@@ -15,6 +15,17 @@ const Index = ({ data, pageContext: { nextPagePath, previousPagePath } }) => {
     <>
       <SEO />
       <Layout>
+      <div>
+    <h2>Hi there 👋</h2>
+        <div>
+        My name is <strong>Alex Nault</strong> and I'm a remote software developer based in Canada. I'm currently building amazing solutions at <a href="https://apprentx.rocks">Apprentx</a>, a fast-growing startup tasked with revoluzioning the way we learn. I previously worked for <a href="https://www.classcraft.com">Classcraft</a> and <a href="https://www.ubisoft.com">Ubisoft</a> among other things.
+        <img src="../images/laptop.jpeg" />
+        github, etc.
+        <a href="mailto:nault.alex@gmail.com">Contact me</a>
+        I write bite-sized articles. Tiny, concise
+        </div>
+        <h3>Recent posts</h3>
+        </div>
         {posts.map(({ node }) => {
           const {
             id,

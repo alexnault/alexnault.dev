@@ -12,13 +12,13 @@ const Footer = ({ copyrights }) => (
     ) : (
       <>
         <span className="footerCopyrights">
-          <a href="https://github.com/alexnault">github</a>
+          <a href="https://github.com/alexnault">Github</a>
         </span>
         <span className="footerCopyrights">
-          <a href="https://www.linkedin.com/in/naultalex">linkedin</a>
+          <a href="https://www.linkedin.com/in/naultalex">LinkedIn</a>
         </span>
         <span className="footerCopyrights">
-          <a href="https://twitter.com/nault_alex">twitter</a>
+          <a href="https://twitter.com/nault_alex">Twitter</a>
         </span>
       </>
     )}
