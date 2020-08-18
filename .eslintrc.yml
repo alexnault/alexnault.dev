@@ -1,5 +1,4 @@
 ---
-
 env:
   es6: true
   jest: true
@@ -10,7 +9,6 @@ env:
 parser: babel-eslint
 
 extends:
-  - airbnb
   - prettier
 
 plugins:
@@ -18,9 +16,6 @@ plugins:
 
 rules:
   # best practices
-  arrow-parens:
-    - 2
-    - as-needed
   camelcase:
     - 0
   max-len:
@@ -45,9 +40,6 @@ rules:
   import/no-extraneous-dependencies: 0
   import/prefer-default-export: 0
   object-curly-newline: 0
-  operator-linebreak:
-    - 2
-    - after
 
   react/jsx-filename-extension: 0
   react/jsx-one-expression-per-line: 0

@@ -16,9 +16,11 @@ Let's get right into it!
 ## Favor Pure Functions
 
 A function is pure if:
+
 - it always returns the same output for the same input
 
 AND
+
 - it has no side effect
 
 > In other words, pure functions map inputs to outputs.
@@ -28,17 +30,17 @@ The caller and the pure function may only communicate via arguments and return v
 ```js
 // impure (using side effect instead of return value)
 function addTaco(array) {
-   array.push("taco");
+  array.push("taco");
 }
 
 // impure (using shared variable instead of argument)
 function addTaco() {
-   return [...globalArray, "taco"];
+  return [...globalArray, "taco"];
 }
 
 // pure
 function addTaco(array) {
-   return [...array, "taco"];
+  return [...array, "taco"];
 }
 ```
 
@@ -83,13 +85,13 @@ const names = ["Han", "Chewbacca", "Luke", "Leia"];
 // imperative
 const shortNames = [];
 for (let i = 0; i < names.length; i++) {
-   if (names[i].length < 5) {
-      shortNames.push(names[i]);
-   }
+  if (names[i].length < 5) {
+    shortNames.push(names[i]);
+  }
 }
 
 // declarative
-const shortNames = names.filter(name => name.length < 5);
+const shortNames = names.filter((name) => name.length < 5);
 ```
 
 **A declarative pattern puts the focus on the problem domain and not the implementation details.** It typically leads to a much more concise and much less error-prone code. Besides, it is much easier to read and reason about.
@@ -99,6 +101,7 @@ By the way, did you notice how `shortNames` also became immutable in the process
 JavaScript has a ton of useful [higher-order functions](https://en.wikipedia.org/wiki/Higher-order_function) such as [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map), [filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter), [reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce), etc. These are musts when writing declarative code so use them extensively!
 
 ## To wrap up
+
 You get to add functional programming to your tool belt! Now, you can follow these principles as you see fit; see what works for your project and what doesn't.
 
 All in all, this article barely scratched the surface, but hopefully shed some light on functional programming and tickled your curiosity.

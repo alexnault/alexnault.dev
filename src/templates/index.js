@@ -1,30 +1,35 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import SEO from '../components/seo'
-import Layout from '../components/layout'
-import Post from '../components/post'
-import Navigation from '../components/navigation'
+import React from "react";
+import PropTypes from "prop-types";
+import { graphql } from "gatsby";
+import SEO from "../components/seo";
+import Layout from "../components/layout";
+import Post from "../components/post";
+import Navigation from "../components/navigation";
 
 const Index = ({ data, pageContext: { nextPagePath, previousPagePath } }) => {
   const {
     allMarkdownRemark: { edges: posts },
-  } = data
+  } = data;
 
   return (
     <>
       <SEO />
       <Layout>
-      <div>
-    <h2>Hi there 👋</h2>
         <div>
-        My name is <strong>Alex Nault</strong> and I'm a remote software developer based in Canada. I'm currently building amazing solutions at <a href="https://apprentx.rocks">Apprentx</a>, a fast-growing startup tasked with revoluzioning the way we learn. I previously worked for <a href="https://www.classcraft.com">Classcraft</a> and <a href="https://www.ubisoft.com">Ubisoft</a> among other things.
-        <img src="../images/laptop.jpeg" />
-        github, etc.
-        <a href="mailto:nault.alex@gmail.com">Contact me</a>
-        I write bite-sized articles. Tiny, concise
-        </div>
-        <h3>Recent posts</h3>
+          <h2>Hi there 👋</h2>
+          <div>
+            My name is <strong>Alex Nault</strong> and I'm a remote software
+            developer based in Canada. I'm currently building amazing solutions
+            at <a href="https://apprentx.rocks">Apprentx</a>, a fast-growing
+            startup tasked with revoluzioning the way we learn. I previously
+            worked for <a href="https://www.classcraft.com">Classcraft</a> and{" "}
+            <a href="https://www.ubisoft.com">Ubisoft</a> among other things.
+            <img src="../images/laptop.jpeg" />
+            github, etc.
+            <a href="mailto:nault.alex@gmail.com">Contact me</a>I write
+            bite-sized articles. Tiny, concise
+          </div>
+          <h3>Recent posts</h3>
         </div>
         {posts.map(({ node }) => {
           const {
@@ -39,7 +44,7 @@ const Index = ({ data, pageContext: { nextPagePath, previousPagePath } }) => {
               excerpt,
               tags,
             },
-          } = node
+          } = node;
 
           return (
             <Post
@@ -52,7 +57,7 @@ const Index = ({ data, pageContext: { nextPagePath, previousPagePath } }) => {
               tags={tags}
               excerpt={excerpt || autoExcerpt}
             />
-          )
+          );
         })}
 
         <Navigation
@@ -63,8 +68,8 @@ const Index = ({ data, pageContext: { nextPagePath, previousPagePath } }) => {
         />
       </Layout>
     </>
-  )
-}
+  );
+};
 
 Index.propTypes = {
   data: PropTypes.object.isRequired,
@@ -72,7 +77,7 @@ Index.propTypes = {
     nextPagePath: PropTypes.string,
     previousPagePath: PropTypes.string,
   }),
-}
+};
 
 export const postsQuery = graphql`
   query($limit: Int!, $skip: Int!) {
@@ -105,6 +110,6 @@ export const postsQuery = graphql`
       }
     }
   }
-`
+`;
 
-export default Index
+export default Index;

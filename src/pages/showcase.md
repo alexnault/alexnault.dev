@@ -46,29 +46,29 @@ pre {
 ```js
 // JS code by PrismJS
 
-const menuTrigger = document.querySelector('.menu-trigger')
-const menu = document.querySelector('.menu')
-const mobileQuery = getComputedStyle(document.body).getPropertyValue('--phoneWidth')
-const isMobile = () => window.matchMedia(mobileQuery).matches
+const menuTrigger = document.querySelector(".menu-trigger");
+const menu = document.querySelector(".menu");
+const mobileQuery = getComputedStyle(document.body).getPropertyValue(
+  "--phoneWidth"
+);
+const isMobile = () => window.matchMedia(mobileQuery).matches;
 const isMobileMenu = () => {
-  menuTrigger.classList.toggle('hidden', !isMobile())
-  menu.classList.toggle('hidden', isMobile())
-}
+  menuTrigger.classList.toggle("hidden", !isMobile());
+  menu.classList.toggle("hidden", isMobile());
+};
 
-isMobileMenu()
+isMobileMenu();
 
-menuTrigger.addEventListener('click', () => menu.classList.toggle('hidden'))
+menuTrigger.addEventListener("click", () => menu.classList.toggle("hidden"));
 
-window.addEventListener('resize', isMobileMenu)
+window.addEventListener("resize", isMobileMenu);
 ```
 
 ```html
 <section id="main">
   <div>
-   <h1 id="title">{{ .Title }}</h1>
-    {{ range .Pages }}
-        {{ .Render "summary"}}
-    {{ end }}
+    <h1 id="title">{{ .Title }}</h1>
+    {{ range .Pages }} {{ .Render "summary"}} {{ end }}
   </div>
 </section>
 ```

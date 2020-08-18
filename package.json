@@ -47,8 +47,7 @@
     "babel-preset-gatsby": "^0.1.6",
     "cssnano": "^4.1.8",
     "eslint": "^5.12.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-prettier": "^3.3.0",
+    "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.12.3",
@@ -60,7 +59,7 @@
     "postcss-nested": "^4.1.1",
     "postcss-preset-env": "^6.5.0",
     "postcss-url": "^8.0.0",
-    "prettier": "^1.15.2",
+    "prettier": "^2.0.5",
     "rambdax": "^1.8.0"
   },
   "repository": {
