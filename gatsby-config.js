@@ -7,31 +7,23 @@ const postCSSMixins = require('postcss-mixins')
 
 module.exports = {
   siteMetadata: {
-    title: `Hello Friend`,
-    description: `A simple starter for Gatsby. That's it.`,
+    title: `alexnault.dev`,
+    description: ``,
     copyrights: '',
-    author: `@panr`,
+    author: `@alexnault`,
     logo: {
       src: '',
       alt: '',
     },
-    logoText: 'hello friend',
+    logoText: 'alexnault.dev',
     defaultTheme: 'dark',
     postsPerPage: 5,
     showMenuItems: 2,
-    menuMoreText: 'Show more',
+    menuMoreText: 'More',
     mainMenu: [
       {
-        title: 'About',
-        path: '/about',
-      },
-      {
-        title: 'Showcase',
-        path: '/showcase',
-      },
-      {
-        title: 'Example',
-        path: '/example',
+        title: 'Blog',
+        path: '/blog',
       },
     ],
   },

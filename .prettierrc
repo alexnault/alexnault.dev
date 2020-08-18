@@ -1,6 +1,4 @@
 {
-  "printWidth": 80,
-  "trailingComma": "all",
   "overrides": [
     {
       "files": "*.{css,scss}",
@@ -21,5 +19,4 @@
       }
     }
   ],
-  "parser": "babylon"
 }
