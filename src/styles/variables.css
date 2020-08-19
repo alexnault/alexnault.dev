@@ -1,14 +1,18 @@
 :root {
+  --primary-color: #fe5186;
+
   /* light theme color */
-  --light-background: #fff;
+  --light-background: #fafafa;
   --light-background-secondary: #eaeaea;
+  --light-background-paper: #ffffff;
   --light-color: rgba(0, 0, 0, 0.87);
   --light-color-secondary: rgba(0, 0, 0, 0.54);
   --light-border-color: rgba(0, 0, 0, 0.12);
 
   /* dark theme colors */
-  --dark-background: #292a2d;
+  --dark-background: #303030;
   --dark-background-secondary: #3b3d42;
+  --dark-background-paper: #424242;
   --dark-color: rgba(255, 255, 255, 0.87);
   --dark-color-secondary: rgba(255, 255, 255, 0.54);
   --dark-border-color: #rgba(255, 255, 255, 0.12);

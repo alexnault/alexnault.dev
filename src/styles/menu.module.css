@@ -23,7 +23,6 @@
   margin: 0 auto;
   padding: 0 15px;
   list-style: none;
-  border-right: 1px solid;
   margin-right: 18px;
 
   li {
@@ -103,6 +102,10 @@
   padding: 0 5px;
   appearance: none;
   outline: none;
+  transition: color 200ms;
+  &:hover {
+    color: var(--primary-color);
+  }
 }
 
 .subMenuTrigger {

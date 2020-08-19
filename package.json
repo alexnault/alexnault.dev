@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-hello-friend",
-  "description": "A simple starter for Gatsby. That's it.",
+  "name": "alexnault.dev",
+  "description": "My personal website and blog",
   "version": "0.2.0",
-  "author": "Radek Kozieł <radoslaw.koziel@gmail.com>",
+  "author": "Alex Nault <nault.alex@gmail.com>",
   "keywords": [
     "gatsby",
     "minimal",
@@ -64,9 +64,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/panr/gatsby-starter-hello-friend"
+    "url": "https://github.com/alexnault/alexnault.dev"
   },
   "bugs": {
-    "url": "https://github.com/panr/gatsby-starter-hello-friend/issues"
+    "url": "https://github.com/alexnault/alexnault.dev/issues"
   }
 }

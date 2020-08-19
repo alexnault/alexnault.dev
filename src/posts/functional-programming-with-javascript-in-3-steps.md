@@ -3,7 +3,6 @@ title: "Functional Programming with JavaScript in 3 Steps"
 date: "2019-04-02"
 coverImage: "../images/laptop.jpeg"
 path: "/functional-programming-with-javascript-in-3-steps"
-author: "Alex Nault"
 excerpt: "Pure functions, immutability & declarative pattern… you're in for a treat."
 tags: []
 ---

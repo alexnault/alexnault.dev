@@ -41,10 +41,8 @@ const SubMenu = ({ mainMenu, mainMenuItems, onToggleSubMenu }) => {
   );
 };
 
-const menuIcon = `M4 34H40V30H4V34ZM4 24H40V20H4V24ZM4 10V14H40V10H4Z`;
-const toggleIcon = `M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
-3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
-13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z`;
+const menuIcon = `M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z`;
+const toggleIcon = `M0 12c0 6.627 5.373 12 12 12s12-5.373 12-12-5.373-12-12-12-12 5.373-12 12zm2 0c0-5.514 4.486-10 10-10v20c-5.514 0-10-4.486-10-10z`;
 
 const Menu = ({
   mainMenu,
@@ -60,15 +58,13 @@ const Menu = ({
 
   return (
     <>
-      <div className={style.mobileMenuContainer}>
+      {/* <div className={style.mobileMenuContainer}>
         <>
           {isMobileMenuVisible ? (
             <>
-              {/* eslint-enable */}
               <ul className={style.mobileMenu}>
                 <MainMenu mainMenu={mainMenu} isMobileMenu />
               </ul>
-              {/* eslint-disable */}
               <div
                 onClick={onToggleMobileMenu}
                 className={style.mobileMenuOverlay}
@@ -112,7 +108,7 @@ const Menu = ({
             </>
           ) : null}
         </ul>
-      </div>
+      </div> */}
       <button
         className={style.themeToggle}
         onClick={onChangeTheme}

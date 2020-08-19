@@ -64,3 +64,34 @@
 .postContent {
   position: relative;
 }
+
+/* TODO move */
+.about {
+  width: 100%;
+  max-width: 800px;
+  text-align: left;
+  padding: 20px;
+  margin: 0 auto 20px;
+  /* border-radius: 8px; */
+  /* background-color: var(--light-background-paper); */
+
+  /* :global .dark-theme :local & {
+    background-color: var(--dark-background-paper);
+  } */
+
+  @media (--tablet) {
+    max-width: 660px;
+  }
+
+  .avatar {
+    border-radius: 50%;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .social {
+    margin: 16px 0;
+    > a {
+      padding: 8px;
+    }
+  }
+}
