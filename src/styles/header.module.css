@@ -1,12 +1,14 @@
 .header {
-  background: #fafafa;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
   padding: 20px;
+  background: var(--light-background-paper);
+  /* background: linear-gradient(to left, #f7797d, #fbd786, #c6ffdd); */
 
   :global .dark-theme :local & {
+    /* background: var(--dark-background-paper); */
     background: #252627;
   }
 
@@ -43,7 +45,7 @@
   display: inline-block;
   width: 10px;
   height: 1rem;
-  background: #fe5186;
+  background: var(--primary-color);
   margin-left: 5px;
   border-radius: 1px;
   animation: cursor 1s infinite;
@@ -60,7 +62,13 @@
 }
 
 @keyframes cursor {
-  0% { opacity: 0; }
-  50% { opacity: 1; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }

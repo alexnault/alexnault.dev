@@ -1,17 +1,21 @@
 :root {
+  --primary-color: #fe5186;
+
   /* light theme color */
-  --light-background: #fff;
+  --light-background: #fafafa;
   --light-background-secondary: #eaeaea;
-  --light-color: #222;
-  --light-color-secondary: #999;
-  --light-border-color: #dcdcdc;
+  --light-background-paper: #ffffff;
+  --light-color: rgba(0, 0, 0, 0.87);
+  --light-color-secondary: rgba(0, 0, 0, 0.54);
+  --light-border-color: rgba(0, 0, 0, 0.12);
 
   /* dark theme colors */
-  --dark-background: #292a2d;
+  --dark-background: #303030;
   --dark-background-secondary: #3b3d42;
-  --dark-color: #a9a9b3;
-  --dark-color-secondary: #73747b;
-  --dark-border-color: #4a4b50;
+  --dark-background-paper: #424242;
+  --dark-color: rgba(255, 255, 255, 0.87);
+  --dark-color-secondary: rgba(255, 255, 255, 0.54);
+  --dark-border-color: #rgba(255, 255, 255, 0.12);
 
   /* variables for js, must be the same as these in @custom-media queries */
   --phoneWidth: (max-width: 684px);

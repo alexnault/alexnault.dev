@@ -23,7 +23,6 @@
   margin: 0 auto;
   padding: 0 15px;
   list-style: none;
-  border-right: 1px solid;
   margin-right: 18px;
 
   li {
@@ -89,7 +88,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, .2);
+    background: rgba(0, 0, 0, 0.2);
     z-index: 10;
   }
 }
@@ -103,6 +102,10 @@
   padding: 0 5px;
   appearance: none;
   outline: none;
+  transition: color 200ms;
+  &:hover {
+    color: var(--primary-color);
+  }
 }
 
 .subMenuTrigger {
@@ -123,7 +126,7 @@
   position: absolute;
   max-width: 300px;
   background: #fafafa;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
   margin: 0;
   padding: 5px;
   list-style: none;
@@ -169,7 +172,7 @@
 
 .menuArrow {
   display: inline-block;
-  font-family: 'Inter UI';
+  font-family: "Inter UI";
   margin-left: 5px;
   transform: rotate(90deg);
 }
