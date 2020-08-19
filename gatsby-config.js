@@ -28,6 +28,12 @@ module.exports = {
     ],
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-22359399-5",
+      },
+    },
     `babel-preset-gatsby`,
     `gatsby-plugin-react-helmet`,
     {
@@ -113,12 +119,6 @@ module.exports = {
         theme_color: `#292a2d`,
         display: `minimal-ui`,
         icon: `src/images/icon.png`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: "UA-22359399-5",
       },
     },
   ],
