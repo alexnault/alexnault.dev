@@ -32,6 +32,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-22359399-5",
+        head: true,
       },
     },
     `babel-preset-gatsby`,
