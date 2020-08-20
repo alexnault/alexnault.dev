@@ -7,7 +7,6 @@ excerpt: "Pure functions, immutability & declarative pattern… you're in for a�
 tags: []
 ---
 
-Pure functions, immutability & declarative pattern… you're in for a treat.
 Functional programming has its roots in lambda calculus, a mathematical concept dating back to the 1930s. That might sound daunting, but it's really not. Without going into the mathematical theory, **these principles will introduce you to some of the wonders of functional programming and its benefits for your software.**
 
 Let's get right into it!
