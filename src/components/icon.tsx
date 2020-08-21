@@ -1,9 +1,15 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import style from "../styles/icon.module.css";
 
-const Icon = (props) => {
+type Props = {
+  d: string;
+  size?: number | string;
+  label?: string;
+  style: any;
+};
+
+const Icon = (props: Props) => {
   const { d, size = "1em", label, style: styles } = props;
 
   return (
@@ -20,13 +26,6 @@ const Icon = (props) => {
       {label && <span className={style.label}>{label}</span>}
     </span>
   );
-};
-
-Icon.propTypes = {
-  d: PropTypes.string,
-  size: PropTypes.number,
-  label: PropTypes.string,
-  style: PropTypes.object,
 };
 
 export default Icon;

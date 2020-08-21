@@ -1,7 +1,10 @@
 import React from "react";
-import PropTypes from "prop-types";
 
-const Footer = ({ copyrights }) => (
+type Props = {
+  copyrights?: string;
+};
+
+const Footer = ({ copyrights }: Props) => (
   <footer>
     {copyrights ? (
       <div
@@ -24,9 +27,5 @@ const Footer = ({ copyrights }) => (
     )}
   </footer>
 );
-
-Footer.propTypes = {
-  copyrights: PropTypes.string,
-};
 
 export default Footer;

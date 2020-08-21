@@ -1,9 +1,22 @@
 import React from "react";
-import PropTypes from "prop-types";
-import Helmet from "react-helmet";
+import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 
-const SEO = ({ description, lang, meta, keywords, title }) => {
+type Props = {
+  description?: string;
+  lang?: string;
+  meta?: any[];
+  keywords?: string[];
+  title?: string;
+};
+
+const SEO = ({
+  description,
+  lang = "en",
+  meta = [],
+  keywords = ["alex", "nault", "dev", "blog", "alexnault", "personal site"],
+  title,
+}: Props) => {
   const data = useStaticQuery(graphql`
     query DefaultSEOQuery {
       site {
@@ -75,29 +88,6 @@ const SEO = ({ description, lang, meta, keywords, title }) => {
         .concat(meta)}
     />
   );
-};
-
-SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  keywords: [
-    "gatsby",
-    "minimal",
-    "starter",
-    "blog",
-    "theme",
-    "dark",
-    "light",
-    "personal site",
-  ],
-};
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.array,
-  keywords: PropTypes.arrayOf(PropTypes.string),
-  title: PropTypes.string,
 };
 
 export default SEO;

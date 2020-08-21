@@ -1,12 +1,19 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 
 import SEO from "../components/seo";
 import Layout from "../components/layout";
 import Post from "../components/post";
 
-const BlogPostTemplate = ({ data, pageContext }) => {
+type Props = {
+  data: any;
+  pageContext: {
+    next: any;
+    previous: any;
+  };
+};
+
+const BlogPostTemplate = ({ data, pageContext }: Props) => {
   const { avatar } = data;
   const {
     frontmatter: { title, date, path, author, coverImage, excerpt, tags },
@@ -37,14 +44,6 @@ const BlogPostTemplate = ({ data, pageContext }) => {
 };
 
 export default BlogPostTemplate;
-
-BlogPostTemplate.propTypes = {
-  data: PropTypes.object.isRequired,
-  pageContext: PropTypes.shape({
-    next: PropTypes.object,
-    previous: PropTypes.object,
-  }),
-};
 
 export const pageQuery = graphql`
   query($path: String) {

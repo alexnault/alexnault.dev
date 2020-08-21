@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
 
@@ -20,7 +19,21 @@ const twitterIcon =
 const emailIcon =
   "M12 12.713l-11.985-9.713h23.971l-11.986 9.713zm-5.425-1.822l-6.575-5.329v12.501l6.575-7.172zm10.85 0l6.575 7.172v-12.501l-6.575 5.329zm-1.557 1.261l-3.868 3.135-3.868-3.135-8.11 8.848h23.956l-8.11-8.848z";
 
-const Index = ({ data, pageContext: { nextPagePath, previousPagePath } }) => {
+type Props = {
+  data: {
+    avatar: any;
+    allMarkdownRemark: any;
+  };
+  pageContext: {
+    nextPagePath: string;
+    previousPagePath: string;
+  };
+};
+
+const Index = ({
+  data,
+  pageContext: { nextPagePath, previousPagePath },
+}: Props) => {
   const {
     avatar,
     allMarkdownRemark: { edges: posts },
@@ -90,14 +103,6 @@ const Index = ({ data, pageContext: { nextPagePath, previousPagePath } }) => {
       </Layout>
     </>
   );
-};
-
-Index.propTypes = {
-  data: PropTypes.object.isRequired,
-  pageContext: PropTypes.shape({
-    nextPagePath: PropTypes.string,
-    previousPagePath: PropTypes.string,
-  }),
 };
 
 export const postsQuery = graphql`

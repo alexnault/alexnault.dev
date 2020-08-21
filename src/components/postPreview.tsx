@@ -1,12 +1,29 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import Img from "gatsby-image";
 import { toKebabCase } from "../helpers";
 
 import style from "../styles/post.module.css";
 
-const Post = ({ title, date, path, coverImage, author, excerpt, tags }) => {
+type Props = {
+  title: string;
+  date: string;
+  path: string;
+  coverImage: any;
+  author: string;
+  excerpt: string;
+  tags: string[];
+};
+
+const Post = ({
+  title,
+  date,
+  path,
+  coverImage,
+  author,
+  excerpt,
+  tags,
+}: Props) => {
   return (
     <div className={style.post}>
       <div className={style.postContent}>
@@ -40,16 +57,6 @@ const Post = ({ title, date, path, coverImage, author, excerpt, tags }) => {
       </div>
     </div>
   );
-};
-
-Post.propTypes = {
-  title: PropTypes.string,
-  date: PropTypes.string,
-  path: PropTypes.string,
-  coverImage: PropTypes.object,
-  author: PropTypes.string,
-  excerpt: PropTypes.string,
-  tags: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default Post;

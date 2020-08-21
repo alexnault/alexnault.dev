@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import SEO from "../components/seo";
 import Layout from "../components/layout";
@@ -8,10 +7,19 @@ import Navigation from "../components/navigation";
 
 import "../styles/layout.css";
 
+type Props = {
+  data: any;
+  pageContext: {
+    nextPagePath: string;
+    previousPagePath: string;
+    tag: any;
+  };
+};
+
 const Tags = ({
   data,
   pageContext: { nextPagePath, previousPagePath, tag },
-}) => {
+}: Props) => {
   const {
     allMarkdownRemark: { edges: posts },
   } = data;
@@ -60,14 +68,6 @@ const Tags = ({
       </Layout>
     </>
   );
-};
-
-Tags.propTypes = {
-  data: PropTypes.object.isRequired,
-  pageContext: PropTypes.shape({
-    nextPagePath: PropTypes.string,
-    previousPagePath: PropTypes.string,
-  }),
 };
 
 export const postsQuery = graphql`

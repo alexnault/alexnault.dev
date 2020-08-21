@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import { Helmet } from "react-helmet";
 
@@ -7,7 +6,19 @@ import Menu from "./menu";
 
 import style from "../styles/header.module.css";
 
-const Header = (props) => {
+type Props = {
+  siteLogo: any;
+  logoText: string;
+  defaultTheme: string;
+  mainMenu: {
+    title: string;
+    path: string;
+  }[];
+  mainMenuItems: number;
+  menuMoreText: string;
+};
+
+const Header = (props: Props) => {
   const {
     siteLogo,
     logoText,
@@ -76,20 +87,6 @@ const Header = (props) => {
       </header>
     </>
   );
-};
-
-Header.propTypes = {
-  siteLogo: PropTypes.object,
-  logoText: PropTypes.string,
-  defaultTheme: PropTypes.string,
-  mainMenu: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string,
-      path: PropTypes.string,
-    })
-  ),
-  mainMenuItems: PropTypes.number,
-  menuMoreText: PropTypes.string,
 };
 
 export default Header;
