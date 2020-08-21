@@ -65,6 +65,25 @@
   position: relative;
 }
 
+.actions {
+  margin: 32px 0;
+  > a:not(:last-child) {
+    margin-right: 8px;
+  }
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  margin: 32px 0;
+}
+
+.avatar {
+  border-radius: 50%;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
 /* TODO move */
 .about {
   width: 100%;
@@ -72,12 +91,6 @@
   text-align: left;
   padding: 20px;
   margin: 0 auto 20px;
-  /* border-radius: 8px; */
-  /* background-color: var(--light-background-paper); */
-
-  /* :global .dark-theme :local & {
-    background-color: var(--dark-background-paper);
-  } */
 
   @media (--tablet) {
     max-width: 660px;

@@ -7,6 +7,7 @@ import Layout from "../components/layout";
 import Post from "../components/post";
 
 const BlogPostTemplate = ({ data, pageContext }) => {
+  const { avatar } = data;
   const {
     frontmatter: { title, date, path, author, coverImage, excerpt, tags },
     excerpt: autoExcerpt,
@@ -29,6 +30,7 @@ const BlogPostTemplate = ({ data, pageContext }) => {
         tags={tags}
         previousPost={previous}
         nextPost={next}
+        avatar={avatar}
       />
     </Layout>
   );
@@ -46,6 +48,13 @@ BlogPostTemplate.propTypes = {
 
 export const pageQuery = graphql`
   query($path: String) {
+    avatar: file(relativePath: { eq: "alex.jpg" }) {
+      childImageSharp {
+        fixed(width: 64, height: 64) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       frontmatter {
         title

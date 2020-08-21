@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import SEO from "../components/seo";
 import Layout from "../components/layout";
-import Post from "../components/post";
+import PostPreview from "../components/postPreview";
 import Navigation from "../components/navigation";
 
 import "../styles/layout.css";
@@ -23,7 +23,6 @@ const Tags = ({
         <div className="infoBanner">
           Posts with tag: <span>#{tag}</span>
         </div>
-
         {posts.map(({ node }) => {
           const {
             id,
@@ -40,7 +39,7 @@ const Tags = ({
           } = node;
 
           return (
-            <Post
+            <PostPreview
               key={id}
               title={title}
               date={date}
@@ -52,7 +51,6 @@ const Tags = ({
             />
           );
         })}
-
         <Navigation
           previousPath={previousPagePath}
           previousLabel="Newer posts"

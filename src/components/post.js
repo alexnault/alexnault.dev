@@ -13,11 +13,11 @@ const Post = ({
   path,
   coverImage,
   author,
-  excerpt,
   tags,
   html,
   previousPost,
   nextPost,
+  avatar,
 }) => {
   const previousPath = previousPost && previousPost.frontmatter.path;
   const previousLabel = previousPost && previousPost.frontmatter.title;
@@ -27,9 +27,7 @@ const Post = ({
   return (
     <div className={style.post}>
       <div className={style.postContent}>
-        <h1 className={style.title}>
-          {excerpt ? <Link to={path}>{title}</Link> : title}
-        </h1>
+        <h1 className={style.title}>{title}</h1>
         <div className={style.meta}>
           {date} {author && <>— Written by {author}</>}
           {tags ? (
@@ -42,40 +40,51 @@ const Post = ({
             </div>
           ) : null}
         </div>
-
-        {coverImage &&
-          (excerpt ? (
-            <Link to={path}>
-              <Img
-                fluid={coverImage.childImageSharp.fluid}
-                className={style.coverImage}
-              />
-            </Link>
-          ) : (
-            <Img
-              fluid={coverImage.childImageSharp.fluid}
-              className={style.coverImage}
-            />
-          ))}
-
-        {excerpt ? (
-          <>
-            <p>{excerpt}</p>
-            <Link to={path} className={style.readMore}>
-              Read more →
-            </Link>
-          </>
-        ) : (
-          <>
-            <div dangerouslySetInnerHTML={{ __html: html }} />
-            <Navigation
-              previousPath={previousPath}
-              previousLabel={previousLabel}
-              nextPath={nextPath}
-              nextLabel={nextLabel}
-            />
-          </>
+        {coverImage && (
+          <Img
+            fluid={coverImage.childImageSharp.fluid}
+            className={style.coverImage}
+          />
         )}
+        <div dangerouslySetInnerHTML={{ __html: html }} />
+        <div className={style.actions}>
+          <a
+            href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+              `Check this out! https://alexnault.dev${path}`
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Share
+          </a>
+          <a
+            href={`https://github.com/alexnault/alexnault.dev/edit/master/src/posts/${path.replace(
+              "/",
+              ""
+            )}.md`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Edit
+          </a>
+        </div>
+        <div className={style.author}>
+          <Img fixed={avatar.childImageSharp.fixed} className={style.avatar} />
+          <div>
+            <div>
+              <b>
+                By <a href="/">Alex Nault</a>
+              </b>
+            </div>
+            <div>I write bite-sized articles for developers</div>
+          </div>
+        </div>
+        <Navigation
+          previousPath={previousPath}
+          previousLabel={previousLabel}
+          nextPath={nextPath}
+          nextLabel={nextLabel}
+        />
       </div>
     </div>
   );
@@ -87,11 +96,11 @@ Post.propTypes = {
   path: PropTypes.string,
   coverImage: PropTypes.object,
   author: PropTypes.string,
-  excerpt: PropTypes.string,
   html: PropTypes.string,
   tags: PropTypes.arrayOf(PropTypes.string),
   previousPost: PropTypes.object,
   nextPost: PropTypes.object,
+  avatar: PropTypes.object,
 };
 
 export default Post;

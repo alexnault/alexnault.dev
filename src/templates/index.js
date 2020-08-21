@@ -5,7 +5,7 @@ import Img from "gatsby-image";
 
 import SEO from "../components/seo";
 import Layout from "../components/layout";
-import Post from "../components/post";
+import PostPreview from "../components/postPreview";
 import Navigation from "../components/navigation";
 import Icon from "../components/icon";
 
@@ -53,37 +53,34 @@ const Index = ({ data, pageContext: { nextPagePath, previousPagePath } }) => {
             </a>
           </div>
         </div>
-        <div>
-          {/* <h3>Blog</h3> */}
-          {posts.map(({ node }) => {
-            const {
-              id,
-              excerpt: autoExcerpt,
-              frontmatter: {
-                title,
-                date,
-                path,
-                author,
-                coverImage,
-                excerpt,
-                tags,
-              },
-            } = node;
+        {posts.map(({ node }) => {
+          const {
+            id,
+            excerpt: autoExcerpt,
+            frontmatter: {
+              title,
+              date,
+              path,
+              author,
+              coverImage,
+              excerpt,
+              tags,
+            },
+          } = node;
 
-            return (
-              <Post
-                key={id}
-                title={title}
-                date={date}
-                path={path}
-                author={author}
-                coverImage={coverImage}
-                tags={tags}
-                excerpt={excerpt || autoExcerpt}
-              />
-            );
-          })}
-        </div>
+          return (
+            <PostPreview
+              key={id}
+              title={title}
+              date={date}
+              path={path}
+              author={author}
+              coverImage={coverImage}
+              tags={tags}
+              excerpt={excerpt || autoExcerpt}
+            />
+          );
+        })}
         <Navigation
           previousPath={previousPagePath}
           previousLabel="Newer posts"
