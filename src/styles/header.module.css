@@ -3,7 +3,8 @@
   align-items: center;
   justify-content: space-between;
   position: relative;
-  padding: 20px;
+  padding: 16px;
+  height: 64px;
   background: var(--light-background-paper);
   /* background: linear-gradient(to left, #f7797d, #fbd786, #c6ffdd); */
 
@@ -38,15 +39,15 @@
 }
 
 .mark {
-  margin-right: 5px;
+  margin-right: 4px;
 }
 
 .cursor {
   display: inline-block;
-  width: 10px;
+  width: 8px;
   height: 1rem;
   background: var(--primary-color);
-  margin-left: 5px;
+  margin-left: 4px;
   border-radius: 1px;
   animation: cursor 1s infinite;
 }

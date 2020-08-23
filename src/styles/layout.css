@@ -113,7 +113,7 @@ img {
 figure {
   display: table;
   max-width: 100%;
-  margin: 25px 0;
+  margin: 24px 0;
 
   &.left {
     margin-right: auto;
@@ -130,7 +130,7 @@ figure {
 
   figcaption {
     font-size: 14px;
-    margin-top: 5px;
+    margin-top: 4px;
     opacity: 0.8;
 
     &.left {
@@ -154,7 +154,7 @@ code {
   background: var(--light-background-secondary);
   padding: 1px 6px;
   margin: 0 2px;
-  border-radius: 5px;
+  border-radius: 4px;
   font-size: 0.9rem;
 
   .dark-theme & {
@@ -164,7 +164,7 @@ code {
 
 pre {
   background: #1a1a1d;
-  padding: 20px;
+  padding: 16px;
   border-radius: 8px;
   font-size: 0.9rem;
   overflow: auto;
@@ -186,11 +186,11 @@ pre {
 blockquote {
   border-left: 2px solid;
   margin: 40px;
-  padding: 10px 20px;
+  padding: 8px 24px;
 
   @media (--phone) {
-    margin: 10px;
-    padding: 10px;
+    margin: 16px;
+    padding: 8px 16px;
   }
 
   p:first-of-type {
@@ -207,14 +207,14 @@ table {
   border-collapse: collapse;
   width: 100%;
   margin: 40px 0;
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
 table,
 th,
 td {
   border: 1px solid var(--light-color);
-  padding: 10px;
+  padding: 8px;
 
   .dark-theme & {
     border-color: var(--dark-color);
@@ -235,7 +235,7 @@ ol {
   padding: 0;
 
   @media (--phone) {
-    margin-left: 20px;
+    margin-left: 16px;
   }
 }
 
@@ -263,7 +263,7 @@ textarea {
   flex: 1 0 auto;
   align-items: center;
   justify-content: center;
-  margin: 50px auto;
+  margin: 48px auto;
   width: 100%;
   max-width: 800px;
 
@@ -289,9 +289,9 @@ hr {
 
 .infoBanner {
   text-align: left;
-  margin: 20px 0 40px;
-  padding: 10px 20px;
-  border-radius: 10px;
+  margin: 16px 0 40px;
+  padding: 8px 16px;
+  border-radius: 8px;
   width: calc(100% - 40px);
   background: var(--light-background-secondary);
 
@@ -336,8 +336,8 @@ footer {
 
   .footerCopyrights {
     &:not(:first-of-type) {
-      margin-left: 20px;
-      padding-left: 20px;
+      margin-left: 16px;
+      padding-left: 16px;
       border-left: 1px solid;
 
       @media (--phone) {

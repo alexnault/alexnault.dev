@@ -130,7 +130,7 @@ pre[class*="language-"].line-numbers > code {
   pointer-events: none;
   top: 1em;
   font-size: 100%;
-  left: 5px !important;
+  left: 4px !important;
   width: 3em !important; /* works for line-numbers below 1000 lines */
   letter-spacing: -1px;
   border-right: 1px solid;

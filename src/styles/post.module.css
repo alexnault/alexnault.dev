@@ -2,8 +2,8 @@
   width: 100%;
   max-width: 800px;
   text-align: left;
-  padding: 20px;
-  margin: 0 auto 20px;
+  padding: 16px;
+  margin: 0 auto 16px;
 
   &:not(:last-of-type) {
     border-bottom: 1px solid var(--light-border-color);
@@ -18,7 +18,7 @@
   }
 
   h1 {
-    margin: 0 0 10px;
+    margin: 0 0 8px;
   }
 
   img {
@@ -40,24 +40,24 @@
 
 .meta {
   font-size: 1rem;
-  margin-bottom: 30px;
+  margin-bottom: 32px;
 }
 
 .tags {
-  margin-top: 10px;
+  margin-top: 8px;
   opacity: 0.5;
 }
 
 .tag {
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 8px;
 }
 
 .readMore {
   display: inline-block;
   text-decoration: none;
   font-weight: bold;
-  margin: 20px 0;
+  margin: 16px 0;
   font-size: 1rem;
 }
 
@@ -80,7 +80,7 @@
 
 .avatar {
   border-radius: 50%;
-  margin-right: 10px;
+  margin-right: 12px;
   flex-shrink: 0;
 }
 
@@ -89,8 +89,8 @@
   width: 100%;
   max-width: 800px;
   text-align: left;
-  padding: 20px;
-  margin: 0 auto 20px;
+  padding: 16px;
+  margin: 0 auto 16px;
 
   @media (--tablet) {
     max-width: 660px;
