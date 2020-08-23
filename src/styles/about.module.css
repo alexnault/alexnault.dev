@@ -1,0 +1,23 @@
+.about {
+  width: 100%;
+  max-width: 800px;
+  text-align: left;
+  padding: 16px;
+  margin: 0 auto 16px;
+
+  @media (--tablet) {
+    max-width: 660px;
+  }
+
+  .avatar {
+    border-radius: 50%;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .social {
+    margin: 16px 0;
+    > a {
+      padding: 8px;
+    }
+  }
+}
