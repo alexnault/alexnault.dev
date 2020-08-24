@@ -1,6 +1,6 @@
 ---
 title: "Open–Closed Principle in Functional TypeScript"
-date: "2020-08-19"
+date: "2020-08-24"
 coverImage: "../images/tim-mossholder-C8jNJslQM3A-unsplash.jpg"
 path: "/open-closed-principle-in-functional-typescript"
 excerpt: ""
@@ -9,18 +9,19 @@ tags: []
 
 _This is part two of a five-part series about SOLID principles in functional TypeScript._
 
-The second SOLID principle, **the open-closed principle (OCP)**, states that:
+## What is the Open-Closed Principle?
 
-> Software entities should be open to extension but closed to modification.
+The open-closed principle (OCP) is one of the five SOLID principles. It states that:
 
-Meaning a module's behavior can be extended without modifying the module itself.
+> Software modules should be open for extension, but closed for modification.
 
-You ended up making mostly additions to support new features, while higher-level modules remain intact. As a result, **lesser code needs to change to meet new requirements.**
+Meaning a module's behavior can be extended without modifying the module itself. **It promotes a composable architecture where each module acts as a plugin.**
 
-<!-- How? By seperating things that change for diff reasons and organization dependecies properly. Change... -->
-<!-- You want to prevent change from inner layers of your software logic. -->
+Ultimately, the goal of the open-closed principle is to **write code that won't need to change when requirements change.**
 
-Here's an exampe with React components:
+## Example
+
+Here's a simplified exampe with React function components:
 
 ```tsx
 function Button({ text }: ButtonProps) {
@@ -28,11 +29,11 @@ function Button({ text }: ButtonProps) {
 }
 
 function App() {
-  return <Button>Click me</Button>;
+  return <Button text="Click me!" />;
 }
 ```
 
-Now, imagine we are tasked with adding a loading state to that button. We could modify our `Button` to handle it, like so:
+Now, let's say we are tasked with adding a loading to that button. We could modify our `Button` to handle it, like so:
 
 ```tsx
 function Button({ text, isLoading }: ButtonProps) {
@@ -44,7 +45,7 @@ function Button({ text, isLoading }: ButtonProps) {
 }
 
 function App() {
-  return <Button isLoading={true}>Click me</Button>;
+  return <Button text="Click me!" isLoading={true} />;
 }
 ```
 
@@ -64,13 +65,13 @@ function Button({ text }: ButtonProps) {
 function App() {
   return (
     <Loading isLoading={true}>
-      <Button>Click me</Button>
+      <Button text="Click me!" />
     </Loading>
   );
 }
 ```
 
-Notice how `Button` stayed pristine and focused on being a button? This solution adheres to the OCP since we managed to extend our `Button`'s behavior while leaving its code unchanged.
+Notice how `Button` remained intact and focused on being a button? This solution adheres to the open-closed principle since we managed to extend our `Button`'s behavior while leaving its code unchanged.
 
 Other advantages of this solution include:
 
@@ -79,11 +80,11 @@ Other advantages of this solution include:
 - Smaller function/file size
 - Observing separation of concerns
 
-### Wrapping up
+## Wrapping up
 
-The open-closed principle allows for easier extension while reducing time spent adapting existing code. By designing your modules into composable parts, you promote a flexible and scalable application.
+**The open-closed principle allows for easier extension while reducing time spent adapting existing code.** By designing your modules into composable parts, you foster a flexible and scalable application.
 
-More on SOLID principles:
+## More on SOLID principles
 
 - [Single-Responsibility Principle](https://alexnault.dev) _(upcoming!)_
 - Open-Closed Principle
