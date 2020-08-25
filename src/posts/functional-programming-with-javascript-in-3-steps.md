@@ -1,7 +1,7 @@
 ---
 title: "Functional Programming with JavaScript in 3 Steps"
 date: "2019-04-02"
-coverImage: "../images/laptop.jpeg"
+coverImage: "../images/ales-nesetril-Im7lZjxeLhg-unsplash.jpg"
 path: "/functional-programming-with-javascript-in-3-steps"
 excerpt: "Pure functions, immutability & declarative pattern… you're in for a treat."
 tags: []
