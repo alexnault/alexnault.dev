@@ -8,6 +8,8 @@ import Navigation from "../components/navigation";
 
 import About from "../components/about";
 
+import style from "../styles/postPreview.module.css";
+
 type Props = {
   data: {
     avatar: any;
@@ -33,34 +35,24 @@ const Index = ({
       <SEO />
       <Layout>
         <About avatar={avatar} />
-        {posts.map(({ node }) => {
-          const {
-            id,
-            excerpt: autoExcerpt,
-            frontmatter: {
-              title,
-              date,
-              path,
-              author,
-              coverImage,
-              excerpt,
-              tags,
-            },
-          } = node;
+        <div className={style.postPreviews}>
+          {posts.map(({ node }) => {
+            const {
+              id,
+              frontmatter: { title, date, path, coverImage },
+            } = node;
 
-          return (
-            <PostPreview
-              key={id}
-              title={title}
-              date={date}
-              path={path}
-              author={author}
-              coverImage={coverImage}
-              tags={tags}
-              excerpt={excerpt || autoExcerpt}
-            />
-          );
-        })}
+            return (
+              <PostPreview
+                key={id}
+                title={title}
+                date={date}
+                path={path}
+                coverImage={coverImage}
+              />
+            );
+          })}
+        </div>
         <Navigation
           previousPath={previousPagePath}
           previousLabel="Newer posts"
@@ -90,14 +82,10 @@ export const postsQuery = graphql`
       edges {
         node {
           id
-          excerpt
           frontmatter {
             title
             date(formatString: "DD MMMM YYYY")
             path
-            author
-            excerpt
-            tags
             coverImage {
               childImageSharp {
                 fluid(maxWidth: 800) {

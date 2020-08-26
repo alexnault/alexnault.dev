@@ -86,8 +86,10 @@ h4 {
 
 a {
   color: inherit;
+  outline: none;
   transition: color 200ms;
-  &:hover {
+  &:hover,
+  &:focus {
     color: var(--primary-color);
   }
 }

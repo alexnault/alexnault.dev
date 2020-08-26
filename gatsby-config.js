@@ -17,7 +17,7 @@ module.exports = {
     },
     logoText: "alexnault.dev",
     defaultTheme: "light",
-    postsPerPage: 5,
+    postsPerPage: 6,
     showMenuItems: 2,
     menuMoreText: "More",
     mainMenu: [

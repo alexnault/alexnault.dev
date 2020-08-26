@@ -34,16 +34,7 @@ const Tags = ({
         {posts.map(({ node }) => {
           const {
             id,
-            excerpt: autoExcerpt,
-            frontmatter: {
-              title,
-              date,
-              path,
-              author,
-              coverImage,
-              excerpt,
-              tags,
-            },
+            frontmatter: { title, date, path, coverImage },
           } = node;
 
           return (
@@ -52,10 +43,7 @@ const Tags = ({
               title={title}
               date={date}
               path={path}
-              author={author}
-              tags={tags}
               coverImage={coverImage}
-              excerpt={excerpt || autoExcerpt}
             />
           );
         })}
@@ -81,14 +69,10 @@ export const postsQuery = graphql`
       edges {
         node {
           id
-          excerpt
           frontmatter {
             title
             date(formatString: "DD MMMM YYYY")
             path
-            author
-            excerpt
-            tags
             coverImage {
               childImageSharp {
                 fluid(maxWidth: 800) {
