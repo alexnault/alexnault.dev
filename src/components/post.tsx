@@ -85,7 +85,7 @@ const Post = ({
           <div>
             <div>
               <b>
-                By <a href="/">Alex Nault</a>
+                By <Link to="/">Alex Nault</Link>
               </b>
             </div>
             <div>I write bite-sized articles for developers</div>
