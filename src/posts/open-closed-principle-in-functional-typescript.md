@@ -1,7 +1,7 @@
 ---
 title: "Open–Closed Principle in Functional TypeScript"
 date: "2020-08-24"
-coverImage: "../images/tim-mossholder-C8jNJslQM3A-unsplash.jpg"
+coverImage: "../images/tim-mossholder-ruQRZpvMkNQ-unsplash.jpg"
 path: "/open-closed-principle-in-functional-typescript"
 excerpt: ""
 tags: []
