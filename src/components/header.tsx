@@ -33,9 +33,11 @@ const Header = (props: Props) => {
   const [userTheme, changeTheme] = useState(defaultThemeState);
   const [isMobileMenuVisible, toggleMobileMenu] = useState(false);
   const [isSubMenuVisible, toggleSubMenu] = useState(false);
+
+  const theme = userTheme || defaultTheme;
+
   const onChangeTheme = () => {
-    const opositeTheme =
-      (userTheme || defaultTheme) === "light" ? "dark" : "light";
+    const opositeTheme = theme === "light" ? "dark" : "light";
 
     changeTheme(opositeTheme);
 
@@ -48,13 +50,7 @@ const Header = (props: Props) => {
   return (
     <>
       <Helmet>
-        <body
-          className={
-            (userTheme || defaultTheme) === "light"
-              ? "light-theme"
-              : "dark-theme"
-          }
-        />
+        <body className={theme === "light" ? "light-theme" : "dark-theme"} />
       </Helmet>
       <header className={style.header}>
         <div className={style.inner}>
