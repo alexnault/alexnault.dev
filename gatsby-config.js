@@ -26,6 +26,7 @@ module.exports = {
         path: "/blog",
       },
     ],
+    siteUrl: "https://alexnault.dev",
   },
   plugins: [
     {
@@ -122,5 +123,6 @@ module.exports = {
         icon: `src/images/icon.png`,
       },
     },
+    `gatsby-plugin-sitemap`,
   ],
 };
