@@ -71,7 +71,7 @@ function App() {
 }
 ```
 
-Notice how `Button` remained intact and focused on being a button? This solution adheres to the open-closed principle since we managed to extend our `Button`'s behavior while leaving its code unchanged.
+Notice how `Button` remained intact and focused on being a button, yet was extended? This solution adheres to the open-closed principle since we managed to extend our `Button`'s behavior while leaving its code unchanged.
 
 Other advantages of this solution include:
 
