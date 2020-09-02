@@ -3,12 +3,9 @@ import { graphql } from "gatsby";
 
 import SEO from "../components/seo";
 import Layout from "../components/layout";
-import PostPreview from "../components/postPreview";
 import Navigation from "../components/navigation";
-
 import About from "../components/about";
-
-import style from "../styles/postPreview.module.css";
+import PostPreviews from "../components/postPreviews";
 
 type Props = {
   data: {
@@ -35,24 +32,7 @@ const Index = ({
       <SEO />
       <Layout>
         <About avatar={avatar} />
-        <div className={style.postPreviews}>
-          {posts.map(({ node }) => {
-            const {
-              id,
-              frontmatter: { title, date, path, coverImage },
-            } = node;
-
-            return (
-              <PostPreview
-                key={id}
-                title={title}
-                date={date}
-                path={path}
-                coverImage={coverImage}
-              />
-            );
-          })}
-        </div>
+        <PostPreviews posts={posts} />
         <Navigation
           previousPath={previousPagePath}
           previousLabel="Newer posts"

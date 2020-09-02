@@ -6,7 +6,7 @@
   overflow: hidden;
   text-decoration: none;
   text-align: left;
-  min-height: 320px;
+  min-height: 280px;
   transition: transform 200ms;
   h4,
   h6 {
@@ -25,12 +25,4 @@
   justify-content: flex-end;
   padding: 16px;
   color: #ffffff;
-}
-
-.postPreviews {
-  width: 100%;
-  padding: 0 16px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  grid-gap: 16px;
 }
