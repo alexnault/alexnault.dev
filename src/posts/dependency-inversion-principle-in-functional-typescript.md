@@ -1,9 +1,9 @@
 ---
 title: "Dependency Inversion Principle in Functional TypeScript"
-date: "2020-09-02"
+date: "2020-09-03"
 coverImage: "../images/nathan-defiesta-hzc5cxRicFI-unsplash.jpg"
 path: "/dependency-inversion-principle-in-functional-typescript"
-excerpt: 'Or "How do I make my code testable?"'
+excerpt: 'Or "How to decouple modules and make code testable"'
 tags: []
 ---
 
