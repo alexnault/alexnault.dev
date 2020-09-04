@@ -90,4 +90,4 @@ Other advantages of this solution include:
 - Open-Closed Principle
 - [Liskov Substitution Principle](https://alexnault.dev) _(upcoming!)_
 - [Interface Segregation Principle](https://alexnault.dev) _(upcoming!)_
-- [Dependency Inversion Principle](https://alexnault.dev) _(upcoming!)_
+- [Dependency Inversion Principle](https://alexnault.dev/dependency-inversion-principle-in-functional-typescript)

@@ -1,0 +1,200 @@
+---
+title: "Dependency Inversion Principle in Functional TypeScript"
+date: "2020-09-02"
+coverImage: "../images/nathan-defiesta-hzc5cxRicFI-unsplash.jpg"
+path: "/dependency-inversion-principle-in-functional-typescript"
+excerpt: 'Or "How do I make my code testable?"'
+tags: []
+---
+
+_This is part five of a five-part series about SOLID principles in functional TypeScript._
+
+## What is the Dependency Inversion Principle?
+
+The dependency inversion principle (DIP) is one of the five SOLID principles. It states that:
+
+> One should depend upon abstractions, not concretions.
+
+Whenever a module uses an abstraction (`interface` or `abstract class`) as dependency, **that dependency can be swapped for another implementation, like a plugin.**
+
+This has the benefit of making that module more flexible, and most importantly, **testable** since its dependencies can be substituted for mocks.
+
+As the [Hollywood Principle](https://en.wikipedia.org/wiki/Inversion_of_control) goes:
+
+> Don't call us, we'll call you.
+
+Meaning, we, the module, end up having our dependencies injected rather than asking for them. Therefore inverting the [flow of control](https://en.wikipedia.org/wiki/Control_flow).
+
+Let's take a look at an example!
+
+
+## With Traditional Dependency
+
+Let's say we have this HTTP API client:
+
+```ts
+// infra/HttpClient.ts
+import axios from "axios";
+
+export default {
+  createUser: async (user: User) => {
+    return axios.post(/* ... */);
+  },
+  getUserByEmail: async (email: string) => {
+    return axios.get(/* ... */);
+  },
+};
+```
+
+And we use it this way in our [domain logic](https://en.wikipedia.org/wiki/Business_logic):
+
+```ts
+// domain/signup.ts
+import HttpClient from "infra/HttpClient"; // Bad: the domain depends on a concretion from the infra
+
+export async function signup(email: string, password: string) {
+  const existingUser = await HttpClient.getUserByEmail(email);
+
+  if (existingUser) {
+    throw new Error("Email already used");
+  }
+
+  return HttpClient.createUser({ email, password });
+}
+```
+
+We have just created a dependency from our domain to an implementation detail (HTTP) - crossing an architectural boundary and thus violating the [Dependency Rule](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html).
+
+Furthermore, **because `signup` is coupled with `HttpClient`, `signup` can't be unit tested.** After all, the `HttpClient` implies HTTP calls...
+So, how can we solve this? How can we mock `HttpClient`?
+
+Let's reimplement it with dependency inversion this time!
+
+## With Dependency Inversion
+
+First, let's define our abstraction with an `interface` that will act as our dependency between the domain and the infrastructure:
+
+```ts
+// domain/ApiClient.ts
+export interface ApiClient {
+  createUser: (user: User) => Promise<void>;
+  getUserByEmail: (email: string) => Promise<User>;
+  // ...
+}
+```
+
+We then implement that `ApiClient` at the infrastructure level:
+
+```ts
+// infra/HttpClient.ts
+import axios from "axios";
+import ApiClient from "domain/ApiClient";
+
+export function HttpClient(): ApiClient {
+  return {
+    createUser: async (user: User) => {
+      return axios.post(/* ... */);
+    },
+    getUserByEmail: async (email: string) => {
+      return axios.get(/* ... */);
+    },
+  };
+}
+```
+
+Finally, we can use an `ApiClient` abstraction in our domain logic:
+
+```ts
+// domain/signup.ts
+import ApiClient from "domain/ApiClient"; // Good: the domain depends on an abstraction of the infra
+
+export function SignupService(client: ApiClient) {
+  return async (email: string, password: string) => {
+    const existingUser = await client.getUserByEmail(email);
+
+    if (existingUser) {
+      throw new Error("Email already used");
+    }
+
+    return client.createUser({ email, password });
+  };
+}
+```
+
+With the power of dependency inversion, **our `SignupService` can now use any `ApiClient`**. Let's inject our `HttpClient` for now:
+
+```ts
+// index.ts
+import SignupService from "domain/signup";
+import HttpClient from "infra/HttpClient";
+
+const signup = SignupService(HttpClient());
+
+signup("bob@bob.com", "pwd123");
+```
+
+Also, thanks to dependency inversion, `SignupService` is now testable!
+
+## Writing Tests
+
+Let's implement `ApiClient` again but with an in-memory data source instead of a remote one.
+
+```ts
+// infra/InMemoryClient.ts
+import ApiClient from "domain/ApiClient";
+
+export function InMemoryClient(): ApiClient {
+  const users: User[] = [];
+
+  return {
+    createUser: async (user: User) => {
+      users.push(user);
+    },
+    getUserByEmail: async (email: string) => {
+      return users.find((user) => user.email === email);
+    },
+  };
+}
+```
+
+With `InMemoryClient` acting as a mock, let's write some tests:
+
+```ts
+// tests/signup.spec.ts
+import SignupService from "domain/signup";
+import InMemoryClient from "infra/InMemoryClient";
+
+let signup: ReturnType<typeof SignupService>;
+
+beforeEach(() => {
+  signup = SignupService(InMemoryClient());
+});
+
+test("it should signup a user", async () => {
+  await expect(signup("john@test.com", "pwd123")).resolves.toBe(undefined);
+});
+
+test("it should fail to signup the same email twice", async () => {
+  await signup("mark@test.com", "pwd123");
+  await expect(signup("mark@test.com", "pwd987")).rejects.toThrow(
+    new Error("Email already used")
+  );
+});
+```
+
+How great is this?
+
+Not only did we manage to unit test `SignupSevice` but we allowed it to use any `ApiClient` as data source. Simply by implementing the interface, we could draw from a database instead, or a third-party API.
+
+Dependency inversion is amazing. But, as with anything, it is a tool and not every dependency should be inverted. It would turn our software into an incomprehensible mess of over-abstracted components otherwise. Use it when needed, no more, no less.
+
+
+<!-- On top of that, modules that are unlikely to change, namely stable dependencies, can be depended on just fine. -->
+
+## More on SOLID principles
+
+- [Single-Responsibility Principle](https://alexnault.dev) _(upcoming!)_
+- [Open-Closed Principle](https://alexnault.dev/open-closed-principle-in-functional-typescript)
+- [Liskov Substitution Principle](https://alexnault.dev) _(upcoming!)_
+- [Interface Segregation Principle](https://alexnault.dev) _(upcoming!)_
+- Dependency Inversion Principle
