@@ -19,8 +19,8 @@ const BlogPostTemplate = ({ data, pageContext }: Props) => {
     frontmatter: { title, date, path, author, coverImage, excerpt, tags },
     excerpt: autoExcerpt,
     id,
-    html,
-  } = data.markdownRemark;
+    body,
+  } = data.mdx;
   const { next, previous } = pageContext;
 
   return (
@@ -33,7 +33,7 @@ const BlogPostTemplate = ({ data, pageContext }: Props) => {
         path={path}
         author={author}
         coverImage={coverImage}
-        html={html}
+        body={body}
         tags={tags}
         previousPost={previous}
         nextPost={next}
@@ -54,7 +54,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+    mdx(frontmatter: { path: { eq: $path } }) {
       frontmatter {
         title
         date(formatString: "DD MMMM YYYY")
@@ -71,7 +71,7 @@ export const pageQuery = graphql`
         }
       }
       id
-      html
+      body
       excerpt
     }
   }

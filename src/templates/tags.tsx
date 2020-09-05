@@ -21,7 +21,7 @@ const Tags = ({
   pageContext: { nextPagePath, previousPagePath, tag },
 }: Props) => {
   const {
-    allMarkdownRemark: { edges: posts },
+    allMdx: { edges: posts },
   } = data;
 
   return (
@@ -60,7 +60,7 @@ const Tags = ({
 
 export const postsQuery = graphql`
   query($limit: Int!, $skip: Int!, $tag: String!) {
-    allMarkdownRemark(
+    allMdx(
       filter: { frontmatter: { tags: { in: [$tag] } } }
       sort: { fields: [frontmatter___date], order: DESC }
       limit: $limit

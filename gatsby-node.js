@@ -19,10 +19,7 @@ exports.createPages = ({ actions, graphql, getNodes }) => {
 
   return graphql(`
     {
-      allMarkdownRemark(
-        sort: { fields: [frontmatter___date], order: DESC }
-        limit: 1000
-      ) {
+      allMdx(sort: { fields: [frontmatter___date], order: DESC }, limit: 1000) {
         edges {
           node {
             frontmatter {
@@ -46,7 +43,7 @@ exports.createPages = ({ actions, graphql, getNodes }) => {
     }
 
     const {
-      allMarkdownRemark: { edges: markdownPages },
+      allMdx: { edges: markdownPages },
       site: { siteMetadata },
     } = result.data;
 
@@ -59,8 +56,7 @@ exports.createPages = ({ actions, graphql, getNodes }) => {
 
     const posts = allNodes.filter(
       ({ internal, fileAbsolutePath }) =>
-        internal.type === "MarkdownRemark" &&
-        fileAbsolutePath.indexOf("/posts/") !== -1
+        internal.type === "Mdx" && fileAbsolutePath.indexOf("/posts/") !== -1
     );
 
     // Create posts index with pagination
@@ -126,7 +122,7 @@ exports.createPages = ({ actions, graphql, getNodes }) => {
 exports.sourceNodes = ({ actions }) => {
   const { createTypes } = actions;
   const typeDefs = `
-    type MarkdownRemark implements Node {
+    type Mdx implements Node {
       frontmatter: Frontmatter!
     }
 

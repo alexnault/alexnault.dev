@@ -3,6 +3,7 @@ import { Link } from "gatsby";
 import Img from "gatsby-image";
 import Navigation from "./navigation";
 import { toKebabCase } from "../helpers";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
 import style from "../styles/post.module.css";
 
@@ -12,7 +13,7 @@ type Props = {
   path: string;
   coverImage: any;
   author: string;
-  html: string;
+  body: string;
   tags: string[];
   previousPost: any;
   nextPost: any;
@@ -26,7 +27,7 @@ const Post = ({
   coverImage,
   author,
   tags,
-  html,
+  body,
   previousPost,
   nextPost,
   avatar,
@@ -58,7 +59,7 @@ const Post = ({
             className={style.coverImage}
           />
         )}
-        <div dangerouslySetInnerHTML={{ __html: html }} />
+        <MDXRenderer>{body}</MDXRenderer>
         <div className={style.actions}>
           <a
             href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(

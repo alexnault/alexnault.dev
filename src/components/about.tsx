@@ -23,8 +23,8 @@ const About = ({ avatar }: Props) => {
     <div className={style.about}>
       <Img fixed={avatar.childImageSharp.fixed} className={style.avatar} />
       <h2>Hi there 👋</h2>
-      I'm <strong>Alex Nault</strong> and I solve complex problems with
-      high-quality software. I'm currently building solutions at{" "}
+      I'm <strong>Alex Nault</strong> and I solve complex problems using
+      software. I'm currently building solutions at{" "}
       <a href="https://apprentx.rocks">Apprentx</a> to improve the way we learn.
       Previously <a href="https://www.classcraft.com">Classcraft</a> and{" "}
       <a href="https://www.ubisoft.com">Ubisoft</a>.

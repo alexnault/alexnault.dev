@@ -97,6 +97,17 @@ svg {
   fill: currentColor;
 }
 
+.excalidraw {
+  path {
+    stroke: var(--light-color);
+  }
+  .dark-theme & {
+    path {
+      stroke: var(--dark-color);
+    }
+  }
+}
+
 img {
   display: block;
   max-width: 100%;

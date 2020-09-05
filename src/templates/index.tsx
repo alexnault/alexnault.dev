@@ -10,7 +10,7 @@ import PostPreviews from "../components/postPreviews";
 type Props = {
   data: {
     avatar: any;
-    allMarkdownRemark: any;
+    allMdx: any;
   };
   pageContext: {
     nextPagePath: string;
@@ -24,7 +24,7 @@ const Index = ({
 }: Props) => {
   const {
     avatar,
-    allMarkdownRemark: { edges: posts },
+    allMdx: { edges: posts },
   } = data;
 
   return (
@@ -53,7 +53,7 @@ export const postsQuery = graphql`
         }
       }
     }
-    allMarkdownRemark(
+    allMdx(
       filter: { fileAbsolutePath: { regex: "//posts//" } }
       sort: { fields: [frontmatter___date], order: DESC }
       limit: $limit

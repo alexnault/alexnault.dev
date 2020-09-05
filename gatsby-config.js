@@ -81,9 +81,10 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        plugins: [
+        extensions: [`.md`, `.mdx`],
+        gatsbyRemarkPlugins: [
           {
             resolve: "gatsby-remark-embed-video",
             options: {
@@ -129,6 +130,8 @@ module.exports = {
         icon: `src/images/icon.png`,
       },
     },
+    `gatsby-plugin-catch-links`,
+    "gatsby-plugin-svgr",
     `gatsby-plugin-sitemap`,
   ],
 };

@@ -3,9 +3,13 @@ title: "Dependency Inversion Principle in Functional TypeScript"
 date: "2020-09-03"
 coverImage: "../images/nathan-defiesta-hzc5cxRicFI-unsplash.jpg"
 path: "/dependency-inversion-principle-in-functional-typescript"
-excerpt: 'Or "How to decouple modules and make code testable"'
+excerpt: 'Or "How to decouple modules and write testable code"'
 tags: []
 ---
+
+
+import { ReactComponent as TraditionalDependencySvg } from '../images/traditional-dependency.svg';
+import { ReactComponent as DependencyInversionSvg } from '../images/dependency-inversion.svg';
 
 _This is part five of a five-part series about SOLID principles in functional TypeScript._
 
@@ -27,10 +31,13 @@ Meaning, we, the module, end up having our dependencies injected rather than ask
 
 Let's take a look at an example!
 
-
 ## With Traditional Dependency
 
-Let's say we have this HTTP API client:
+Let's build a `SignupService` that uses an `HttpClient` as data source, like so:
+
+<TraditionalDependencySvg className="excalidraw" />
+
+Starting with the `HttpClient`:
 
 ```ts
 // infra/HttpClient.ts
@@ -49,7 +56,7 @@ export default {
 And we use it this way in our [domain logic](https://en.wikipedia.org/wiki/Business_logic):
 
 ```ts
-// domain/signup.ts
+// domain/SignupService.ts
 import HttpClient from "infra/HttpClient"; // Bad: the domain depends on a concretion from the infra
 
 export async function signup(email: string, password: string) {
@@ -63,7 +70,7 @@ export async function signup(email: string, password: string) {
 }
 ```
 
-We have just created a dependency from our domain to an implementation detail (HTTP) - crossing an architectural boundary and thus violating the [Dependency Rule](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html).
+This isn't ideal. We have just created a dependency from our domain to an implementation detail (HTTP) - crossing an architectural boundary and thus violating the [Dependency Rule](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html).
 
 Furthermore, **because `signup` is coupled with `HttpClient`, `signup` can't be unit tested.** After all, the `HttpClient` implies HTTP calls...
 So, how can we solve this? How can we mock `HttpClient`?
@@ -72,7 +79,11 @@ Let's reimplement it with dependency inversion this time!
 
 ## With Dependency Inversion
 
-First, let's define our abstraction with an `interface` that will act as our dependency between the domain and the infrastructure:
+We're going to decouple `SignupService` and `HttpClient`. It's going to look like this:
+
+<DependencyInversionSvg className="excalidraw" />
+
+First, using an `interface`, let's define the abstraction that will act as the dependency between the domain and the infrastructure:
 
 ```ts
 // domain/ApiClient.ts
@@ -193,8 +204,8 @@ Dependency inversion is amazing. But, as with anything, it is a tool and not eve
 
 ## More on SOLID principles
 
-- [Single-Responsibility Principle](https://alexnault.dev) _(upcoming!)_
-- [Open-Closed Principle](https://alexnault.dev/open-closed-principle-in-functional-typescript)
-- [Liskov Substitution Principle](https://alexnault.dev) _(upcoming!)_
-- [Interface Segregation Principle](https://alexnault.dev) _(upcoming!)_
+- Single-Responsibility Principle _(upcoming!)_
+- [Open-Closed Principle](/open-closed-principle-in-functional-typescript)
+- Liskov Substitution Principle _(upcoming!)_
+- Interface Segregation Principle _(upcoming!)_
 - Dependency Inversion Principle
