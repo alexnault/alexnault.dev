@@ -4,9 +4,9 @@
 
 html {
   box-sizing: border-box;
-  font-size: 20px;
+  font-size: 21px;
   @media (--phone) {
-    font-size: 18px;
+    font-size: 19px;
   }
 }
 
@@ -19,8 +19,8 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: "Inter UI", -apple-system, BlinkMacSystemFont, "Roboto",
-    "Segoe UI", Helvetica, Arial, sans-serif;
+  font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
+    Helvetica, Arial, sans-serif;
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.54;
@@ -262,8 +262,8 @@ ol ol {
 button,
 input,
 textarea {
-  font-family: "Inter UI", -apple-system, BlinkMacSystemFont, "Roboto",
-    "Segoe UI", Helvetica, Arial, sans-serif;
+  font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
+    Helvetica, Arial, sans-serif;
 }
 
 .container {
