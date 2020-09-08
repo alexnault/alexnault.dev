@@ -7,9 +7,8 @@ excerpt: 'Or "How to decouple modules and write testable code"'
 tags: []
 ---
 
-
-import { ReactComponent as TraditionalDependencySvg } from '../images/traditional-dependency.svg';
-import { ReactComponent as DependencyInversionSvg } from '../images/dependency-inversion.svg';
+import { ReactComponent as TraditionalDependencySvg } from "../images/traditional-dependency.svg";
+import { ReactComponent as DependencyInversionSvg } from "../images/dependency-inversion.svg";
 
 _This is part five of a five-part series about SOLID principles in functional TypeScript._
 
@@ -198,7 +197,6 @@ How great is this?
 Not only did we manage to unit test `SignupSevice` but we allowed it to use any `ApiClient` as data source. Simply by implementing the interface, we could draw from a database instead, or a third-party API.
 
 Dependency inversion is amazing. But, as with anything, it is a tool and not every dependency should be inverted. It would turn our software into an incomprehensible mess of over-abstracted components otherwise. Use it when needed, no more, no less.
-
 
 <!-- On top of that, modules that are unlikely to change, namely stable dependencies, can be depended on just fine. -->
 
