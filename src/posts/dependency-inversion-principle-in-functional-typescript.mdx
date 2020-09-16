@@ -110,7 +110,7 @@ export function HttpClient(): ApiClient {
 Finally, we can use an `ApiClient` abstraction in our domain logic:
 
 ```ts
-// domain/signup.ts
+// domain/SignupService.ts
 import ApiClient from "domain/ApiClient"; // Good: the domain depends on an abstraction of the infra
 
 export function SignupService(client: ApiClient) {
