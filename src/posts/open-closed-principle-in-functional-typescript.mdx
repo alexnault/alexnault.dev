@@ -15,13 +15,14 @@ The open-closed principle (OCP) is one of the five SOLID principles. It states t
 
 > Software modules should be open for extension, but closed for modification.
 
-Meaning a module's behavior can be extended without modifying the module itself. **It promotes a composable architecture where each module acts as a plugin.**
+Meaning a module's behavior should be extensible without requiring modifications to the module itself.
+In functional programming, OCP typically translates to composition.
 
 Ultimately, the goal of the open-closed principle is to **write code that won't need to change when requirements change.**
 
 ## Example
 
-Here's a simplified exampe with React function components:
+Here's a simplified example with React components:
 
 ```tsx
 function Button({ text }: ButtonProps) {
@@ -49,9 +50,11 @@ function App() {
 }
 ```
 
-Except, this disregards the open-closed principle at the `Button` level since we are modifying its code. We are adding a specific loading behavior to our generic button.
+Except, this disregards the open-closed principle at the `Button` level since we are modifying its code.
+We are adding a specific loading behavior to our generic button.
 
-Instead, **we should combine software components to create new behaviors**. So, opting for composition, we could implement the feature like so:
+Instead, **we should combine software components to create new behaviors**.
+So, opting for composition, we could implement the feature like so:
 
 ```tsx
 function Loading({ isLoading, children }: LoadingProps) {
@@ -71,7 +74,8 @@ function App() {
 }
 ```
 
-Notice how `Button` remained intact and focused on being a button, yet was extended? This solution adheres to the open-closed principle since we managed to extend our `Button`'s behavior while leaving its code unchanged.
+Notice how `Button` remained intact and focused on being a button, yet was extended?
+This solution adheres to the open-closed principle since we managed to extend our `Button`'s behavior while leaving its code unchanged.
 
 Other advantages of this solution include:
 
@@ -82,7 +86,8 @@ Other advantages of this solution include:
 
 ## Wrapping up
 
-**The open-closed principle allows for easier extension while reducing time spent adapting existing code.** By designing your modules into composable parts, you foster a flexible and scalable application.
+**The open-closed principle allows for easier extension while reducing time spent adapting existing code.**
+By designing your modules into composable parts, you foster a flexible and scalable application.
 
 ## More on SOLID principles
 
