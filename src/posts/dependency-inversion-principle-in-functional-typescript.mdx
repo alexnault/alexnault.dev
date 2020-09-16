@@ -1,7 +1,7 @@
 ---
 title: "Dependency Inversion Principle in Functional TypeScript"
 date: "2020-09-03"
-coverImage: "../images/nathan-defiesta-hzc5cxRicFI-unsplash.jpg"
+coverImage: "../images/tim-gouw-He9WQV8e7Kk-unsplash.jpg"
 path: "/dependency-inversion-principle-in-functional-typescript"
 excerpt: 'Or "How to decouple modules and write testable code"'
 tags: []
@@ -18,15 +18,10 @@ The dependency inversion principle (DIP) is one of the five SOLID principles. It
 
 > One should depend upon abstractions, not concretions.
 
-Whenever a module uses an abstraction (`interface` or `abstract class`) as dependency, **that dependency can be swapped for another implementation, like a plugin.**
+Whenever a module relies on a abstraction (`interface` or `abstract class`) as dependency, that dependency can be swapped for another implementation, like a plugin.
+Therefore, decoupling the module from its dependency.
 
-This has the benefit of making that module more flexible, and most importantly, **testable** since its dependencies can be substituted for mocks.
-
-As the [Hollywood Principle](https://en.wikipedia.org/wiki/Inversion_of_control) goes:
-
-> Don't call us, we'll call you.
-
-Meaning, we, the module, end up having our dependencies injected rather than asking for them. Therefore inverting the [flow of control](https://en.wikipedia.org/wiki/Control_flow).
+Also, **any module that solely uses dependency inversion can be unit tested since its dependencies can be substituted for mocks.**
 
 Let's take a look at an example!
 
