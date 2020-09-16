@@ -74,7 +74,7 @@ const Post = ({
             href={`https://github.com/alexnault/alexnault.dev/edit/master/src/posts/${path.replace(
               "/",
               ""
-            )}.md`}
+            )}.mdx`}
             target="_blank"
             rel="noopener noreferrer"
           >
