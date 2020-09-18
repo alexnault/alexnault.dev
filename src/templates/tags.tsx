@@ -71,7 +71,7 @@ export const postsQuery = graphql`
           id
           frontmatter {
             title
-            date(formatString: "LL", locale: "en-US")
+            date(formatString: "LL")
             path
             coverImage {
               childImageSharp {

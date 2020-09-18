@@ -57,7 +57,7 @@ export const pageQuery = graphql`
     mdx(frontmatter: { path: { eq: $path } }) {
       frontmatter {
         title
-        date(formatString: "LL", locale: "en-US")
+        date(formatString: "LL")
         path
         author
         excerpt
