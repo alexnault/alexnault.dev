@@ -55,7 +55,9 @@ const Layout = ({ children }: Props) => {
         mainMenuItems={showMenuItems}
         menuMoreText={menuMoreText}
       />
-      <div className="content">{children}</div>
+      <main>
+        <div className="content">{children}</div>
+      </main>
       <Footer copyrights={copyrights} />
     </div>
   );

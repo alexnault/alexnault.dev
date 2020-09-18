@@ -22,5 +22,5 @@
   --tabletWidth: (max-width: 900px);
 }
 
-@custom-media --phone (width < 684px);
-@custom-media --tablet (width < 900px);
+@custom-media --phone (width < 600px);
+@custom-media --tablet (width < 960px);

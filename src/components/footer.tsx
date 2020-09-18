@@ -1,11 +1,13 @@
 import React from "react";
 
+import style from "../styles/footer.module.css";
+
 type Props = {
   copyrights?: string;
 };
 
 const Footer = ({ copyrights }: Props) => (
-  <footer>
+  <footer className={style.footer}>
     {copyrights ? (
       <div
         dangerouslySetInnerHTML={{
@@ -14,13 +16,13 @@ const Footer = ({ copyrights }: Props) => (
       />
     ) : (
       <>
-        <span className="footerCopyrights">
+        <span className={style.item}>
           <a href="https://github.com/alexnault">Github</a>
         </span>
-        <span className="footerCopyrights">
+        <span className={style.item}>
           <a href="https://www.linkedin.com/in/naultalex">LinkedIn</a>
         </span>
-        <span className="footerCopyrights">
+        <span className={style.item}>
           <a href="https://twitter.com/nault_alex">Twitter</a>
         </span>
       </>

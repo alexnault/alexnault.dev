@@ -1,0 +1,23 @@
+.footer {
+  text-align: center;
+  padding: 40px 16px;
+
+  @media (--phone) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.item {
+  &:not(:first-of-type) {
+    margin-left: 16px;
+    padding-left: 16px;
+    border-left: 1px solid;
+
+    @media (--phone) {
+      margin: 0;
+      padding: 0;
+      border: none;
+    }
+  }
+}

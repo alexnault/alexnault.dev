@@ -38,8 +38,8 @@ const Post = ({
   const nextLabel = nextPost && nextPost.frontmatter.title;
 
   return (
-    <div className={style.post}>
-      <div className={style.postContent}>
+    <article className={style.post}>
+      <header>
         <h1 className={style.title}>{title}</h1>
         <div className={style.meta}>
           {date} {author && <>— Written by {author}</>}
@@ -53,53 +53,53 @@ const Post = ({
             </div>
           ) : null}
         </div>
-        {coverImage && (
-          <Img
-            fluid={coverImage.childImageSharp.fluid}
-            className={style.coverImage}
-          />
-        )}
-        <MDXRenderer>{body}</MDXRenderer>
-        <div className={style.actions}>
-          <a
-            href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
-              `Check this out! https://alexnault.dev${path}`
-            )}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Share
-          </a>
-          <a
-            href={`https://github.com/alexnault/alexnault.dev/edit/master/src/posts/${path.replace(
-              "/",
-              ""
-            )}.mdx`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Edit
-          </a>
-        </div>
-        <div className={style.author}>
-          <Img fixed={avatar.childImageSharp.fixed} className={style.avatar} />
-          <div>
-            <div>
-              <b>
-                By <Link to="/">Alex Nault</Link>
-              </b>
-            </div>
-            <div>I write bite-sized articles for developers</div>
-          </div>
-        </div>
-        <Navigation
-          previousPath={previousPath}
-          previousLabel={previousLabel}
-          nextPath={nextPath}
-          nextLabel={nextLabel}
+      </header>
+      {coverImage && (
+        <Img
+          fluid={coverImage.childImageSharp.fluid}
+          className={style.coverImage}
         />
+      )}
+      <MDXRenderer>{body}</MDXRenderer>
+      <div className={style.actions}>
+        <a
+          href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+            `Check this out! https://alexnault.dev${path}`
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Share
+        </a>
+        <a
+          href={`https://github.com/alexnault/alexnault.dev/edit/master/src/posts/${path.replace(
+            "/",
+            ""
+          )}.mdx`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Edit
+        </a>
       </div>
-    </div>
+      <div className={style.author}>
+        <Img fixed={avatar.childImageSharp.fixed} className={style.avatar} />
+        <div>
+          <div>
+            <b>
+              By <Link to="/">Alex Nault</Link>
+            </b>
+          </div>
+          <div>I write bite-sized articles for developers</div>
+        </div>
+      </div>
+      <Navigation
+        previousPath={previousPath}
+        previousLabel={previousLabel}
+        nextPath={nextPath}
+        nextLabel={nextLabel}
+      />
+    </article>
   );
 };
 

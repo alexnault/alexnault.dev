@@ -1,22 +1,45 @@
 .about {
-  width: 100%;
-  max-width: 800px;
-  text-align: left;
-  padding: 16px;
-  margin: 0 auto 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 auto 32px;
+  h2 {
+    margin-top: 0;
+  }
+  @media (--phone) {
+    > div {
+      flex-basis: 100%;
+    }
+  }
+}
 
-  @media (--tablet) {
-    max-width: 660px;
+.imageWrapper {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  flex: 1;
+  margin-left: 16px;
+  @media (--phone) {
+    margin: 0;
   }
 }
 
 .avatar {
   border-radius: 50%;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  width: 240px;
+  height: 240px;
+  @media (--phone) {
+    width: 160px;
+    height: 160px;
+  }
 }
 
 .social {
-  margin: 16px 0;
+  margin: 8px 0;
   > a {
     display: inline-flex;
     padding: 8px;

@@ -1,9 +1,5 @@
 .post {
-  width: 100%;
-  max-width: 800px;
-  text-align: left;
-  padding: 16px;
-  margin: 0 auto 16px;
+  position: relative;
 
   &:not(:last-of-type) {
     border-bottom: 1px solid var(--light-border-color);
@@ -11,10 +7,6 @@
     :global .dark-theme :local & {
       border-color: var(--dark-border-color);
     }
-  }
-
-  @media (--tablet) {
-    max-width: 660px;
   }
 
   h1 {
@@ -53,10 +45,6 @@
   font-weight: bold;
   margin: 16px 0;
   font-size: 1rem;
-}
-
-.postContent {
-  position: relative;
 }
 
 .actions {

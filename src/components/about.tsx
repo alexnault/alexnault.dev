@@ -21,26 +21,30 @@ type Props = {
 const About = ({ avatar }: Props) => {
   return (
     <div className={style.about}>
-      <Img fixed={avatar.childImageSharp.fixed} className={style.avatar} />
-      <h2>Hi there 👋</h2>
-      I'm <strong>Alex Nault</strong> and I solve complex problems using
-      software. I'm currently building solutions at{" "}
-      <a href="https://apprentx.rocks">Apprentx</a> to improve the way we learn.
-      Previously <a href="https://www.classcraft.com">Classcraft</a> and{" "}
-      <a href="https://www.ubisoft.com">Ubisoft</a>.
-      <div className={style.social}>
-        <a href="https://github.com/alexnault">
-          <Icon style={{ cursor: "pointer" }} size={24} d={githubIcon} />
-        </a>
-        <a href="https://www.linkedin.com/in/naultalex">
-          <Icon style={{ cursor: "pointer" }} size={24} d={linkedInIcon} />
-        </a>
-        <a href="https://twitter.com/nault_alex">
-          <Icon style={{ cursor: "pointer" }} size={24} d={twitterIcon} />
-        </a>
-        <a href="mailto:nault.alex@gmail.com">
-          <Icon style={{ cursor: "pointer" }} size={24} d={emailIcon} />
-        </a>
+      <div className={style.imageWrapper}>
+        <Img fluid={avatar.childImageSharp.fluid} className={style.avatar} />
+      </div>
+      <div className={style.content}>
+        <h2>Hi there 👋</h2>
+        I'm <strong>Alex Nault</strong> and I solve complex problems using
+        software. I'm currently building solutions at{" "}
+        <a href="https://apprentx.rocks">Apprentx</a> to improve the way we
+        learn. Previously <a href="https://www.classcraft.com">Classcraft</a>{" "}
+        and <a href="https://www.ubisoft.com">Ubisoft</a>.
+        <div className={style.social}>
+          <a href="https://github.com/alexnault">
+            <Icon style={{ cursor: "pointer" }} size={24} d={githubIcon} />
+          </a>
+          <a href="https://www.linkedin.com/in/naultalex">
+            <Icon style={{ cursor: "pointer" }} size={24} d={linkedInIcon} />
+          </a>
+          <a href="https://twitter.com/nault_alex">
+            <Icon style={{ cursor: "pointer" }} size={24} d={twitterIcon} />
+          </a>
+          <a href="mailto:nault.alex@gmail.com">
+            <Icon style={{ cursor: "pointer" }} size={24} d={emailIcon} />
+          </a>
+        </div>
       </div>
     </div>
   );
