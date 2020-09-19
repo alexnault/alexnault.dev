@@ -1,16 +1,30 @@
-/* PrismJS 1.15.0
-https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+actionscript+apacheconf+applescript+c+csharp+bash+cpp+coffeescript+ruby+csp+css-extras+diff+django+docker+elixir+elm+markup-templating+erlang+fsharp+flow+git+go+graphql+less+handlebars+haskell+http+java+json+kotlin+latex+markdown+makefile+objectivec+ocaml+perl+php+php-extras+sql+processing+scss+python+jsx+typescript+reason+textile+rust+sass+stylus+scheme+pug+swift+yaml+haml+toml+twig+tsx+vim+visual-basic+wasm&plugins=line-numbers+toolbar+jsonp-highlight+command-line+copy-to-clipboard */
+/* PrismJS 1.14.0
+http://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript+abap+actionscript+ada+apacheconf+apl+applescript+c+arff+asciidoc+asm6502+aspnet+autohotkey+autoit+bash+basic+batch+bison+brainfuck+bro+cpp+csharp+arduino+coffeescript+clojure+ruby+csp+css-extras+d+dart+diff+django+docker+eiffel+elixir+elm+markup-templating+erlang+fsharp+flow+fortran+gedcom+gherkin+git+glsl+go+graphql+groovy+haml+handlebars+haskell+haxe+http+hpkp+hsts+ichigojam+icon+inform7+ini+io+j+java+jolie+json+julia+keyman+kotlin+latex+less+liquid+lisp+livescript+lolcode+lua+makefile+markdown+erb+matlab+mel+mizar+monkey+n4js+nasm+nginx+nim+nix+nsis+objectivec+ocaml+opencl+oz+parigp+parser+pascal+perl+php+php-extras+sql+powershell+processing+prolog+properties+protobuf+pug+puppet+pure+python+q+qore+r+jsx+typescript+renpy+reason+rest+rip+roboconf+crystal+rust+sas+sass+scss+scala+scheme+smalltalk+smarty+plsql+soy+stylus+swift+tcl+textile+twig+tsx+vbnet+velocity+verilog+vhdl+vim+visual-basic+wasm+wiki+xeora+xojo+yaml&plugins=line-numbers+toolbar+show-language */
 /**
- * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
- * Based on https://github.com/chriskempson/tomorrow-theme
- * @author Rose Pritchard
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
  */
 
-pre[class*="language-"],
-pre[class*="language-"] > code {
-  color: #a9a9b3;
-  background: none;
-  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+/*
+* Dracula Theme for Prism.JS
+*
+* @author Gustavo Costa
+* e-mail: gusbemacbe@gmail.com
+*
+* @contributor Jon Leopard
+* e-mail: jonlprd@gmail.com
+*
+* @license MIT 2016-2018
+*/
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #ccc;
+  background: rgb(40, 41, 54);
+  text-shadow: none;
+  font-family: PT Mono, Consolas, Monaco, "Andale Mono", "Ubuntu Mono",
+    monospace;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -28,99 +42,259 @@ pre[class*="language-"] > code {
   hyphens: none;
 }
 
+pre[class*="language-"]::-moz-selection,
+pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection,
+code[class*="language-"] ::-moz-selection {
+  text-shadow: none;
+  background-color: #5a5f80;
+}
+
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection {
+  text-shadow: none;
+  background-color: #5a5f80;
+}
+
+@media print {
+  code[class*="language-"],
+  pre[class*="language-"] {
+    text-shadow: none;
+  }
+}
+
 /* Code blocks */
 pre[class*="language-"] {
+  background: rgba(40, 41, 54, 1) !important;
+  border-radius: 0.5em;
   padding: 1em;
   margin: 0.5em 0;
   overflow: auto;
+  height: auto;
 }
 
+:not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-  background: #1a1a1d !important;
-  border-radius: 8px;
+  background: rgba(40, 41, 54, 1);
 }
 
-.token.comment,
-.token.block-comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-  color: rgba(255, 255, 255, 0.35);
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: 4px 7px;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+.limit-300 {
+  height: 300px !important;
+}
+
+.limit-400 {
+  height: 400px !important;
+}
+
+.limit-500 {
+  height: 500px !important;
+}
+
+.limit-600 {
+  height: 600px !important;
+}
+
+.limit-700 {
+  height: 700px !important;
+}
+
+.limit-800 {
+  height: 800px !important;
+}
+
+.token.comment {
+  color: rgba(98, 114, 164, 1);
+}
+
+.token.prolog {
+  color: rgba(207, 207, 194, 1);
+}
+
+.token.tag {
+  color: rgba(220, 104, 170, 1);
+}
+
+.token.entity {
+  color: rgba(139, 233, 253, 1);
+}
+
+.token.atrule {
+  color: rgba(98, 239, 117, 1);
+}
+
+.token.url {
+  color: rgba(102, 217, 239, 1);
+}
+
+.token.selector {
+  color: rgba(207, 207, 194, 1);
+}
+
+.token.string {
+  color: rgba(241, 250, 140, 1);
+}
+
+.token.property {
+  color: rgba(255, 184, 108, 1);
+}
+
+.token.important {
+  color: rgba(255, 121, 198, 1);
+  font-weight: bold;
 }
 
 .token.punctuation {
-  color: #a9a9b3;
+  color: white;
 }
 
-.token.tag,
-.token.attr-name,
-.token.namespace,
+.token.number {
+  color: rgba(189, 147, 249, 1);
+}
+
+.token.function {
+  color: rgba(80, 250, 123, 1);
+}
+
+.token.class-name {
+  color: rgba(255, 184, 108, 1);
+}
+
+.token.keyword {
+  color: rgba(255, 121, 198, 1);
+}
+
+.token.boolean {
+  color: rgba(255, 184, 108, 1);
+}
+
+.token.operator {
+  color: rgba(139, 233, 253, 1);
+}
+
+.token.char {
+  color: rgba(255, 135, 157, 1);
+}
+
+.token.regex {
+  color: rgba(80, 250, 123, 1);
+}
+
+.token.variable {
+  color: rgba(80, 250, 123, 1);
+}
+
+.token.constant {
+  color: rgba(255, 184, 108, 1);
+}
+
+.token.symbol {
+  color: rgba(255, 184, 108, 1);
+}
+
+.token.builtin {
+  color: rgba(255, 121, 198, 1);
+}
+
+.token.attr-value {
+  color: #7ec699;
+}
+
 .token.deleted {
   color: #e2777a;
 }
 
-.token.function-name {
-  color: #6196cc;
+.token.namespace {
+  color: #e2777a;
 }
 
-.token.boolean,
-.token.number,
-.token.function {
-  color: #f08d49;
-}
-
-.token.property,
-.token.class-name,
-.token.constant,
-.token.symbol {
-  color: #f8c555;
-}
-
-.token.selector,
-.token.important,
-.token.atrule,
-.token.keyword,
-.token.builtin {
-  color: #cc99cd;
-}
-
-.token.string,
-.token.char,
-.token.attr-value,
-.token.regex,
-.token.variable {
-  color: #7ec699;
-}
-
-.token.operator,
-.token.entity,
-.token.url {
-  color: #67cdcc;
-}
-
-.token.important,
 .token.bold {
   font-weight: bold;
 }
+
 .token.italic {
   font-style: italic;
 }
 
-.token.entity {
-  cursor: help;
+.token {
+  color: #ff79c6;
 }
 
-.token.inserted {
-  color: green;
+.language-cpp .token.string {
+  color: #8be9fd;
 }
 
-pre[class*="language-"].line-numbers {
+.language-c .token.string {
+  color: #8be9fd;
+}
+
+.language-css .token.selector {
+  color: rgba(80, 250, 123, 1);
+}
+
+.language-css .token.property {
+  color: rgba(255, 184, 108, 1);
+}
+
+.language-java span.token.class-name {
+  color: #8be9fd;
+}
+
+.language-java .token.class-name {
+  color: #8be9fd;
+}
+
+.language-markup .token.attr-value {
+  color: rgba(102, 217, 239, 1);
+}
+
+.language-markup .token.tag {
+  color: rgba(80, 250, 123, 1);
+}
+
+.language-objectivec .token.property {
+  color: #66d9ef;
+}
+
+.language-objectivec .token.string {
+  color: #50fa7b;
+}
+
+.language-php .token.boolean {
+  color: #8be9fd;
+}
+
+.language-php .token.function {
+  color: #ff79c6;
+}
+
+.language-php .token.keyword {
+  color: #66d9ef;
+}
+
+.language-ruby .token.symbol {
+  color: #8be9fd;
+}
+
+.language-ruby .token.class-name {
+  color: #cfcfc2;
+}
+
+pre.line-numbers {
   position: relative;
-  padding-left: 65px;
+  padding-left: 3.8em;
   counter-reset: linenumber;
 }
 
-pre[class*="language-"].line-numbers > code {
+pre.line-numbers > code {
   position: relative;
   white-space: inherit;
 }
@@ -128,13 +302,12 @@ pre[class*="language-"].line-numbers > code {
 .line-numbers .line-numbers-rows {
   position: absolute;
   pointer-events: none;
-  top: 1em;
+  top: 0;
   font-size: 100%;
-  left: 5px !important;
-  width: 3em !important; /* works for line-numbers below 1000 lines */
+  left: -3.8em;
+  width: 3em; /* works for line-numbers below 1000 lines */
   letter-spacing: -1px;
-  border-right: 1px solid;
-  opacity: 0.5;
+  border-right: 1px solid #999;
 
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -174,6 +347,7 @@ div.code-toolbar:hover > .toolbar {
 
 div.code-toolbar > .toolbar .toolbar-item {
   display: inline-block;
+  padding-right: 20px;
 }
 
 div.code-toolbar > .toolbar a {
@@ -196,12 +370,10 @@ div.code-toolbar > .toolbar button {
 div.code-toolbar > .toolbar a,
 div.code-toolbar > .toolbar button,
 div.code-toolbar > .toolbar span {
-  color: #bbb;
+  color: #ccc;
   font-size: 0.8em;
-  padding: 0 0.5em;
-  background: #f5f2f0;
-  background: rgba(224, 224, 224, 0.2);
-  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2);
+  padding: 0.5em;
+  background: rgba(98, 114, 164, 1);
   border-radius: 0.5em;
 }
 
@@ -213,38 +385,5 @@ div.code-toolbar > .toolbar span:hover,
 div.code-toolbar > .toolbar span:focus {
   color: inherit;
   text-decoration: none;
-}
-
-.command-line-prompt {
-  border-right: 1px solid #999;
-  display: block;
-  float: left;
-  font-size: 100%;
-  letter-spacing: -1px;
-  margin-right: 1em;
-  pointer-events: none;
-
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.command-line-prompt > span:before {
-  color: #999;
-  content: " ";
-  display: block;
-  padding-right: 0.8em;
-}
-
-.command-line-prompt > span[data-user]:before {
-  content: "[" attr(data-user) "@" attr(data-host) "] $";
-}
-
-.command-line-prompt > span[data-user="root"]:before {
-  content: "[" attr(data-user) "@" attr(data-host) "] #";
-}
-
-.command-line-prompt > span[data-prompt]:before {
-  content: attr(data-prompt);
+  background-color: var(--verde);
 }

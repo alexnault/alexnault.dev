@@ -1,6 +1,6 @@
 @import "./fonts.css";
 @import "./variables.css";
-@import "./prism.css";
+@import "./custom.css";
 
 html {
   box-sizing: border-box;
