@@ -26,17 +26,17 @@ AND
 The caller and the pure function may only communicate via arguments and return value:
 
 ```js
-// impure (using side effect instead of return value)
+// ❌ impure (using side effect instead of return value)
 function addTaco(array) {
   array.push("taco");
 }
 
-// impure (using shared variable instead of argument)
+// ❌ impure (using shared variable instead of argument)
 function addTaco() {
   return [...globalArray, "taco"];
 }
 
-// pure
+// ✅ pure
 function addTaco(array) {
   return [...array, "taco"];
 }
@@ -55,11 +55,11 @@ In JavaScript, all primitives (boolean, string, etc.) are immutable. While it is
 If we wish to modify it, we must duplicate it and assign it a new variable:
 
 ```js
-// mutable
+// ❌ mutable
 const bands = ["Metallica", "Queen"];
 bands.push("Nirvana");
 
-// immutable
+// ✅ immutable
 const someBands = ["Metallica", "Queen"];
 const bands = [...someBands, "Nirvana"];
 ```
@@ -80,7 +80,7 @@ In other words, imperative programming describes explicit step-by-step instructi
 ```js
 const names = ["Han", "Chewbacca", "Luke", "Leia"];
 
-// imperative
+// ❌ imperative
 const shortNames = [];
 for (let i = 0; i < names.length; i++) {
   if (names[i].length < 5) {
@@ -88,7 +88,7 @@ for (let i = 0; i < names.length; i++) {
   }
 }
 
-// declarative
+// ✅ declarative
 const shortNames = names.filter((name) => name.length < 5);
 ```
 

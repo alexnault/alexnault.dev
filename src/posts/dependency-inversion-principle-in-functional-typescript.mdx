@@ -51,7 +51,7 @@ And we use it this way in our [domain logic](https://en.wikipedia.org/wiki/Busin
 
 ```ts
 // domain/SignupService.ts
-import HttpClient from "infra/HttpClient"; // Bad: the domain depends on a concretion from the infra
+import HttpClient from "infra/HttpClient"; // ❌ the domain depends on a concretion from the infra
 
 export async function signup(email: string, password: string) {
   const existingUser = await HttpClient.getUserByEmail(email);
@@ -111,7 +111,7 @@ Finally, we can use an `ApiClient` abstraction in our domain logic:
 
 ```ts
 // domain/SignupService.ts
-import ApiClient from "domain/ApiClient"; // Good: the domain depends on an abstraction of the infra
+import ApiClient from "domain/ApiClient"; // ✅ the domain depends on an abstraction of the infra
 
 export function SignupService(client: ApiClient) {
   return async (email: string, password: string) => {
