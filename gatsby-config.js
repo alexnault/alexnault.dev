@@ -120,11 +120,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-hello-friend`,
-        short_name: `hello-friend`,
+        name: `Alex Nault`,
+        short_name: `Alex Nault`,
         start_url: `/`,
-        background_color: `#292a2d`,
-        theme_color: `#292a2d`,
+        background_color: `#fafafa`,
+        theme_color: `#fe5186`,
         display: `minimal-ui`,
         icon: `src/images/icon.png`,
       },
