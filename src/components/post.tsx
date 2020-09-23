@@ -64,7 +64,7 @@ const Post = ({
       <div className={style.actions}>
         <a
           href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
-            `Check this out! https://alexnault.dev${path}`
+            `${title} by Alex Nault https://alexnault.dev${path}`
           )}`}
           target="_blank"
           rel="noopener noreferrer"
