@@ -132,5 +132,6 @@ module.exports = {
     `gatsby-plugin-catch-links`,
     "gatsby-plugin-svgr",
     `gatsby-plugin-sitemap`,
+    "gatsby-plugin-robots-txt",
   ],
 };

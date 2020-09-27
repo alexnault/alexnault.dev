@@ -34,6 +34,7 @@
     "gatsby-plugin-offline": "^3.2.23",
     "gatsby-plugin-postcss": "^2.0.2",
     "gatsby-plugin-react-helmet": "^3.0.2",
+    "gatsby-plugin-robots-txt": "^1.5.2",
     "gatsby-plugin-sharp": "^2.0.17",
     "gatsby-plugin-sitemap": "^2.4.12",
     "gatsby-plugin-svgr": "^2.0.2",
