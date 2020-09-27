@@ -36,6 +36,7 @@ module.exports = {
         head: true,
       },
     },
+    `gatsby-plugin-typescript`,
     `babel-preset-gatsby`,
     `gatsby-plugin-react-helmet`,
     {

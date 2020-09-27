@@ -16,6 +16,7 @@
     "build": "gatsby build",
     "dev": "gatsby clean && gatsby develop",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --quiet",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
@@ -55,15 +56,18 @@
     "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8",
     "@types/react-helmet": "^6.1.0",
+    "@typescript-eslint/eslint-plugin": "^4.2.0",
+    "@typescript-eslint/parser": "^4.2.0",
     "babel-eslint": "^10.0.1",
     "babel-preset-gatsby": "^0.5.10",
     "cssnano": "^4.1.8",
     "eslint": "^7.10.0",
     "eslint-config-prettier": "^6.12.0",
-    "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.2",
     "eslint-plugin-react-hooks": "^4.1.2",
+    "gatsby-plugin-typescript": "^2.4.20",
     "gatsby-remark-embed-video": "^3.0.10",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
@@ -72,7 +76,8 @@
     "postcss-preset-env": "^6.5.0",
     "postcss-url": "^8.0.0",
     "prettier": "^2.1.2",
-    "rambdax": "^6.1.0"
+    "rambdax": "^6.1.0",
+    "typescript": "^4.0.3"
   },
   "repository": {
     "type": "git",
