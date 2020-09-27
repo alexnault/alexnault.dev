@@ -58,6 +58,7 @@ const Post = ({
         <Img
           fluid={coverImage.childImageSharp.fluid}
           className={style.coverImage}
+          alt="Post cover"
         />
       )}
       <MDXRenderer>{body}</MDXRenderer>
@@ -83,7 +84,11 @@ const Post = ({
         </a>
       </div>
       <div className={style.author}>
-        <Img fixed={avatar.childImageSharp.fixed} className={style.avatar} />
+        <Img
+          fixed={avatar.childImageSharp.fixed}
+          className={style.avatar}
+          alt="Alex Nault"
+        />
         <div>
           <div>
             <b>
