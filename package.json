@@ -72,7 +72,7 @@
     "postcss-preset-env": "^6.5.0",
     "postcss-url": "^8.0.0",
     "prettier": "^2.1.2",
-    "rambdax": "^5.1.0"
+    "rambdax": "^6.1.0"
   },
   "repository": {
     "type": "git",
