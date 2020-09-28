@@ -37,7 +37,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-typescript`,
-    `babel-preset-gatsby`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
