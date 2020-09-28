@@ -6,7 +6,11 @@ import Layout from "../components/layout";
 import Post from "../components/post";
 
 type Props = {
-  data: any;
+  data: {
+    avatar: any;
+    mdx: any;
+    site: any;
+  };
   pageContext: {
     next: any;
     previous: any;
@@ -21,17 +25,36 @@ const BlogPostTemplate = ({ data, pageContext }: Props) => {
     id,
     body,
   } = data.mdx;
+  const { siteUrl } = data.site.siteMetadata;
   const { next, previous } = pageContext;
+
+  const schema = {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    url: `${siteUrl}${path}`,
+    name: title,
+    author: {
+      "@type": "Person",
+      name: "Alex Nault",
+    },
+    datePublished: date,
+    dateModified: data.site.buildTime,
+    image: {
+      "@type": "ImageObject",
+      url: `${siteUrl}${coverImage.childImageSharp.fluid.src}`,
+    },
+  };
+
+  //
 
   return (
     <Layout>
-      <SEO title={title} description={excerpt || autoExcerpt} />
+      <SEO title={title} description={excerpt || autoExcerpt} schema={schema} />
       <Post
         key={id}
         title={title}
-        date={date}
+        excerpt={excerpt}
         path={path}
-        author={author}
         coverImage={coverImage}
         body={body}
         tags={tags}
@@ -57,7 +80,7 @@ export const pageQuery = graphql`
     mdx(frontmatter: { path: { eq: $path } }) {
       frontmatter {
         title
-        date(formatString: "LL")
+        date(formatString: "YYYY-MM-DD")
         path
         author
         excerpt
@@ -73,6 +96,12 @@ export const pageQuery = graphql`
       id
       body
       excerpt
+    }
+    site {
+      buildTime(formatString: "YYYY-MM-DD")
+      siteMetadata {
+        siteUrl
+      }
     }
   }
 `;

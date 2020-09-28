@@ -7,6 +7,7 @@ type Props = {
   lang?: string;
   meta?: any[];
   keywords?: string[];
+  schema?: { [key: string]: any };
   title?: string;
 };
 
@@ -15,6 +16,7 @@ const SEO = ({
   lang = "en",
   meta = [],
   keywords = ["alex", "nault", "dev", "blog", "alexnault", "personal site"],
+  schema,
   title,
 }: Props) => {
   const data = useStaticQuery(graphql`
@@ -86,7 +88,11 @@ const SEO = ({
             : []
         )
         .concat(meta)}
-    />
+    >
+      {schema && (
+        <script type="application/ld+json">{JSON.stringify(schema)}</script>
+      )}
+    </Helmet>
   );
 };
 

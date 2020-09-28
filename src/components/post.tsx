@@ -9,10 +9,9 @@ import style from "../styles/post.module.css";
 
 type Props = {
   title: string;
-  date: string;
   path: string;
   coverImage: any;
-  author: string;
+  excerpt?: string;
   body: string;
   tags: string[];
   previousPost: any;
@@ -22,10 +21,9 @@ type Props = {
 
 const Post = ({
   title,
-  date,
   path,
   coverImage,
-  author,
+  excerpt,
   tags,
   body,
   previousPost,
@@ -42,7 +40,7 @@ const Post = ({
       <header>
         <h1 className={style.title}>{title}</h1>
         <div className={style.meta}>
-          {date} {author && <>— Written by {author}</>}
+          {excerpt}
           {tags ? (
             <div className={style.tags}>
               {tags.map((tag) => (

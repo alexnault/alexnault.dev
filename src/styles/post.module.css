@@ -10,7 +10,7 @@
   }
 
   h1 {
-    margin: 0 0 8px;
+    margin: 0 0 16px;
   }
 
   img {
@@ -27,6 +27,12 @@
 .meta {
   font-size: 1rem;
   margin-bottom: 32px;
+  color: var(--light-color-secondary);
+  font-weight: bold;
+
+  :global .dark-theme :local & {
+    color: var(--dark-color-secondary);
+  }
 }
 
 .tags {
