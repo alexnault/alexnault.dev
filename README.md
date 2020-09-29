@@ -11,13 +11,13 @@ My personal website and blog.
 
 ## Commands
 
-| Commands       | Description                                                             |     |     |     |
-| -------------- | ----------------------------------------------------------------------- | --- | --- | --- |
-| npm run build  | Build the static website for deployment                                 |     |     |     |
-| npm run dev    | Start the development server at [localhost:8000](http://localhost:8000) |     |     |     |
-| npm run format | Format files with Prettier                                              |     |     |     |
-| npm run lint   | Lint files with eslint                                                  |     |     |     |
-| npm run serve  | Serve the production build at [localhost:9000](http://localhost:9000)   |     |     |     |
+| Commands       | Description                                                             |
+| -------------- | ----------------------------------------------------------------------- |
+| npm run build  | Build the static website for deployment                                 |
+| npm run dev    | Start the development server at [localhost:8000](http://localhost:8000) |
+| npm run format | Format files with Prettier                                              |
+| npm run lint   | Lint files with eslint                                                  |
+| npm run serve  | Serve the production build at [localhost:9000](http://localhost:9000)   |
 
 ## Contributing
 
