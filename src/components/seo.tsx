@@ -9,6 +9,8 @@ type Props = {
   keywords?: string[];
   schema?: { [key: string]: any };
   title?: string;
+  url?: string;
+  image?: string;
 };
 
 const SEO = ({
@@ -18,6 +20,8 @@ const SEO = ({
   keywords = ["alex", "nault", "dev", "blog", "alexnault", "personal site"],
   schema,
   title,
+  url,
+  image,
 }: Props) => {
   const data = useStaticQuery(graphql`
     query DefaultSEOQuery {
@@ -26,17 +30,48 @@ const SEO = ({
           title
           description
           author
+          twitterUsername
+          siteUrl
+          image
         }
       }
     }
   `);
+
   const {
     title: siteTitle,
     description: siteDescription,
     author,
+    twitterUsername,
+    siteUrl,
+    image: siteImage,
   } = data.site.siteMetadata;
+
   const metaTitle = title || siteTitle;
   const metaDescription = description || siteDescription;
+  const metaUrl = url || siteUrl;
+  const metaImage = image || `${siteUrl}${siteImage}`;
+
+  const defaultSchema = {
+    "@context": "http://schema.org",
+    "@type": "Website",
+    url: metaUrl,
+    name: metaTitle,
+    description: metaDescription,
+    author: {
+      "@type": "Person",
+      name: author,
+      url: siteUrl,
+    },
+    creator: [author],
+    publisher: {
+      "@type": "Person",
+      name: author,
+      url: siteUrl,
+    },
+    image: metaImage,
+    mainEntityOfPage: metaUrl,
+  };
 
   return (
     <Helmet
@@ -44,12 +79,13 @@ const SEO = ({
         lang,
       }}
       title={metaTitle}
-      titleTemplate={title ? `${title} :: ${siteTitle}` : siteTitle}
+      titleTemplate={title ? `${title} | ${siteTitle}` : siteTitle}
       meta={[
         {
           name: `description`,
           content: metaDescription,
         },
+        { name: "author", content: author },
         {
           property: `og:title`,
           content: metaTitle,
@@ -61,6 +97,14 @@ const SEO = ({
         {
           property: `og:type`,
           content: `website`,
+        },
+        {
+          property: `og:url`,
+          content: metaUrl,
+        },
+        {
+          property: `og:image`,
+          content: metaImage,
         },
         {
           name: `twitter:card`,
@@ -76,7 +120,11 @@ const SEO = ({
         },
         {
           name: `twitter:creator`,
-          content: author,
+          content: twitterUsername,
+        },
+        {
+          name: `twitter:image:src`,
+          content: metaImage,
         },
       ]
         .concat(
@@ -89,9 +137,9 @@ const SEO = ({
         )
         .concat(meta)}
     >
-      {schema && (
-        <script type="application/ld+json">{JSON.stringify(schema)}</script>
-      )}
+      <script type="application/ld+json">
+        {JSON.stringify(schema || defaultSchema)}
+      </script>
     </Helmet>
   );
 };

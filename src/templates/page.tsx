@@ -20,36 +20,48 @@ type Props = {
 const BlogPostTemplate = ({ data, pageContext }: Props) => {
   const { avatar } = data;
   const {
-    frontmatter: { title, date, path, author, coverImage, excerpt, tags },
+    frontmatter: { title, date, path, coverImage, excerpt, tags },
     excerpt: autoExcerpt,
     id,
     body,
   } = data.mdx;
-  const { siteUrl } = data.site.siteMetadata;
+  const { siteUrl, author } = data.site.siteMetadata;
   const { next, previous } = pageContext;
 
   const schema = {
     "@context": "http://schema.org",
-    "@type": "Article",
+    "@type": "TechArticle",
     url: `${siteUrl}${path}`,
+    headline: title,
     name: title,
+    description: excerpt,
     author: {
       "@type": "Person",
-      name: "Alex Nault",
+      name: author,
+      url: siteUrl,
     },
+    creator: [author],
+    publisher: {
+      "@type": "Person",
+      name: author,
+      url: siteUrl,
+    },
+    dateCreated: date,
     datePublished: date,
     dateModified: data.site.buildTime,
-    image: {
-      "@type": "ImageObject",
-      url: `${siteUrl}${coverImage.childImageSharp.fluid.src}`,
-    },
+    image: `${siteUrl}${coverImage.childImageSharp.fluid.src}`,
+    mainEntityOfPage: `${siteUrl}${path}`,
   };
-
-  //
 
   return (
     <Layout>
-      <SEO title={title} description={excerpt || autoExcerpt} schema={schema} />
+      <SEO
+        title={title}
+        description={excerpt || autoExcerpt}
+        image={`${siteUrl}${coverImage.childImageSharp.fluid.src}`}
+        schema={schema}
+        url={`${siteUrl}${path}`}
+      />
       <Post
         key={id}
         title={title}
@@ -100,6 +112,7 @@ export const pageQuery = graphql`
     site {
       buildTime(formatString: "YYYY-MM-DD")
       siteMetadata {
+        author
         siteUrl
       }
     }
