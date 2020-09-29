@@ -11,7 +11,7 @@ My personal website and blog.
 
 ## Commands
 
-| Commands       | Description                                                             |
+| Command        | Description                                                             |
 | -------------- | ----------------------------------------------------------------------- |
 | npm run build  | Build the static website for deployment                                 |
 | npm run dev    | Start the development server at [localhost:8000](http://localhost:8000) |
