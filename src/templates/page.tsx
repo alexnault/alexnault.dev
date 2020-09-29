@@ -28,13 +28,15 @@ const BlogPostTemplate = ({ data, pageContext }: Props) => {
   const { siteUrl, author } = data.site.siteMetadata;
   const { next, previous } = pageContext;
 
+  const description = excerpt || autoExcerpt;
+
   const schema = {
     "@context": "http://schema.org",
     "@type": "TechArticle",
     url: `${siteUrl}${path}`,
     headline: title,
     name: title,
-    description: excerpt,
+    description,
     author: {
       "@type": "Person",
       name: author,
@@ -57,7 +59,7 @@ const BlogPostTemplate = ({ data, pageContext }: Props) => {
     <Layout>
       <SEO
         title={title}
-        description={excerpt || autoExcerpt}
+        description={description}
         image={`${siteUrl}${coverImage.childImageSharp.fluid.src}`}
         schema={schema}
         url={`${siteUrl}${path}`}
