@@ -119,12 +119,16 @@ const SEO = ({
           content: metaDescription,
         },
         {
+          name: `twitter:image`,
+          content: metaImage,
+        },
+        {
           name: `twitter:creator`,
           content: twitterUsername,
         },
         {
-          name: `twitter:image:src`,
-          content: metaImage,
+          name: `twitter:site`,
+          content: twitterUsername,
         },
       ]
         .concat(
