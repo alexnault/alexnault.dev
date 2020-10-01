@@ -1,0 +1,11 @@
+.button {
+  background-color: var(--primary-color);
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 0;
+  color: white;
+  appearance: none;
+  text-transform: uppercase;
+  font-size: 1rem;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}

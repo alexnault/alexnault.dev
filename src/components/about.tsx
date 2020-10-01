@@ -41,16 +41,16 @@ const About = ({ avatar }: Props) => {
         learn. Previously <a href="https://www.classcraft.com">Classcraft</a>{" "}
         and <a href="https://www.ubisoft.com">Ubisoft</a>.
         <div className={style.social}>
-          <a href="https://github.com/alexnault">
+          <a href="https://github.com/alexnault" aria-label="Github">
             <Icon style={{ cursor: "pointer" }} size={24} d={githubIcon} />
           </a>
-          <a href="https://www.linkedin.com/in/naultalex">
+          <a href="https://www.linkedin.com/in/naultalex" aria-label="LinkedIn">
             <Icon style={{ cursor: "pointer" }} size={24} d={linkedInIcon} />
           </a>
-          <a href="https://twitter.com/nault_alex">
+          <a href="https://twitter.com/nault_alex" aria-label="Twitter">
             <Icon style={{ cursor: "pointer" }} size={24} d={twitterIcon} />
           </a>
-          <a href="mailto:nault.alex@gmail.com">
+          <a href="mailto:nault.alex@gmail.com" aria-label="Email">
             <Icon style={{ cursor: "pointer" }} size={24} d={emailIcon} />
           </a>
         </div>
