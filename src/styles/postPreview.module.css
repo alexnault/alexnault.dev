@@ -7,14 +7,24 @@
   text-decoration: none;
   min-height: 280px;
   transition: transform 200ms;
-  h4,
-  h6 {
-    margin: 0 0 8px 0;
-  }
   &:hover,
   &:focus {
     transform: scale(1.0325);
   }
+}
+
+.date,
+.title {
+  margin: 0 0 8px 0;
+}
+
+.date {
+  font-size: 0.67rem;
+  font-weight: bold;
+}
+
+.title {
+  font-size: 1.125rem;
 }
 
 .backgroundImage {

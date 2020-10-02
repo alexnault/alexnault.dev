@@ -24,8 +24,8 @@ const PostPreview = ({ title, date, path, coverImage }: Props) => {
         backgroundColor={`#040e18`}
         className={style.backgroundImage}
       >
-        <h6>{date}</h6>
-        <h4>{title}</h4>
+        <span className={style.date}>{date}</span>
+        <h3 className={style.title}>{title}</h3>
       </BackgroundImage>
     </Link>
   );

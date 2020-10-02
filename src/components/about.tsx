@@ -29,14 +29,11 @@ const About = ({ avatar }: Props) => {
         />
       </div>
       <div className={style.content}>
-        <h2>
-          Hi there{" "}
-          <span role="img" aria-label="Wave">
-            👋
-          </span>
-        </h2>
-        I&apos;m <strong>Alex Nault</strong> and I solve complex problems using
-        software. I&apos;m currently building solutions at{" "}
+        <h1 className={style.title}>
+          Hi, I&apos;m <strong>Alex Nault</strong> and I solve complex problems
+          using software.
+        </h1>
+        I&apos;m currently building solutions at{" "}
         <a href="https://apprentx.rocks">Apprentx</a> to improve the way we
         learn. Previously <a href="https://www.classcraft.com">Classcraft</a>{" "}
         and <a href="https://www.ubisoft.com">Ubisoft</a>.
