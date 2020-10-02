@@ -13,7 +13,7 @@ const NotFoundPage = () => (
       The page you are looking for might have been removed, had its name changed
       or is temporarily unavailable.
     </p>
-    <Link to="/">
+    <Link to="/" tabIndex={-1}>
       <Button>Go to homepage</Button>
     </Link>
   </Layout>

@@ -4,3 +4,7 @@
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   grid-gap: 16px;
 }
+
+.title {
+  font-size: 1.375rem;
+}
