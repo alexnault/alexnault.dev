@@ -31,7 +31,7 @@ const About = ({ avatar }: Props) => {
       </div>
       <div className={style.content}>
         <h1 className={`${typography.h2} ${style.title} `}>
-          {"Hi, I'm Alex Nault and I solve complex problems using software."}
+          {"Hi, I'm Alex Nault and I solve problems using software."}
         </h1>
         {"I'm currently building solutions at "}
         <a href="https://apprentx.rocks">Apprentx</a>
