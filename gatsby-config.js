@@ -8,7 +8,8 @@ const postCSSMixins = require("postcss-mixins");
 module.exports = {
   siteMetadata: {
     title: `Alex Nault`,
-    description: "I write bite-sized articles for developers.",
+    description:
+      "I solve problems using software and write bite-sized articles for developers.",
     copyrights: "",
     author: `Alex Nault`,
     twitterUsername: "@nault_alex",

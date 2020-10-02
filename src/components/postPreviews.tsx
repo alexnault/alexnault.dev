@@ -2,6 +2,7 @@ import React from "react";
 
 import PostPreview from "../components/postPreview";
 
+import typography from "../styles/typography.module.css";
 import style from "../styles/postPreviews.module.css";
 
 type Props = {
@@ -11,7 +12,7 @@ type Props = {
 const PostPreviews = ({ posts }: Props) => {
   return (
     <>
-      <h2 className={style.title}>Latest articles</h2>
+      <h2 className={typography.h3}>Latest articles</h2>
       <div className={style.postPreviews}>
         {posts.map(({ node }) => {
           const {

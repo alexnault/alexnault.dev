@@ -23,10 +23,6 @@
   font-weight: bold;
 }
 
-.title {
-  font-size: 1.125rem;
-}
-
 .backgroundImage {
   flex: 1;
   display: flex;
