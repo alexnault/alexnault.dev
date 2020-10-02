@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
 
+import typography from "../styles/typography.module.css";
 import style from "../styles/postPreview.module.css";
 
 type Props = {
@@ -25,7 +26,7 @@ const PostPreview = ({ title, date, path, coverImage }: Props) => {
         className={style.backgroundImage}
       >
         <span className={style.date}>{date}</span>
-        <h3 className={style.title}>{title}</h3>
+        <h3 className={`${typography.h4} ${style.title}`}>{title}</h3>
       </BackgroundImage>
     </Link>
   );

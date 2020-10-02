@@ -43,41 +43,55 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
   line-height: 1.3;
   margin-top: 2.5rem;
 }
 
-h1 {
+h1,
+.h1 {
   font-size: 2.625rem;
 }
 
-h2 {
+h2,
+.h2 {
   font-size: 1.625rem;
 }
 
-h3 {
+h3,
+.h3 {
   font-size: 1.375rem;
 }
 
-h4 {
+h4,
+.h4 {
   font-size: 1.125rem;
 }
 
 @media (--phone) {
-  h1 {
+  h1,
+  .h1 {
     font-size: 2rem;
   }
 
-  h2 {
+  h2,
+  .h2 {
     font-size: 1.4rem;
   }
 
-  h3 {
+  h3,
+  .h3 {
     font-size: 1.15rem;
   }
 
-  h4 {
+  h4,
+  .h4 {
     font-size: 1.125rem;
   }
 }
@@ -165,27 +179,28 @@ figure {
 code {
   font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
   font-feature-settings: normal;
-  background: var(--light-background-secondary);
-  padding: 1px 6px;
-  margin: 0 2px;
+  background: var(--light-background-secondary) !important;
   border-radius: 4px;
-  font-size: 0.9rem;
 
   .dark-theme & {
-    background: var(--dark-background-secondary);
+    background: var(--dark-background-secondary) !important;
   }
 }
 
-pre {
-  background: #1a1a1d;
+pre[class*="language-"] {
   padding: 16px;
   border-radius: 8px;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   overflow: auto;
+
+  background: #1a1a1d !important;
+  margin-left: -16px;
+  margin-right: -16px;
 
   @media (--phone) {
     white-space: pre-wrap;
     word-wrap: break-word;
+    border-radius: 0;
   }
 
   code {
@@ -193,7 +208,6 @@ pre {
     color: #ccc;
     margin: 0;
     padding: 0;
-    font-size: 0.9rem;
   }
 }
 
@@ -340,8 +354,8 @@ hr {
   margin-left: -1em;
   padding-right: 1em;
   padding-left: 1em;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.075);
   .dark-theme & {
-    background-color: rgba(255, 255, 255, 0.025);
+    background-color: rgba(255, 255, 255, 0.075);
   }
 }

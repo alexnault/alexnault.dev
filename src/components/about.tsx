@@ -3,6 +3,7 @@ import Img from "gatsby-image";
 
 import Icon from "../components/icon";
 
+import typography from "../styles/typography.module.css";
 import style from "../styles/about.module.css";
 
 const githubIcon =
@@ -29,14 +30,15 @@ const About = ({ avatar }: Props) => {
         />
       </div>
       <div className={style.content}>
-        <h1 className={style.title}>
-          Hi, I&apos;m <strong>Alex Nault</strong> and I solve complex problems
-          using software.
+        <h1 className={`${typography.h2} ${style.title} `}>
+          {"Hi, I'm Alex Nault and I solve complex problems using software."}
         </h1>
-        I&apos;m currently building solutions at{" "}
-        <a href="https://apprentx.rocks">Apprentx</a> to improve the way we
-        learn. Previously <a href="https://www.classcraft.com">Classcraft</a>{" "}
-        and <a href="https://www.ubisoft.com">Ubisoft</a>.
+        {"I'm currently building solutions at "}
+        <a href="https://apprentx.rocks">Apprentx</a>
+        {" to improve the way we learn. Previously "}
+        <a href="https://www.classcraft.com">Classcraft</a>
+        {" and "}
+        <a href="https://www.ubisoft.com">Ubisoft</a>.
         <div className={style.social}>
           <a href="https://github.com/alexnault" aria-label="Github">
             <Icon style={{ cursor: "pointer" }} size={24} d={githubIcon} />
