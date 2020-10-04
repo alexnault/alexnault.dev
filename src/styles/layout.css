@@ -179,28 +179,27 @@ figure {
 code {
   font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
   font-feature-settings: normal;
-  background: var(--light-background-secondary) !important;
+  background: var(--light-background-secondary);
+  padding: 1px 6px;
+  margin: 0 2px;
   border-radius: 4px;
+  font-size: 0.9rem;
 
   .dark-theme & {
-    background: var(--dark-background-secondary) !important;
+    background: var(--dark-background-secondary);
   }
 }
 
-pre[class*="language-"] {
+pre {
+  background: #1a1a1d;
   padding: 16px;
   border-radius: 8px;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   overflow: auto;
-
-  background: #1a1a1d !important;
-  margin-left: -16px;
-  margin-right: -16px;
 
   @media (--phone) {
     white-space: pre-wrap;
     word-wrap: break-word;
-    border-radius: 0;
   }
 
   code {
@@ -208,6 +207,7 @@ pre[class*="language-"] {
     color: #ccc;
     margin: 0;
     padding: 0;
+    font-size: 0.9rem;
   }
 }
 
@@ -354,8 +354,8 @@ hr {
   margin-left: -1em;
   padding-right: 1em;
   padding-left: 1em;
-  background-color: rgba(255, 255, 255, 0.075);
+  background-color: rgba(255, 255, 255, 0.05);
   .dark-theme & {
-    background-color: rgba(255, 255, 255, 0.075);
+    background-color: rgba(255, 255, 255, 0.025);
   }
 }
