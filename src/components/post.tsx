@@ -4,6 +4,7 @@ import Img from "gatsby-image";
 import Navigation from "./navigation";
 import { toKebabCase } from "../helpers";
 import { MDXRenderer } from "gatsby-plugin-mdx";
+import { OutboundLink } from "gatsby-plugin-gtag";
 
 import style from "../styles/post.module.css";
 
@@ -61,7 +62,7 @@ const Post = ({
       )}
       <MDXRenderer>{body}</MDXRenderer>
       <div className={style.actions}>
-        <a
+        <OutboundLink
           href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
             `${title} by Alex Nault https://alexnault.dev${path}`
           )}`}
@@ -69,8 +70,8 @@ const Post = ({
           rel="noopener noreferrer"
         >
           Share
-        </a>
-        <a
+        </OutboundLink>
+        <OutboundLink
           href={`https://github.com/alexnault/alexnault.dev/edit/master/src/posts/${path.replace(
             "/",
             ""
@@ -79,7 +80,7 @@ const Post = ({
           rel="noopener noreferrer"
         >
           Edit
-        </a>
+        </OutboundLink>
       </div>
       <div className={style.author}>
         <Img

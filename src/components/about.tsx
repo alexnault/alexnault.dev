@@ -1,5 +1,6 @@
 import React from "react";
 import Img from "gatsby-image";
+import { OutboundLink } from "gatsby-plugin-gtag";
 
 import Icon from "../components/icon";
 
@@ -34,24 +35,32 @@ const About = ({ avatar }: Props) => {
           {"Hi, I'm Alex Nault and I solve problems using software."}
         </h1>
         {"I'm currently building solutions at "}
-        <a href="https://apprentx.rocks">Apprentx</a>
+        <OutboundLink href="https://apprentx.rocks">Apprentx</OutboundLink>
         {" to improve the way we learn. Previously "}
-        <a href="https://www.classcraft.com">Classcraft</a>
+        <OutboundLink href="https://www.classcraft.com">
+          Classcraft
+        </OutboundLink>
         {" and "}
-        <a href="https://www.ubisoft.com">Ubisoft</a>.
+        <OutboundLink href="https://www.ubisoft.com">Ubisoft</OutboundLink>.
         <div className={style.social}>
-          <a href="https://github.com/alexnault" aria-label="Github">
+          <OutboundLink href="https://github.com/alexnault" aria-label="Github">
             <Icon style={{ cursor: "pointer" }} size={24} d={githubIcon} />
-          </a>
-          <a href="https://www.linkedin.com/in/naultalex" aria-label="LinkedIn">
+          </OutboundLink>
+          <OutboundLink
+            href="https://www.linkedin.com/in/naultalex"
+            aria-label="LinkedIn"
+          >
             <Icon style={{ cursor: "pointer" }} size={24} d={linkedInIcon} />
-          </a>
-          <a href="https://twitter.com/nault_alex" aria-label="Twitter">
+          </OutboundLink>
+          <OutboundLink
+            href="https://twitter.com/nault_alex"
+            aria-label="Twitter"
+          >
             <Icon style={{ cursor: "pointer" }} size={24} d={twitterIcon} />
-          </a>
-          <a href="mailto:nault.alex@gmail.com" aria-label="Email">
+          </OutboundLink>
+          <OutboundLink href="mailto:nault.alex@gmail.com" aria-label="Email">
             <Icon style={{ cursor: "pointer" }} size={24} d={emailIcon} />
-          </a>
+          </OutboundLink>
         </div>
       </div>
     </div>

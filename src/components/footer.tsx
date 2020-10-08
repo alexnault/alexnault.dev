@@ -1,4 +1,5 @@
 import React from "react";
+import { OutboundLink } from "gatsby-plugin-gtag";
 
 import style from "../styles/footer.module.css";
 
@@ -17,13 +18,19 @@ const Footer = ({ copyrights }: Props) => (
     ) : (
       <>
         <span className={style.item}>
-          <a href="https://github.com/alexnault">Github</a>
+          <OutboundLink href="https://github.com/alexnault">
+            Github
+          </OutboundLink>
         </span>
         <span className={style.item}>
-          <a href="https://www.linkedin.com/in/naultalex">LinkedIn</a>
+          <OutboundLink href="https://www.linkedin.com/in/naultalex">
+            LinkedIn
+          </OutboundLink>
         </span>
         <span className={style.item}>
-          <a href="https://twitter.com/nault_alex">Twitter</a>
+          <OutboundLink href="https://twitter.com/nault_alex">
+            Twitter
+          </OutboundLink>
         </span>
       </>
     )}
