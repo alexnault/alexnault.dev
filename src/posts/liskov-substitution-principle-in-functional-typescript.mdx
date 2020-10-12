@@ -76,20 +76,20 @@ class Square extends Rectangle {
 Now if a client was to use a `Rectangle` (or a `Square`):
 
 ```ts
-const rect: Rectangle = ...
+const rect: Rectangle = new Square(10); // can be either a Rectangle or a Square
 rect.setWidth(20);
 // highlight-next-line
 expect(rect.getArea()).toBe(200); // ❌ If rect is a Square, area is 400
 ```
 
-`Rectangle` assumes an area of 200. `Square` breaks that assumption.
+`Rectangle` assumes an area of 200. `Square` breaks that behavior by expecting an area of 400.
 Therefore, **`Rectangle` and `Square` are not substitutable.**
 
 While this design is still serviceable, it fails the Liskov test and misses out on the benefits mentionned earlier.
 Moreover, clients of our code may have to adapt, like so:
 
 ```ts
-const rect: Rectangle = ...
+const rect: Rectangle = new Square(10);
 rect.setWidth(20);
 // highlight-next-line
 if (rect instanceof Square) {
@@ -124,7 +124,7 @@ interface Square extends Shape {
 // Implementation...
 ```
 
-Now, `Shape` is substitutable by both `Rectangle` and `Square`, because none of the two subtypes break an assumption about `Shape`.
+Now, `Shape` is substitutable by both `Rectangle` and `Square`, because none of the two subtypes break the behavior defined by `Shape`.
 
 As you might have noticed, steering clear from inheritance is one way to avoid LSP violations.
 Which is yet another example of composition over inheritance.
