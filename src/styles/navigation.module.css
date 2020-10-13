@@ -12,7 +12,6 @@
   border-radius: 8px;
   cursor: pointer;
   appearance: none;
-  padding: 8px 16px;
 
   :global .dark-theme :local & {
     background: var(--dark-background-secondary);
@@ -26,6 +25,8 @@
     display: flex;
     text-decoration: none;
     align-items: center;
+
+    padding: 8px 16px;
   }
 }
 
