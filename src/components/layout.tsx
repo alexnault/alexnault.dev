@@ -1,5 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
+import "fontsource-inter/400.css";
+import "fontsource-inter/700.css";
 
 import Header from "./header";
 import Footer from "./footer";
