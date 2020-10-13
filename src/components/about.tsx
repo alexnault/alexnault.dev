@@ -34,14 +34,16 @@ const About = ({ avatar }: Props) => {
         <h1 className={`${typography.h2} ${style.title} `}>
           {"Hi, I'm Alex Nault and I solve problems using software."}
         </h1>
-        {"I'm currently building solutions at "}
-        <OutboundLink href="https://apprentx.rocks">Apprentx</OutboundLink>
-        {" to improve the way we learn. Previously "}
-        <OutboundLink href="https://www.classcraft.com">
-          Classcraft
-        </OutboundLink>
-        {" and "}
-        <OutboundLink href="https://www.ubisoft.com">Ubisoft</OutboundLink>.
+        <p>
+          {"I'm currently building solutions at "}
+          <OutboundLink href="https://apprentx.rocks">Apprentx</OutboundLink>
+          {" to improve the way we learn. Previously "}
+          <OutboundLink href="https://www.classcraft.com">
+            Classcraft
+          </OutboundLink>
+          {" and "}
+          <OutboundLink href="https://www.ubisoft.com">Ubisoft</OutboundLink>.
+        </p>
         <div className={style.social}>
           <OutboundLink href="https://github.com/alexnault" aria-label="Github">
             <Icon style={{ cursor: "pointer" }} size={24} d={githubIcon} />
