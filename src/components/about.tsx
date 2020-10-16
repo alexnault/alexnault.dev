@@ -34,7 +34,7 @@ const About = ({ avatar }: Props) => {
         <h1 className={`${typography.h2} ${style.title} `}>
           {"Hi, I'm Alex Nault and I solve problems using software."}
         </h1>
-        <p>
+        <p className={style.paragraph}>
           {"I'm currently building solutions at "}
           <OutboundLink href="https://apprentx.rocks">Apprentx</OutboundLink>
           {" to improve the way we learn. Previously "}

@@ -40,9 +40,9 @@ const Post = ({
     <article className={style.post}>
       <header>
         <h1 className={style.title}>{title}</h1>
-        <div className={style.meta}>
+        <p className={style.meta}>
           {excerpt}
-          {tags ? (
+          {/* {tags ? (
             <div className={style.tags}>
               {tags.map((tag) => (
                 <Link to={`/tag/${toKebabCase(tag)}/`} key={toKebabCase(tag)}>
@@ -50,8 +50,8 @@ const Post = ({
                 </Link>
               ))}
             </div>
-          ) : null}
-        </div>
+          ) : null} */}
+        </p>
       </header>
       {coverImage && (
         <Img

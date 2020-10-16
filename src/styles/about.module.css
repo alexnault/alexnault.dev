@@ -40,6 +40,10 @@
   margin-top: 0;
 }
 
+.paragraph {
+  margin-bottom: 1em;
+}
+
 .social {
   margin: 8px 0;
   > a {
