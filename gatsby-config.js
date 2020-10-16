@@ -21,14 +21,6 @@ module.exports = {
     logoText: "alexnault.dev",
     defaultTheme: "light",
     postsPerPage: 6,
-    showMenuItems: 2,
-    menuMoreText: "More",
-    mainMenu: [
-      {
-        title: "Blog",
-        path: "/blog",
-      },
-    ],
     siteUrl: "https://alexnault.dev",
   },
   plugins: [

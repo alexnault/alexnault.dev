@@ -62,6 +62,22 @@
   position: relative;
 }
 
+.themeToggle {
+  background: none;
+  color: inherit;
+  border: none;
+  box-shadow: none;
+  line-height: 0;
+  padding: 0 4px;
+  appearance: none;
+  outline: none;
+  transition: color 200ms;
+  &:hover,
+  &:focus {
+    color: var(--primary-color);
+  }
+}
+
 @keyframes cursor {
   0% {
     opacity: 0;

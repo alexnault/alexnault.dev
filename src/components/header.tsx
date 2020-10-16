@@ -2,37 +2,24 @@ import React, { useState } from "react";
 import { Link } from "gatsby";
 import { Helmet } from "react-helmet";
 
-import Menu from "./menu";
+import Icon from "./icon";
 
 import style from "../styles/header.module.css";
+
+const toggleIcon = `M0 12c0 6.627 5.373 12 12 12s12-5.373 12-12-5.373-12-12-12-12 5.373-12 12zm2 0c0-5.514 4.486-10 10-10v20c-5.514 0-10-4.486-10-10z`;
 
 type Props = {
   siteLogo: any;
   logoText: string;
   defaultTheme: string;
-  mainMenu: {
-    title: string;
-    path: string;
-  }[];
-  mainMenuItems: number;
-  menuMoreText: string;
 };
 
 const Header = (props: Props) => {
-  const {
-    siteLogo,
-    logoText,
-    mainMenu,
-    mainMenuItems,
-    menuMoreText,
-    defaultTheme,
-  } = props;
+  const { siteLogo, logoText, defaultTheme } = props;
   const defaultThemeState =
     (typeof window !== "undefined" && window.localStorage.getItem("theme")) ||
     null;
   const [userTheme, changeTheme] = useState(defaultThemeState);
-  const [isMobileMenuVisible, toggleMobileMenu] = useState(false);
-  const [isSubMenuVisible, toggleSubMenu] = useState(false);
 
   const theme = userTheme || defaultTheme;
 
@@ -44,8 +31,6 @@ const Header = (props: Props) => {
     typeof window !== "undefined" &&
       window.localStorage.setItem("theme", opositeTheme);
   };
-  const onToggleMobileMenu = () => toggleMobileMenu(!isMobileMenuVisible);
-  const onToggleSubMenu = () => toggleSubMenu(!isSubMenuVisible);
 
   return (
     <>
@@ -68,16 +53,14 @@ const Header = (props: Props) => {
             </div>
           </Link>
           <span className={style.right}>
-            <Menu
-              mainMenu={mainMenu}
-              mainMenuItems={mainMenuItems}
-              isMobileMenuVisible={isMobileMenuVisible}
-              isSubMenuVisible={isSubMenuVisible}
-              menuMoreText={menuMoreText}
-              onToggleMobileMenu={onToggleMobileMenu}
-              onToggleSubMenu={onToggleSubMenu}
-              onChangeTheme={onChangeTheme}
-            />
+            <button
+              className={style.themeToggle}
+              onClick={onChangeTheme}
+              type="button"
+              aria-label="Theme toggle"
+            >
+              <Icon style={{ cursor: "pointer" }} size={24} d={toggleIcon} />
+            </button>
           </span>
         </div>
       </header>

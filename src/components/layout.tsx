@@ -25,12 +25,6 @@ const Layout = ({ children }: Props) => {
           logoText
           defaultTheme
           copyrights
-          mainMenu {
-            title
-            path
-          }
-          showMenuItems
-          menuMoreText
         }
       }
     }
@@ -40,9 +34,6 @@ const Layout = ({ children }: Props) => {
     logo,
     logoText,
     defaultTheme,
-    mainMenu,
-    showMenuItems,
-    menuMoreText,
     copyrights,
   } = data.site.siteMetadata;
 
@@ -53,9 +44,6 @@ const Layout = ({ children }: Props) => {
         siteLogo={logo}
         logoText={logoText}
         defaultTheme={defaultTheme}
-        mainMenu={mainMenu}
-        mainMenuItems={showMenuItems}
-        menuMoreText={menuMoreText}
       />
       <main>
         <div className="content">{children}</div>
