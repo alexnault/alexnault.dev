@@ -85,7 +85,7 @@ expect(rect.getArea()).toBe(200); // ❌ If rect is a Square, area is 400
 `Rectangle` assumes an area of 200. `Square` breaks that behavior by expecting an area of 400.
 Therefore, **`Rectangle` and `Square` are not substitutable.**
 
-While this design is still serviceable, it fails the Liskov test and misses out on the benefits mentionned earlier.
+While this design is still serviceable, it fails the Liskov test and misses out on the benefits mentioned earlier.
 Moreover, clients of our code may have to adapt, like so:
 
 ```ts
