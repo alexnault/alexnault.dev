@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #fe5186;
+  --primary-color: #ff79c6;
 
   /* light theme color */
   --light-background: #fafafa;
@@ -10,7 +10,7 @@
   --light-border-color: rgba(0, 0, 0, 0.12);
 
   /* dark theme colors */
-  --dark-background: #303030;
+  --dark-background: #212121;
   --dark-background-secondary: #3b3d42;
   --dark-background-paper: #424242;
   --dark-color: rgba(255, 255, 255, 0.87);
@@ -18,8 +18,8 @@
   --dark-border-color: #rgba(255, 255, 255, 0.12);
 
   /* variables for js, must be the same as these in @custom-media queries */
-  --phoneWidth: (max-width: 684px);
-  --tabletWidth: (max-width: 900px);
+  --phoneWidth: (max-width: 600);
+  --tabletWidth: (max-width: 960px);
 }
 
 @custom-media --phone (width < 600px);

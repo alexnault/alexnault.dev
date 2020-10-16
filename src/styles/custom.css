@@ -3,7 +3,3 @@
 .token.comment {
   color: rgba(138, 154, 204, 1);
 }
-
-pre[class*="language-"] {
-  background: #252627 !important;
-}

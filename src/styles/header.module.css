@@ -10,7 +10,7 @@
 
   :global .dark-theme :local & {
     /* background: var(--dark-background-paper); */
-    background: #252627;
+    background-color: #1c1c1c;
   }
 
   a {
