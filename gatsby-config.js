@@ -128,5 +128,6 @@ module.exports = {
     `gatsby-plugin-sitemap`,
     "gatsby-plugin-robots-txt",
     "gatsby-plugin-remove-generator",
+    "gatsby-plugin-material-ui",
   ],
 };

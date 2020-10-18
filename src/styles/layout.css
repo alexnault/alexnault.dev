@@ -3,11 +3,11 @@
 @import "./custom.css";
 
 html {
-  box-sizing: border-box;
-  font-size: 20px;
-  @media (--phone) {
+  /* box-sizing: border-box; */
+  /* font-size: 20px; */
+  /* @media (--phone) {
     font-size: 18px;
-  }
+  } */
 }
 
 *,
@@ -16,16 +16,17 @@ html {
   box-sizing: inherit;
 }
 
-body {
+/* body {
   margin: 0;
   padding: 0;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
-    Arial, sans-serif;
+  font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Helvetica, Arial, sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.54;
   background-color: var(--light-background);
   color: var(--light-color);
+  color: rgb(45, 55, 72);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   font-feature-settings: "liga", "tnum", "case", "calt", "zero", "ss01", "locl";
@@ -36,9 +37,9 @@ body {
     background-color: var(--dark-background);
     color: var(--dark-color);
   }
-}
+} */
 
-h1,
+/* h1,
 h2,
 h3,
 h4,
@@ -72,8 +73,8 @@ h3,
 h4,
 .h4 {
   font-size: 1.125rem;
-}
-
+} */
+/*
 @media (--phone) {
   h1,
   .h1 {
@@ -109,7 +110,7 @@ a {
   &:focus {
     color: var(--primary-color);
   }
-}
+} */
 
 svg {
   fill: currentColor;
@@ -287,30 +288,38 @@ ol ol {
 button,
 input,
 textarea {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
-    Arial, sans-serif;
+  font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Helvetica, Arial, sans-serif;
 }
 
-.container {
+/* .container {
   display: flex;
   flex-direction: column;
-}
+} */
 
-main {
+/* main {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+} */
 
 .content {
-  width: 100%;
+  padding-top: 48px;
+  padding-bottom: 48px;
+
+  @media (--phone) {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  /* width: 100%;
   max-width: calc(728px + 48px * 2);
-  padding: 48px;
+  padding-top: 48px;
 
   @media (--phone) {
     max-width: calc(728px + 16px * 2);
     padding: 16px;
-  }
+  } */
 }
 
 hr {

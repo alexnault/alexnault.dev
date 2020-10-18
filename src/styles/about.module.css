@@ -19,7 +19,7 @@
 
 .content {
   flex: 1;
-  margin-left: 16px;
+  margin-left: 32px;
   @media (--phone) {
     margin: 0;
   }
@@ -34,10 +34,6 @@
     width: 160px;
     height: 160px;
   }
-}
-
-.title {
-  margin-top: 0;
 }
 
 .paragraph {

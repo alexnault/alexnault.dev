@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { Container } from "@material-ui/core";
 
 import SEO from "../components/seo";
 import Layout from "../components/layout";
@@ -64,18 +65,20 @@ const BlogPostTemplate = ({ data, pageContext }: Props) => {
         schema={schema}
         url={`${siteUrl}${path}`}
       />
-      <Post
-        key={id}
-        title={title}
-        excerpt={excerpt}
-        path={path}
-        coverImage={coverImage}
-        body={body}
-        tags={tags}
-        previousPost={previous}
-        nextPost={next}
-        avatar={avatar}
-      />
+      <Container maxWidth="sm" component="main" className="content">
+        <Post
+          key={id}
+          title={title}
+          excerpt={excerpt}
+          path={path}
+          coverImage={coverImage}
+          body={body}
+          tags={tags}
+          previousPost={previous}
+          nextPost={next}
+          avatar={avatar}
+        />
+      </Container>
     </Layout>
   );
 };

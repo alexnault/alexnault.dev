@@ -21,10 +21,15 @@
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/styles": "^4.10.0",
     "@mdx-js/mdx": "^1.6.18",
     "@mdx-js/react": "^1.6.18",
     "@svgr/webpack": "^5.4.0",
     "fontsource-inter": "^3.0.5",
+    "fontsource-montserrat": "^3.0.9",
+    "fontsource-nunito": "^3.0.9",
+    "fontsource-nunito-sans": "^3.0.9",
     "gatsby": "^2.24.65",
     "gatsby-awesome-pagination": "^0.3.3",
     "gatsby-background-image": "^1.1.2",
@@ -32,6 +37,7 @@
     "gatsby-plugin-catch-links": "^2.3.12",
     "gatsby-plugin-gtag": "^1.0.13",
     "gatsby-plugin-manifest": "^2.4.31",
+    "gatsby-plugin-material-ui": "^2.1.10",
     "gatsby-plugin-mdx": "^1.2.41",
     "gatsby-plugin-offline": "^3.2.28",
     "gatsby-plugin-postcss": "^2.3.12",

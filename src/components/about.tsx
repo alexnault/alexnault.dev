@@ -1,6 +1,7 @@
 import React from "react";
 import Img from "gatsby-image";
 import { OutboundLink } from "gatsby-plugin-gtag";
+import Typography from "@material-ui/core/Typography";
 
 import Icon from "../components/icon";
 
@@ -31,9 +32,12 @@ const About = ({ avatar }: Props) => {
         />
       </div>
       <div className={style.content}>
-        <h1 className={`${typography.h2} ${style.title} `}>
+        <Typography variant="h3" component="h1">
           {"Hi, I'm Alex Nault and I solve problems using software."}
-        </h1>
+        </Typography>
+        {/* <h1 className={`${typography.h2} ${style.title} `}>
+          {"Hi, I'm Alex Nault and I solve problems using software."}
+        </h1> */}
         <p className={style.paragraph}>
           {"I'm currently building solutions at "}
           <OutboundLink href="https://apprentx.rocks">Apprentx</OutboundLink>

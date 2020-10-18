@@ -2,9 +2,10 @@ import React from "react";
 import { Link } from "gatsby";
 import Img from "gatsby-image";
 import Navigation from "./navigation";
-import { toKebabCase } from "../helpers";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { OutboundLink } from "gatsby-plugin-gtag";
+import { Typography, Link as MuiLink } from "@material-ui/core";
+import { MDXProvider } from "@mdx-js/react";
 
 import style from "../styles/post.module.css";
 
@@ -18,6 +19,22 @@ type Props = {
   previousPost: any;
   nextPost: any;
   avatar: any;
+};
+
+const MyH1 = (props) => <Typography component="h1" variant="h3" {...props} />;
+const MyH2 = (props) => <Typography component="h2" variant="h4" {...props} />;
+const MyH3 = (props) => <Typography component="h3" variant="h5" {...props} />;
+const MyH4 = (props) => <Typography component="h4" variant="h6" {...props} />;
+const MyP = (props) => <Typography variant="body1" paragraph {...props} />;
+const MyLink = (props) => <MuiLink {...props} />; // Test gatsby link
+
+const components = {
+  h1: MyH1,
+  h2: MyH2,
+  h3: MyH3,
+  h4: MyH4,
+  a: MyLink,
+  p: MyP,
 };
 
 const Post = ({
@@ -39,10 +56,21 @@ const Post = ({
   return (
     <article className={style.post}>
       <header>
-        <h1 className={style.title}>{title}</h1>
-        <p className={style.meta}>
+        {/* <h1 className={style.title}>{title}</h1> */}
+        <Typography variant="h3" component="h1" className={style.title}>
+          {title}
+        </Typography>
+        <Typography
+          variant="subtitle1"
+          color="textSecondary"
+          paragraph
+          className={style.meta}
+        >
           {excerpt}
-          {/* {tags ? (
+        </Typography>
+        {/* <p className={style.meta}> */}
+        {/* {excerpt} */}
+        {/* {tags ? (
             <div className={style.tags}>
               {tags.map((tag) => (
                 <Link to={`/tag/${toKebabCase(tag)}/`} key={toKebabCase(tag)}>
@@ -51,7 +79,7 @@ const Post = ({
               ))}
             </div>
           ) : null} */}
-        </p>
+        {/* </p> */}
       </header>
       {coverImage && (
         <Img
@@ -60,7 +88,9 @@ const Post = ({
           alt="Post cover"
         />
       )}
-      <MDXRenderer>{body}</MDXRenderer>
+      <MDXProvider components={components}>
+        <MDXRenderer>{body}</MDXRenderer>
+      </MDXProvider>
       <div className={style.actions}>
         <OutboundLink
           href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(

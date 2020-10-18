@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { Container } from "@material-ui/core";
 
 import SEO from "../components/seo";
 import Layout from "../components/layout";
@@ -31,14 +32,16 @@ const Index = ({
     <>
       <SEO />
       <Layout>
-        <About avatar={avatar} />
-        <PostPreviews posts={posts} />
-        <Navigation
-          previousPath={previousPagePath}
-          previousLabel="Newer posts"
-          nextPath={nextPagePath}
-          nextLabel="Older posts"
-        />
+        <Container maxWidth="md" component="main" className="content">
+          <About avatar={avatar} />
+          <PostPreviews posts={posts} />
+          <Navigation
+            previousPath={previousPagePath}
+            previousLabel="Newer posts"
+            nextPath={nextPagePath}
+            nextLabel="Older posts"
+          />
+        </Container>
       </Layout>
     </>
   );
@@ -65,6 +68,7 @@ export const postsQuery = graphql`
           frontmatter {
             title
             date(formatString: "LL")
+            excerpt
             path
             coverImage {
               childImageSharp {

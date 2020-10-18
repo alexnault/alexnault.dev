@@ -1,5 +1,6 @@
 import React from "react";
 import { OutboundLink } from "gatsby-plugin-gtag";
+import { Link } from "@material-ui/core";
 
 import style from "../styles/footer.module.css";
 
@@ -18,19 +19,22 @@ const Footer = ({ copyrights }: Props) => (
     ) : (
       <>
         <span className={style.item}>
-          <OutboundLink href="https://github.com/alexnault">
+          <Link component={OutboundLink} href="https://github.com/alexnault">
             Github
-          </OutboundLink>
+          </Link>
         </span>
         <span className={style.item}>
-          <OutboundLink href="https://www.linkedin.com/in/naultalex">
+          <Link
+            component={OutboundLink}
+            href="https://www.linkedin.com/in/naultalex"
+          >
             LinkedIn
-          </OutboundLink>
+          </Link>
         </span>
         <span className={style.item}>
-          <OutboundLink href="https://twitter.com/nault_alex">
+          <Link component={OutboundLink} href="https://twitter.com/nault_alex">
             Twitter
-          </OutboundLink>
+          </Link>
         </span>
       </>
     )}

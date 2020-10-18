@@ -1,4 +1,5 @@
 import React from "react";
+import Typography from "@material-ui/core/Typography";
 
 import PostPreview from "../components/postPreview";
 
@@ -12,12 +13,15 @@ type Props = {
 const PostPreviews = ({ posts }: Props) => {
   return (
     <>
-      <h2 className={typography.h3}>Latest articles</h2>
+      <Typography variant="h4" component="h2" gutterBottom>
+        Latest articles
+      </Typography>
+      {/* <h2 className={typography.h3}>Latest articles</h2> */}
       <div className={style.postPreviews}>
         {posts.map(({ node }) => {
           const {
             id,
-            frontmatter: { title, date, path, coverImage },
+            frontmatter: { title, date, path, coverImage, excerpt },
           } = node;
 
           return (
@@ -25,6 +29,7 @@ const PostPreviews = ({ posts }: Props) => {
               key={id}
               title={title}
               date={date}
+              excerpt={excerpt}
               path={path}
               coverImage={coverImage}
             />
