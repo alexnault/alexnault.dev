@@ -1,56 +1,7 @@
-.post {
-  position: relative;
-
-  &:not(:last-of-type) {
-    border-bottom: 1px solid var(--light-border-color);
-
-    :global .dark-theme :local & {
-      border-color: var(--dark-border-color);
-    }
-  }
-
-  h1 {
-    margin: 0 0 16px;
-  }
-
-  img {
-    border-radius: 8px;
-  }
-}
-
 .coverImage {
   border-radius: 8px;
   margin-bottom: 40px;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-.meta {
-  font-size: 1rem;
-  margin-bottom: 32px;
-  color: var(--light-color-secondary);
-  font-weight: bold;
-
-  :global .dark-theme :local & {
-    color: var(--dark-color-secondary);
-  }
-}
-
-.tags {
-  margin-top: 8px;
-  opacity: 0.5;
-}
-
-.tag {
-  display: inline-block;
-  margin-right: 8px;
-}
-
-.readMore {
-  display: inline-block;
-  text-decoration: none;
-  font-weight: bold;
-  margin: 16px 0;
-  font-size: 1rem;
 }
 
 .actions {

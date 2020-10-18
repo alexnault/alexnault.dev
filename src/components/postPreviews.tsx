@@ -1,9 +1,8 @@
 import React from "react";
-import Typography from "@material-ui/core/Typography";
+import { Typography } from "@material-ui/core";
 
 import PostPreview from "../components/postPreview";
 
-import typography from "../styles/typography.module.css";
 import style from "../styles/postPreviews.module.css";
 
 type Props = {

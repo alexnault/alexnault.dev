@@ -9,6 +9,30 @@ import { MDXProvider } from "@mdx-js/react";
 
 import style from "../styles/post.module.css";
 
+const H1 = (props) => (
+  <Typography component="h1" variant="h3" gutterBottom {...props} />
+);
+const H2 = (props) => (
+  <Typography component="h2" variant="h4" gutterBottom {...props} />
+);
+const H3 = (props) => (
+  <Typography component="h3" variant="h5" gutterBottom {...props} />
+);
+const H4 = (props) => (
+  <Typography component="h4" variant="h6" gutterBottom {...props} />
+);
+const P = (props) => <Typography variant="body1" paragraph {...props} />;
+const A = (props) => <MuiLink {...props} />;
+
+const components = {
+  h1: H1,
+  h2: H2,
+  h3: H3,
+  h4: H4,
+  a: A,
+  p: P,
+};
+
 type Props = {
   title: string;
   path: string;
@@ -19,22 +43,6 @@ type Props = {
   previousPost: any;
   nextPost: any;
   avatar: any;
-};
-
-const MyH1 = (props) => <Typography component="h1" variant="h3" {...props} />;
-const MyH2 = (props) => <Typography component="h2" variant="h4" {...props} />;
-const MyH3 = (props) => <Typography component="h3" variant="h5" {...props} />;
-const MyH4 = (props) => <Typography component="h4" variant="h6" {...props} />;
-const MyP = (props) => <Typography variant="body1" paragraph {...props} />;
-const MyLink = (props) => <MuiLink {...props} />; // Test gatsby link
-
-const components = {
-  h1: MyH1,
-  h2: MyH2,
-  h3: MyH3,
-  h4: MyH4,
-  a: MyLink,
-  p: MyP,
 };
 
 const Post = ({
@@ -54,32 +62,14 @@ const Post = ({
   const nextLabel = nextPost && nextPost.frontmatter.title;
 
   return (
-    <article className={style.post}>
+    <article>
       <header>
-        {/* <h1 className={style.title}>{title}</h1> */}
-        <Typography variant="h3" component="h1" className={style.title}>
+        <Typography variant="h2" component="h1" className={style.title}>
           {title}
         </Typography>
-        <Typography
-          variant="subtitle1"
-          color="textSecondary"
-          paragraph
-          className={style.meta}
-        >
+        <Typography variant="subtitle1" color="textSecondary" paragraph>
           {excerpt}
         </Typography>
-        {/* <p className={style.meta}> */}
-        {/* {excerpt} */}
-        {/* {tags ? (
-            <div className={style.tags}>
-              {tags.map((tag) => (
-                <Link to={`/tag/${toKebabCase(tag)}/`} key={toKebabCase(tag)}>
-                  <span className={style.tag}>#{tag}</span>
-                </Link>
-              ))}
-            </div>
-          ) : null} */}
-        {/* </p> */}
       </header>
       {coverImage && (
         <Img
@@ -92,7 +82,8 @@ const Post = ({
         <MDXRenderer>{body}</MDXRenderer>
       </MDXProvider>
       <div className={style.actions}>
-        <OutboundLink
+        <MuiLink
+          component={OutboundLink}
           href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
             `${title} by Alex Nault https://alexnault.dev${path}`
           )}`}
@@ -100,8 +91,9 @@ const Post = ({
           rel="noopener noreferrer"
         >
           Share
-        </OutboundLink>
-        <OutboundLink
+        </MuiLink>
+        <MuiLink
+          component={OutboundLink}
           href={`https://github.com/alexnault/alexnault.dev/edit/master/src/posts/${path.replace(
             "/",
             ""
@@ -110,7 +102,7 @@ const Post = ({
           rel="noopener noreferrer"
         >
           Edit
-        </OutboundLink>
+        </MuiLink>
       </div>
       <div className={style.author}>
         <Img
@@ -121,7 +113,10 @@ const Post = ({
         <div>
           <div>
             <b>
-              By <Link to="/">Alex Nault</Link>
+              By{" "}
+              <MuiLink component={Link} to="/">
+                Alex Nault
+              </MuiLink>
             </b>
           </div>
           <div>I write bite-sized articles for developers</div>

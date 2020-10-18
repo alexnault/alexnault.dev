@@ -10,7 +10,6 @@ module.exports = {
     title: `Alex Nault`,
     description:
       "I solve problems using software and write bite-sized articles for developers.",
-    copyrights: "",
     author: `Alex Nault`,
     twitterUsername: "@nault_alex",
     logo: {

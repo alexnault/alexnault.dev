@@ -9,7 +9,7 @@ const NotFoundPage = () => (
   <Layout>
     <Container maxWidth="sm" component="main" className="content">
       <SEO title="404 Not found" />
-      <Typography variant="h4" component="h1" gutterBottom>
+      <Typography variant="h3" component="h1" gutterBottom>
         Oops! Page not found
       </Typography>
       <Typography color="textSecondary" paragraph>
