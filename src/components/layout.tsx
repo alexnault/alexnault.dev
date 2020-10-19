@@ -11,7 +11,6 @@ import "fontsource-nunito/700.css";
 
 import Header from "./header";
 import Footer from "./footer";
-import { ThemeProvider } from "./themeContext";
 
 import "../styles/layout.css";
 
@@ -38,18 +37,16 @@ const Layout = ({ children }: Props) => {
   const { title, logo, logoText, defaultTheme } = data.site.siteMetadata;
 
   return (
-    <ThemeProvider>
-      <div className="layout">
-        <Header
-          // siteTitle={title}
-          siteLogo={logo}
-          logoText={logoText}
-          defaultTheme={defaultTheme}
-        />
-        {children}
-        <Footer />
-      </div>
-    </ThemeProvider>
+    <>
+      <Header
+        // siteTitle={title}
+        siteLogo={logo}
+        logoText={logoText}
+        defaultTheme={defaultTheme}
+      />
+      {children}
+      <Footer />
+    </>
   );
 };
 
