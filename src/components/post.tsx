@@ -87,6 +87,7 @@ const Post = ({
           href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
             `${title} by Alex Nault https://alexnault.dev${path}`
           )}`}
+          color="textPrimary"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -98,6 +99,7 @@ const Post = ({
             "/",
             ""
           )}.mdx`}
+          color="textPrimary"
           target="_blank"
           rel="noopener noreferrer"
         >

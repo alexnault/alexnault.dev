@@ -1,7 +1,6 @@
 .postPreview {
   overflow: hidden;
-
-  transition: transform 200ms;
+  transition: transform 200ms !important;
 
   &:hover,
   &:focus {
@@ -10,7 +9,8 @@
 }
 
 .content {
-  padding: 24px;
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 
 .backgroundImage {

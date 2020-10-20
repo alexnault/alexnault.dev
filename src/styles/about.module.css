@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   align-items: center;
   margin: 0 auto 32px;
+  max-width: 960px;
   @media (--phone) {
     > div {
       flex-basis: 100%;

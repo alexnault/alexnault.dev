@@ -13,6 +13,7 @@ import {
   darken,
 } from "@material-ui/core/styles";
 import createPalette from "@material-ui/core/styles/createPalette";
+import createBreakpoints from "@material-ui/core/styles/createBreakpoints";
 import { CssBaseline, PaletteType } from "@material-ui/core";
 import { blue, pink } from "@material-ui/core/colors";
 
@@ -24,24 +25,26 @@ export function createTheme({ paletteType }: ThemeOptions) {
   const palette = createPalette({
     type: paletteType,
     primary: {
-      main: paletteType === "light" ? blue[700] : blue[200],
+      main: paletteType === "light" ? "#0070f3" : pink[200],
     },
     secondary: {
-      main: paletteType === "light" ? darken(pink.A400, 0.1) : pink[200],
+      main: paletteType === "light" ? blue[700] : blue[200],
+    },
+  });
+
+  const breakpoints = createBreakpoints({
+    values: {
+      xs: 0,
+      sm: 776, // 728 + (24 * 2)
+      md: 960,
+      lg: 1280,
+      xl: 1920,
     },
   });
 
   const theme = createMuiTheme({
     palette,
-    breakpoints: {
-      values: {
-        xs: 0,
-        sm: 776, // 728 + (24 * 2)
-        md: 960,
-        lg: 1280,
-        xl: 1920,
-      },
-    },
+    breakpoints,
     typography: {
       fontFamily: [
         "Nunito",
@@ -71,18 +74,34 @@ export function createTheme({ paletteType }: ThemeOptions) {
         fontWeight: 700,
       },
       body1: {
-        fontSize: "1.25rem", // 20px
+        fontSize: 20,
+        [breakpoints.down("sm")]: {
+          fontSize: 18,
+        },
       },
       body2: {
-        fontSize: "1.125rem", // 18px
+        fontSize: 18,
+        [breakpoints.down("sm")]: {
+          fontSize: 16,
+        },
       },
       subtitle1: {
-        fontSize: "1.25rem", // 20px
-        fontWeight: 700,
+        fontSize: 20,
+        [breakpoints.down("sm")]: {
+          fontSize: 18,
+        },
       },
       subtitle2: {
-        fontSize: "1.125rem", // 18px
-        fontWeight: 700,
+        fontSize: 18,
+        [breakpoints.down("sm")]: {
+          fontSize: 16,
+        },
+      },
+      button: {
+        fontSize: 18,
+        [breakpoints.down("sm")]: {
+          fontSize: 16,
+        },
       },
     },
     props: {
@@ -137,10 +156,11 @@ export function createTheme({ paletteType }: ThemeOptions) {
     ],
   });
 
-  // TODO
-  const them2 = responsiveFontSizes(theme);
+  const responsiveTheme = responsiveFontSizes(theme, {
+    variants: ["h1", "h2", "h3", "h4", "h5", "h6"],
+  });
 
-  return theme;
+  return responsiveTheme;
 }
 
 export const DispatchContext = createContext<

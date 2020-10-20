@@ -32,7 +32,7 @@ const Index = ({
     <>
       <SEO />
       <Layout>
-        <Container maxWidth="md" component="main" className="content">
+        <Container component="main" className="content">
           <About avatar={avatar} />
           <PostPreviews posts={posts} />
           <Navigation
