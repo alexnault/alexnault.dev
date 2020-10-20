@@ -17,7 +17,7 @@ const PostPreview = ({ title, date, path, coverImage, excerpt }: Props) => {
   const backgroundFluidImageStack = [coverImage.childImageSharp.fluid];
 
   return (
-    <Paper component={Link} className={style.postPreview}>
+    <Paper className={style.postPreview}>
       <Link to={path}>
         <BackgroundImage
           fluid={backgroundFluidImageStack}
