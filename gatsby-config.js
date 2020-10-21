@@ -30,6 +30,15 @@ module.exports = {
       },
     },
     `gatsby-plugin-typescript`,
+    "gatsby-plugin-top-layout",
+    {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        stylesProvider: {
+          injectFirst: true,
+        },
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -127,6 +136,5 @@ module.exports = {
     `gatsby-plugin-sitemap`,
     "gatsby-plugin-robots-txt",
     "gatsby-plugin-remove-generator",
-    "gatsby-plugin-material-ui",
   ],
 };
