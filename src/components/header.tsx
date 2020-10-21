@@ -19,21 +19,6 @@ type Props = {
 const Header = ({ siteLogo, logoText, defaultTheme }: Props) => {
   const { palette } = useTheme();
   const changeTheme = useChangeTheme();
-  // const defaultThemeState =
-  //   (typeof window !== "undefined" && window.localStorage.getItem("theme")) ||
-  //   null;
-  // const [userTheme, changeTheme] = useState(defaultThemeState);
-
-  // const theme = userTheme || defaultTheme;
-
-  // const onChangeTheme = () => {
-  //   const opositeTheme = theme === "light" ? "dark" : "light";
-
-  //   changeTheme(opositeTheme);
-
-  //   typeof window !== "undefined" &&
-  //     window.localStorage.setItem("theme", opositeTheme);
-  // };
 
   const handleChangeTheme = () => {
     changeTheme({ paletteType: palette.type === "dark" ? "light" : "dark" });
