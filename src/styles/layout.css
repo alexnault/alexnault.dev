@@ -10,17 +10,6 @@ svg {
   fill: currentColor;
 }
 
-.excalidraw {
-  path {
-    stroke: var(--light-color);
-  }
-  .dark-theme & {
-    path {
-      stroke: var(--dark-color);
-    }
-  }
-}
-
 figure {
   display: table;
   max-width: 100%;
