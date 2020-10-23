@@ -23,6 +23,7 @@ const H4 = (props) => (
 );
 const P = (props) => <Typography variant="body1" paragraph {...props} />;
 const A = (props) => <MuiLink {...props} />;
+const Li = (props) => <Typography component="li" {...props} />;
 
 const components = {
   h1: H1,
@@ -31,6 +32,7 @@ const components = {
   h4: H4,
   a: A,
   p: P,
+  li: Li,
 };
 
 type Props = {
@@ -68,7 +70,7 @@ const Post = ({
           {title}
         </Typography>
         <Typography variant="subtitle1" color="textSecondary" paragraph>
-          {excerpt}
+          <b>{excerpt}</b>
         </Typography>
       </header>
       {coverImage && (
@@ -87,6 +89,7 @@ const Post = ({
           href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
             `${title} by Alex Nault https://alexnault.dev${path}`
           )}`}
+          variant="body1"
           color="textPrimary"
           target="_blank"
           rel="noopener noreferrer"
@@ -99,6 +102,7 @@ const Post = ({
             "/",
             ""
           )}.mdx`}
+          variant="body1"
           color="textPrimary"
           target="_blank"
           rel="noopener noreferrer"
@@ -113,15 +117,15 @@ const Post = ({
           alt="Alex Nault"
         />
         <div>
-          <div>
+          <Typography>
             <b>
-              By{" "}
+              {"By "}
               <MuiLink component={Link} to="/">
                 Alex Nault
               </MuiLink>
             </b>
-          </div>
-          <div>I write bite-sized articles for developers</div>
+          </Typography>
+          <Typography>I write bite-sized articles for developers</Typography>
         </div>
       </div>
       <Navigation

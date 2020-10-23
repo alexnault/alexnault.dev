@@ -7,24 +7,16 @@
 }
 
 .button {
-  background: var(--light-background-secondary);
   font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
   appearance: none;
-
-  :global .dark-theme :local & {
-    background: var(--dark-background-secondary);
-  }
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
 
   + .button {
     margin-left: 16px;
-  }
-
-  a {
-    display: flex;
-    align-items: center;
-    padding: 8px 16px;
   }
 }
 
