@@ -1,7 +1,7 @@
 import React from "react";
 import Img from "gatsby-image";
 import { OutboundLink } from "gatsby-plugin-gtag";
-import { Typography, Link } from "@material-ui/core";
+import { Typography, Link, IconButton } from "@material-ui/core";
 
 import Icon from "../components/icon";
 
@@ -32,7 +32,9 @@ const About = ({ avatar }: Props) => {
       </div>
       <div className={style.content}>
         <Typography variant="h3" component="h1" gutterBottom>
-          {"Hi, I'm Alex Nault and I solve problems using software."}
+          {"Hi, I'm "}
+          <span className={style.test}>Alex Nault</span>
+          {" and I solve problems using software."}
         </Typography>
         <Typography>
           {"I'm currently building solutions at "}
@@ -50,34 +52,35 @@ const About = ({ avatar }: Props) => {
           .
         </Typography>
         <div className={style.social}>
-          <Link
+          <IconButton
+            edge="start"
             component={OutboundLink}
             href="https://github.com/alexnault"
             aria-label="Github"
           >
-            <Icon style={{ cursor: "pointer" }} size={24} d={githubIcon} />
-          </Link>
-          <Link
+            <Icon size={24} d={githubIcon} />
+          </IconButton>
+          <IconButton
             component={OutboundLink}
             href="https://www.linkedin.com/in/naultalex"
             aria-label="LinkedIn"
           >
-            <Icon style={{ cursor: "pointer" }} size={24} d={linkedInIcon} />
-          </Link>
-          <Link
+            <Icon size={24} d={linkedInIcon} />
+          </IconButton>
+          <IconButton
             component={OutboundLink}
             href="https://twitter.com/nault_alex"
             aria-label="Twitter"
           >
-            <Icon style={{ cursor: "pointer" }} size={24} d={twitterIcon} />
-          </Link>
-          <Link
+            <Icon size={24} d={twitterIcon} />
+          </IconButton>
+          <IconButton
             component={OutboundLink}
             href="mailto:nault.alex@gmail.com"
             aria-label="Email"
           >
-            <Icon style={{ cursor: "pointer" }} size={24} d={emailIcon} />
-          </Link>
+            <Icon size={24} d={emailIcon} />
+          </IconButton>
         </div>
       </div>
     </div>

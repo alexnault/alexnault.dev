@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import { useTheme } from "@material-ui/core/styles";
-import { Typography, Paper } from "@material-ui/core";
+import { Typography, Paper, IconButton } from "@material-ui/core";
 
 import Icon from "./icon";
 import { useChangeTheme } from "./themeContext";
@@ -43,14 +43,13 @@ const Header = ({ siteLogo, logoText, defaultTheme }: Props) => {
           </Typography>
         </Link>
         <span className={style.right}>
-          <button
-            className={style.themeToggle}
+          <IconButton
+            edge="end"
             onClick={handleChangeTheme}
-            type="button"
             aria-label="Theme toggle"
           >
-            <Icon style={{ cursor: "pointer" }} size={24} d={toggleIcon} />
-          </button>
+            <Icon size={24} d={toggleIcon} />
+          </IconButton>
         </span>
       </div>
     </Paper>

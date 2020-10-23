@@ -8,7 +8,7 @@ const Footer = () => (
   <footer className={style.footer}>
     <Link
       component={OutboundLink}
-      color="textPrimary"
+      color="textSecondary"
       href="https://github.com/alexnault"
     >
       Github
@@ -16,7 +16,7 @@ const Footer = () => (
     <Divider orientation="vertical" />
     <Link
       component={OutboundLink}
-      color="textPrimary"
+      color="textSecondary"
       href="https://www.linkedin.com/in/naultalex"
     >
       LinkedIn
@@ -24,7 +24,7 @@ const Footer = () => (
     <Divider orientation="vertical" />
     <Link
       component={OutboundLink}
-      color="textPrimary"
+      color="textSecondary"
       href="https://twitter.com/nault_alex"
     >
       Twitter

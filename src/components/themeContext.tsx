@@ -25,10 +25,10 @@ export default function createTheme({ paletteType }: ThemeOptions) {
   const palette = createPalette({
     type: paletteType,
     primary: {
-      main: paletteType === "light" ? "#0070f3" : pink[200],
+      main: paletteType === "light" ? "#d81188" : pink[200],
     },
     secondary: {
-      main: paletteType === "light" ? blue[700] : blue[200],
+      main: paletteType === "light" ? "#006cee" : blue[200],
     },
   });
 
