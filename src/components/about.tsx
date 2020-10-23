@@ -33,7 +33,7 @@ const About = ({ avatar }: Props) => {
       <div className={style.content}>
         <Typography variant="h3" component="h1" gutterBottom>
           {"Hi, I'm "}
-          <span className={style.test}>Alex Nault</span>
+          <span className={style.highlight}>Alex Nault</span>
           {" and I solve problems using software."}
         </Typography>
         <Typography>
