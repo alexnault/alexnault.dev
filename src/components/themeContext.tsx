@@ -47,7 +47,7 @@ export default function createTheme({ paletteType }: ThemeOptions) {
     breakpoints,
     typography: {
       fontFamily: [
-        "Nunito",
+        "Inter",
         "-apple-system",
         "BlinkMacSystemFont",
         "Segoe UI",
