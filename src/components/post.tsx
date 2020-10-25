@@ -5,35 +5,10 @@ import Navigation from "./navigation";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { OutboundLink } from "gatsby-plugin-gtag";
 import { Typography, Link as MuiLink } from "@material-ui/core";
-import { MDXProvider } from "@mdx-js/react";
+
+import CustomMDXProvider from "./customMDXProvider";
 
 import style from "../styles/post.module.css";
-
-const H1 = (props) => (
-  <Typography component="h1" variant="h3" gutterBottom {...props} />
-);
-const H2 = (props) => (
-  <Typography component="h2" variant="h4" gutterBottom {...props} />
-);
-const H3 = (props) => (
-  <Typography component="h3" variant="h5" gutterBottom {...props} />
-);
-const H4 = (props) => (
-  <Typography component="h4" variant="h6" gutterBottom {...props} />
-);
-const P = (props) => <Typography variant="body1" paragraph {...props} />;
-const A = (props) => <MuiLink {...props} />;
-const Li = (props) => <Typography component="li" {...props} />;
-
-const components = {
-  h1: H1,
-  h2: H2,
-  h3: H3,
-  h4: H4,
-  a: A,
-  p: P,
-  li: Li,
-};
 
 type Props = {
   title: string;
@@ -80,9 +55,9 @@ const Post = ({
           alt="Post cover"
         />
       )}
-      <MDXProvider components={components}>
+      <CustomMDXProvider>
         <MDXRenderer>{body}</MDXRenderer>
-      </MDXProvider>
+      </CustomMDXProvider>
       <div className={style.actions}>
         <MuiLink
           component={OutboundLink}

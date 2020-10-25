@@ -57,11 +57,6 @@ code {
 :not(pre) > code[class*="language-"] {
   border-radius: 4px;
   color: inherit;
-  background: var(--light-background-secondary);
-
-  .dark-theme & {
-    background: var(--dark-background-secondary);
-  }
 }
 
 /* Code block */
@@ -147,4 +142,9 @@ ol ol {
     height: 100%;
     border: 0;
   }
+}
+
+::selection {
+  color: black;
+  background: #79ffe1;
 }

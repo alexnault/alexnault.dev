@@ -1,16 +1,1 @@
-:root {
-  --primary-color: #ff79c6;
-  --light-background: #fafafa;
-  --light-background-secondary: #eaeaea;
-  --light-background-paper: #ffffff;
-  --light-color: rgba(0, 0, 0, 0.87);
-  --light-color-secondary: rgba(0, 0, 0, 0.54);
-  --light-border-color: rgba(0, 0, 0, 0.12);
-
-  /* variables for js, must be the same as these in @custom-media queries */
-  --phoneWidth: (max-width: 600);
-  --tabletWidth: (max-width: 960px);
-}
-
 @custom-media --phone (width < 600px);
-@custom-media --tablet (width < 960px);

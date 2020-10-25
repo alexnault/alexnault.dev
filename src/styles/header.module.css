@@ -29,7 +29,7 @@
   display: inline-block;
   width: 8px;
   height: 1rem;
-  background: var(--primary-color);
+  background: #ff79c6;
   margin-left: 4px;
   border-radius: 1px;
   animation: cursor 1s infinite;

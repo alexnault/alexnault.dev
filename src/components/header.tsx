@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import { useTheme } from "@material-ui/core/styles";
-import { Typography, Paper, IconButton } from "@material-ui/core";
+import { Typography, IconButton } from "@material-ui/core";
 
 import Icon from "./icon";
 import { useChangeTheme } from "./themeContext";
@@ -13,10 +13,9 @@ const toggleIcon = `M0 12c0 6.627 5.373 12 12 12s12-5.373 12-12-5.373-12-12-12-1
 type Props = {
   siteLogo: any;
   logoText: string;
-  defaultTheme: string;
 };
 
-const Header = ({ siteLogo, logoText, defaultTheme }: Props) => {
+const Header = ({ siteLogo, logoText }: Props) => {
   const { palette } = useTheme();
   const changeTheme = useChangeTheme();
 
@@ -25,7 +24,10 @@ const Header = ({ siteLogo, logoText, defaultTheme }: Props) => {
   };
 
   return (
-    <Paper component="header" elevation={0} square className={style.header}>
+    <header
+      className={style.header}
+      style={{ backgroundColor: palette.type === "dark" ? "#212121" : "white" }}
+    >
       <div className={style.inner}>
         <Link to="/">
           <Typography color="textPrimary">
@@ -52,7 +54,7 @@ const Header = ({ siteLogo, logoText, defaultTheme }: Props) => {
           </IconButton>
         </span>
       </div>
-    </Paper>
+    </header>
   );
 };
 
