@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "gatsby";
-import { Helmet } from "react-helmet";
+import { useTheme } from "@material-ui/core/styles";
+import { Typography, IconButton } from "@material-ui/core";
 
 import Icon from "./icon";
+import { useChangeTheme } from "./themeContext";
 
 import style from "../styles/header.module.css";
 
@@ -11,35 +13,24 @@ const toggleIcon = `M0 12c0 6.627 5.373 12 12 12s12-5.373 12-12-5.373-12-12-12-1
 type Props = {
   siteLogo: any;
   logoText: string;
-  defaultTheme: string;
 };
 
-const Header = (props: Props) => {
-  const { siteLogo, logoText, defaultTheme } = props;
-  const defaultThemeState =
-    (typeof window !== "undefined" && window.localStorage.getItem("theme")) ||
-    null;
-  const [userTheme, changeTheme] = useState(defaultThemeState);
+const Header = ({ siteLogo, logoText }: Props) => {
+  const { palette } = useTheme();
+  const changeTheme = useChangeTheme();
 
-  const theme = userTheme || defaultTheme;
-
-  const onChangeTheme = () => {
-    const opositeTheme = theme === "light" ? "dark" : "light";
-
-    changeTheme(opositeTheme);
-
-    typeof window !== "undefined" &&
-      window.localStorage.setItem("theme", opositeTheme);
+  const handleChangeTheme = () => {
+    changeTheme({ paletteType: palette.type === "dark" ? "light" : "dark" });
   };
 
   return (
-    <>
-      <Helmet>
-        <body className={theme === "light" ? "light-theme" : "dark-theme"} />
-      </Helmet>
-      <header className={style.header}>
-        <div className={style.inner}>
-          <Link to="/">
+    <header
+      className={style.header}
+      style={{ backgroundColor: palette.type === "dark" ? "#212121" : "white" }}
+    >
+      <div className={style.inner}>
+        <Link to="/">
+          <Typography color="textPrimary">
             <div className={style.logo}>
               {siteLogo.src ? (
                 <img src={siteLogo.src} alt={siteLogo.alt} />
@@ -51,20 +42,19 @@ const Header = (props: Props) => {
                 </>
               )}
             </div>
-          </Link>
-          <span className={style.right}>
-            <button
-              className={style.themeToggle}
-              onClick={onChangeTheme}
-              type="button"
-              aria-label="Theme toggle"
-            >
-              <Icon style={{ cursor: "pointer" }} size={24} d={toggleIcon} />
-            </button>
-          </span>
-        </div>
-      </header>
-    </>
+          </Typography>
+        </Link>
+        <span className={style.right}>
+          <IconButton
+            edge="end"
+            onClick={handleChangeTheme}
+            aria-label="Theme toggle"
+          >
+            <Icon size={24} d={toggleIcon} />
+          </IconButton>
+        </span>
+      </div>
+    </header>
   );
 };
 

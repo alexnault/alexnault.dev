@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
+import { Paper } from "@material-ui/core";
 
 import style from "../styles/navigation.module.css";
 
@@ -19,20 +20,16 @@ const Navigation = ({
   previousPath || nextPath ? (
     <div className={style.navigation}>
       {previousPath && (
-        <span className={style.button}>
-          <Link to={previousPath}>
-            <span className={style.iconPrev}>←</span>
-            <span className={style.buttonText}>{previousLabel}</span>
-          </Link>
-        </span>
+        <Paper component={Link} to={previousPath} className={style.button}>
+          <span className={style.iconPrev}>←</span>
+          <span className={style.buttonText}>{previousLabel}</span>
+        </Paper>
       )}
       {nextPath && (
-        <span className={style.button}>
-          <Link to={nextPath}>
-            <span className={style.buttonText}>{nextLabel}</span>
-            <span className={style.iconNext}>→</span>
-          </Link>
-        </span>
+        <Paper component={Link} to={nextPath} className={style.button}>
+          <span className={style.buttonText}>{nextLabel}</span>
+          <span className={style.iconNext}>→</span>
+        </Paper>
       )}
     </div>
   ) : null;

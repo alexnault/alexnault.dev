@@ -6,7 +6,7 @@ type Props = {
   d: string;
   size?: number | string;
   label?: string;
-  style: any;
+  style?: any;
 };
 
 const Icon = (props: Props) => {
