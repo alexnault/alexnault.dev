@@ -2,9 +2,11 @@ import React from "react";
 import { Link } from "gatsby";
 import Img from "gatsby-image";
 import Navigation from "./navigation";
-import { toKebabCase } from "../helpers";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { OutboundLink } from "gatsby-plugin-gtag";
+import { Typography, Link as MuiLink } from "@material-ui/core";
+
+import CustomMDXProvider from "./customMDXProvider";
 
 import style from "../styles/post.module.css";
 
@@ -37,21 +39,14 @@ const Post = ({
   const nextLabel = nextPost && nextPost.frontmatter.title;
 
   return (
-    <article className={style.post}>
+    <article>
       <header>
-        <h1 className={style.title}>{title}</h1>
-        <div className={style.meta}>
-          {excerpt}
-          {tags ? (
-            <div className={style.tags}>
-              {tags.map((tag) => (
-                <Link to={`/tag/${toKebabCase(tag)}/`} key={toKebabCase(tag)}>
-                  <span className={style.tag}>#{tag}</span>
-                </Link>
-              ))}
-            </div>
-          ) : null}
-        </div>
+        <Typography variant="h2" component="h1" className={style.title}>
+          {title}
+        </Typography>
+        <Typography variant="subtitle1" color="textSecondary" paragraph>
+          <b>{excerpt}</b>
+        </Typography>
       </header>
       {coverImage && (
         <Img
@@ -60,27 +55,35 @@ const Post = ({
           alt="Post cover"
         />
       )}
-      <MDXRenderer>{body}</MDXRenderer>
+      <CustomMDXProvider>
+        <MDXRenderer>{body}</MDXRenderer>
+      </CustomMDXProvider>
       <div className={style.actions}>
-        <OutboundLink
+        <MuiLink
+          component={OutboundLink}
           href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
             `${title} by Alex Nault https://alexnault.dev${path}`
           )}`}
+          variant="body1"
+          color="textPrimary"
           target="_blank"
           rel="noopener noreferrer"
         >
           Share
-        </OutboundLink>
-        <OutboundLink
+        </MuiLink>
+        <MuiLink
+          component={OutboundLink}
           href={`https://github.com/alexnault/alexnault.dev/edit/master/src/posts/${path.replace(
             "/",
             ""
           )}.mdx`}
+          variant="body1"
+          color="textPrimary"
           target="_blank"
           rel="noopener noreferrer"
         >
           Edit
-        </OutboundLink>
+        </MuiLink>
       </div>
       <div className={style.author}>
         <Img
@@ -89,12 +92,15 @@ const Post = ({
           alt="Alex Nault"
         />
         <div>
-          <div>
+          <Typography>
             <b>
-              By <Link to="/">Alex Nault</Link>
+              {"By "}
+              <MuiLink component={Link} to="/">
+                Alex Nault
+              </MuiLink>
             </b>
-          </div>
-          <div>I write bite-sized articles for developers</div>
+          </Typography>
+          <Typography>I write bite-sized articles for developers</Typography>
         </div>
       </div>
       <Navigation

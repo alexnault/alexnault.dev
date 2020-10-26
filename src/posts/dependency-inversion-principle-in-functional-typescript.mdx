@@ -3,10 +3,11 @@ title: "Dependency Inversion Principle in Functional TypeScript"
 date: "2020-09-03"
 coverImage: "../images/tim-gouw-He9WQV8e7Kk-unsplash.jpg"
 path: "/dependency-inversion-principle-in-functional-typescript"
-excerpt: "A sure way to decouple modules and write testable code"
+excerpt: "A sure way to decouple modules and write testable code."
 tags: []
 ---
 
+import Excalidraw from "../components/excalidraw";
 import { ReactComponent as TraditionalDependencySvg } from "../images/traditional-dependency.svg";
 import { ReactComponent as DependencyInversionSvg } from "../images/dependency-inversion.svg";
 
@@ -29,7 +30,7 @@ Let's take a look at an example!
 
 Let's build a `SignupService` that uses an `HttpClient` as data source, like so:
 
-<TraditionalDependencySvg className="excalidraw" />
+<Excalidraw svg={<TraditionalDependencySvg />} />
 
 Starting with the `HttpClient`:
 
@@ -75,7 +76,7 @@ Let's reimplement it with dependency inversion this time!
 
 We're going to decouple `SignupService` and `HttpClient`. It's going to look like this:
 
-<DependencyInversionSvg className="excalidraw" />
+<Excalidraw svg={<DependencyInversionSvg />} />
 
 First, using an `interface`, let's define the abstraction that will act as the dependency between the domain and the infrastructure:
 

@@ -1,39 +1,34 @@
 import React from "react";
 import { OutboundLink } from "gatsby-plugin-gtag";
+import { Link, Divider } from "@material-ui/core";
 
 import style from "../styles/footer.module.css";
 
-type Props = {
-  copyrights?: string;
-};
-
-const Footer = ({ copyrights }: Props) => (
+const Footer = () => (
   <footer className={style.footer}>
-    {copyrights ? (
-      <div
-        dangerouslySetInnerHTML={{
-          __html: copyrights,
-        }}
-      />
-    ) : (
-      <>
-        <span className={style.item}>
-          <OutboundLink href="https://github.com/alexnault">
-            Github
-          </OutboundLink>
-        </span>
-        <span className={style.item}>
-          <OutboundLink href="https://www.linkedin.com/in/naultalex">
-            LinkedIn
-          </OutboundLink>
-        </span>
-        <span className={style.item}>
-          <OutboundLink href="https://twitter.com/nault_alex">
-            Twitter
-          </OutboundLink>
-        </span>
-      </>
-    )}
+    <Link
+      component={OutboundLink}
+      color="textSecondary"
+      href="https://github.com/alexnault"
+    >
+      Github
+    </Link>
+    <Divider orientation="vertical" />
+    <Link
+      component={OutboundLink}
+      color="textSecondary"
+      href="https://www.linkedin.com/in/naultalex"
+    >
+      LinkedIn
+    </Link>
+    <Divider orientation="vertical" />
+    <Link
+      component={OutboundLink}
+      color="textSecondary"
+      href="https://twitter.com/nault_alex"
+    >
+      Twitter
+    </Link>
   </footer>
 );
 

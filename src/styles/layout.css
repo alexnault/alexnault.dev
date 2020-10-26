@@ -2,141 +2,12 @@
 @import "./variables.css";
 @import "./custom.css";
 
-html {
-  box-sizing: border-box;
-  font-size: 20px;
-  @media (--phone) {
-    font-size: 18px;
-  }
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
-    Arial, sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.54;
-  background-color: var(--light-background);
-  color: var(--light-color);
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  font-feature-settings: "liga", "tnum", "case", "calt", "zero", "ss01", "locl";
-  -webkit-overflow-scrolling: touch;
-  -webkit-text-size-adjust: 100%;
-
-  &.dark-theme {
-    background-color: var(--dark-background);
-    color: var(--dark-color);
-  }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-  line-height: 1.3;
-  margin-top: 2.5rem;
-}
-
-h1,
-.h1 {
-  font-size: 2.625rem;
-}
-
-h2,
-.h2 {
-  font-size: 1.625rem;
-}
-
-h3,
-.h3 {
-  font-size: 1.375rem;
-}
-
-h4,
-.h4 {
-  font-size: 1.125rem;
-}
-
-@media (--phone) {
-  h1,
-  .h1 {
-    font-size: 2rem;
-  }
-
-  h2,
-  .h2 {
-    font-size: 1.4rem;
-  }
-
-  h3,
-  .h3 {
-    font-size: 1.15rem;
-  }
-
-  h4,
-  .h4 {
-    font-size: 1.125rem;
-  }
-}
-
 a {
-  color: inherit;
-  outline: none;
-  transition: color 200ms;
-  &:hover,
-  &:focus {
-    color: var(--primary-color);
-  }
+  text-decoration: none;
 }
 
 svg {
   fill: currentColor;
-}
-
-.excalidraw {
-  path {
-    stroke: var(--light-color);
-  }
-  .dark-theme & {
-    path {
-      stroke: var(--dark-color);
-    }
-  }
-}
-
-img {
-  display: block;
-  max-width: 100%;
-
-  &.left {
-    margin-right: auto;
-  }
-
-  &.center {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  &.right {
-    margin-left: auto;
-  }
 }
 
 figure {
@@ -177,7 +48,7 @@ figure {
 }
 
 code {
-  font-size: 0.85rem;
+  font-size: 16px;
   font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
   font-feature-settings: normal;
 }
@@ -186,11 +57,6 @@ code {
 :not(pre) > code[class*="language-"] {
   border-radius: 4px;
   color: inherit;
-  background: var(--light-background-secondary);
-
-  .dark-theme & {
-    background: var(--dark-background-secondary);
-  }
 }
 
 /* Code block */
@@ -238,33 +104,6 @@ blockquote {
   }
 }
 
-table {
-  table-layout: fixed;
-  border-collapse: collapse;
-  width: 100%;
-  margin: 40px 0;
-  border-radius: 4px;
-}
-
-table,
-th,
-td {
-  border: 1px solid var(--light-color);
-  padding: 8px;
-
-  .dark-theme & {
-    border-color: var(--dark-color);
-  }
-}
-
-th {
-  background: var(--light-background-secondary);
-
-  .dark-theme & {
-    background: var(--dark-background-secondary);
-  }
-}
-
 ul,
 ol {
   margin-left: 40px;
@@ -279,65 +118,14 @@ ol ol {
   list-style-type: lower-alpha;
 }
 
-button,
-input,
-textarea {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
-    Arial, sans-serif;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .content {
-  width: 100%;
-  max-width: calc(728px + 48px * 2);
-  padding: 48px;
+  padding-top: 48px;
+  padding-bottom: 48px;
 
   @media (--phone) {
-    max-width: calc(728px + 16px * 2);
-    padding: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
   }
-}
-
-hr {
-  width: 100%;
-  border: none;
-  background: var(--light-border-color);
-  height: 1px;
-
-  .dark-theme & {
-    background: var(--dark-border-color);
-  }
-}
-
-.infoBanner {
-  text-align: left;
-  margin: 16px 0 40px;
-  padding: 8px 16px;
-  border-radius: 8px;
-  width: calc(100% - 40px);
-  background: var(--light-background-secondary);
-
-  .dark-theme & {
-    background: var(--dark-background-secondary);
-  }
-
-  span {
-    font-weight: bold;
-  }
-}
-
-.hidden {
-  display: none;
 }
 
 .embedVideo-container {
@@ -354,4 +142,9 @@ hr {
     height: 100%;
     border: 0;
   }
+}
+
+::selection {
+  color: black;
+  background: #79ffe1;
 }

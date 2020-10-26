@@ -1,12 +1,9 @@
 .footer {
-  text-align: center;
+  display: flex;
+  justify-content: center;
   padding: 40px 16px;
-}
-
-.item {
-  &:not(:first-of-type) {
-    margin-left: 16px;
-    padding-left: 16px;
-    border-left: 1px solid;
+  hr {
+    height: auto;
+    margin: 0 16px;
   }
 }

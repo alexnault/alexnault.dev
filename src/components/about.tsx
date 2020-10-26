@@ -1,10 +1,10 @@
 import React from "react";
 import Img from "gatsby-image";
 import { OutboundLink } from "gatsby-plugin-gtag";
+import { Typography, Link, IconButton } from "@material-ui/core";
 
 import Icon from "../components/icon";
 
-import typography from "../styles/typography.module.css";
 import style from "../styles/about.module.css";
 
 const githubIcon =
@@ -31,38 +31,56 @@ const About = ({ avatar }: Props) => {
         />
       </div>
       <div className={style.content}>
-        <h1 className={`${typography.h2} ${style.title} `}>
-          {"Hi, I'm Alex Nault and I solve problems using software."}
-        </h1>
-        <p>
+        <Typography variant="h3" component="h1" gutterBottom>
+          {"Hi, I'm "}
+          <span className={style.highlight}>Alex Nault</span>
+          {" and I solve problems using software."}
+        </Typography>
+        <Typography>
           {"I'm currently building solutions at "}
-          <OutboundLink href="https://apprentx.rocks">Apprentx</OutboundLink>
+          <Link component={OutboundLink} href="https://apprentx.rocks">
+            Apprentx
+          </Link>
           {" to improve the way we learn. Previously "}
-          <OutboundLink href="https://www.classcraft.com">
+          <Link component={OutboundLink} href="https://www.classcraft.com">
             Classcraft
-          </OutboundLink>
+          </Link>
           {" and "}
-          <OutboundLink href="https://www.ubisoft.com">Ubisoft</OutboundLink>.
-        </p>
+          <Link component={OutboundLink} href="https://www.ubisoft.com">
+            Ubisoft
+          </Link>
+          .
+        </Typography>
         <div className={style.social}>
-          <OutboundLink href="https://github.com/alexnault" aria-label="Github">
-            <Icon style={{ cursor: "pointer" }} size={24} d={githubIcon} />
-          </OutboundLink>
-          <OutboundLink
+          <IconButton
+            edge="start"
+            component={OutboundLink}
+            href="https://github.com/alexnault"
+            aria-label="Github"
+          >
+            <Icon size={24} d={githubIcon} />
+          </IconButton>
+          <IconButton
+            component={OutboundLink}
             href="https://www.linkedin.com/in/naultalex"
             aria-label="LinkedIn"
           >
-            <Icon style={{ cursor: "pointer" }} size={24} d={linkedInIcon} />
-          </OutboundLink>
-          <OutboundLink
+            <Icon size={24} d={linkedInIcon} />
+          </IconButton>
+          <IconButton
+            component={OutboundLink}
             href="https://twitter.com/nault_alex"
             aria-label="Twitter"
           >
-            <Icon style={{ cursor: "pointer" }} size={24} d={twitterIcon} />
-          </OutboundLink>
-          <OutboundLink href="mailto:nault.alex@gmail.com" aria-label="Email">
-            <Icon style={{ cursor: "pointer" }} size={24} d={emailIcon} />
-          </OutboundLink>
+            <Icon size={24} d={twitterIcon} />
+          </IconButton>
+          <IconButton
+            component={OutboundLink}
+            href="mailto:nault.alex@gmail.com"
+            aria-label="Email"
+          >
+            <Icon size={24} d={emailIcon} />
+          </IconButton>
         </div>
       </div>
     </div>

@@ -10,7 +10,6 @@ module.exports = {
     title: `Alex Nault`,
     description:
       "I solve problems using software and write bite-sized articles for developers.",
-    copyrights: "",
     author: `Alex Nault`,
     twitterUsername: "@nault_alex",
     logo: {
@@ -19,7 +18,6 @@ module.exports = {
     },
     image: "/alex.jpg",
     logoText: "alexnault.dev",
-    defaultTheme: "light",
     postsPerPage: 6,
     siteUrl: "https://alexnault.dev",
   },
@@ -31,6 +29,15 @@ module.exports = {
       },
     },
     `gatsby-plugin-typescript`,
+    "gatsby-plugin-top-layout",
+    {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        stylesProvider: {
+          injectFirst: true,
+        },
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -102,10 +109,7 @@ module.exports = {
             resolve: `gatsby-remark-prismjs`,
             options: {
               classPrefix: "language-",
-              inlineCodeMarker: null,
-              aliases: {},
-              showLineNumbers: false,
-              noInlineHighlight: false,
+              noInlineHighlight: true,
             },
           },
         ],

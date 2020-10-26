@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
+import { Typography, Paper, Container } from "@material-ui/core";
 
-import typography from "../styles/typography.module.css";
 import style from "../styles/postPreview.module.css";
 
 type Props = {
@@ -10,25 +10,36 @@ type Props = {
   date: string;
   path: string;
   coverImage: any;
+  excerpt: string;
 };
 
-const PostPreview = ({ title, date, path, coverImage }: Props) => {
-  const backgroundFluidImageStack = [
-    "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.7) 80%, rgba(0,0,0,0.8) 100%)",
-    coverImage.childImageSharp.fluid,
-  ];
+const PostPreview = ({ title, date, path, coverImage, excerpt }: Props) => {
+  const backgroundFluidImageStack = [coverImage.childImageSharp.fluid];
 
   return (
-    <Link to={path} className={style.postPreview}>
+    <Paper component={Link} to={path} className={style.postPreview}>
       <BackgroundImage
         fluid={backgroundFluidImageStack}
         backgroundColor={`#040e18`}
         className={style.backgroundImage}
-      >
-        <span className={style.date}>{date}</span>
-        <h3 className={`${typography.h4} ${style.title}`}>{title}</h3>
-      </BackgroundImage>
-    </Link>
+      />
+      <Container className={style.content}>
+        <Typography
+          variant="h5"
+          component="h3"
+          color="textPrimary"
+          gutterBottom
+        >
+          {title}
+        </Typography>
+        {/* <Typography variant="overline" gutterBottom>
+          10 min read
+        </Typography> */}
+        <Typography variant="body2" color="textSecondary">
+          {excerpt}
+        </Typography>
+      </Container>
+    </Paper>
   );
 };
 

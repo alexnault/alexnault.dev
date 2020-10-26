@@ -2,20 +2,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
   padding: 16px;
   height: 64px;
-  background: var(--light-background-paper);
-  /* background: linear-gradient(to left, #f7797d, #fbd786, #c6ffdd); */
-
-  :global .dark-theme :local & {
-    /* background: var(--dark-background-paper); */
-    background-color: #1c1c1c;
-  }
-
-  a {
-    text-decoration: none;
-  }
 }
 
 .inner {
@@ -23,19 +11,14 @@
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
-  width: 760px;
+  width: 960px;
   max-width: 100%;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  text-decoration: none;
   font-weight: bold;
-
-  & img {
-    height: 44px;
-  }
 }
 
 .mark {
@@ -46,7 +29,7 @@
   display: inline-block;
   width: 8px;
   height: 1rem;
-  background: var(--primary-color);
+  background: #ff79c6;
   margin-left: 4px;
   border-radius: 1px;
   animation: cursor 1s infinite;
@@ -59,23 +42,6 @@
 
 .right {
   display: flex;
-  position: relative;
-}
-
-.themeToggle {
-  background: none;
-  color: inherit;
-  border: none;
-  box-shadow: none;
-  line-height: 0;
-  padding: 0 4px;
-  appearance: none;
-  outline: none;
-  transition: color 200ms;
-  &:hover,
-  &:focus {
-    color: var(--primary-color);
-  }
 }
 
 @keyframes cursor {
