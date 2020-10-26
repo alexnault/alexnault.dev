@@ -174,18 +174,19 @@ type Props = {
 };
 
 export function ThemeProvider({ children }: Props) {
-  const localTheme =
-    (typeof window !== "undefined" && window.localStorage.getItem("theme")) ||
-    null;
+  // const localTheme =
+  //   (typeof window !== "undefined" && window.localStorage.getItem("theme")) ||
+  //   null;
   // const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   // const preferredType = prefersDarkMode ? "dark" : "light";
-
-  const preferredType = localTheme === "dark" ? "dark" : "light";
+  // const preferredType = localTheme === "dark" ? "dark" : "light";
+  const preferredType = "light"; // Material UI w/ SSR creates a flash of light
 
   const [options, setOptions] = useReducer(
     (state: ThemeOptions, action: Partial<ThemeOptions>) => {
-      typeof window !== "undefined" &&
-        window.localStorage.setItem("theme", action.paletteType);
+      // if (typeof window !== "undefined") {
+      //   window.localStorage.setItem("theme", action.paletteType);
+      // }
       return { ...state, ...action };
     },
     {

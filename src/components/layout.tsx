@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 
 import Header from "./header";
 import Footer from "./footer";
-import TwoPassRenderer from "./twoPassRendere";
 
 import "../styles/layout.css";
 
@@ -29,7 +28,7 @@ const Layout = ({ children }: Props) => {
   const { title, logo, logoText } = data.site.siteMetadata;
 
   return (
-    <TwoPassRenderer>
+    <>
       <Header
         // siteTitle={title}
         siteLogo={logo}
@@ -37,7 +36,7 @@ const Layout = ({ children }: Props) => {
       />
       {children}
       <Footer />
-    </TwoPassRenderer>
+    </>
   );
 };
 
