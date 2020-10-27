@@ -7,7 +7,7 @@ module.exports = {
         "uses-rel-preconnect": "off",
         "works-offline": "off",
         "unused-javascript": "off",
-        "unused-css-rule": "off",
+        "unused-css-rules": "off",
         "offline-start-url": "off",
         "service-worker": "off",
       },
