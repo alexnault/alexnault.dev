@@ -127,6 +127,7 @@ module.exports = {
         icon: `src/images/icon.png`,
       },
     },
+    "gatsby-plugin-offline",
     `gatsby-plugin-catch-links`,
     "gatsby-plugin-svgr",
     `gatsby-plugin-sitemap`,
