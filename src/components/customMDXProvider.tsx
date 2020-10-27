@@ -65,7 +65,7 @@ const H4 = (props) => {
 };
 const P = (props) => <Typography variant="body1" paragraph {...props} />;
 const A = (props) => <Link {...props} />;
-const Li = (props) => <Typography component="li" {...props} />;
+const Li = (props) => <Typography component="li" {...props} gutterBottom />;
 const InlineCode = (props) => {
   const { palette } = useTheme();
   return (
