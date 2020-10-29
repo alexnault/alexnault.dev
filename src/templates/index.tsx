@@ -72,7 +72,7 @@ export const postsQuery = graphql`
             path
             coverImage {
               childImageSharp {
-                fluid(maxWidth: 800) {
+                fluid(maxWidth: 500) {
                   ...GatsbyImageSharpFluid
                 }
               }
