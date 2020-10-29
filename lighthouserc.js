@@ -16,6 +16,7 @@ module.exports = {
         "uses-rel-preconnect": "off",
         "unused-javascript": "off",
         "unused-css-rules": "off",
+        canonical: "off",
       },
     },
     upload: {
