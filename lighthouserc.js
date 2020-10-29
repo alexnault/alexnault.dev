@@ -3,7 +3,7 @@ module.exports = {
     collect: {
       staticDistDir: "./public",
       url: [
-        "http://localhost/",
+        "http://localhost",
         "http://localhost/404",
         "http://localhost/functional-programming-with-javascript-in-3-steps",
         "http://localhost/dependency-inversion-principle-in-functional-typescript",
