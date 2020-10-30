@@ -11,7 +11,7 @@ const Footer = () => (
       color="textSecondary"
       href="https://github.com/alexnault"
     >
-      Github
+      GitHub
     </Link>
     <Divider orientation="vertical" />
     <Link
