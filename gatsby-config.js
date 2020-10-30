@@ -40,6 +40,12 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://alexnault.dev`,
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
@@ -127,6 +133,7 @@ module.exports = {
         icon: `src/images/icon.png`,
       },
     },
+    "gatsby-plugin-offline",
     `gatsby-plugin-catch-links`,
     "gatsby-plugin-svgr",
     `gatsby-plugin-sitemap`,
