@@ -51,7 +51,7 @@ export const postsQuery = graphql`
   query($limit: Int!, $skip: Int!) {
     avatar: file(relativePath: { eq: "alex.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 240) {
+        fluid(maxWidth: 240, maxHeight: 240) {
           ...GatsbyImageSharpFluid
         }
       }
