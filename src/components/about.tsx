@@ -25,7 +25,7 @@ const About = ({ avatar }: Props) => {
     <div className={style.about}>
       <div className={style.imageWrapper}>
         <Img
-          fluid={avatar.childImageSharp.fluid}
+          fluid={avatar.childImageSharp.fixed}
           className={style.avatar}
           alt="Alex Nault"
         />
