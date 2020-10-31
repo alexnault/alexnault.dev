@@ -6,7 +6,7 @@
 
 .actions {
   margin: 32px 0;
-  > a:not(:last-child) {
+  > button:not(:last-child) {
     margin-right: 8px;
   }
 }
