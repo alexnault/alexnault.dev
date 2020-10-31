@@ -2,6 +2,8 @@
 
 My personal website and blog.
 
+![alexnault.dev preview](/media/preview.png?raw=true)
+
 ## Getting started
 
 - `git clone https://github.com/alexnault/alexnault.dev.git`
