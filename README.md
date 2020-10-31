@@ -27,8 +27,10 @@ Contributions of all kind are welcomed! Simply submit a PR.
 
 Thanks to:
 
-- [Radek Kozieł](https://github.com/panr)
+- [Charles-Olivier Demers](https://github.com/codemers)
 - [iconmonstr](https://iconmonstr.com)
+- [Nicolas Charpentier](https://github.com/charpeni)
+- [Radek Kozieł](https://github.com/panr)
 
 ## Licenses
 
