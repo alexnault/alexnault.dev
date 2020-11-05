@@ -17,7 +17,7 @@ const NotFoundPage = () => (
         changed or is temporarily unavailable.
       </Typography>
       <Button variant="contained" component={Link} to="/" color="primary">
-        Go to homepage
+        Go back home
       </Button>
     </Container>
   </Layout>
