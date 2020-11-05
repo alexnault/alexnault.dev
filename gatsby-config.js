@@ -67,6 +67,21 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-webfonts`,
+      options: {
+        fonts: {
+          google: [
+            {
+              family: "Inter",
+              variants: ["400", "700"],
+              fontDisplay: "swap",
+              strategy: "selfHosted",
+            },
+          ],
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-postcss`,
       options: {
         postCssPlugins: [
