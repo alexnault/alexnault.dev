@@ -38,7 +38,6 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-canonical-urls`,
@@ -65,6 +64,21 @@ module.exports = {
       options: {
         name: `pages`,
         path: `${__dirname}/src/pages`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-webfonts`,
+      options: {
+        fonts: {
+          google: [
+            {
+              family: "Inter",
+              variants: ["400", "700"],
+              fontDisplay: "swap",
+              strategy: "selfHosted",
+            },
+          ],
+        },
       },
     },
     {

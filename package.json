@@ -18,8 +18,7 @@
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --quiet",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
-    "preload-fonts": "gatsby-preload-fonts"
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
@@ -27,7 +26,6 @@
     "@mdx-js/mdx": "^1.6.18",
     "@mdx-js/react": "^1.6.18",
     "@svgr/webpack": "^5.4.0",
-    "fontsource-inter": "^3.0.5",
     "gatsby": "^2.24.65",
     "gatsby-awesome-pagination": "^0.3.3",
     "gatsby-background-image": "^1.1.2",
@@ -40,13 +38,13 @@
     "gatsby-plugin-mdx": "^1.2.41",
     "gatsby-plugin-offline": "^3.2.37",
     "gatsby-plugin-postcss": "^2.3.12",
-    "gatsby-plugin-preload-fonts": "^1.2.30",
     "gatsby-plugin-react-helmet": "^3.3.11",
     "gatsby-plugin-remove-generator": "^1.0.6",
     "gatsby-plugin-robots-txt": "^1.5.3",
     "gatsby-plugin-sharp": "^2.6.36",
     "gatsby-plugin-sitemap": "^2.4.13",
     "gatsby-plugin-svgr": "^2.0.2",
+    "gatsby-plugin-webfonts": "^1.1.3",
     "gatsby-remark-autolink-headers": "^2.3.13",
     "gatsby-remark-images": "^3.3.30",
     "gatsby-remark-prismjs": "^3.5.13",
