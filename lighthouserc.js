@@ -12,7 +12,6 @@ module.exports = {
     assert: {
       preset: "lighthouse:recommended",
       assertions: {
-        "maskable-icon": "off",
         "uses-rel-preconnect": "off",
         "unused-javascript": "off",
         "unused-css-rules": "off",
