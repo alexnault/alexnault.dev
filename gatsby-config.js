@@ -38,6 +38,7 @@ module.exports = {
         },
       },
     },
+    `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-canonical-urls`,

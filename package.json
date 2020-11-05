@@ -18,7 +18,8 @@
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --quiet",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
+    "preload-fonts": "gatsby-preload-fonts"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
@@ -39,6 +40,7 @@
     "gatsby-plugin-mdx": "^1.2.41",
     "gatsby-plugin-offline": "^3.2.37",
     "gatsby-plugin-postcss": "^2.3.12",
+    "gatsby-plugin-preload-fonts": "^1.2.30",
     "gatsby-plugin-react-helmet": "^3.3.11",
     "gatsby-plugin-remove-generator": "^1.0.6",
     "gatsby-plugin-robots-txt": "^1.5.3",
