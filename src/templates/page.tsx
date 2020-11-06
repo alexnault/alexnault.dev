@@ -5,6 +5,7 @@ import { Container } from "@material-ui/core";
 import SEO from "../components/seo";
 import Layout from "../components/layout";
 import Post from "../components/post";
+import Navigation from "../components/navigation";
 
 type Props = {
   data: {
@@ -21,7 +22,7 @@ type Props = {
 const BlogPostTemplate = ({ data, pageContext }: Props) => {
   const { avatar } = data;
   const {
-    frontmatter: { title, date, path, coverImage, excerpt, tags },
+    frontmatter: { title, date, path, coverImage, excerpt },
     excerpt: autoExcerpt,
     id,
     body,
@@ -56,6 +57,11 @@ const BlogPostTemplate = ({ data, pageContext }: Props) => {
     mainEntityOfPage: `${siteUrl}${path}`,
   };
 
+  const previousPath = previous && previous.frontmatter.path;
+  const previousLabel = previous && previous.frontmatter.title;
+  const nextPath = next && next.frontmatter.path;
+  const nextLabel = next && next.frontmatter.title;
+
   return (
     <Layout>
       <SEO
@@ -73,10 +79,13 @@ const BlogPostTemplate = ({ data, pageContext }: Props) => {
           path={path}
           coverImage={coverImage}
           body={body}
-          tags={tags}
-          previousPost={previous}
-          nextPost={next}
           avatar={avatar}
+        />
+        <Navigation
+          previousPath={previousPath}
+          previousLabel={previousLabel}
+          nextPath={nextPath}
+          nextLabel={nextLabel}
         />
       </Container>
     </Layout>
@@ -101,7 +110,6 @@ export const pageQuery = graphql`
         path
         author
         excerpt
-        tags
         coverImage {
           childImageSharp {
             fluid(maxWidth: 728) {

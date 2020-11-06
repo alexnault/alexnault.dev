@@ -1,13 +1,5 @@
 const { paginate } = require("gatsby-awesome-pagination");
-const {
-  forEachIndexed,
-  forEach,
-  uniq,
-  filter,
-  not,
-  isNil,
-  chain,
-} = require("rambdax");
+const { forEachIndexed } = require("rambdax");
 const path = require("path");
 
 const pageTypeRegex = /src\/(.*?)\//;
@@ -15,10 +7,6 @@ const getType = (node) => node.fileAbsolutePath.match(pageTypeRegex)[1];
 
 const pageTemplate = path.resolve(`./src/templates/page.tsx`);
 const indexTemplate = path.resolve(`./src/templates/index.tsx`);
-
-function toKebabCase(value) {
-  return value.replace(new RegExp("(\\s|_|-)+", "gmi"), "-");
-}
 
 exports.createPages = ({ actions, graphql, getNodes }) => {
   const { createPage } = actions;
