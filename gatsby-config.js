@@ -79,6 +79,7 @@ module.exports = {
             },
           ],
         },
+        formats: ["woff2"],
       },
     },
     {
