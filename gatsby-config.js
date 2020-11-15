@@ -29,7 +29,8 @@ module.exports = {
       },
     },
     `gatsby-plugin-typescript`,
-    "gatsby-plugin-top-layout",
+    `gatsby-plugin-preload-font`,
+    `gatsby-plugin-top-layout`,
     {
       resolve: `gatsby-plugin-material-ui`,
       options: {
@@ -64,21 +65,6 @@ module.exports = {
       options: {
         name: `pages`,
         path: `${__dirname}/src/pages`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-webfonts`,
-      options: {
-        fonts: {
-          google: [
-            {
-              family: "Inter",
-              variants: ["400", "700"],
-              fontDisplay: "swap",
-              strategy: "selfHosted",
-            },
-          ],
-        },
       },
     },
     {

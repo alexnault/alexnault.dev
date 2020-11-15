@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
 import Img from "gatsby-image";
-import Navigation from "./navigation";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { OutboundLink } from "gatsby-plugin-gtag";
 import {
@@ -28,30 +27,12 @@ type Props = {
   coverImage: any;
   excerpt?: string;
   body: string;
-  tags: string[];
-  previousPost: any;
-  nextPost: any;
   avatar: any;
 };
 
-const Post = ({
-  title,
-  path,
-  coverImage,
-  excerpt,
-  tags,
-  body,
-  previousPost,
-  nextPost,
-  avatar,
-}: Props) => {
+const Post = ({ title, path, coverImage, excerpt, body, avatar }: Props) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [snackbarOpen, setSnackbarOpen] = React.useState(false);
-
-  const previousPath = previousPost && previousPost.frontmatter.path;
-  const previousLabel = previousPost && previousPost.frontmatter.title;
-  const nextPath = nextPost && nextPost.frontmatter.path;
-  const nextLabel = nextPost && nextPost.frontmatter.title;
 
   const handleClickShare = (event) => {
     setAnchorEl(event.currentTarget);
@@ -189,12 +170,6 @@ const Post = ({
           <Typography>I write bite-sized articles for developers</Typography>
         </div>
       </div>
-      <Navigation
-        previousPath={previousPath}
-        previousLabel={previousLabel}
-        nextPath={nextPath}
-        nextLabel={nextLabel}
-      />
     </article>
   );
 };
