@@ -16,22 +16,17 @@ const Layout = ({ children }: Props) => {
       site {
         siteMetadata {
           title
-          logo {
-            src
-            alt
-          }
           logoText
         }
       }
     }
   `);
-  const { title, logo, logoText } = data.site.siteMetadata;
+  const { title, logoText } = data.site.siteMetadata;
 
   return (
     <>
       <Header
         // siteTitle={title}
-        siteLogo={logo}
         logoText={logoText}
       />
       {children}

@@ -12,10 +12,6 @@ module.exports = {
       "I solve problems using software and write bite-sized articles for developers.",
     author: `Alex Nault`,
     twitterUsername: "@nault_alex",
-    logo: {
-      src: "",
-      alt: "",
-    },
     image: "/alex.jpg",
     logoText: "alexnault.dev",
     postsPerPage: 6,
