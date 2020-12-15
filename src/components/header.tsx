@@ -9,11 +9,10 @@ import DarkIcon from "./icons/dark";
 import style from "../styles/header.module.css";
 
 type Props = {
-  siteLogo: any;
   logoText: string;
 };
 
-const Header = ({ siteLogo, logoText }: Props) => {
+const Header = ({ logoText }: Props) => {
   const { palette } = useTheme();
   const changeTheme = useChangeTheme();
 
@@ -28,18 +27,10 @@ const Header = ({ siteLogo, logoText }: Props) => {
     >
       <div className={style.inner}>
         <Link to="/">
-          <Typography color="textPrimary">
-            <div className={style.logo}>
-              {siteLogo.src ? (
-                <img src={siteLogo.src} alt={siteLogo.alt} />
-              ) : (
-                <>
-                  <span className={style.mark}>{">"}</span>
-                  <span className={style.text}>{logoText}</span>
-                  <span className={style.cursor} />
-                </>
-              )}
-            </div>
+          <Typography color="textPrimary" className={style.logo}>
+            <span className={style.mark}>{">"}</span>
+            <span className={style.text}>{logoText}</span>
+            <span className={style.cursor} />
           </Typography>
         </Link>
         <span className={style.right}>

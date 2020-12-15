@@ -44,7 +44,7 @@ const Post = ({ title, path, coverImage, excerpt, body, avatar }: Props) => {
 
   const handleShareTwitter = () => {
     const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-      `${title} by Alex Nault https://alexnault.dev${path}`
+      `${title} https://alexnault.dev${path} via @nault_alex`
     )}`;
     window.open(url, "_blank");
     setAnchorEl(null);

@@ -121,6 +121,9 @@ export default function createTheme({ paletteType }: ThemeOptions) {
         },
       },
       MuiTypography: {
+        gutterBottom: {
+          marginBottom: "0.5em",
+        },
         paragraph: {
           marginTop: 24,
           marginBottom: 24,
