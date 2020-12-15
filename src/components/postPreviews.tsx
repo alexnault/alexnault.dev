@@ -12,10 +12,9 @@ type Props = {
 const PostPreviews = ({ posts }: Props) => {
   return (
     <>
-      <Typography variant="h4" component="h2" gutterBottom>
+      <Typography variant="h4" component="h2" paragraph>
         Latest articles
       </Typography>
-      {/* <h2 className={typography.h3}>Latest articles</h2> */}
       <div className={style.postPreviews}>
         {posts.map(({ node }) => {
           const {
