@@ -7,7 +7,9 @@ excerpt: "Pure functions, immutability & declarative pattern… you're in for a�
 tags: []
 ---
 
-Functional programming has its roots in lambda calculus, a mathematical concept dating back to the 1930s. That might sound daunting, but it's really not. Without going into the mathematical theory, **these principles will introduce you to some of the wonders of functional programming and its benefits for your software.**
+Functional programming has its roots in lambda calculus, a mathematical concept dating back to the 1930s.
+That might sound daunting, but it's really not.
+Without going into the mathematical theory, **these principles will introduce you to some of the wonders of functional programming and its benefits for your software.**
 
 Let's get right into it!
 
@@ -44,7 +46,10 @@ function addTaco(array) {
 
 **Pure functions are predictable, easy to debug and super easy to test.** Also, because they are **[referentially transparent](https://en.wikipedia.org/wiki/Referential_transparency)**, they allow for a bunch of optimization techniques such as **[memoization](https://en.wikipedia.org/wiki/Memoization)** (which is used to speed up repeated evaluations by caching function results).
 
-Not every function can be pure. Some are inherently impure when dealing with I/O, randomization, networking, databases, etc. Nevertheless, these concepts can and should be moved to the outer edges of your software in order to have a larger functional coverage and thus a simpler core.
+Not every function can be pure.
+Some are inherently impure when dealing with I/O, randomization, networking, databases, etc.
+Nevertheless, these concepts can and should be moved to the outer edges of your software in order to have a larger functional coverage.
+This is known as "functional core, imperative shell".
 
 ## Favor Immutability
 
@@ -96,12 +101,12 @@ const shortNames = names.filter((name) => name.length < 5);
 
 By the way, did you notice how `shortNames` also became immutable in the process?
 
-JavaScript has a ton of useful [higher-order functions](https://en.wikipedia.org/wiki/Higher-order_function) such as [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map), [filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter), [reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce), etc. These are musts when writing declarative code so use them extensively!
+JavaScript has a ton of useful [higher-order functions](https://en.wikipedia.org/wiki/Higher-order_function) such as [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map), [filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter), [reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce), etc.
+These are musts when writing declarative code so use them extensively!
 
 ## To wrap up
 
-You get to add functional programming to your tool belt! Now, you can follow these principles as you see fit; see what works for your project and what doesn't.
+You get to add functional programming to your tool belt!
+Now, you can follow these principles as you see fit; see what works for your project and what doesn't.
 
 All in all, this article barely scratched the surface, but hopefully shed some light on functional programming and tickled your curiosity.
-
-If you have any questions, don't hesitate to ask and I'll answer as best as I can!
