@@ -12,7 +12,7 @@ type Props = {
 const PostPreviews = ({ posts }: Props) => {
   return (
     <>
-      <Typography variant="h4" component="h2" paragraph>
+      <Typography variant="h4" component="h2" gutterBottom>
         Latest articles
       </Typography>
       <div className={style.postPreviews}>
