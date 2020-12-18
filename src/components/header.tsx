@@ -21,10 +21,7 @@ const Header = ({ logoText }: Props) => {
   };
 
   return (
-    <header
-      className={style.header}
-      style={{ backgroundColor: palette.type === "dark" ? "#212121" : "white" }}
-    >
+    <header className={style.header}>
       <div className={style.inner}>
         <Link to="/">
           <Typography color="textPrimary" className={style.logo}>
