@@ -139,5 +139,11 @@ module.exports = {
     `gatsby-plugin-sitemap`,
     "gatsby-plugin-robots-txt",
     "gatsby-plugin-remove-generator",
+    {
+      resolve: "@sentry/gatsby",
+      options: {
+        dsn: process.env.SENTRY_DSN,
+      },
+    },
   ],
 };

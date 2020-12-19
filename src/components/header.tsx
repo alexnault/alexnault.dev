@@ -17,7 +17,8 @@ const Header = ({ logoText }: Props) => {
   const changeTheme = useChangeTheme();
 
   const handleChangeTheme = () => {
-    changeTheme({ paletteType: palette.type === "dark" ? "light" : "dark" });
+    throw new Error("Sentry test");
+    // changeTheme({ paletteType: palette.type === "dark" ? "light" : "dark" });
   };
 
   return (

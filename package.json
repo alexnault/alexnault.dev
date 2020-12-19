@@ -25,6 +25,7 @@
     "@material-ui/styles": "^4.10.0",
     "@mdx-js/mdx": "^1.6.18",
     "@mdx-js/react": "^1.6.18",
+    "@sentry/gatsby": "^5.29.2",
     "@svgr/webpack": "^5.4.0",
     "gatsby": "^2.25.1",
     "gatsby-awesome-pagination": "^0.3.3",
