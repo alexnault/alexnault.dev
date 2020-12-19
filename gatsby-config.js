@@ -5,6 +5,8 @@ const postCSSImports = require("postcss-import");
 const cssnano = require("cssnano");
 const postCSSMixins = require("postcss-mixins");
 
+require("dotenv").config();
+
 module.exports = {
   siteMetadata: {
     title: `Alex Nault`,
