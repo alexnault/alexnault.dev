@@ -98,6 +98,7 @@ export default function createTheme({ paletteType }: ThemeOptions) {
         },
       },
       button: {
+        textTransform: "none",
         fontSize: 18,
         [breakpoints.down("sm")]: {
           fontSize: 16,
