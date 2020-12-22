@@ -1,5 +1,4 @@
 const { paginate } = require("gatsby-awesome-pagination");
-const { forEachIndexed } = require("rambdax");
 const path = require("path");
 
 const pageTypeRegex = /src\/(.*?)\//;
@@ -64,7 +63,7 @@ exports.createPages = ({ actions, graphql, getNodes }) => {
     });
 
     // Create each markdown page and post
-    forEachIndexed(({ node }, index) => {
+    sortedPages.forEach(({ node }, index) => {
       const previous = index === 0 ? null : sortedPages[index - 1].node;
       const next =
         index === sortedPages.length - 1 ? null : sortedPages[index + 1].node;
@@ -81,7 +80,7 @@ exports.createPages = ({ actions, graphql, getNodes }) => {
           previous: isPreviousSameType ? previous : null,
         },
       });
-    }, sortedPages);
+    });
 
     return {
       sortedPages,
