@@ -127,7 +127,7 @@ module.exports = {
         short_name: `Alex Nault`,
         start_url: `/`,
         background_color: `#fafafa`,
-        theme_color: `#fe5186`,
+        theme_color: `#000000`,
         display: `minimal-ui`,
         icon: `src/images/icon.png`,
         icon_options: {
