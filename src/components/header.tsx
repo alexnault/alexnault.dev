@@ -5,6 +5,7 @@ import { Typography, IconButton } from "@material-ui/core";
 
 import { useChangeTheme } from "./themeContext";
 import DarkIcon from "./icons/dark";
+import LogoIcon from "./icons/logo";
 
 import style from "../styles/header.module.css";
 
@@ -23,22 +24,19 @@ const Header = ({ logoText }: Props) => {
   return (
     <header className={style.header}>
       <div className={style.inner}>
-        <Link to="/">
-          <Typography color="textPrimary" className={style.logo}>
-            <span className={style.mark}>{">"}</span>
-            <span className={style.text}>{logoText}</span>
-            <span className={style.cursor} />
+        <Link to="/" className={style.logo}>
+          <LogoIcon width={30} height={30} className={style.svg} />
+          <Typography color="textPrimary" className={style.text}>
+            {logoText}
           </Typography>
         </Link>
-        <span className={style.right}>
-          <IconButton
-            edge="end"
-            onClick={handleChangeTheme}
-            aria-label="Theme toggle"
-          >
-            <DarkIcon />
-          </IconButton>
-        </span>
+        <IconButton
+          edge="end"
+          onClick={handleChangeTheme}
+          aria-label="Theme toggle"
+        >
+          <DarkIcon />
+        </IconButton>
       </div>
     </header>
   );

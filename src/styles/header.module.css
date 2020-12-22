@@ -18,40 +18,14 @@
 .logo {
   display: flex;
   align-items: center;
-  font-weight: bold;
+  color: inherit;
 }
 
-.mark {
-  margin-right: 4px;
+.svg {
+  margin-right: 6px;
 }
 
-.cursor {
-  display: inline-block;
-  width: 8px;
-  height: 1rem;
-  background: #ff79c6;
-  margin-left: 4px;
-  border-radius: 1px;
-  animation: cursor 1s infinite;
-}
-
-.text,
-.mark {
+.text {
   font-size: 18px;
-}
-
-.right {
-  display: flex;
-}
-
-@keyframes cursor {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+  font-weight: 700;
 }

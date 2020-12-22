@@ -15,7 +15,7 @@ module.exports = {
     author: `Alex Nault`,
     twitterUsername: "@nault_alex",
     image: "/alex.jpg",
-    logoText: "alexnault.dev",
+    logoText: "alexnault",
     postsPerPage: 6,
     siteUrl: "https://alexnault.dev",
   },
