@@ -1,39 +1,25 @@
 import React from "react";
 
 const css = `
-  @font-face {
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url("/fonts/Inter-Regular.woff2") format("woff2");
-  }
-
-  @font-face {
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: url("/fonts/Inter-Bold.woff2") format("woff2");
-  }`;
+@font-face {
+  font-family: 'Inter var';
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  unicode-range: U+0000-007F,U+00A0-0100,U+0131,U+0152-0154,U+02BB-02BD,U+02C6,U+02DA,U+02DC,U+2000-200C,U+2010-2028,U+202F-2060,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+FEFF;
+  src: url("/fonts/Inter-roman.latin.var.woff2") format("woff2");
+}`;
 
 export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
     <link
-      key="interRegular"
+      key="Inter var"
       rel="preload"
       as="font"
       type={`font/woff2`}
       crossOrigin="anonymous"
-      href={"/fonts/Inter-Regular.woff2"}
-    />,
-    <link
-      key="interBold"
-      rel="preload"
-      as="font"
-      type={`font/woff2`}
-      crossOrigin="anonymous"
-      href={"/fonts/Inter-Bold.woff2"}
+      href={"/fonts/Inter-roman.latin.var.woff2"}
     />,
     <style key="css" dangerouslySetInnerHTML={{ __html: css }} />,
   ]);
