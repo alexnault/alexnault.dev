@@ -2,6 +2,7 @@ import React from "react";
 import Img from "gatsby-image";
 import { OutboundLink } from "gatsby-plugin-gtag";
 import { Typography, Link, IconButton } from "@material-ui/core";
+import { H } from "react-headings";
 
 import GitHubIcon from "./icons/github";
 import LinkedInIcon from "./icons/linkedin";
@@ -25,11 +26,15 @@ const About = ({ avatar }: Props) => {
         />
       </div>
       <div className={style.content}>
-        <Typography variant="h3" component="h1" gutterBottom>
-          {"Hi, I'm "}
-          <span className={style.highlight}>Alex Nault</span>
-          {" and I solve problems using software."}
-        </Typography>
+        <H>
+          {(Component) => (
+            <Typography variant="h3" component={Component} gutterBottom>
+              {"Hi, I'm "}
+              <span className={style.highlight}>Alex Nault</span>
+              {" and I solve problems using software."}
+            </Typography>
+          )}
+        </H>
         <Typography>
           {"I'm currently building solutions at "}
           <Link component={OutboundLink} href="https://apprentx.rocks">
