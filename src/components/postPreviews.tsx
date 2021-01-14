@@ -1,7 +1,8 @@
 import React from "react";
-import { Typography } from "@material-ui/core";
+import { Section } from "react-headings";
 
 import PostPreview from "../components/postPreview";
+import Heading from "../components/heading";
 
 import style from "../styles/postPreviews.module.css";
 
@@ -11,10 +12,13 @@ type Props = {
 
 const PostPreviews = ({ posts }: Props) => {
   return (
-    <>
-      <Typography variant="h4" component="h2" gutterBottom>
-        Latest articles
-      </Typography>
+    <Section
+      component={
+        <Heading variant="h4" gutterBottom>
+          Latest articles
+        </Heading>
+      }
+    >
       <div className={style.postPreviews}>
         {posts.map(({ node }) => {
           const {
@@ -34,7 +38,7 @@ const PostPreviews = ({ posts }: Props) => {
           );
         })}
       </div>
-    </>
+    </Section>
   );
 };
 

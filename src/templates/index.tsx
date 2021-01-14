@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { Container } from "@material-ui/core";
+import { Section } from "react-headings";
 
 import SEO from "../components/seo";
 import Layout from "../components/layout";
@@ -33,8 +34,9 @@ const Index = ({
       <SEO />
       <Layout>
         <Container component="main" className="content">
-          <About avatar={avatar} />
-          <PostPreviews posts={posts} />
+          <Section component={<About avatar={avatar} />}>
+            <PostPreviews posts={posts} />
+          </Section>
           <Navigation
             previousPath={previousPagePath}
             previousLabel="Newer posts"

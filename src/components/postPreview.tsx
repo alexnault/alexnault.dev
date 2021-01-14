@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
 import { Typography, Paper, Container } from "@material-ui/core";
+import { Section } from "react-headings";
+
+import Heading from "./heading";
 
 import style from "../styles/postPreview.module.css";
 
@@ -24,20 +27,17 @@ const PostPreview = ({ title, date, path, coverImage, excerpt }: Props) => {
         className={style.backgroundImage}
       />
       <Container className={style.content}>
-        <Typography
-          variant="h5"
-          component="h3"
-          color="textPrimary"
-          gutterBottom
+        <Section
+          component={
+            <Heading variant="h5" color="textPrimary" gutterBottom>
+              {title}
+            </Heading>
+          }
         >
-          {title}
-        </Typography>
-        {/* <Typography variant="overline" gutterBottom>
-          10 min read
-        </Typography> */}
-        <Typography variant="body2" color="textSecondary">
-          {excerpt}
-        </Typography>
+          <Typography variant="body2" color="textSecondary">
+            {excerpt}
+          </Typography>
+        </Section>
       </Container>
     </Paper>
   );
