@@ -1,0 +1,10 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.divider {
+  height: auto;
+  margin: 0 16px;
+}
