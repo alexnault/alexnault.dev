@@ -4,10 +4,7 @@ import { AppProps } from "next/app";
 import { ThemeProvider } from "../components/themeContext";
 
 import "../styles/globals.css";
-import "../styles/fonts.css";
-import "../styles/custom.css";
-
-// TODO move
+// TODO move/remove
 import "../styles/layout.css";
 
 export default function App({ Component, pageProps }: AppProps) {

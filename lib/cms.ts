@@ -2,8 +2,6 @@ import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
 
-// import renderToString from "next-mdx-remote/render-to-string";
-
 export type Article = {
   slug: string;
   content: string;
@@ -18,11 +16,11 @@ const articlesDirectory = join(process.cwd(), "posts");
 export function getAllSlugs() {
   return fs
     .readdirSync(articlesDirectory)
-    .map((fileName) => fileName.replace(/\.mdx$/, ""));
+    .map((fileName) => fileName.replace(/\.md$/, ""));
 }
 
 export function getArticleBySlug(slug: string) {
-  const fullPath = join(articlesDirectory, `${slug}.mdx`);
+  const fullPath = join(articlesDirectory, `${slug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 

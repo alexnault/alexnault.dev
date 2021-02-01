@@ -57,22 +57,22 @@ code {
 
 /* Code block */
 pre[class*="language-"] {
-  --padding: 16px;
-
-  padding: var(--padding);
+  /* --padding: 16px; */
+  padding: 16px;
+  /* padding: var(--padding); */
   border-radius: 8px;
   overflow: auto;
   margin-left: -16px;
   margin-right: -16px;
 
-  .gatsby-highlight-code-line {
+  /* .gatsby-highlight-code-line {
     display: block;
     margin-right: calc(-1 * var(--padding));
     margin-left: calc(-1 * var(--padding));
     padding-right: var(--padding);
     padding-left: var(--padding);
     background-color: rgba(255, 255, 255, 0.05);
-  }
+  } */
 }
 
 blockquote {

@@ -18,15 +18,13 @@ import {
   ListItemText,
   Container,
 } from "@material-ui/core";
-import renderToString from "next-mdx-remote/render-to-string";
-import hydrate from "next-mdx-remote/hydrate";
 
-import { getAllSlugs, getArticleBySlug } from "../lib/mdx";
+import { getAllSlugs, getArticleBySlug } from "../lib/cms";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Navigation from "../components/navigation";
-import { components } from "../components/customMDXProvider";
+import MarkdownRenderer from "../components/markdownRenderer";
 import TwitterIcon from "../components/icons/twitter";
 import LinkedInIcon from "../components/icons/linkedin";
 import LinkIcon from "../components/icons/link";
@@ -38,7 +36,7 @@ export default function Slug({
   // relatedArticles
   article,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const { slug, title, excerpt, coverImage, mdxSource } = article;
+  const { slug, title, excerpt, coverImage, content } = article;
 
   // const schema = {
   //   "@context": "http://schema.org",
@@ -116,8 +114,6 @@ export default function Slug({
     setSnackbarOpen(false);
   };
 
-  const content = hydrate(mdxSource, { components });
-
   return (
     <Layout>
       {/* <SEO
@@ -144,18 +140,15 @@ export default function Slug({
             {coverImage && (
               <Image
                 src={coverImage}
-                className={style.coverImage}
-                width={400}
-                height={400}
-                layout="responsive"
                 alt="Article cover"
+                width="728"
+                height="500"
+                layout="responsive"
+                className={style.coverImage}
+                objectFit="cover"
               />
             )}
-            {content}
-            {/* <CustomMDXProvider> */}
-            {/* {content} */}
-            {/* <MDXRenderer>{content}</MDXRenderer> */}
-            {/* </CustomMDXProvider> */}
+            <MarkdownRenderer>{content}</MarkdownRenderer>
             <div className={style.actions}>
               <Button
                 aria-controls="share-menu"
@@ -255,11 +248,9 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
   const article = await getArticleBySlug(slug);
   // const relatedArticles = await getRelatedArticles(slug); // TODO
 
-  const mdxSource = await renderToString(article.content, { components });
-
   return {
     props: {
-      article: { ...article, mdxSource },
+      article,
       // relatedArticles,
     },
   };

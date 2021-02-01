@@ -1,7 +1,7 @@
 import React from "react";
 import { Section } from "react-headings";
 
-import { Article } from "../lib/mdx";
+import { Article } from "../lib/cms";
 
 import PostPreview from "../components/postPreview";
 import Heading from "../components/heading";

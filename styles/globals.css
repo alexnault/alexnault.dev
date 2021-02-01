@@ -9,3 +9,9 @@
     U+20AC, U+2122, U+2191, U+2193, U+2212, U+FEFF;
   src: url("/fonts/Inter-roman.latin.var.woff2") format("woff2");
 }
+
+@font-face {
+  font-family: "Virgil";
+  font-display: swap;
+  src: url("https://excalidraw.com/FG_Virgil.woff2");
+}

@@ -3,7 +3,7 @@ import { Container } from "@material-ui/core";
 import { Section } from "react-headings";
 import { InferGetStaticPropsType } from "next";
 
-import { getAllArticles } from "../lib/mdx";
+import { getAllArticles } from "../lib/cms";
 
 import SEO from "../components/seo";
 import Layout from "../components/layout";

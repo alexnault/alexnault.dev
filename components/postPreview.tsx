@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Typography, Paper, Container } from "@material-ui/core";
 import { Section } from "react-headings";
 
-import { Article } from "../lib/mdx";
+import { Article } from "../lib/cms";
 
 import Heading from "./heading";
 

@@ -5,10 +5,6 @@ coverImage: "/tim-gouw-He9WQV8e7Kk-unsplash.jpg"
 excerpt: "A sure way to decouple modules and write testable code."
 ---
 
-// import Excalidraw from "../components/excalidraw";
-// import { ReactComponent as TraditionalDependencySvg } from "../public/traditional-dependency.svg";
-// import { ReactComponent as DependencyInversionSvg } from "../public/dependency-inversion.svg";
-
 _This is part five of a five-part series about SOLID principles in functional TypeScript._
 
 ## What is the Dependency Inversion Principle?
@@ -28,7 +24,7 @@ Let's take a look at an example!
 
 Let's build a `SignupService` that uses an `HttpClient` as data source, like so:
 
-{/_ <Excalidraw svg={<TraditionalDependencySvg />} /> _/}
+<!-- TODO <Excalidraw svg={<TraditionalDependencySvg />} /> -->
 
 Starting with the `HttpClient`:
 
@@ -74,7 +70,7 @@ Let's reimplement it with dependency inversion this time!
 
 We're going to decouple `SignupService` and `HttpClient`. It's going to look like this:
 
-{/_ <Excalidraw svg={<DependencyInversionSvg />} /> _/}
+<!-- TODO <Excalidraw svg={<DependencyInversionSvg />} /> -->
 
 First, using an `interface`, let's define the abstraction that will act as the dependency between the domain and the infrastructure:
 
@@ -192,7 +188,7 @@ Not only did we manage to unit test `SignupSevice` but we allowed it to use any 
 
 Dependency inversion is amazing. But, as with anything, it is a tool and not every dependency should be inverted. It would turn our software into an incomprehensible mess of over-abstracted components otherwise. Use it when needed, no more, no less.
 
-<!-- On top of that, modules that are unlikely to change, namely stable dependencies, can be depended on just fine. -->
+<!-- TODO On top of that, modules that are unlikely to change, namely stable dependencies, can be depended on just fine. -->
 
 ## More on SOLID principles
 
