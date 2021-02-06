@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { AppProps } from "next/app";
 
-import { ThemeProvider } from "../components/themeContext";
+import { ThemeProvider } from "components/themeContext";
 
 import "../styles/globals.css";
 // TODO move/remove

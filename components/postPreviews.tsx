@@ -1,12 +1,12 @@
 import React from "react";
 import { Section } from "react-headings";
 
-import { Article } from "../lib/cms";
+import { Article } from "lib/cms";
 
-import PostPreview from "../components/postPreview";
-import Heading from "../components/heading";
+import PostPreview from "components/postPreview";
+import Heading from "components/heading";
 
-import style from "../styles/postPreviews.module.css";
+import style from "styles/postPreviews.module.css";
 
 type Props = {
   articles: Article[];

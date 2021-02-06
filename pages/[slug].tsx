@@ -19,18 +19,18 @@ import {
   Container,
 } from "@material-ui/core";
 
-import { getAllSlugs, getArticleBySlug } from "../lib/cms";
+import { getAllSlugs, getArticleBySlug } from "lib/cms";
 
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import Navigation from "../components/navigation";
-import MarkdownRenderer from "../components/markdownRenderer";
-import TwitterIcon from "../components/icons/twitter";
-import LinkedInIcon from "../components/icons/linkedin";
-import LinkIcon from "../components/icons/link";
-import Heading from "../components/heading";
+import Layout from "components/layout";
+import SEO from "components/seo";
+import Navigation from "components/navigation";
+import MarkdownRenderer from "components/markdownRenderer";
+import TwitterIcon from "components/icons/twitter";
+import LinkedInIcon from "components/icons/linkedin";
+import LinkIcon from "components/icons/link";
+import Heading from "components/heading";
 
-import style from "../styles/post.module.css";
+import style from "styles/post.module.css";
 
 export default function Slug({
   // relatedArticles

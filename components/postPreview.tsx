@@ -4,11 +4,11 @@ import Image from "next/image";
 import { Typography, Paper, Container } from "@material-ui/core";
 import { Section } from "react-headings";
 
-import { Article } from "../lib/cms";
+import { Article } from "lib/cms";
 
 import Heading from "./heading";
 
-import style from "../styles/postPreview.module.css";
+import style from "styles/postPreview.module.css";
 
 type Props = {
   article: Article;

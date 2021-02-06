@@ -7,7 +7,7 @@ import { useChangeTheme } from "./themeContext";
 import DarkIcon from "./icons/dark";
 import LogoIcon from "./icons/logo";
 
-import style from "../styles/header.module.css";
+import style from "styles/header.module.css";
 
 type Props = {
   logoText: string;

@@ -3,13 +3,13 @@ import { Container } from "@material-ui/core";
 import { Section } from "react-headings";
 import { InferGetStaticPropsType } from "next";
 
-import { getAllArticles } from "../lib/cms";
+import { getAllArticles } from "lib/cms";
 
-import SEO from "../components/seo";
-import Layout from "../components/layout";
-import Navigation from "../components/navigation";
-import About from "../components/about";
-import PostPreviews from "../components/postPreviews";
+import SEO from "components/seo";
+import Layout from "components/layout";
+import Navigation from "components/navigation";
+import About from "components/about";
+import PostPreviews from "components/postPreviews";
 
 export default function Index({
   articles,

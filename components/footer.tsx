@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, Divider } from "@material-ui/core";
 
-import style from "../styles/footer.module.css";
+import style from "styles/footer.module.css";
 
 const Footer = () => (
   <footer className={style.footer}>

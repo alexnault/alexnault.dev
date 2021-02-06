@@ -3,9 +3,9 @@ import Link from "next/link";
 import { Container, Typography, Button } from "@material-ui/core";
 import { Section } from "react-headings";
 
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import Heading from "../components/heading";
+import Layout from "components/layout";
+import SEO from "components/seo";
+import Heading from "components/heading";
 
 const NotFoundPage = () => (
   <Layout>

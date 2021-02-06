@@ -8,7 +8,7 @@ import LinkedInIcon from "./icons/linkedin";
 import TwitterIcon from "./icons/twitter";
 import EmailIcon from "./icons/email";
 
-import style from "../styles/about.module.css";
+import style from "styles/about.module.css";
 
 const About = () => {
   return (
