@@ -53,7 +53,12 @@ const InlineCode = ({ children }) => {
 };
 const CodeBlock = ({ language, value }) => {
   return (
-    <Prism style={theme} language={language} children={value} showLineNumbers />
+    <Prism
+      style={theme}
+      language={language}
+      children={value}
+      // showLineNumbers={true}
+    />
   );
 };
 
