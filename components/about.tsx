@@ -14,13 +14,9 @@ const About = () => {
   return (
     <div className={style.about}>
       <div className={style.avatarWrapper}>
-        <Image
-          src="/alex.jpg"
-          width={240}
-          height={240}
-          className={style.avatar}
-          alt="Alex Nault"
-        />
+        <div className={style.avatar}>
+          <Image src="/alex.jpg" layout="fill" alt="Alex Nault" />
+        </div>
       </div>
       <div className={style.content}>
         <Heading variant="h3" gutterBottom>

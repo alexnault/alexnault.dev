@@ -11,9 +11,6 @@
   display: flex;
   justify-content: center;
   margin: 24px 0;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-  overflow: hidden;
 }
 
 .content {
@@ -22,8 +19,12 @@
 }
 
 .avatar {
-  /* TODO fix mobile avaatar */
-  /* border-radius: 50%; */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  width: 240px;
+  height: 240px;
 }
 
 .highlight {
@@ -47,5 +48,9 @@
   }
   .content {
     margin: 0;
+  }
+  .avatar {
+    width: 160px;
+    height: 160px;
   }
 }
