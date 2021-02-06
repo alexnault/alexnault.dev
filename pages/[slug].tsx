@@ -32,36 +32,37 @@ import Heading from "components/heading";
 
 import style from "styles/post.module.css";
 
+const siteUrl = "https://alexnault.dev";
+
 export default function Slug({
   // relatedArticles
   article,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { slug, title, excerpt, coverImage, content } = article;
 
-  // const schema = {
-  //   "@context": "http://schema.org",
-  //   "@type": "TechArticle",
-  //   url: `${siteUrl}${path}`,
-  //   headline: title,
-  //   name: title,
-  //   description: excerpt,
-  //   author: {
-  //     "@type": "Person",
-  //     name: author,
-  //     url: siteUrl,
-  //   },
-  //   creator: [author],
-  //   publisher: {
-  //     "@type": "Person",
-  //     name: author,
-  //     url: siteUrl,
-  //   },
-  //   dateCreated: date,
-  //   datePublished: date,
-  //   dateModified: data.site.buildTime,
-  //   image: `${siteUrl}${coverImage.childImageSharp.fluid.src}`,
-  //   mainEntityOfPage: `${siteUrl}${path}`,
-  // };
+  const currentUrl = `${siteUrl}/${slug}`;
+
+  const schema = {
+    "@context": "http://schema.org",
+    "@type": "TechArticle",
+    url: currentUrl,
+    headline: title,
+    name: title,
+    description: excerpt,
+    author: {
+      "@type": "Person",
+      name: "Alex Nault",
+      url: siteUrl,
+    },
+    creator: ["Alex Nault"],
+    publisher: {
+      "@type": "Person",
+      name: "Alex Nault",
+      url: siteUrl,
+    },
+    image: `${siteUrl}${coverImage}`,
+    mainEntityOfPage: currentUrl,
+  };
 
   // const previousPath = previous && previous.frontmatter.path;
   // const previousLabel = previous && previous.frontmatter.title;
@@ -81,7 +82,7 @@ export default function Slug({
 
   const handleShareTwitter = () => {
     const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-      `${title} https://alexnault.dev/${slug} via @nault_alex`
+      `${title} ${currentUrl} via @nault_alex`
     )}`;
     window.open(url, "_blank");
     setAnchorEl(null);
@@ -89,7 +90,7 @@ export default function Slug({
 
   const handleShareLinkedIn = () => {
     const urlEncoded = encodeURI(
-      `https://www.linkedin.com/shareArticle?mini=true&url=${`https://alexnault.dev/${slug}`}&title=${title}&summary=${excerpt}&source=LinkedIn`
+      `https://www.linkedin.com/shareArticle?mini=true&url=${currentUrl}&title=${title}&summary=${excerpt}&source=LinkedIn`
     );
 
     window.open(
@@ -116,13 +117,13 @@ export default function Slug({
 
   return (
     <Layout>
-      {/* <SEO
-        title={post.fields.title}
-        // image={imageUrl}
-        description={description}
+      <SEO
+        title={title}
+        image={`${siteUrl}${coverImage}`}
+        description={excerpt}
         schema={schema}
-        url={`${siteUrl}/${slug}`}
-      /> */}
+        url={currentUrl}
+      />
       <Container maxWidth="sm" component="main" className="content">
         <article>
           <Section

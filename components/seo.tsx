@@ -1,10 +1,16 @@
 import React from "react";
 import Head from "next/head";
 
+const siteTitle = "Alex Nault";
+const siteDescription =
+  "I solve problems using software and write bite-sized articles for developers.";
+const author = "Alex Nault";
+const twitterUsername = "@nault_alex";
+const siteUrl = "https://alexnault.dev";
+const siteImage = "/alex.jpg";
+
 type Props = {
   description?: string;
-  lang?: string;
-  meta?: any[];
   keywords?: string[];
   schema?: { [key: string]: any };
   title?: string;
@@ -14,23 +20,13 @@ type Props = {
 
 const SEO = ({
   description,
-  lang = "en",
-  meta = [],
   keywords = ["alex", "nault", "dev", "blog", "alexnault", "personal site"],
   schema,
   title,
   url,
   image,
 }: Props) => {
-  const siteTitle = "Alex Nault";
-  const siteDescription =
-    "I solve problems using software and write bite-sized articles for developers.";
-  const author = "Alex Nault";
-  const twitterUsername = "@nault_alex";
-  const siteUrl = "https://alexnault.dev";
-  const siteImage = "/alex.jpg";
-
-  const metaTitle = title || siteTitle;
+  const metaTitle = title ? `${title} | ${siteTitle}` : siteTitle;
   const metaDescription = description || siteDescription;
   const metaUrl = url || siteUrl;
   const metaImage = image || `${siteUrl}${siteImage}`;
@@ -56,75 +52,26 @@ const SEO = ({
     mainEntityOfPage: metaUrl,
   };
 
-  // TODO
   return (
-    <Head
-    // htmlAttributes={{
-    //   lang,
-    // }}
-    // title={metaTitle}
-    // titleTemplate={title ? `${title} | ${siteTitle}` : siteTitle}
-    // meta={[
-    //   {
-    //     name: `description`,
-    //     content: metaDescription,
-    //   },
-    //   { name: "author", content: author },
-    //   {
-    //     property: `og:title`,
-    //     content: metaTitle,
-    //   },
-    //   {
-    //     property: `og:description`,
-    //     content: metaDescription,
-    //   },
-    //   {
-    //     property: `og:type`,
-    //     content: `website`,
-    //   },
-    //   {
-    //     property: `og:url`,
-    //     content: metaUrl,
-    //   },
-    //   {
-    //     property: `og:image`,
-    //     content: metaImage,
-    //   },
-    //   {
-    //     name: `twitter:card`,
-    //     content: `summary`,
-    //   },
-    //   {
-    //     name: `twitter:title`,
-    //     content: metaTitle,
-    //   },
-    //   {
-    //     name: `twitter:description`,
-    //     content: metaDescription,
-    //   },
-    //   {
-    //     name: `twitter:image`,
-    //     content: metaImage,
-    //   },
-    //   {
-    //     name: `twitter:creator`,
-    //     content: twitterUsername,
-    //   },
-    //   {
-    //     name: `twitter:site`,
-    //     content: twitterUsername,
-    //   },
-    // ]
-    //   .concat(
-    //     keywords.length > 0
-    //       ? {
-    //           name: `keywords`,
-    //           content: keywords.join(`, `),
-    //         }
-    //       : []
-    //   )
-    //   .concat(meta)}
-    >
+    <Head>
+      <title>{metaTitle}</title>
+      <meta name="description" content={metaDescription} />
+      <meta name="author" content={author} />
+      <meta name="keywords" content={keywords.join(", ")} />
+
+      <meta property="og:title" content={metaTitle} />
+      <meta property="og:description" content={metaDescription} />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={metaUrl} />
+      <meta property="og:image" content={metaImage} />
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:title" content={metaTitle} />
+      <meta name="twitter:description" content={metaDescription} />
+      <meta name="twitter:image" content={metaImage} />
+      <meta name="twitter:creator" content={twitterUsername} />
+      <meta name="twitter:site" content={twitterUsername} />
+
       <script type="application/ld+json">
         {JSON.stringify(schema || defaultSchema)}
       </script>
