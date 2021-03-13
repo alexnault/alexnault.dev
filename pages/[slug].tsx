@@ -23,7 +23,6 @@ import { getAllSlugs, getArticleBySlug } from "lib/cms";
 
 import Layout from "components/layout";
 import SEO from "components/seo";
-import Navigation from "components/navigation";
 import MarkdownRenderer from "components/markdownRenderer";
 import TwitterIcon from "components/icons/twitter";
 import LinkedInIcon from "components/icons/linkedin";
@@ -63,11 +62,6 @@ export default function Slug({
     image: `${siteUrl}${coverImage}`,
     mainEntityOfPage: currentUrl,
   };
-
-  // const previousPath = previous && previous.frontmatter.path;
-  // const previousLabel = previous && previous.frontmatter.title;
-  // const nextPath = next && next.frontmatter.path;
-  // const nextLabel = next && next.frontmatter.title;
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [snackbarOpen, setSnackbarOpen] = React.useState(false);
@@ -228,12 +222,6 @@ export default function Slug({
             </div>
           </Section>
         </article>
-        {/* <Navigation
-          previousPath={previousPath}
-          previousLabel={previousLabel}
-          nextPath={nextPath}
-          nextLabel={nextLabel}
-        /> */}
       </Container>
     </Layout>
   );
