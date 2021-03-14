@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Typography,
   Link,
@@ -7,15 +7,12 @@ import {
   makeStyles,
 } from "@material-ui/core";
 import ReactMarkdown from "react-markdown";
-import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
-import theme from 'react-syntax-highlighter/dist/cjs/styles/prism/dracula';
-import javascript from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript';
-import typescript from 'react-syntax-highlighter/dist/cjs/languages/prism/typescript';
-import tsx from 'react-syntax-highlighter/dist/cjs/languages/prism/tsx';
-
-SyntaxHighlighter.registerLanguage('javascript', javascript);
-SyntaxHighlighter.registerLanguage('typescript', typescript);
-SyntaxHighlighter.registerLanguage('tsx', tsx);
+import Prism from "prismjs";
+import "prismjs/components/prism-javascript";
+import "prismjs/components/prism-jsx";
+import "prismjs/components/prism-typescript";
+import "prismjs/components/prism-tsx";
+import "prismjs/themes/prism-tomorrow.css";
 
 const useHeadingStyles = makeStyles((theme) => ({
   heading: {
@@ -59,13 +56,14 @@ const InlineCode = ({ children }) => {
   );
 };
 const CodeBlock = ({ language, value }) => {
+  useEffect(() => {
+    Prism.highlightAll();
+  }, []);
+
   return (
-    <SyntaxHighlighter
-      style={theme}
-      language={language}
-      children={value}
-      // showLineNumbers={true}
-    />
+    <pre className={`language-${language}`}>
+      <code>{value}</code>
+    </pre>
   );
 };
 

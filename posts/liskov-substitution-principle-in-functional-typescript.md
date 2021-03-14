@@ -58,17 +58,13 @@ class Square extends Rectangle {
 
   public setWidth(width: number) {
     // A square must maintain equal sides
-    // highlight-start
     super.setWidth(width);
     super.setLength(width);
-    // highlight-end
   }
 
   public setLength(length: number) {
-    // highlight-start
     super.setWidth(length);
     super.setLength(length);
-    // highlight-end
   }
 }
 ```

@@ -36,11 +36,9 @@ Now, let's say we are tasked with adding a loading to that button. We could modi
 
 ```tsx
 function Button({ text, isLoading }: ButtonProps) {
-  // highlight-start
   if (isLoading) {
     return <svg>...</svg>;
   }
-  // highlight-end
 
   return <button>{text}</button>;
 }
@@ -58,11 +56,9 @@ Instead, **we should combine software components to create new behaviors**.
 So, opting for composition, we could implement the feature like so:
 
 ```tsx
-// highlight-start
 function Loading({ isLoading, children }: LoadingProps) {
   return isLoading ? <svg>...</svg> : children;
 }
-// highlight-end
 
 function Button({ text }: ButtonProps) {
   return <button>{text}</button>;
