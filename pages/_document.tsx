@@ -18,8 +18,19 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <Html className="text-default">
+      <Html lang="en" dir="ltr">
         <Head>
+          <meta name="application-name" content="Alex Nault" />
+          <meta name="apple-mobile-web-app-capable" content="yes" />
+          <meta name="apple-mobile-web-app-title" content="Alex Nault" />
+          <meta name="mobile-web-app-capable" content="yes" />
+          <meta name="theme-color" content="#fe5186" />
+          <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/icons/apple-touch-icon.png"
+          />
+          <link rel="manifest" href="/manifest.json" />
           <link rel="icon" href="/favicon.ico" />
           <link
             rel="preload"
