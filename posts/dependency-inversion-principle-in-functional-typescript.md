@@ -24,7 +24,7 @@ Let's take a look at an example!
 
 Let's build a `SignupService` that uses an `HttpClient` as data source, like so:
 
-<!-- TODO <Excalidraw svg={<TraditionalDependencySvg />} /> -->
+![Traditional dependency](traditional-dependency.svg)
 
 Starting with the `HttpClient`:
 
@@ -70,7 +70,7 @@ Let's reimplement it with dependency inversion this time!
 
 We're going to decouple `SignupService` and `HttpClient`. It's going to look like this:
 
-<!-- TODO <Excalidraw svg={<DependencyInversionSvg />} /> -->
+![Dependency inversion](dependency-inversion.svg)
 
 First, using an `interface`, let's define the abstraction that will act as the dependency between the domain and the infrastructure:
 
