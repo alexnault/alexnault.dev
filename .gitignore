@@ -1,16 +1,16 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
-/.pnp
+node_modules
+.pnp
 .pnp.js
 
 # testing
-/coverage
+coverage
 
 # next.js
-/.next/
-/out/
+.next/
+out/
 
 # production
 /build
@@ -18,8 +18,8 @@
 # misc
 .DS_Store
 *.pem
-/_logs/
-/_cacache/
+_logs/
+_cacache/
 
 # debug
 npm-debug.log*
@@ -34,3 +34,13 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# next-pwa
+public/precache.*.*.js
+public/sw.js
+public/workbox-*.js
+public/worker-*.js
+public/precache.*.*.js.map
+public/sw.js.map
+public/workbox-*.js.map
+public/worker-*.js.map

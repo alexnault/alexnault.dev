@@ -188,8 +188,6 @@ Not only did we manage to unit test `SignupSevice` but we allowed it to use any 
 
 Dependency inversion is amazing. But, as with anything, it is a tool and not every dependency should be inverted. It would turn our software into an incomprehensible mess of over-abstracted components otherwise. Use it when needed, no more, no less.
 
-<!-- TODO On top of that, modules that are unlikely to change, namely stable dependencies, can be depended on just fine. -->
-
 ## More on SOLID principles
 
 - Single-Responsibility Principle _(upcoming!)_
