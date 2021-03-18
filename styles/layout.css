@@ -2,6 +2,10 @@ a {
   text-decoration: none;
 }
 
+svg {
+  fill: currentColor;
+}
+
 /* Inline code */
 :not(pre) > code[class*="language-"] {
   border-radius: 4px;
