@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Typography, Link, IconButton } from "@material-ui/core";
+import { Typography, IconButton } from "@material-ui/core";
 
 import Heading from "./heading";
 import GitHubIcon from "./icons/github";
@@ -20,17 +20,15 @@ const About = () => {
       </div>
       <div className={style.content}>
         <Heading variant="h3" gutterBottom>
-          {"Hi, I'm "}
-          <span className={style.highlight}>Alex Nault</span>
-          {" and I solve problems using software."}
+          {"Hi, I'm Alex Nault and I solve problems using software."}
         </Heading>
         <Typography>
           {"I'm currently building solutions at "}
-          <Link href="https://apprentx.rocks">Apprentx</Link>
+          <strong>Apprentx</strong>
           {" to improve the way we learn. Previously "}
-          <Link href="https://www.classcraft.com">Classcraft</Link>
+          <strong>Classcraft</strong>
           {" and "}
-          <Link href="https://www.ubisoft.com">Ubisoft</Link>.
+          <strong>Ubisoft</strong>.
         </Typography>
         <div className={style.social}>
           <IconButton

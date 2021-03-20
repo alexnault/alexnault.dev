@@ -27,12 +27,6 @@
   height: 240px;
 }
 
-.highlight {
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(90deg, #a14ef1, #ff0080);
-}
-
 .paragraph {
   margin-bottom: 1em;
 }

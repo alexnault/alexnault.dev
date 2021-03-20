@@ -37,6 +37,11 @@ ol {
   padding: 0;
 }
 
+::selection {
+  background-color: #79ffe1;
+  color: black;
+}
+
 .content {
   padding-top: 48px;
   padding-bottom: 48px;
