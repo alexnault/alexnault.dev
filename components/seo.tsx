@@ -7,7 +7,7 @@ const siteDescription =
 const author = "Alex Nault";
 const twitterUsername = "@nault_alex";
 const siteUrl = "https://alexnault.dev";
-const siteImage = "/alex.jpg";
+const siteImage = "/preview.jpg";
 
 type Props = {
   description?: string;
