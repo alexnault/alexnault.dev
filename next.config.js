@@ -18,6 +18,7 @@ module.exports = withPWA({
                 "https://excalidraw.com",
                 "https://www.googletagmanager.com",
                 "https://www.google-analytics.com",
+                "https://vitals.vercel-insights.com",
               ],
               styleSrc: ["'self'", "'unsafe-inline'"],
               scriptSrc: [
