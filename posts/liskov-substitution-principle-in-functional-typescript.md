@@ -74,7 +74,6 @@ Now if a client was to use a `Rectangle` (or a `Square`):
 ```ts
 const rect: Rectangle = new Square(10); // Can be either a Rectangle or a Square
 rect.setWidth(20);
-// highlight-next-line
 expect(rect.getArea()).toBe(200); // ❌ If rect is a Square, area is 400
 ```
 
@@ -87,7 +86,6 @@ Moreover, clients of our code may have to adapt, like so:
 ```ts
 const rect: Rectangle = new Square(10);
 rect.setWidth(20);
-// highlight-next-line
 if (rect instanceof Square) {
   // ...
 } else {

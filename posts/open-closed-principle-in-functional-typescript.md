@@ -44,7 +44,6 @@ function Button({ text, isLoading }: ButtonProps) {
 }
 
 function App() {
-  // highlight-next-line
   return <Button text="Click me!" isLoading={true} />;
 }
 ```
@@ -66,10 +65,8 @@ function Button({ text }: ButtonProps) {
 
 function App() {
   return (
-    // highlight-next-line
     <Loading isLoading={true}>
       <Button text="Click me!" />
-      // highlight-next-line
     </Loading>
   );
 }
