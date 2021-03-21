@@ -26,7 +26,7 @@ module.exports = withPWA({
                 "'unsafe-inline'",
                 "https://www.googletagmanager.com",
               ],
-              imgSrc: ["'self'"],
+              imgSrc: ["'self'", "data:"],
               baseUri: "self",
               formAction: "self",
               frameAncestors: true,
