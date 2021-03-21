@@ -11,7 +11,7 @@ export default function Layout({ children }: Props) {
   return (
     <>
       <Header logoText="alexnault" />
-      <main className="flex-1">{children}</main>
+      <main className="content">{children}</main>
       <Footer />
     </>
   );

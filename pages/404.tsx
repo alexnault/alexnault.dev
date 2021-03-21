@@ -9,7 +9,7 @@ import Heading from "components/heading";
 
 const NotFoundPage = () => (
   <Layout>
-    <Container maxWidth="sm" component="main" className="content">
+    <Container maxWidth="sm">
       <SEO title="404 Not found" />
       <Section
         component={

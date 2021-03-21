@@ -19,7 +19,7 @@ import {
   Container,
 } from "@material-ui/core";
 
-import { getAllSlugs, getArticleBySlug } from "lib/cms";
+import { getAllSlugs, getArticleBySlug, getRelatedArticles } from "lib/cms";
 
 import Layout from "components/layout";
 import SEO from "components/seo";
@@ -28,14 +28,15 @@ import TwitterIcon from "components/icons/twitter";
 import LinkedInIcon from "components/icons/linkedin";
 import LinkIcon from "components/icons/link";
 import Heading from "components/heading";
+import PostPreviews from "components/postPreviews";
 
 import style from "styles/post.module.css";
 
 const siteUrl = "https://alexnault.dev";
 
 export default function Slug({
-  // relatedArticles
   article,
+  relatedArticles,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { slug, title, excerpt, coverImage, content } = article;
 
@@ -118,10 +119,10 @@ export default function Slug({
         schema={schema}
         url={currentUrl}
       />
-      <Container maxWidth="sm" component="main" className="content">
-        <article>
-          <Section
-            component={
+      <Section
+        component={
+          <Container maxWidth="sm">
+            <article>
               <header>
                 <Heading variant="h2" className={style.title}>
                   {title}
@@ -130,99 +131,110 @@ export default function Slug({
                   <b>{excerpt}</b>
                 </Typography>
               </header>
-            }
-          >
-            {coverImage && (
-              <Image
-                src={coverImage}
-                alt="Article cover"
-                width="728"
-                height="500"
-                layout="responsive"
-                className={style.coverImage}
-                objectFit="cover"
-              />
-            )}
-            <MarkdownRenderer>{content}</MarkdownRenderer>
-            <div className={style.actions}>
-              <Button
-                aria-controls="share-menu"
-                aria-haspopup="true"
-                color="primary"
-                variant="contained"
-                onClick={handleClickShare}
-              >
-                Share
-              </Button>
-              <Button
-                component="a"
-                variant="outlined"
-                href={`https://github.com/alexnault/alexnault.dev/edit/master/posts/${slug}.mdx`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Edit
-              </Button>
-              <Menu
-                id="share-menu"
-                keepMounted
-                anchorEl={anchorEl}
-                open={!!anchorEl}
-                onClose={handleCloseMenu}
-              >
-                <MenuItem onClick={handleShareTwitter}>
-                  <ListItemIcon>
-                    <TwitterIcon fontSize="small" />
-                  </ListItemIcon>
-                  <ListItemText primary="Twitter" />
-                </MenuItem>
-                <MenuItem onClick={handleShareLinkedIn}>
-                  <ListItemIcon>
-                    <LinkedInIcon fontSize="small" />
-                  </ListItemIcon>
-                  <ListItemText primary="LinkedIn" />
-                </MenuItem>
-                <MenuItem onClick={handleCopyLink}>
-                  <ListItemIcon>
-                    <LinkIcon fontSize="small" />
-                  </ListItemIcon>
-                  <ListItemText primary="Copy link" />
-                </MenuItem>
-              </Menu>
-              <Snackbar
-                open={snackbarOpen}
-                autoHideDuration={2000}
-                onClose={handleCloseSnackbar}
-                message="Link copied"
-              />
-            </div>
-            <div className={style.author}>
-              <div className={style.avatarWrapper}>
+              {coverImage && (
                 <Image
-                  src="/alex.jpg"
-                  width={64}
-                  height={64}
-                  alt="Alex Nault"
-                  className={style.avatar}
+                  src={coverImage}
+                  alt="Article cover"
+                  width="728"
+                  height="500"
+                  layout="responsive"
+                  className={style.coverImage}
+                  objectFit="cover"
+                />
+              )}
+              <MarkdownRenderer>{content}</MarkdownRenderer>
+              <div className={style.actions}>
+                <Button
+                  aria-controls="share-menu"
+                  aria-haspopup="true"
+                  color="secondary"
+                  variant="contained"
+                  onClick={handleClickShare}
+                >
+                  Share
+                </Button>
+                <Button
+                  component="a"
+                  variant="outlined"
+                  href={`https://github.com/alexnault/alexnault.dev/edit/master/posts/${slug}.mdx`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Edit
+                </Button>
+                <Menu
+                  id="share-menu"
+                  keepMounted
+                  anchorEl={anchorEl}
+                  open={!!anchorEl}
+                  onClose={handleCloseMenu}
+                >
+                  <MenuItem onClick={handleShareTwitter}>
+                    <ListItemIcon>
+                      <TwitterIcon fontSize="small" />
+                    </ListItemIcon>
+                    <ListItemText primary="Twitter" />
+                  </MenuItem>
+                  <MenuItem onClick={handleShareLinkedIn}>
+                    <ListItemIcon>
+                      <LinkedInIcon fontSize="small" />
+                    </ListItemIcon>
+                    <ListItemText primary="LinkedIn" />
+                  </MenuItem>
+                  <MenuItem onClick={handleCopyLink}>
+                    <ListItemIcon>
+                      <LinkIcon fontSize="small" />
+                    </ListItemIcon>
+                    <ListItemText primary="Copy link" />
+                  </MenuItem>
+                </Menu>
+                <Snackbar
+                  open={snackbarOpen}
+                  autoHideDuration={2000}
+                  onClose={handleCloseSnackbar}
+                  message="Link copied"
                 />
               </div>
-              <div>
-                <Typography>
-                  <b>
-                    {"By "}
-                    <Link href="/" passHref>
-                      <MuiLink>Alex Nault</MuiLink>
-                    </Link>
-                  </b>
-                </Typography>
-                <Typography>
-                  I write bite-sized articles for developers
-                </Typography>
+              <div className={style.author}>
+                <div className={style.avatarWrapper}>
+                  <Image
+                    src="/alex.jpg"
+                    width={64}
+                    height={64}
+                    alt="Alex Nault"
+                    className={style.avatar}
+                  />
+                </div>
+                <div>
+                  <Typography>
+                    <b>
+                      {"By "}
+                      <Link href="/" passHref>
+                        <MuiLink>Alex Nault</MuiLink>
+                      </Link>
+                    </b>
+                  </Typography>
+                  <Typography>
+                    I write bite-sized articles for developers
+                  </Typography>
+                </div>
               </div>
-            </div>
+            </article>
+          </Container>
+        }
+      >
+        <Container>
+          <Section
+            component={
+              <Heading variant="h4" gutterBottom>
+                Related articles
+              </Heading>
+            }
+          >
+            <PostPreviews articles={relatedArticles} />
           </Section>
-        </article>
-      </Container>
+        </Container>
+      </Section>
     </Layout>
   );
 }
@@ -235,12 +247,12 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
   }
 
   const article = await getArticleBySlug(slug);
-  // const relatedArticles = await getRelatedArticles(slug); // TODO
+  const relatedArticles = await getRelatedArticles(slug);
 
   return {
     props: {
       article,
-      // relatedArticles,
+      relatedArticles,
     },
   };
 };

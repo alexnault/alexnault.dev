@@ -43,3 +43,13 @@ export function getAllArticles() {
     .map((slug) => getArticleBySlug(slug))
     .sort((a, b) => (a.date > b.date ? -1 : 1));
 }
+
+export function getRelatedArticles(slug) {
+  const slugs = getAllSlugs();
+
+  return slugs
+    .filter((s) => s !== slug) // TODO use labels
+    .slice(0, 3)
+    .map((s) => getArticleBySlug(s))
+    .sort((a, b) => (a.date > b.date ? -1 : 1));
+}

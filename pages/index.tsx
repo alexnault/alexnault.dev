@@ -7,9 +7,9 @@ import { getAllArticles } from "lib/cms";
 
 import SEO from "components/seo";
 import Layout from "components/layout";
-import Navigation from "components/navigation";
 import About from "components/about";
 import PostPreviews from "components/postPreviews";
+import Heading from "components/heading";
 
 export default function Index({
   articles,
@@ -18,16 +18,18 @@ export default function Index({
     <>
       <SEO />
       <Layout>
-        <Container component="main" className="content">
+        <Container>
           <Section component={<About />}>
-            <PostPreviews articles={articles} />
+            <Section
+              component={
+                <Heading variant="h4" gutterBottom>
+                  Latest articles
+                </Heading>
+              }
+            >
+              <PostPreviews articles={articles} />
+            </Section>
           </Section>
-          {/* <Navigation
-            previousPath={previousPagePath}
-            previousLabel="Newer posts"
-            nextPath={nextPagePath}
-            nextLabel="Older posts"
-          /> */}
         </Container>
       </Layout>
     </>
