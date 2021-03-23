@@ -1,13 +1,11 @@
 .postPreview {
   overflow: hidden;
   transition: transform 200ms !important;
-  filter: grayscale(1);
 }
 
 .postPreview:hover,
 .postPreview:focus {
   transform: scale(1.0325);
-  filter: grayscale(0);
 }
 
 .content {
