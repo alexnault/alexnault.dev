@@ -198,7 +198,7 @@ export default function Slug({
               <div className={style.author}>
                 <div className={style.avatarWrapper}>
                   <Image
-                    src="/alex.jpg"
+                    src="/alex.webp"
                     width={64}
                     height={64}
                     alt="Alex Nault"

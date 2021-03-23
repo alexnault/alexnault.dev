@@ -15,7 +15,7 @@ const About = () => {
     <div className={style.about}>
       <div className={style.avatarWrapper}>
         <div className={style.avatar}>
-          <Image src="/alex.jpg" layout="fill" alt="Alex Nault" />
+          <Image src="/alex.webp" layout="fill" alt="Alex Nault" />
         </div>
       </div>
       <div className={style.content}>
