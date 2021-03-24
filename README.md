@@ -13,13 +13,13 @@ My personal website and blog.
 
 ## Commands
 
-| Command        | Description                                                             |
-| -------------- | ----------------------------------------------------------------------- |
-| npm run build  | Build the production application in the `.next` folder                  |
-| npm run dev    | Start the development server at [localhost:3000](http://localhost:3000) |
-| npm run format | Format files with Prettier                                              |
-| npm run lint   | Lint files with ESlint                                                  |
-| npm run start  | Start the production server at [localhost:3000](http://localhost:3000)  |
+| Command          | Description                                                             |
+| ---------------- | ----------------------------------------------------------------------- |
+| `npm run build`  | Build the production application in the `.next` folder                  |
+| `npm run dev`    | Start the development server at [localhost:3000](http://localhost:3000) |
+| `npm run format` | Format files with Prettier                                              |
+| `npm run lint`   | Lint files with ESlint                                                  |
+| `npm run start`  | Start the production server at [localhost:3000](http://localhost:3000)  |
 
 ## Contributing
 
