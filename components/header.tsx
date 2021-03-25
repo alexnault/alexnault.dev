@@ -27,8 +27,8 @@ const Header = ({ logoText }: Props) => {
         <Link href="/">
           <a className={style.logo}>
             <LogoIcon width={30} height={30} className={style.svg} />
-            <Typography color="textPrimary" className={style.text}>
-              {logoText}
+            <Typography variant="body2">
+              <b>{logoText}</b>
             </Typography>
           </a>
         </Link>
