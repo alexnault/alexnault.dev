@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Typography, IconButton } from "@material-ui/core";
+import { Typography, IconButton, useTheme } from "@material-ui/core";
 
 import Heading from "./heading";
 import GitHubIcon from "./icons/github";
@@ -11,11 +11,16 @@ import EmailIcon from "./icons/email";
 import style from "styles/about.module.css";
 
 const About = () => {
+  const { palette } = useTheme();
+
   return (
     <div className={style.about}>
       <div className={style.avatarWrapper}>
-        <div className={style.avatar}>
-          <Image src="/alex.webp" layout="fill" alt="Alex Nault" />
+        <div
+          className={style.avatar}
+          style={{ backgroundColor: palette.divider }}
+        >
+          <Image src="/alex.webp" alt="Alex Nault" layout="fill" />
         </div>
       </div>
       <div className={style.content}>

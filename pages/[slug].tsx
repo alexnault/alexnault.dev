@@ -17,6 +17,7 @@ import {
   Snackbar,
   ListItemText,
   Container,
+  useTheme,
 } from "@material-ui/core";
 
 import { getAllSlugs, getArticleBySlug, getRelatedArticles } from "lib/cms";
@@ -39,6 +40,7 @@ export default function Slug({
   relatedArticles,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { slug, title, excerpt, coverImage, content } = article;
+  const { palette } = useTheme();
 
   const currentUrl = `${siteUrl}/${slug}`;
 
@@ -132,15 +134,19 @@ export default function Slug({
                 </Typography>
               </header>
               {coverImage && (
-                <Image
-                  src={coverImage}
-                  alt="Article cover"
-                  width="728"
-                  height="500"
-                  layout="responsive"
+                <div
                   className={style.coverImage}
-                  objectFit="cover"
-                />
+                  style={{ backgroundColor: palette.divider }}
+                >
+                  <Image
+                    src={coverImage}
+                    alt="Article cover"
+                    width="728"
+                    height="500"
+                    layout="responsive"
+                    objectFit="cover"
+                  />
+                </div>
               )}
               <MarkdownRenderer>{content}</MarkdownRenderer>
               <div className={style.actions}>
