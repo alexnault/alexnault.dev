@@ -30,8 +30,6 @@ import LinkIcon from "components/icons/link";
 import Container from "components/container";
 import PostPreviews from "components/postPreviews";
 
-import style from "styles/post.module.css";
-
 const siteUrl = "https://alexnault.dev";
 
 export default function Slug({
@@ -134,7 +132,7 @@ export default function Slug({
               </header>
               {coverImage && (
                 <div
-                  className={style.coverImage}
+                  className="rounded-md mb-10 shadow-xl overflow-hidden"
                   style={{ backgroundColor: palette.divider }}
                 >
                   <Image
@@ -148,7 +146,7 @@ export default function Slug({
                 </div>
               )}
               <MarkdownRenderer>{content}</MarkdownRenderer>
-              <div className={style.actions}>
+              <div className="my-8 space-x-2">
                 <Button
                   aria-controls="share-menu"
                   aria-haspopup="true"
@@ -200,14 +198,14 @@ export default function Slug({
                   message="Link copied"
                 />
               </div>
-              <div className={style.author}>
-                <div className={style.avatarWrapper}>
+              <div className="flex items-center my-8">
+                <div className="flex-shrink-0 mr-3">
                   <Image
                     src="/alex.webp"
                     width={64}
                     height={64}
                     alt="Alex Nault"
-                    className={style.avatar}
+                    className="rounded-full"
                   />
                 </div>
                 <div>
