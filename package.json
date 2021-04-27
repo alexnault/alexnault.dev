@@ -23,18 +23,22 @@
   "dependencies": {
     "@material-ui/core": "^4.11.2",
     "@material-ui/styles": "^4.11.2",
+    "@tailwindcss/typography": "^0.4.0",
     "@types/prismjs": "^1.16.3",
+    "autoprefixer": "^10.2.5",
     "classnames": "^2.2.6",
     "gray-matter": "^4.0.2",
     "next": "^10.1.0",
     "next-pwa": "^5.0.6",
+    "postcss": "^8.2.12",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^6.7.0",
     "prismjs": "^1.23.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-headings": "^3.0.7",
-    "react-markdown": "^5.0.3"
+    "react-markdown": "^5.0.3",
+    "tailwindcss": "^2.1.2"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.11",

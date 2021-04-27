@@ -1,6 +1,5 @@
 import React from "react";
-import { Container } from "@material-ui/core";
-import { Section } from "react-headings";
+import { Section, H } from "react-headings";
 import { InferGetStaticPropsType } from "next";
 
 import { getAllArticles } from "lib/cms";
@@ -9,7 +8,7 @@ import SEO from "components/seo";
 import Layout from "components/layout";
 import About from "components/about";
 import PostPreviews from "components/postPreviews";
-import Heading from "components/heading";
+import Container from "components/container";
 
 export default function Index({
   articles,
@@ -22,9 +21,7 @@ export default function Index({
           <Section component={<About />}>
             <Section
               component={
-                <Heading variant="h4" gutterBottom>
-                  Latest articles
-                </Heading>
+                <H className="text-3xl font-bold mb-4">Latest articles</H>
               }
             >
               <PostPreviews articles={articles} />

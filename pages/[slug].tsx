@@ -6,7 +6,7 @@ import {
 } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Section } from "react-headings";
+import { Section, H } from "react-headings";
 import {
   Typography,
   Link as MuiLink,
@@ -16,7 +16,6 @@ import {
   ListItemIcon,
   Snackbar,
   ListItemText,
-  Container,
   useTheme,
 } from "@material-ui/core";
 
@@ -28,7 +27,7 @@ import MarkdownRenderer from "components/markdownRenderer";
 import TwitterIcon from "components/icons/twitter";
 import LinkedInIcon from "components/icons/linkedin";
 import LinkIcon from "components/icons/link";
-import Heading from "components/heading";
+import Container from "components/container";
 import PostPreviews from "components/postPreviews";
 
 import style from "styles/post.module.css";
@@ -104,7 +103,7 @@ export default function Slug({
     setAnchorEl(null);
   };
 
-  const handleCloseSnackbar = (event, reason) => {
+  const handleCloseSnackbar = (_, reason) => {
     if (reason === "clickaway") {
       return;
     }
@@ -123,15 +122,15 @@ export default function Slug({
       />
       <Section
         component={
-          <Container maxWidth="sm">
+          <Container className="md:max-w-screen-md">
             <article>
               <header>
-                <Heading variant="h2" className={style.title}>
+                <H className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
                   {title}
-                </Heading>
-                <Typography variant="subtitle1" color="textSecondary" paragraph>
-                  <b>{excerpt}</b>
-                </Typography>
+                </H>
+                <p className="text-gray-500 font-bold my-4 text-lg">
+                  {excerpt}
+                </p>
               </header>
               {coverImage && (
                 <div
@@ -232,9 +231,7 @@ export default function Slug({
         <Container>
           <Section
             component={
-              <Heading variant="h4" gutterBottom>
-                Related articles
-              </Heading>
+              <H className="text-3xl font-bold mb-4">Related articles</H>
             }
           >
             <PostPreviews articles={relatedArticles} />

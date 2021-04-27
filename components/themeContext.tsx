@@ -201,16 +201,18 @@ export function ThemeProvider({ children }: Props) {
 
   const theme = useMemo(() => createTheme(options), [options]);
 
-  return (
-    <StylesProvider injectFirst>
-      <MuiThemeProvider theme={theme}>
-        <CssBaseline />
-        <DispatchContext.Provider value={setOptions}>
-          {children}
-        </DispatchContext.Provider>
-      </MuiThemeProvider>
-    </StylesProvider>
-  );
+  return <>{children}</>;
+
+  // return (
+  //   <StylesProvider injectFirst>
+  //     <MuiThemeProvider theme={theme}>
+  //       <CssBaseline />
+  //       <DispatchContext.Provider value={setOptions}>
+  //         {children}
+  //       </DispatchContext.Provider>
+  //     </MuiThemeProvider>
+  //   </StylesProvider>
+  // );
 }
 
 export function useChangeTheme() {

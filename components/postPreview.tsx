@@ -1,14 +1,10 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Typography, Paper, Container, useTheme } from "@material-ui/core";
-import { Section } from "react-headings";
+import { useTheme } from "@material-ui/core";
+import { Section, H } from "react-headings";
 
 import { Article } from "lib/cms";
-
-import Heading from "./heading";
-
-import style from "styles/postPreview.module.css";
 
 type Props = {
   article: Article;
@@ -20,10 +16,15 @@ const PostPreview = ({ article }: Props) => {
 
   return (
     <Link href={`/${slug}`} passHref>
-      <Paper component="a" className={style.postPreview}>
+      {/* transition: transform 200ms !important; */}
+      {/* // .postPreview:hover,
+// .postPreview:focus {
+//   transform: scale(1.0325);
+// } */}
+      <a className="overflow-hidden bg-white shadow-2xl rounded-lg scale-150 transform-all">
         <div
-          className={style.imageWrapper}
-          style={{ backgroundColor: palette.divider }}
+          className="relative w-full pt"
+          style={{ backgroundColor: palette.divider, paddingTop: "50%" }}
         >
           <Image
             src={coverImage}
@@ -32,20 +33,14 @@ const PostPreview = ({ article }: Props) => {
             objectFit="cover"
           />
         </div>
-        <Container className={style.content}>
+        <div className="px-4 py-6 sm:px-6">
           <Section
-            component={
-              <Heading variant="h5" color="textPrimary" gutterBottom>
-                {title}
-              </Heading>
-            }
+            component={<H className="text-2xl font-bold mb-2">{title}</H>}
           >
-            <Typography variant="body2" color="textSecondary">
-              {excerpt}
-            </Typography>
+            <p className="text-gray-500">{excerpt}</p>
           </Section>
-        </Container>
-      </Paper>
+        </div>
+      </a>
     </Link>
   );
 };

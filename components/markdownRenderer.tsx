@@ -68,13 +68,13 @@ const CodeBlock = ({ language, value }) => {
 };
 
 const renderers = {
-  heading: Heading,
-  link: A,
-  paragraph: P,
-  listItem: Li,
-  thematicBreak: Hr,
-  inlineCode: InlineCode,
-  code: CodeBlock,
+  // heading: Heading,
+  // link: A,
+  // paragraph: P,
+  // listItem: Li,
+  // thematicBreak: Hr,
+  // inlineCode: InlineCode,
+  // code: CodeBlock,
 };
 
 type Props = {
@@ -82,6 +82,11 @@ type Props = {
 };
 
 export default function MarkdownRenderer({ children }: Props) {
-  // @ts-ignore
-  return <ReactMarkdown renderers={renderers} children={children} />;
+  return (
+    <div className="prose lg:prose-xl prose-indigo">
+      {/*
+      // @ts-ignore */}
+      <ReactMarkdown renderers={renderers} children={children} />
+    </div>
+  );
 }

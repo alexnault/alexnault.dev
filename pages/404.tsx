@@ -1,27 +1,25 @@
 import React from "react";
 import Link from "next/link";
-import { Container, Typography, Button } from "@material-ui/core";
-import { Section } from "react-headings";
+import { Button } from "@material-ui/core";
+import { Section, H } from "react-headings";
 
 import Layout from "components/layout";
 import SEO from "components/seo";
-import Heading from "components/heading";
+import Container from "components/container";
 
 const NotFoundPage = () => (
   <Layout>
-    <Container maxWidth="sm">
+    <Container className="md:max-w-screen-md">
       <SEO title="404 Not found" />
       <Section
         component={
-          <Heading variant="h3" gutterBottom>
-            Oops! Page not found
-          </Heading>
+          <H className="text-5xl font-bold mb-6">Oops! Page not found</H>
         }
       >
-        <Typography color="textSecondary" paragraph>
+        <p className="text-gray-500 text-xl mb-6">
           The page you are looking for might have been removed, had its name
           changed or is temporarily unavailable.
-        </Typography>
+        </p>
         <Link href="/" passHref>
           <Button component="a" variant="contained" color="primary">
             Go back home
