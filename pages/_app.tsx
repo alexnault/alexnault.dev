@@ -4,9 +4,7 @@ import { AppProps } from "next/app";
 
 import { ThemeProvider } from "components/themeContext";
 
-import "../styles/globals.css";
-// TODO move/remove
-import "../styles/layout.css";
+import "styles/globals.css";
 
 export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {

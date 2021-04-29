@@ -19,3 +19,24 @@
   font-display: swap;
   src: url("https://excalidraw.com/FG_Virgil.woff2");
 }
+
+::selection {
+  background-color: #79ffe1;
+  color: black;
+}
+
+/* svg {
+  fill: currentColor;
+} */
+
+/* Inline code */
+/* :not(pre) > code[class*="language-"] {
+  border-radius: 4px;
+  color: inherit;
+} */
+
+/* Code block */
+/* pre[class*="language-"] {
+  border-radius: 8px;
+}
+*/

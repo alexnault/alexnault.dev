@@ -11,7 +11,7 @@ export default function Layout({ children }: Props) {
   return (
     <>
       <Header logoText="alexnault" />
-      <main className="content">{children}</main>
+      <main className="py-4 sm:py-12">{children}</main>
       <Footer />
     </>
   );
