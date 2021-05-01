@@ -17,11 +17,13 @@ export default function Index({
     <>
       <SEO />
       <Layout>
-        <Container>
+        <Container className="xl:max-w-screen-xl">
           <Section component={<About />}>
             <Section
               component={
-                <H className="text-3xl font-bold mb-4">Latest articles</H>
+                <H className="text-2xl md:text-3xl font-bold mb-4">
+                  Latest articles
+                </H>
               }
             >
               <PostPreviews articles={articles} />

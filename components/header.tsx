@@ -1,9 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import { useTheme } from "@material-ui/core/styles";
 import { IconButton } from "@material-ui/core";
 
-import { useChangeTheme } from "./themeContext";
 import DarkIcon from "./icons/dark";
 import LogoIcon from "./icons/logo";
 
@@ -12,11 +10,8 @@ type Props = {
 };
 
 const Header = ({ logoText }: Props) => {
-  const { palette } = useTheme();
-  const changeTheme = useChangeTheme();
-
   const handleChangeTheme = () => {
-    changeTheme({ paletteType: palette.type === "dark" ? "light" : "dark" });
+    // TODO change theme
   };
 
   return (

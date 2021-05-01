@@ -1,19 +1,13 @@
+import React from "react";
+
 type Props = {
-  as?: React.ElementType;
   className?: string;
-  children?: React.ReactNode;
 };
 
-export default function Container({
-  as: Component = "div",
-  className = "",
-  children,
-}: Props) {
+export default function Container({ className = "", ...props }: Props) {
   return (
-    <Component
-      className={`container mx-auto px-4 sm:px-8 lg:px-16 xl:px-20 2xl:px-24 ${className}`}
-    >
-      {children}
-    </Component>
+    <div className="px-4 sm:px-8 md:px-16 lg:px-20 xl:px-24">
+      <div className={`container mx-auto ${className}`} {...props} />
+    </div>
   );
 }

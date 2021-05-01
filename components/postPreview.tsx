@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useTheme } from "@material-ui/core";
 import { Section, H } from "react-headings";
 
 import { Article } from "lib/cms";
@@ -12,7 +11,6 @@ type Props = {
 
 const PostPreview = ({ article }: Props) => {
   const { slug, title, coverImage, excerpt } = article;
-  const { palette } = useTheme();
 
   return (
     <Link href={`/${slug}`} passHref>
@@ -23,8 +21,9 @@ const PostPreview = ({ article }: Props) => {
 // } */}
       <a className="overflow-hidden bg-white shadow-2xl rounded-lg scale-150 transform-all">
         <div
-          className="relative w-full pt"
-          style={{ backgroundColor: palette.divider, paddingTop: "50%" }}
+          className="relative w-full
+           bg-gray-300"
+          style={{ paddingTop: "50%" }}
         >
           <Image
             src={coverImage}
@@ -35,9 +34,11 @@ const PostPreview = ({ article }: Props) => {
         </div>
         <div className="px-4 py-6 sm:px-6">
           <Section
-            component={<H className="text-2xl font-bold mb-2">{title}</H>}
+            component={
+              <H className="text-xl md:text-2xl font-bold mb-2">{title}</H>
+            }
           >
-            <p className="text-gray-500">{excerpt}</p>
+            <p className="text-gray-500 md:text-lg">{excerpt}</p>
           </Section>
         </div>
       </a>

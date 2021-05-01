@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { IconButton, useTheme } from "@material-ui/core";
+import { IconButton } from "@material-ui/core";
 import { H } from "react-headings";
 
 import GitHubIcon from "./icons/github";
@@ -9,15 +9,10 @@ import TwitterIcon from "./icons/twitter";
 import EmailIcon from "./icons/email";
 
 const About = () => {
-  const { palette } = useTheme();
-
   return (
     <div className="flex flex-col sm:flex-row items-center mt-0 mx-auto mb-8 max-w-5xl">
       <div className="flex justify-center my-6 flex-shrink-0">
-        <div
-          className="w-40 h-40 sm:w-60 sm:h-60 overflow-hidden rounded-full relative shadow-xl"
-          style={{ backgroundColor: palette.divider }}
-        >
+        <div className="w-40 h-40 sm:w-60 sm:h-60 overflow-hidden rounded-full relative shadow-xl bg-gray-300">
           <Image src="/alex.webp" alt="Alex Nault" layout="fill" />
         </div>
       </div>
@@ -25,10 +20,10 @@ const About = () => {
         <H className="text-3xl md:text-5xl font-bold mb-4 md:mb-8">
           {"Hi, I'm Alex Nault and I solve problems using software."}
         </H>
-        <p className="text-gray-500 text-lg md:text-xl mb-4 md:leading-relaxed">
+        <p className="text-gray-600 text-lg md:text-xl mb-2 md:leading-relaxed">
           {"I'm currently building solutions at "}
           <strong>Apprentx</strong>
-          {" to improve the way we learn. Previously "}
+          {" as a software architect. Previously "}
           <strong>Classcraft</strong>
           {" and "}
           <strong>Ubisoft</strong>.
