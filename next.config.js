@@ -2,6 +2,9 @@ const withPWA = require("next-pwa");
 const { createSecureHeaders } = require("next-secure-headers");
 
 module.exports = withPWA({
+  future: {
+    webpack5: true,
+  },
   pwa: {
     dest: "public",
   },
