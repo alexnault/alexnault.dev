@@ -79,7 +79,7 @@ pre {
 }
 
 .prose pre {
-  @apply bg-gray-50 border border-gray-200 dark:border-gray-700 dark:bg-gray-900;
+  @apply -mx-4 rounded-none sm:mx-0 sm:rounded-md bg-gray-50 border border-gray-200 dark:border-gray-700 dark:bg-gray-900;
 }
 
 .prose code {

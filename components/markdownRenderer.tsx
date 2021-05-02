@@ -42,7 +42,7 @@ type Props = {
 
 export default function MarkdownRenderer({ children }: Props) {
   return (
-    <div className="prose sm:prose-lg lg:prose-xl">
+    <div className="prose sm:prose-lg">
       {/*
       // @ts-ignore */}
       <ReactMarkdown renderers={renderers} children={children} />

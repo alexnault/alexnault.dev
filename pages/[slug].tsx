@@ -8,9 +8,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Section, H } from "react-headings";
 import {
-  Typography,
-  Link as MuiLink,
-  Button,
   Menu,
   MenuItem,
   ListItemIcon,
@@ -28,6 +25,7 @@ import LinkedInIcon from "components/icons/linkedin";
 import LinkIcon from "components/icons/link";
 import Container from "components/container";
 import PostPreviews from "components/postPreviews";
+import Button from "components/button";
 
 const siteUrl = "https://alexnault.dev";
 
@@ -120,46 +118,40 @@ export default function Slug({
         component={
           <Container className="md:max-w-screen-md">
             <article>
-              <header>
+              <header className="mb-8">
                 <H className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
                   {title}
                 </H>
-                <p className="text-gray-500 font-bold my-4 text-lg">
+                <p className="text-gray-500 font-bold mt-4 text-lg">
                   {excerpt}
                 </p>
               </header>
-              {coverImage && (
-                <div className="rounded-md mb-10 shadow-xl overflow-hidden bg-gray-200">
-                  <Image
-                    src={coverImage}
-                    alt="Article cover"
-                    width="728"
-                    height="500"
-                    layout="responsive"
-                    objectFit="cover"
-                  />
-                </div>
-              )}
+              <div className="mb-8 -mx-4 sm:mx-0 sm:rounded-md shadow-xl overflow-hidden bg-gray-200">
+                <Image
+                  src={coverImage}
+                  alt="Article cover"
+                  width="728"
+                  height="500"
+                  layout="responsive"
+                  objectFit="cover"
+                />
+              </div>
               <MarkdownRenderer>{content}</MarkdownRenderer>
               <div className="my-8 space-x-2">
                 <Button
                   aria-controls="share-menu"
                   aria-haspopup="true"
-                  color="secondary"
-                  variant="contained"
                   onClick={handleClickShare}
                 >
                   Share
                 </Button>
-                <Button
-                  component="a"
-                  variant="outlined"
-                  href={`https://github.com/alexnault/alexnault.dev/edit/master/posts/${slug}.mdx`}
+                <a
+                  href={`https://github.com/alexnault/alexnault.dev/edit/master/posts/${slug}.md`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Edit
-                </Button>
+                  <Button>Edit</Button>
+                </a>
                 <Menu
                   id="share-menu"
                   keepMounted
@@ -204,24 +196,22 @@ export default function Slug({
                   />
                 </div>
                 <div>
-                  <Typography>
-                    <b>
-                      {"By "}
-                      <Link href="/" passHref>
-                        <MuiLink>Alex Nault</MuiLink>
-                      </Link>
-                    </b>
-                  </Typography>
-                  <Typography>
+                  <div className="text-lg font-bold">
+                    {"By "}
+                    <Link href="/" passHref>
+                      <a className="underline text-blue-500">Alex Nault</a>
+                    </Link>
+                  </div>
+                  <div className="text-lg text-gray-700">
                     I write bite-sized articles for developers
-                  </Typography>
+                  </div>
                 </div>
               </div>
             </article>
           </Container>
         }
       >
-        <Container>
+        <Container className="xl:max-w-screen-xl">
           <Section
             component={
               <H className="text-3xl font-bold mb-4">Related articles</H>
