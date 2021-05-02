@@ -22,7 +22,7 @@ const PostPreview = ({ article }: Props) => {
       <a className="overflow-hidden bg-white shadow-2xl rounded-lg scale-150 transform-all">
         <div
           className="relative w-full
-           bg-gray-300"
+           bg-gray-200"
           style={{ paddingTop: "50%" }}
         >
           <Image

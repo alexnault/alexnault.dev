@@ -1,12 +1,10 @@
 import React, { useEffect } from "react";
-import { useTheme } from "@material-ui/core";
 import ReactMarkdown from "react-markdown";
 import Prism from "prismjs";
 import "prismjs/components/prism-javascript";
 import "prismjs/components/prism-jsx";
 import "prismjs/components/prism-typescript";
 import "prismjs/components/prism-tsx";
-import "prismjs/themes/prism-okaidia.css";
 
 // const InlineCode = ({ children }) => {
 //   const { palette } = useTheme();
@@ -44,7 +42,7 @@ type Props = {
 
 export default function MarkdownRenderer({ children }: Props) {
   return (
-    <div className="prose sm:prose-lg lg:prose-xl prose-pink">
+    <div className="prose sm:prose-lg lg:prose-xl">
       {/*
       // @ts-ignore */}
       <ReactMarkdown renderers={renderers} children={children} />

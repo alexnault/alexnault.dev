@@ -16,7 +16,6 @@ import {
   ListItemIcon,
   Snackbar,
   ListItemText,
-  useTheme,
 } from "@material-ui/core";
 
 import { getAllSlugs, getArticleBySlug, getRelatedArticles } from "lib/cms";
@@ -37,7 +36,6 @@ export default function Slug({
   relatedArticles,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { slug, title, excerpt, coverImage, content } = article;
-  const { palette } = useTheme();
 
   const currentUrl = `${siteUrl}/${slug}`;
 
@@ -131,10 +129,7 @@ export default function Slug({
                 </p>
               </header>
               {coverImage && (
-                <div
-                  className="rounded-md mb-10 shadow-xl overflow-hidden"
-                  style={{ backgroundColor: palette.divider }}
-                >
+                <div className="rounded-md mb-10 shadow-xl overflow-hidden bg-gray-200">
                   <Image
                     src={coverImage}
                     alt="Article cover"

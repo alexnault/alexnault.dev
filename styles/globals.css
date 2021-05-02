@@ -2,24 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "Inter var";
-  font-weight: 100 900;
-  font-display: swap;
-  font-style: normal;
-  font-named-instance: "Regular";
-  unicode-range: U+0000-007F, U+00A0-0100, U+0131, U+0152-0154, U+02BB-02BD,
-    U+02C6, U+02DA, U+02DC, U+2000-200C, U+2010-2028, U+202F-2060, U+2074,
-    U+20AC, U+2122, U+2191, U+2193, U+2212, U+FEFF;
-  src: url("/fonts/Inter-roman.latin.var.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Virgil";
-  font-display: swap;
-  src: url("https://excalidraw.com/FG_Virgil.woff2");
-}
-
 ::selection {
   background-color: #79ffe1;
   color: black;
@@ -29,14 +11,77 @@
   fill: currentColor;
 } */
 
-/* Inline code */
-/* :not(pre) > code[class*="language-"] {
-  border-radius: 4px;
-  color: inherit;
-} */
-
-/* Code block */
-/* pre[class*="language-"] {
-  border-radius: 8px;
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata,
+.token.punctuation {
+  @apply text-gray-700 dark:text-gray-300;
 }
-*/
+
+.token.comment {
+  @apply text-gray-500 dark:text-gray-400;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  @apply text-green-500;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  @apply text-purple-500;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.regex,
+.token.important,
+.token.variable {
+  @apply text-yellow-500;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  @apply text-blue-500;
+}
+
+.token.function,
+.token.class-name {
+  @apply text-pink-500;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  @apply text-gray-800 dark:text-gray-50;
+}
+
+pre::-webkit-scrollbar {
+  display: none;
+}
+
+pre {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.prose pre {
+  @apply bg-gray-50 border border-gray-200 dark:border-gray-700 dark:bg-gray-900;
+}
+
+.prose code {
+  @apply font-normal;
+}
