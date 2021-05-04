@@ -25,7 +25,6 @@ import LinkedInIcon from "components/icons/linkedin";
 import LinkIcon from "components/icons/link";
 import Container from "components/container";
 import PostPreviews from "components/postPreviews";
-import Button from "components/button";
 
 const siteUrl = "https://alexnault.dev";
 
@@ -138,19 +137,21 @@ export default function Slug({
               </div>
               <MarkdownRenderer>{content}</MarkdownRenderer>
               <div className="my-8 space-x-2">
-                <Button
+                <button
+                  className="btn-primary"
                   aria-controls="share-menu"
                   aria-haspopup="true"
                   onClick={handleClickShare}
                 >
                   Share
-                </Button>
+                </button>
                 <a
                   href={`https://github.com/alexnault/alexnault.dev/edit/master/posts/${slug}.md`}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="btn-secondary"
                 >
-                  <Button>Edit</Button>
+                  Edit
                 </a>
                 <Menu
                   id="share-menu"

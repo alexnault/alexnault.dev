@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import { Button } from "@material-ui/core";
 import { Section, H } from "react-headings";
 
 import Layout from "components/layout";
@@ -21,9 +20,7 @@ const NotFoundPage = () => (
           changed or is temporarily unavailable.
         </p>
         <Link href="/" passHref>
-          <Button component="a" variant="contained" color="primary">
-            Go back home
-          </Button>
+          <a className="btn-primary">Go back home</a>
         </Link>
       </Section>
     </Container>
