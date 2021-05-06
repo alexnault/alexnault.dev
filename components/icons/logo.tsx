@@ -1,7 +1,6 @@
-import React from "react";
-import { SvgIconProps } from "@material-ui/core";
+import SvgIcon from "components/svgicon";
 
-export default function Logo(props: SvgIconProps) {
+export default function Logo(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 80 51.961524" preserveAspectRatio="xMidYMid" {...props}>
       <path

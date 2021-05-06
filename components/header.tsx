@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import { IconButton } from "@material-ui/core";
 
 import DarkIcon from "./icons/dark";
 import LogoIcon from "./icons/logo";
@@ -22,13 +21,13 @@ const Header = ({ logoText }: Props) => {
           <span className="text-lg font-bold">{logoText}</span>
         </a>
       </Link>
-      <IconButton
-        edge="end"
+      <button
+        className="text-gray-500 hover:text-gray-600 transition-colors"
         onClick={handleChangeTheme}
         aria-label="Toggle theme"
       >
         <DarkIcon />
-      </IconButton>
+      </button>
     </header>
   );
 };

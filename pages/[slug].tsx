@@ -186,28 +186,25 @@ export default function Slug({
                   message="Link copied"
                 />
               </div>
-              <div className="flex items-center my-8">
-                <div className="flex-shrink-0 mr-3">
-                  <Image
-                    src="/alex.webp"
-                    width={64}
-                    height={64}
-                    alt="Alex Nault"
-                    className="rounded-full"
-                  />
-                </div>
-                <div>
-                  <div className="text-lg font-bold">
-                    {"By "}
-                    <Link href="/" passHref>
-                      <a className="underline text-blue-500">Alex Nault</a>
-                    </Link>
+              <Link href="/" passHref>
+                <a className="flex items-center my-8">
+                  <div className="flex-shrink-0 mr-3">
+                    <Image
+                      src="/alex.webp"
+                      width={64}
+                      height={64}
+                      alt="Alex Nault"
+                      className="rounded-full"
+                    />
                   </div>
-                  <div className="text-lg text-gray-700">
-                    I write bite-sized articles for developers
+                  <div>
+                    <div className="text-lg font-bold">By Alex Nault</div>
+                    <div className="text-lg text-gray-700">
+                      I write bite-sized articles for developers
+                    </div>
                   </div>
-                </div>
-              </div>
+                </a>
+              </Link>
             </article>
           </Container>
         }
