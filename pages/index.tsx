@@ -21,7 +21,7 @@ export default function Index({
           <Section component={<About />}>
             <Section
               component={
-                <H className="text-2xl md:text-3xl font-bold mb-4">
+                <H className="text-2xl md:text-3xl font-bold mb-6">
                   Latest articles
                 </H>
               }

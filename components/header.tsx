@@ -17,7 +17,7 @@ const Header = ({ logoText }: Props) => {
     <header className="flex items-center justify-between p-4 container max-w-4xl mx-auto h-16">
       <Link href="/">
         <a className="flex items-center">
-          <LogoIcon width={30} height={30} className="mr-2" />
+          <LogoIcon size="lg" className="mr-2" />
           <span className="text-lg font-bold">{logoText}</span>
         </a>
       </Link>

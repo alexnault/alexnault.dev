@@ -14,12 +14,7 @@ const PostPreview = ({ article }: Props) => {
 
   return (
     <Link href={`/${slug}`} passHref>
-      {/* transition: transform 200ms !important; */}
-      {/* // .postPreview:hover,
-// .postPreview:focus {
-//   transform: scale(1.0325);
-// } */}
-      <a className="overflow-hidden bg-white shadow-2xl rounded-lg scale-150 transform-all">
+      <a className="overflow-hidden bg-white shadow-2xl rounded-lg transition transform hover:scale-105 focus:scale-105">
         <div
           className="relative w-full
            bg-gray-200"
