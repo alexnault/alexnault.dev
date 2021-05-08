@@ -7,13 +7,7 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import { Section, H } from "react-headings";
-import {
-  Menu,
-  MenuItem,
-  ListItemIcon,
-  Snackbar,
-  ListItemText,
-} from "@material-ui/core";
+import { Menu } from "@headlessui/react";
 
 import { getAllSlugs, getArticleBySlug, getRelatedArticles } from "lib/cms";
 
@@ -25,6 +19,7 @@ import LinkedInIcon from "components/icons/linkedin";
 import LinkIcon from "components/icons/link";
 import Container from "components/container";
 import PostPreviews from "components/postPreviews";
+import CustomMenu from "components/menu";
 
 const siteUrl = "https://alexnault.dev";
 
@@ -58,23 +53,13 @@ export default function Slug({
     mainEntityOfPage: currentUrl,
   };
 
-  const [anchorEl, setAnchorEl] = React.useState(null);
   const [snackbarOpen, setSnackbarOpen] = React.useState(false);
-
-  const handleClickShare = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleCloseMenu = () => {
-    setAnchorEl(null);
-  };
 
   const handleShareTwitter = () => {
     const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
       `${title} ${currentUrl} via @nault_alex`
     )}`;
     window.open(url, "_blank");
-    setAnchorEl(null);
   };
 
   const handleShareLinkedIn = () => {
@@ -87,13 +72,11 @@ export default function Slug({
       "_blank",
       "width=550,height=431,location=no,menubar=no,scrollbars=no,status=no,toolbar=no"
     );
-    setAnchorEl(null);
   };
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(window.location.href);
     setSnackbarOpen(true);
-    setAnchorEl(null);
   };
 
   const handleCloseSnackbar = (_, reason) => {
@@ -137,14 +120,46 @@ export default function Slug({
               </div>
               <MarkdownRenderer>{content}</MarkdownRenderer>
               <div className="my-8 space-x-2">
-                <button
-                  className="btn-primary"
-                  aria-controls="share-menu"
-                  aria-haspopup="true"
-                  onClick={handleClickShare}
-                >
-                  Share
-                </button>
+                <CustomMenu
+                  button={
+                    <Menu.Button className="btn-primary">Share</Menu.Button>
+                  }
+                  items={[
+                    {
+                      key: "twitter",
+                      title: "Twitter",
+                      onClick: handleShareTwitter,
+                      icon: (
+                        <TwitterIcon
+                          size="sm"
+                          className="mr-3 text-gray-400 group-hover:text-gray-500"
+                        />
+                      ),
+                    },
+                    {
+                      key: "linkedin",
+                      title: "LinkedIn",
+                      onClick: handleShareLinkedIn,
+                      icon: (
+                        <LinkedInIcon
+                          size="sm"
+                          className="mr-3 text-gray-400 group-hover:text-gray-500"
+                        />
+                      ),
+                    },
+                    {
+                      key: "link",
+                      title: "Copy link",
+                      onClick: handleCopyLink,
+                      icon: (
+                        <LinkIcon
+                          size="sm"
+                          className="mr-3 text-gray-400 group-hover:text-gray-500"
+                        />
+                      ),
+                    },
+                  ]}
+                />
                 <a
                   href={`https://github.com/alexnault/alexnault.dev/edit/master/posts/${slug}.md`}
                   target="_blank"
@@ -153,38 +168,6 @@ export default function Slug({
                 >
                   Edit
                 </a>
-                <Menu
-                  id="share-menu"
-                  keepMounted
-                  anchorEl={anchorEl}
-                  open={!!anchorEl}
-                  onClose={handleCloseMenu}
-                >
-                  <MenuItem onClick={handleShareTwitter}>
-                    <ListItemIcon>
-                      <TwitterIcon fontSize="small" />
-                    </ListItemIcon>
-                    <ListItemText primary="Twitter" />
-                  </MenuItem>
-                  <MenuItem onClick={handleShareLinkedIn}>
-                    <ListItemIcon>
-                      <LinkedInIcon fontSize="small" />
-                    </ListItemIcon>
-                    <ListItemText primary="LinkedIn" />
-                  </MenuItem>
-                  <MenuItem onClick={handleCopyLink}>
-                    <ListItemIcon>
-                      <LinkIcon fontSize="small" />
-                    </ListItemIcon>
-                    <ListItemText primary="Copy link" />
-                  </MenuItem>
-                </Menu>
-                <Snackbar
-                  open={snackbarOpen}
-                  autoHideDuration={2000}
-                  onClose={handleCloseSnackbar}
-                  message="Link copied"
-                />
               </div>
               <Link href="/" passHref>
                 <a className="flex items-center my-8">

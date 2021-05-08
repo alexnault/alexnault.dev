@@ -27,7 +27,7 @@ const SocialButton = ({ icon, title, href }: SocialButtonProps) => {
 
 const About = () => {
   return (
-    <div className="flex flex-col sm:flex-row items-center mt-0 mx-auto mb-14 max-w-5xl">
+    <div className="flex flex-col sm:flex-row items-center mx-auto mb-20 mt-8 max-w-5xl">
       <div className="flex justify-center mb-6 sm:mb-0 flex-shrink-0">
         <div className="w-40 h-40 sm:w-48 sm:h-48 lg:w-60 lg:h-60 overflow-hidden rounded-full relative shadow-xl bg-gray-200">
           <Image src="/alex.webp" alt="Alex Nault" layout="fill" />
