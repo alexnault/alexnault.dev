@@ -53,8 +53,6 @@ export default function Slug({
     mainEntityOfPage: currentUrl,
   };
 
-  const [snackbarOpen, setSnackbarOpen] = React.useState(false);
-
   const handleShareTwitter = () => {
     const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
       `${title} ${currentUrl} via @nault_alex`
@@ -76,15 +74,6 @@ export default function Slug({
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(window.location.href);
-    setSnackbarOpen(true);
-  };
-
-  const handleCloseSnackbar = (_, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-
-    setSnackbarOpen(false);
   };
 
   return (

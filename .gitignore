@@ -18,8 +18,6 @@ out/
 # misc
 .DS_Store
 *.pem
-_logs/
-_cacache/
 
 # debug
 npm-debug.log*
