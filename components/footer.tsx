@@ -2,29 +2,30 @@ import React from "react";
 
 import Divider from "components/divider";
 
-const Footer = () => (
-  <footer className="flex justify-center py-10 px-4">
-    <a
-      href="https://github.com/alexnault"
-      className="text-gray-500 sm:text-lg hover:text-gray-600"
-    >
-      GitHub
-    </a>
-    <Divider className="h-auto mx-4" />
-    <a
-      href="https://www.linkedin.com/in/naultalex"
-      className="text-gray-500 sm:text-lg hover:text-gray-600"
-    >
-      LinkedIn
-    </a>
-    <Divider className="h-auto mx-4" />
-    <a
-      href="https://twitter.com/nault_alex"
-      className="text-gray-500 sm:text-lg hover:text-gray-600"
-    >
-      Twitter
-    </a>
-  </footer>
-);
+type FooterLinkProps = {
+  title: string;
+  href?: string;
+};
 
-export default Footer;
+function FooterLink({ title, href }: FooterLinkProps) {
+  return (
+    <a href={href} className="text-gray-500 sm:text-lg hover:text-gray-600">
+      {title}
+    </a>
+  );
+}
+
+export default function Footer() {
+  return (
+    <footer className="flex justify-center py-10 px-4">
+      <FooterLink title="GitHub" href="https://github.com/alexnault" />
+      <Divider className="h-auto mx-4" />
+      <FooterLink
+        title="LinkedIn"
+        href="https://www.linkedin.com/in/naultalex"
+      />
+      <Divider className="h-auto mx-4" />
+      <FooterLink title="Twitter" href="https://twitter.com/nault_alex" />
+    </footer>
+  );
+}

@@ -1,14 +1,68 @@
+:root {
+  --color-white: white;
+  --color-black: black;
+
+  --color-gray-50: #fff;
+  --color-gray-100: #fafafa;
+  --color-gray-200: #eaeaea;
+  --color-gray-300: #999;
+  --color-gray-400: #888;
+  --color-gray-500: #666;
+  --color-gray-600: #444;
+  --color-gray-700: #333;
+  --color-gray-800: #111;
+  --color-gray-900: #000;
+
+  /* --color-gray-50: #fafafa;
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #e5e5e5;
+  --color-gray-300: #d4d4d4;
+  --color-gray-400: #a3a3a3;
+  --color-gray-500: #737373;
+  --color-gray-600: #525252;
+  --color-gray-700: #404040;
+  --color-gray-800: #262626;
+  --color-gray-900: #171717; */
+}
+
+.dark {
+  --color-white: black;
+  --color-black: white;
+
+  --color-gray-50: #000;
+  --color-gray-100: #111;
+  --color-gray-200: #333;
+  --color-gray-300: #444;
+  --color-gray-400: #666;
+  --color-gray-500: #888;
+  --color-gray-600: #999;
+  --color-gray-700: #eaeaea;
+  --color-gray-800: #fafafa;
+  --color-gray-900: #fff;
+
+  /* --color-gray-50: #171717;
+  --color-gray-100: #262626;
+  --color-gray-200: #404040;
+  --color-gray-300: #525252;
+  --color-gray-400: #737373;
+  --color-gray-500: #a3a3a3;
+  --color-gray-600: #d4d4d4;
+  --color-gray-700: #e5e5e5;
+  --color-gray-800: #f5f5f5;
+  --color-gray-900: #fafafa; */
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500;
+    @apply inline-flex items-center px-4 py-2 border border-black text-base font-medium rounded-md text-white bg-black hover:text-black hover:bg-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500;
+    @apply inline-flex items-center px-4 py-2 border border-gray-300 hover:border-black text-base font-medium rounded-md text-gray-700 bg-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors;
   }
 }
 
@@ -17,20 +71,16 @@
   color: black;
 }
 
-/* svg {
-  fill: currentColor;
-} */
-
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata,
 .token.punctuation {
-  @apply text-gray-700 dark:text-gray-300;
+  @apply text-gray-700;
 }
 
 .token.comment {
-  @apply text-gray-500 dark:text-gray-400;
+  @apply text-gray-500;
 }
 
 .token.property,
@@ -40,7 +90,7 @@
 .token.constant,
 .token.symbol,
 .token.deleted {
-  @apply text-green-500;
+  @apply text-green-600 dark:text-green-500;
 }
 
 .token.selector,
@@ -49,7 +99,7 @@
 .token.char,
 .token.builtin,
 .token.inserted {
-  @apply text-purple-500;
+  @apply text-purple-600 dark:text-purple-500;
 }
 
 .token.operator,
@@ -60,23 +110,23 @@
 .token.regex,
 .token.important,
 .token.variable {
-  @apply text-yellow-500;
+  @apply text-yellow-600 dark:text-yellow-500;
 }
 
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-  @apply text-blue-500;
+  @apply text-blue-600 dark:text-blue-500;
 }
 
 .token.function,
 .token.class-name {
-  @apply text-pink-500;
+  @apply text-pink-600 dark:text-pink-500;
 }
 
 code[class*="language-"],
 pre[class*="language-"] {
-  @apply text-gray-800 dark:text-gray-50;
+  @apply text-gray-800;
 }
 
 pre::-webkit-scrollbar {
@@ -89,7 +139,7 @@ pre {
 }
 
 .prose pre {
-  @apply -mx-4 rounded-none sm:mx-0 sm:rounded-md bg-gray-50 border border-gray-200 dark:border-gray-700 dark:bg-gray-900;
+  @apply -mx-4 rounded-none sm:mx-0 sm:rounded-md bg-gray-100 border border-gray-200;
 }
 
 .prose code {

@@ -17,7 +17,7 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="en" dir="ltr">
+      <Html lang="en" dir="ltr" className="bg-white text-black">
         <Head>
           <meta name="application-name" content="Alex Nault" />
           <meta name="apple-mobile-web-app-capable" content="yes" />

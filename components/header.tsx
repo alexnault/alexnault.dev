@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { useTheme } from "next-themes";
 
 import DarkIcon from "./icons/dark";
 import LogoIcon from "./icons/logo";
@@ -9,8 +10,10 @@ type Props = {
 };
 
 const Header = ({ logoText }: Props) => {
+  const { theme, setTheme } = useTheme();
+
   const handleChangeTheme = () => {
-    // TODO change theme
+    setTheme(theme === "light" ? "dark" : "light");
   };
 
   return (
@@ -22,7 +25,7 @@ const Header = ({ logoText }: Props) => {
         </a>
       </Link>
       <button
-        className="text-gray-500 hover:text-gray-600 transition-colors"
+        className="text-gray-400 hover:text-gray-500 transition-colors"
         onClick={handleChangeTheme}
         aria-label="Toggle theme"
       >

@@ -39,9 +39,7 @@ export default function Example({ button, items }: Props) {
                       <button
                         onClick={item.onClick}
                         className={classnames(
-                          active
-                            ? "bg-gray-100 text-gray-900"
-                            : "text-gray-700",
+                          active ? "bg-gray-100 text-black" : "text-gray-700",
                           "group flex items-center w-full px-4 py-2 text-sm"
                         )}
                       >

@@ -97,7 +97,7 @@ export default function Slug({
                   {excerpt}
                 </p>
               </header>
-              <div className="mb-8 -mx-4 sm:mx-0 sm:rounded-md shadow-xl overflow-hidden bg-gray-200">
+              <div className="mb-8 -mx-4 sm:mx-0 sm:rounded-md shadow-xl overflow-hidden bg-gray-100">
                 <Image
                   src={coverImage}
                   alt="Article cover"
@@ -171,7 +171,7 @@ export default function Slug({
                   </div>
                   <div>
                     <div className="text-lg font-bold">By Alex Nault</div>
-                    <div className="text-lg text-gray-700">
+                    <div className="text-lg text-gray-500">
                       I write bite-sized articles for developers
                     </div>
                   </div>

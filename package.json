@@ -29,6 +29,7 @@
     "gray-matter": "^4.0.2",
     "next": "^10.2.0",
     "next-pwa": "^5.0.6",
+    "next-themes": "^0.0.14",
     "postcss": "^8.2.12",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^6.7.0",
