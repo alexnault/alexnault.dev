@@ -36,6 +36,7 @@ module.exports = {
       },
       boxShadow: {
         border: "0 0 0 1px var(--color-gray-200)",
+        "border-black": "0 0 0 1px var(--color-black)",
       },
       typography: (theme) => ({
         DEFAULT: {
@@ -54,6 +55,11 @@ module.exports = {
           },
         },
       }),
+    },
+  },
+  variants: {
+    extend: {
+      boxShadow: ["hover"],
     },
   },
   plugins: [require("@tailwindcss/typography")],

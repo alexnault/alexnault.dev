@@ -25,7 +25,7 @@ const Header = ({ logoText }: Props) => {
         </a>
       </Link>
       <button
-        className="text-gray-400 hover:text-gray-500 transition-colors"
+        className="text-gray-400 hover:text-black transition-colors"
         onClick={handleChangeTheme}
         aria-label="Toggle theme"
       >

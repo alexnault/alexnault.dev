@@ -17,7 +17,7 @@ const SocialButton = ({ icon, title, href }: SocialButtonProps) => {
   return (
     <a
       href={href}
-      className="text-gray-400 hover:text-gray-500 transition-colors"
+      className="text-gray-400 hover:text-black transition-colors"
       aria-label={title}
     >
       {icon}

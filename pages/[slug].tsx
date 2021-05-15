@@ -181,10 +181,10 @@ export default function Slug({
           </Container>
         }
       >
-        <Container className="mt-8 xl:max-w-screen-xl">
+        <Container className="mt-16 xl:max-w-screen-xl">
           <Section
             component={
-              <H className="text-3xl font-bold mb-4">Related articles</H>
+              <H className="text-3xl font-bold mb-6">Related articles</H>
             }
           >
             <PostPreviews articles={relatedArticles} />

@@ -9,7 +9,7 @@ type FooterLinkProps = {
 
 function FooterLink({ title, href }: FooterLinkProps) {
   return (
-    <a href={href} className="text-gray-500 sm:text-lg hover:text-gray-600">
+    <a href={href} className="text-gray-500 sm:text-lg hover:text-black">
       {title}
     </a>
   );
