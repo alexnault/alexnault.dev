@@ -1,9 +1,12 @@
-import React from "react";
-import { SvgIconProps } from "@material-ui/core";
+import SvgIcon, { SvgIconProps } from "components/svgicon";
 
 export default function Logo(props: SvgIconProps) {
   return (
-    <svg viewBox="0 0 80 51.961524" preserveAspectRatio="xMidYMid" {...props}>
+    <SvgIcon
+      viewBox="0 0 80 51.961524"
+      preserveAspectRatio="xMidYMid"
+      {...props}
+    >
       <path
         d="
         M0.000,51.961524
@@ -18,6 +21,6 @@ export default function Logo(props: SvgIconProps) {
         L80.000,17.320508
         Z"
       />
-    </svg>
+    </SvgIcon>
   );
 }

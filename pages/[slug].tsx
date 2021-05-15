@@ -6,19 +6,8 @@ import {
 } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Section } from "react-headings";
-import {
-  Typography,
-  Link as MuiLink,
-  Button,
-  Menu,
-  MenuItem,
-  ListItemIcon,
-  Snackbar,
-  ListItemText,
-  Container,
-  useTheme,
-} from "@material-ui/core";
+import { Section, H } from "react-headings";
+import { Menu } from "@headlessui/react";
 
 import { getAllSlugs, getArticleBySlug, getRelatedArticles } from "lib/cms";
 
@@ -28,10 +17,9 @@ import MarkdownRenderer from "components/markdownRenderer";
 import TwitterIcon from "components/icons/twitter";
 import LinkedInIcon from "components/icons/linkedin";
 import LinkIcon from "components/icons/link";
-import Heading from "components/heading";
+import Container from "components/container";
 import PostPreviews from "components/postPreviews";
-
-import style from "styles/post.module.css";
+import CustomMenu from "components/menu";
 
 const siteUrl = "https://alexnault.dev";
 
@@ -40,7 +28,6 @@ export default function Slug({
   relatedArticles,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { slug, title, excerpt, coverImage, content } = article;
-  const { palette } = useTheme();
 
   const currentUrl = `${siteUrl}/${slug}`;
 
@@ -66,23 +53,11 @@ export default function Slug({
     mainEntityOfPage: currentUrl,
   };
 
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const [snackbarOpen, setSnackbarOpen] = React.useState(false);
-
-  const handleClickShare = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleCloseMenu = () => {
-    setAnchorEl(null);
-  };
-
   const handleShareTwitter = () => {
     const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
       `${title} ${currentUrl} via @nault_alex`
     )}`;
     window.open(url, "_blank");
-    setAnchorEl(null);
   };
 
   const handleShareLinkedIn = () => {
@@ -95,21 +70,10 @@ export default function Slug({
       "_blank",
       "width=550,height=431,location=no,menubar=no,scrollbars=no,status=no,toolbar=no"
     );
-    setAnchorEl(null);
   };
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(window.location.href);
-    setSnackbarOpen(true);
-    setAnchorEl(null);
-  };
-
-  const handleCloseSnackbar = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-
-    setSnackbarOpen(false);
   };
 
   return (
@@ -123,118 +87,102 @@ export default function Slug({
       />
       <Section
         component={
-          <Container maxWidth="sm">
+          <Container className="md:max-w-screen-md">
             <article>
-              <header>
-                <Heading variant="h2" className={style.title}>
+              <header className="mb-8">
+                <H className=" mb-4 lg:mb-8 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
                   {title}
-                </Heading>
-                <Typography variant="subtitle1" color="textSecondary" paragraph>
-                  <b>{excerpt}</b>
-                </Typography>
+                </H>
+                <p className="text-gray-500 font-bold text-lg">{excerpt}</p>
               </header>
-              {coverImage && (
-                <div
-                  className={style.coverImage}
-                  style={{ backgroundColor: palette.divider }}
-                >
-                  <Image
-                    src={coverImage}
-                    alt="Article cover"
-                    width="728"
-                    height="500"
-                    layout="responsive"
-                    objectFit="cover"
-                  />
-                </div>
-              )}
-              <MarkdownRenderer>{content}</MarkdownRenderer>
-              <div className={style.actions}>
-                <Button
-                  aria-controls="share-menu"
-                  aria-haspopup="true"
-                  color="secondary"
-                  variant="contained"
-                  onClick={handleClickShare}
-                >
-                  Share
-                </Button>
-                <Button
-                  component="a"
-                  variant="outlined"
-                  href={`https://github.com/alexnault/alexnault.dev/edit/master/posts/${slug}.mdx`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Edit
-                </Button>
-                <Menu
-                  id="share-menu"
-                  keepMounted
-                  anchorEl={anchorEl}
-                  open={!!anchorEl}
-                  onClose={handleCloseMenu}
-                >
-                  <MenuItem onClick={handleShareTwitter}>
-                    <ListItemIcon>
-                      <TwitterIcon fontSize="small" />
-                    </ListItemIcon>
-                    <ListItemText primary="Twitter" />
-                  </MenuItem>
-                  <MenuItem onClick={handleShareLinkedIn}>
-                    <ListItemIcon>
-                      <LinkedInIcon fontSize="small" />
-                    </ListItemIcon>
-                    <ListItemText primary="LinkedIn" />
-                  </MenuItem>
-                  <MenuItem onClick={handleCopyLink}>
-                    <ListItemIcon>
-                      <LinkIcon fontSize="small" />
-                    </ListItemIcon>
-                    <ListItemText primary="Copy link" />
-                  </MenuItem>
-                </Menu>
-                <Snackbar
-                  open={snackbarOpen}
-                  autoHideDuration={2000}
-                  onClose={handleCloseSnackbar}
-                  message="Link copied"
+              <div className="mb-8 -mx-6 sm:mx-0 sm:rounded-md shadow-xl overflow-hidden bg-gray-100">
+                <Image
+                  src={coverImage}
+                  alt="Article cover"
+                  width="728"
+                  height="500"
+                  layout="responsive"
+                  objectFit="cover"
                 />
               </div>
-              <div className={style.author}>
-                <div className={style.avatarWrapper}>
-                  <Image
-                    src="/alex.webp"
-                    width={64}
-                    height={64}
-                    alt="Alex Nault"
-                    className={style.avatar}
-                  />
-                </div>
-                <div>
-                  <Typography>
-                    <b>
-                      {"By "}
-                      <Link href="/" passHref>
-                        <MuiLink>Alex Nault</MuiLink>
-                      </Link>
-                    </b>
-                  </Typography>
-                  <Typography>
-                    I write bite-sized articles for developers
-                  </Typography>
-                </div>
+              <MarkdownRenderer>{content}</MarkdownRenderer>
+              <div className="my-8 space-x-2">
+                <CustomMenu
+                  button={
+                    <Menu.Button className="btn-primary">Share</Menu.Button>
+                  }
+                  items={[
+                    {
+                      key: "twitter",
+                      title: "Twitter",
+                      onClick: handleShareTwitter,
+                      icon: (
+                        <TwitterIcon
+                          size="sm"
+                          className="mr-3 text-gray-400 group-hover:text-gray-500"
+                        />
+                      ),
+                    },
+                    {
+                      key: "linkedin",
+                      title: "LinkedIn",
+                      onClick: handleShareLinkedIn,
+                      icon: (
+                        <LinkedInIcon
+                          size="sm"
+                          className="mr-3 text-gray-400 group-hover:text-gray-500"
+                        />
+                      ),
+                    },
+                    {
+                      key: "link",
+                      title: "Copy link",
+                      onClick: handleCopyLink,
+                      icon: (
+                        <LinkIcon
+                          size="sm"
+                          className="mr-3 text-gray-400 group-hover:text-gray-500"
+                        />
+                      ),
+                    },
+                  ]}
+                />
+                <a
+                  href={`https://github.com/alexnault/alexnault.dev/edit/master/posts/${slug}.md`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary"
+                >
+                  Edit
+                </a>
               </div>
+              <Link href="/" passHref>
+                <a className="flex items-center my-8">
+                  <div className="flex-shrink-0 mr-3">
+                    <Image
+                      src="/alex.webp"
+                      width={64}
+                      height={64}
+                      alt="Alex Nault"
+                      className="rounded-full"
+                    />
+                  </div>
+                  <div>
+                    <div className="text-lg font-bold">By Alex Nault</div>
+                    <div className="text-lg text-gray-500">
+                      I write bite-sized articles for developers
+                    </div>
+                  </div>
+                </a>
+              </Link>
             </article>
           </Container>
         }
       >
-        <Container>
+        <Container className="mt-16 xl:max-w-screen-xl">
           <Section
             component={
-              <Heading variant="h4" gutterBottom>
-                Related articles
-              </Heading>
+              <H className="text-3xl font-bold mb-6">Related articles</H>
             }
           >
             <PostPreviews articles={relatedArticles} />

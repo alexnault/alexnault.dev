@@ -4,15 +4,13 @@ import { Article } from "lib/cms";
 
 import PostPreview from "components/postPreview";
 
-import style from "styles/postPreviews.module.css";
-
 type Props = {
   articles: Article[];
 };
 
 const PostPreviews = ({ articles }: Props) => {
   return (
-    <div className={style.postPreviews}>
+    <div className="w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
       {articles.map((article) => (
         <PostPreview key={article.slug} article={article} />
       ))}

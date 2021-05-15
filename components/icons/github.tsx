@@ -1,5 +1,4 @@
-import React from "react";
-import { SvgIcon, SvgIconProps } from "@material-ui/core";
+import SvgIcon, { SvgIconProps } from "components/svgicon";
 
 export default function GitHubIcon(props: SvgIconProps) {
   return (

@@ -1,9 +1,0 @@
-.postPreviews {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  grid-gap: 24px;
-  @media (max-width: 600px) {
-    grid-template-columns: 1fr;
-  }
-}

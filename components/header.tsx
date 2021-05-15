@@ -1,45 +1,36 @@
 import React from "react";
 import Link from "next/link";
-import { useTheme } from "@material-ui/core/styles";
-import { Typography, IconButton } from "@material-ui/core";
+import { useTheme } from "next-themes";
 
-import { useChangeTheme } from "./themeContext";
 import DarkIcon from "./icons/dark";
 import LogoIcon from "./icons/logo";
-
-import style from "styles/header.module.css";
 
 type Props = {
   logoText: string;
 };
 
 const Header = ({ logoText }: Props) => {
-  const { palette } = useTheme();
-  const changeTheme = useChangeTheme();
+  const { theme, setTheme } = useTheme();
 
   const handleChangeTheme = () => {
-    changeTheme({ paletteType: palette.type === "dark" ? "light" : "dark" });
+    setTheme(theme === "light" ? "dark" : "light");
   };
 
   return (
-    <header className={style.header}>
-      <div className={style.inner}>
-        <Link href="/">
-          <a className={style.logo}>
-            <LogoIcon width={30} height={30} className={style.svg} />
-            <Typography variant="body2">
-              <b>{logoText}</b>
-            </Typography>
-          </a>
-        </Link>
-        <IconButton
-          edge="end"
-          onClick={handleChangeTheme}
-          aria-label="Toggle theme"
-        >
-          <DarkIcon />
-        </IconButton>
-      </div>
+    <header className="flex items-center justify-between px-6 py-4 container max-w-4xl mx-auto h-16">
+      <Link href="/">
+        <a className="flex items-center">
+          <LogoIcon size="lg" className="mr-2" />
+          <span className="text-lg font-bold">{logoText}</span>
+        </a>
+      </Link>
+      <button
+        className="text-gray-400 hover:text-black transition-colors"
+        onClick={handleChangeTheme}
+        aria-label="Toggle theme"
+      >
+        <DarkIcon />
+      </button>
     </header>
   );
 };

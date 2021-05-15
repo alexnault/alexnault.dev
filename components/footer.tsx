@@ -1,22 +1,34 @@
 import React from "react";
-import { Link, Divider } from "@material-ui/core";
 
-import style from "styles/footer.module.css";
+import Divider from "components/divider";
 
-const Footer = () => (
-  <footer className={style.footer}>
-    <Link color="textSecondary" href="https://github.com/alexnault">
-      GitHub
-    </Link>
-    <Divider orientation="vertical" className={style.divider} />
-    <Link color="textSecondary" href="https://www.linkedin.com/in/naultalex">
-      LinkedIn
-    </Link>
-    <Divider orientation="vertical" className={style.divider} />
-    <Link color="textSecondary" href="https://twitter.com/nault_alex">
-      Twitter
-    </Link>
-  </footer>
-);
+type FooterLinkProps = {
+  title: string;
+  href?: string;
+};
 
-export default Footer;
+function FooterLink({ title, href }: FooterLinkProps) {
+  return (
+    <a
+      href={href}
+      className="transition-colors text-gray-500 sm:text-lg hover:text-black"
+    >
+      {title}
+    </a>
+  );
+}
+
+export default function Footer() {
+  return (
+    <footer className="flex justify-center py-10 px-6">
+      <FooterLink title="GitHub" href="https://github.com/alexnault" />
+      <Divider className="h-auto mx-4" />
+      <FooterLink
+        title="LinkedIn"
+        href="https://www.linkedin.com/in/naultalex"
+      />
+      <Divider className="h-auto mx-4" />
+      <FooterLink title="Twitter" href="https://twitter.com/nault_alex" />
+    </footer>
+  );
+}
