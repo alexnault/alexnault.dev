@@ -90,12 +90,10 @@ export default function Slug({
           <Container className="md:max-w-screen-md">
             <article>
               <header className="mb-8">
-                <H className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
+                <H className=" mb-4 lg:mb-8 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
                   {title}
                 </H>
-                <p className="text-gray-500 font-bold mt-4 text-lg">
-                  {excerpt}
-                </p>
+                <p className="text-gray-500 font-bold text-lg">{excerpt}</p>
               </header>
               <div className="mb-8 -mx-6 sm:mx-0 sm:rounded-md shadow-xl overflow-hidden bg-gray-100">
                 <Image

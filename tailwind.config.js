@@ -42,16 +42,28 @@ module.exports = {
         DEFAULT: {
           css: {
             a: {
-              color: theme("colors.blue.500"),
+              color: theme("colors.blue.600"),
               "&:hover": {
                 color: theme("colors.blue.700"),
               },
-              code: { color: theme("colors.blue.400") },
+              code: { color: theme("colors.blue.600") },
             },
             code: { color: theme("colors.pink.600") },
             "blockquote p": { color: theme("colors.gray.500") },
             "blockquote p:first-of-type::before": false,
             "blockquote p:last-of-type::after": false,
+          },
+        },
+        dark: {
+          css: {
+            code: { color: theme("colors.pink.500") },
+            a: {
+              color: theme("colors.blue.500"),
+              "&:hover": {
+                color: theme("colors.blue.600"),
+              },
+              code: { color: theme("colors.blue.500") },
+            },
           },
         },
       }),
@@ -60,6 +72,7 @@ module.exports = {
   variants: {
     extend: {
       boxShadow: ["hover"],
+      typography: ["dark"],
     },
   },
   plugins: [require("@tailwindcss/typography")],
