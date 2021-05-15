@@ -97,7 +97,7 @@ export default function Slug({
                   {excerpt}
                 </p>
               </header>
-              <div className="mb-8 -mx-4 sm:mx-0 sm:rounded-md shadow-xl overflow-hidden bg-gray-100">
+              <div className="mb-8 -mx-6 sm:mx-0 sm:rounded-md shadow-xl overflow-hidden bg-gray-100">
                 <Image
                   src={coverImage}
                   alt="Article cover"
@@ -181,7 +181,7 @@ export default function Slug({
           </Container>
         }
       >
-        <Container className="xl:max-w-screen-xl">
+        <Container className="mt-8 xl:max-w-screen-xl">
           <Section
             component={
               <H className="text-3xl font-bold mb-4">Related articles</H>

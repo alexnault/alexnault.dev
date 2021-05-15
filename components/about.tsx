@@ -33,16 +33,16 @@ const About = () => {
           <Image src="/alex.webp" alt="Alex Nault" layout="fill" />
         </div>
       </div>
-      <div className="sm:flex-1 sm:ml-8">
-        <H className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-8">
+      <div className="sm:flex-1 sm:ml-12 md:ml-16">
+        <H className="text-center sm:text-left text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-8">
           {"Hi, I'm Alex Nault and I solve problems using software."}
         </H>
-        <p className="text-gray-500 text-lg md:text-xl mb-4 md:leading-relaxed">
+        <p className="text-gray-500 text-center sm:text-left text-lg md:text-xl mb-4 md:leading-relaxed">
           {
             "I'm currently building solutions at Apprentx as a software architect. Previously Classcraft and Ubisoft."
           }
         </p>
-        <div className="space-x-6">
+        <div className="flex justify-center sm:justify-start space-x-6">
           <SocialButton
             title="GitHub"
             href="https://github.com/alexnault"

@@ -17,7 +17,7 @@ function FooterLink({ title, href }: FooterLinkProps) {
 
 export default function Footer() {
   return (
-    <footer className="flex justify-center py-10 px-4">
+    <footer className="flex justify-center py-10 px-6">
       <FooterLink title="GitHub" href="https://github.com/alexnault" />
       <Divider className="h-auto mx-4" />
       <FooterLink
