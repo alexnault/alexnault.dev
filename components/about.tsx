@@ -17,7 +17,7 @@ const SocialButton = ({ icon, title, href }: SocialButtonProps) => {
   return (
     <a
       href={href}
-      className="text-gray-400 hover:text-black transition-colors"
+      className="text-gray-400 hover:text-black transition-colors p-2"
       aria-label={title}
     >
       {icon}
@@ -37,12 +37,12 @@ const About = () => {
         <H className="text-center sm:text-left text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-8">
           {"Hi, I'm Alex Nault and I solve problems using software."}
         </H>
-        <p className="text-gray-500 text-center sm:text-left text-lg md:text-xl mb-4 md:leading-relaxed">
+        <p className="text-gray-500 text-center sm:text-left text-lg md:text-xl mb-3 md:leading-relaxed">
           {
             "I'm currently building solutions at Apprentx as a software architect. Previously Classcraft and Ubisoft."
           }
         </p>
-        <div className="flex justify-center sm:justify-start space-x-6">
+        <div className="flex justify-center sm:justify-start space-x-2 sm:-mx-2">
           <SocialButton
             title="GitHub"
             href="https://github.com/alexnault"
