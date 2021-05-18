@@ -3,8 +3,8 @@
   "short_name": "Alex Nault",
   "scope": "/",
   "start_url": "/",
-  "theme_color": "#fe5186",
-  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "background_color": "#000000",
   "display": "standalone",
   "orientation": "portrait",
   "icons": [
