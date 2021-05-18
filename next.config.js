@@ -4,10 +4,12 @@ const { createSecureHeaders } = require("next-secure-headers");
 module.exports = withPWA({
   future: {
     webpack5: true,
+    strictPostcssConfiguration: true,
   },
   pwa: {
     dest: "public",
   },
+  reactStrictMode: true,
   async headers() {
     return [
       {
