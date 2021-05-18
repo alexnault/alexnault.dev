@@ -10,10 +10,10 @@ type Props = {
 };
 
 const Header = ({ logoText }: Props) => {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
 
   const handleChangeTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light");
+    setTheme(resolvedTheme === "light" ? "dark" : "light");
   };
 
   return (
