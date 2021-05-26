@@ -30,7 +30,12 @@ const About = () => {
     <div className="flex flex-col sm:flex-row items-center mx-auto mb-20 mt-8 max-w-5xl">
       <div className="flex justify-center mb-6 sm:mb-0 flex-shrink-0">
         <div className="w-40 h-40 sm:w-48 sm:h-48 lg:w-60 lg:h-60 overflow-hidden rounded-full relative shadow-xl bg-gray-100">
-          <Image src="/alex.webp" alt="Alex Nault" layout="fill" />
+          <Image
+            src="/alex.webp"
+            alt="Alex Nault"
+            layout="fill"
+            sizes="(max-width: 640px) 160px, 240px"
+          />
         </div>
       </div>
       <div className="sm:flex-1 sm:ml-12 md:ml-16">

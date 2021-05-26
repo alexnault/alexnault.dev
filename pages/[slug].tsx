@@ -99,10 +99,11 @@ export default function Slug({
                 <Image
                   src={coverImage}
                   alt="Article cover"
-                  width="728"
+                  width="768"
                   height="500"
                   layout="responsive"
                   objectFit="cover"
+                  sizes="(max-width: 768px) 100vw, 768px"
                 />
               </div>
               <MarkdownRenderer>{content}</MarkdownRenderer>
@@ -164,7 +165,7 @@ export default function Slug({
                       width={64}
                       height={64}
                       alt="Alex Nault"
-                      className="rounded-full"
+                      className="rounded-full bg-gray-100"
                     />
                   </div>
                   <div>

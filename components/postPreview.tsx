@@ -25,6 +25,7 @@ const PostPreview = ({ article }: Props) => {
             alt="Cover image"
             layout="fill"
             objectFit="cover"
+            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 416px"
           />
         </div>
         <div className="px-4 py-6 sm:px-6">
