@@ -31,10 +31,10 @@ const PostPreview = ({ article }: Props) => {
         <div className="px-4 py-6 sm:px-6">
           <Section
             component={
-              <H className="text-xl md:text-2xl font-bold mb-2">{title}</H>
+              <H className="text-xl md:text-2xl font-bold mb-3">{title}</H>
             }
           >
-            <p className="text-gray-500 md:text-lg">{excerpt}</p>
+            <p className="text-gray-500 text-sm md:text-base">{excerpt}</p>
           </Section>
         </div>
       </a>
