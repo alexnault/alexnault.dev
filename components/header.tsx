@@ -29,7 +29,7 @@ const Header = ({ logoText }: Props) => {
         onClick={handleChangeTheme}
         aria-label="Toggle theme"
       >
-        <DarkIcon />
+        <DarkIcon size="sm" />
       </button>
     </header>
   );
