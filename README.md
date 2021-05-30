@@ -7,6 +7,7 @@ My personal website and blog.
 ## Getting started
 
 - `git clone https://github.com/alexnault/alexnault.dev.git`
+- `cd alexnault.dev`
 - `npm i`
 - `npm run dev`
 - Open [localhost:3000](https://localhost:3000)
