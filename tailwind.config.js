@@ -47,10 +47,10 @@ module.exports = {
       fontFamily: {
         sans: ["Inter var", ...fontFamily.sans],
       },
-      boxShadow: {
-        border: "0 0 0 1px var(--color-gray-200)",
-        "border-black": "0 0 0 1px var(--color-black)",
-      },
+      boxShadow: (theme) => ({
+        border: `0 0 0 1px ${theme("colors.gray.200")}`,
+        "border-black": `0 0 0 1px ${theme("colors.black")}`,
+      }),
       typography: (theme) => ({
         DEFAULT: {
           css: {
@@ -84,7 +84,7 @@ module.exports = {
   },
   variants: {
     extend: {
-      boxShadow: ["hover"],
+      boxShadow: ["dark", "hover"],
       typography: ["dark"],
     },
   },
