@@ -14,7 +14,7 @@ const PostPreview = ({ article }: Props) => {
 
   return (
     <Link href={`/${slug}`} passHref>
-      <a className="overflow-hidden transition transform rounded-xl bg-white dark:bg-gray-100 shadow-xl hover:shadow-2xl dark:shadow-border dark:hover:shadow-border-black">
+      <a className="overflow-hidden transition transform rounded-xl bg-white dark:bg-gray-100 shadow-xl hover:shadow-2xl ring-1 ring-gray-200 dark:hover:ring-black">
         <div
           className="relative w-full
            bg-gray-100"
