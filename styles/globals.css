@@ -36,11 +36,11 @@
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center px-4 py-2 border border-black text-base font-medium rounded-md text-white bg-black hover:text-black hover:bg-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors;
+    @apply inline-flex items-center px-4 py-2 border border-black text-base font-medium rounded-md text-white bg-black hover:text-black hover:bg-white focus:text-black focus:bg-white focus:outline-none transition-colors;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center px-4 py-2 border border-gray-300 hover:border-black text-base font-medium rounded-md text-gray-700 bg-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors;
+    @apply inline-flex items-center px-4 py-2 border border-gray-300 text-base text-gray-600 hover:text-black hover:border-black focus:text-black focus:border-black font-medium rounded-md bg-white focus:outline-none transition-colors;
   }
 }
 
