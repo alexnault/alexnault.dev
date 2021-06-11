@@ -1,6 +1,19 @@
 const { fontFamily } = require("tailwindcss/defaultTheme");
 const colors = require("tailwindcss/colors");
 
+// https://github.com/adamwathan/tailwind-css-variable-text-opacity-demo
+function cssVariableOpacity(variable) {
+  return ({ opacityVariable, opacityValue }) => {
+    if (opacityValue !== undefined) {
+      return `rgba(var(${variable}), ${opacityValue})`;
+    }
+    if (opacityVariable !== undefined) {
+      return `rgba(var(${variable}), var(${opacityVariable}, 1))`;
+    }
+    return `rgb(var(${variable}))`;
+  };
+}
+
 module.exports = {
   mode: "jit",
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
@@ -9,19 +22,19 @@ module.exports = {
     colors: {
       transparent: "transparent",
       current: "currentColor",
-      black: "var(--color-black)",
-      white: "var(--color-white)",
+      black: cssVariableOpacity("--color-black"),
+      white: cssVariableOpacity("--color-white"),
       gray: {
-        50: "var(--color-gray-50)",
-        100: "var(--color-gray-100)",
-        200: "var(--color-gray-200)",
-        300: "var(--color-gray-300)",
-        400: "var(--color-gray-400)",
-        500: "var(--color-gray-500)",
-        600: "var(--color-gray-600)",
-        700: "var(--color-gray-700)",
-        800: "var(--color-gray-800)",
-        900: "var(--color-gray-900)",
+        50: cssVariableOpacity("--color-gray-50"),
+        100: cssVariableOpacity("--color-gray-100"),
+        200: cssVariableOpacity("--color-gray-200"),
+        300: cssVariableOpacity("--color-gray-300"),
+        400: cssVariableOpacity("--color-gray-400"),
+        500: cssVariableOpacity("--color-gray-500"),
+        600: cssVariableOpacity("--color-gray-600"),
+        700: cssVariableOpacity("--color-gray-700"),
+        800: cssVariableOpacity("--color-gray-800"),
+        900: cssVariableOpacity("--color-gray-900"),
       },
       blue: colors.blue,
       cyan: colors.cyan,
