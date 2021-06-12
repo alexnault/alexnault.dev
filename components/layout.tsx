@@ -10,8 +10,8 @@ type Props = {
 export default function Layout({ children }: Props) {
   return (
     <>
-      <Header logoText="alexnault" />
-      <main className="py-10 sm:py-12">{children}</main>
+      <Header />
+      <main className="mt-16 py-10 sm:py-12">{children}</main>
       <Footer />
     </>
   );
