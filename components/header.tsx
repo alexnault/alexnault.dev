@@ -13,7 +13,7 @@ const Header = () => {
   };
 
   return (
-    <header className="w-full bg-white bg-opacity-70 backdrop-filter backdrop-blur fixed z-20 top-0">
+    <header className="w-full fixed z-20 top-0 bg-white bg-opacity-80 dark:bg-opacity-60 backdrop-filter backdrop-blur backdrop-saturate-150">
       <div className="flex items-center justify-between h-16 px-6 py-4 container max-w-4xl mx-auto">
         <Link href="/">
           <a className="flex items-center p-2 leading-none">
