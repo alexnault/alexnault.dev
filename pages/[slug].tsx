@@ -21,13 +21,15 @@ import Container from "components/container";
 import PostPreviews from "components/postPreviews";
 import CustomMenu from "components/menu";
 
+import alexWebp from "public/alex.webp";
+
 const siteUrl = "https://alexnault.dev";
 
 export default function Slug({
   article,
   relatedArticles,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const { slug, title, excerpt, coverImage, content } = article;
+  const { slug, title, excerpt, coverImage, blurDataURL, content } = article;
 
   const currentUrl = `${siteUrl}/${slug}`;
 
@@ -98,12 +100,14 @@ export default function Slug({
               <div className="mb-8 -mx-6 sm:mx-0 sm:rounded-md shadow-xl overflow-hidden bg-gray-100">
                 <Image
                   src={coverImage}
+                  blurDataURL={blurDataURL}
                   alt="Article cover"
                   width="768"
                   height="500"
                   layout="responsive"
                   objectFit="cover"
                   sizes="(max-width: 768px) 100vw, 768px"
+                  placeholder="blur"
                 />
               </div>
               <MarkdownRenderer>{content}</MarkdownRenderer>
@@ -161,11 +165,12 @@ export default function Slug({
                 <a className="flex items-center my-8">
                   <div className="flex-shrink-0 mr-3">
                     <Image
-                      src="/alex.webp"
+                      src={alexWebp}
                       width={64}
                       height={64}
                       alt="Alex Nault"
                       className="rounded-full bg-gray-100"
+                      placeholder="blur"
                     />
                   </div>
                   <div>
