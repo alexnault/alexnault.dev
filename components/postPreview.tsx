@@ -10,7 +10,7 @@ type Props = {
 };
 
 const PostPreview = ({ article }: Props) => {
-  const { slug, title, coverImage, excerpt } = article;
+  const { slug, title, coverImage, blurDataURL, excerpt } = article;
 
   return (
     <Link href={`/${slug}`} passHref>
@@ -22,10 +22,12 @@ const PostPreview = ({ article }: Props) => {
         >
           <Image
             src={coverImage}
+            blurDataURL={blurDataURL}
             alt="Cover image"
             layout="fill"
             objectFit="cover"
             sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 416px"
+            placeholder="blur"
           />
         </div>
         <div className="px-4 py-6 sm:px-6">
