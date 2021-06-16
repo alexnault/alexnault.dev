@@ -35,7 +35,7 @@ export default function Index({
   );
 }
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
   const articles = await getAllArticles();
 
   return {
