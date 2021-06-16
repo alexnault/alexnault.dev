@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.1.1",
+    "@plaiceholder/next": "^2.0.3",
     "@tailwindcss/typography": "^0.4.0",
     "@types/prismjs": "^1.16.3",
     "autoprefixer": "^10.2.5",
