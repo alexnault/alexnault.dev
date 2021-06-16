@@ -31,7 +31,7 @@ export default function MarkdownRenderer({ children }: Props) {
     <div className="prose sm:prose-lg dark:prose-dark">
       {/*
       // @ts-ignore */}
-      <ReactMarkdown renderers={renderers} children={children} />
+      <ReactMarkdown renderers={renderers}>{children}</ReactMarkdown>
     </div>
   );
 }
