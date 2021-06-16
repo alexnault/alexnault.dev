@@ -1,13 +1,13 @@
-import { Fragment, useState } from "react";
+import { Fragment, ReactNode } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import classnames from "classnames";
 
 type Props = {
-  button: React.ReactNode;
+  button: ReactNode;
   items: {
     key: string;
     title: string;
-    icon?: React.ReactNode;
+    icon?: ReactNode;
     onClick?: () => void;
   }[];
 };

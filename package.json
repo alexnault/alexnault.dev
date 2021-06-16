@@ -17,8 +17,8 @@
     "build": "next build",
     "postbuild": "next-sitemap --config next-sitemap-config.js",
     "start": "next start",
-    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
-    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --quiet"
+    "lint": "next lint",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx}\""
   },
   "dependencies": {
     "@headlessui/react": "^1.1.1",
@@ -49,11 +49,9 @@
     "@typescript-eslint/eslint-plugin": "^4.13.0",
     "@typescript-eslint/parser": "^4.13.0",
     "eslint": "^7.18.0",
+    "eslint-config-next": "^11.0.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^3.3.0",
-    "eslint-plugin-react": "^7.22.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
     "next-secure-headers": "^2.2.0",
     "next-sitemap": "^1.6.116",
     "prettier": "^2.2.1",
