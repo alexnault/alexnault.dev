@@ -7,8 +7,6 @@ import Document, {
   DocumentContext,
 } from "next/document";
 
-const GA_TRACKING_ID = "G-T3N79BDT7Y";
-
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx);
@@ -37,22 +35,6 @@ export default class MyDocument extends Document {
             as="font"
             type="font/woff2"
             crossOrigin="anonymous"
-          />
-          <script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-          />
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_TRACKING_ID}', {
-              page_path: window.location.pathname,
-            });
-          `,
-            }}
           />
         </Head>
         <body>
