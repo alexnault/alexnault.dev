@@ -7,6 +7,8 @@ import LinkedInIcon from "./icons/linkedin";
 import TwitterIcon from "./icons/twitter";
 import EmailIcon from "./icons/email";
 
+import alexWebp from "public/alex.webp";
+
 type SocialButtonProps = {
   title: string;
   href: string;
@@ -31,10 +33,11 @@ const About = () => {
       <div className="flex justify-center mb-6 sm:mb-0 flex-shrink-0">
         <div className="w-40 h-40 sm:w-48 sm:h-48 lg:w-60 lg:h-60 overflow-hidden rounded-full relative shadow-xl bg-gray-100">
           <Image
-            src="/alex.webp"
+            src={alexWebp}
             alt="Alex Nault"
             layout="fill"
             sizes="(max-width: 640px) 160px, 240px"
+            placeholder="blur"
           />
         </div>
       </div>
