@@ -2,45 +2,45 @@ const withPWA = require("next-pwa");
 const { withPlaiceholder } = require("@plaiceholder/next");
 const { createSecureHeaders } = require("next-secure-headers");
 
-module.exports = withPWA(
-  withPlaiceholder({
-    future: {
-      strictPostcssConfiguration: true,
-    },
-    pwa: {
-      dest: "public",
-    },
-    reactStrictMode: true,
-    async headers() {
-      return [
-        {
-          source: "/(.*)",
-          headers: createSecureHeaders({
-            contentSecurityPolicy: {
-              directives: {
-                defaultSrc: [
-                  "'self'",
-                  "https://alexnault.dev",
-                  "https://excalidraw.com",
-                  "https://www.googletagmanager.com",
-                  "https://www.google-analytics.com",
-                  "https://vitals.vercel-insights.com",
-                ],
-                styleSrc: ["'self'", "'unsafe-inline'"],
-                scriptSrc: [
-                  "'self'",
-                  "'unsafe-inline'",
-                  "https://www.googletagmanager.com",
-                ],
-                imgSrc: ["'self'", "data:"],
-                baseUri: "self",
-                formAction: "self",
-                frameAncestors: true,
-              },
+const config = {
+  future: {
+    strictPostcssConfiguration: true,
+  },
+  pwa: {
+    dest: "public",
+  },
+  reactStrictMode: true,
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: createSecureHeaders({
+          contentSecurityPolicy: {
+            directives: {
+              defaultSrc: [
+                "'self'",
+                "https://alexnault.dev",
+                "https://excalidraw.com",
+                "https://www.googletagmanager.com",
+                "https://www.google-analytics.com",
+                "https://vitals.vercel-insights.com",
+              ],
+              styleSrc: ["'self'", "'unsafe-inline'"],
+              scriptSrc: [
+                "'self'",
+                "'unsafe-inline'",
+                "https://www.googletagmanager.com",
+              ],
+              imgSrc: ["'self'", "data:"],
+              baseUri: "self",
+              formAction: "self",
+              frameAncestors: true,
             },
-          }),
-        },
-      ];
-    },
-  })
-);
+          },
+        }),
+      },
+    ];
+  },
+};
+
+module.exports = withPWA(withPlaiceholder(config));
