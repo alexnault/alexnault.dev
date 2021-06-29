@@ -6,8 +6,6 @@
     "next",
     "next/core-web-vitals"
   ],
-  "plugins": ["@typescript-eslint", "react", "react-hooks", "jsx-a11y"],
-  "parser": "@typescript-eslint/parser",
   "rules": {
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/no-explicit-any": "off",
@@ -16,10 +14,5 @@
       { "ignoreRestSiblings": true }
     ],
     "@typescript-eslint/explicit-module-boundary-types": "off"
-  },
-  "env": {
-    "browser": true,
-    "node": true,
-    "es6": true
   }
 }
