@@ -28,7 +28,7 @@
     "autoprefixer": "^10.2.5",
     "classnames": "^2.2.6",
     "gray-matter": "^4.0.2",
-    "next": "^11.0.0",
+    "next": "^11.0.1",
     "next-pwa": "^5.2.21",
     "next-themes": "^0.0.14",
     "plaiceholder": "^2.0.1",
@@ -46,18 +46,16 @@
   "devDependencies": {
     "@types/classnames": "^2.2.11",
     "@types/node": "^14.14.21",
-    "@types/react": "^17.0.6",
-    "@types/react-dom": "^17.0.5",
-    "@typescript-eslint/eslint-plugin": "^4.13.0",
-    "@typescript-eslint/parser": "^4.13.0",
-    "eslint": "^7.18.0",
-    "eslint-config-next": "^11.0.0",
+    "@types/react": "^17.0.11",
+    "@types/react-dom": "^17.0.8",
+    "eslint": "^7.29.0",
+    "eslint-config-next": "^11.0.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.3.0",
     "next-secure-headers": "^2.2.0",
     "next-sitemap": "^1.6.116",
     "prettier": "^2.2.1",
-    "typescript": "^4.3.2"
+    "typescript": "^4.3.4"
   },
   "repository": {
     "type": "git",
