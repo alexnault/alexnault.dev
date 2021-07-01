@@ -91,7 +91,7 @@ export default function Slug({
         component={
           <Container className="md:max-w-screen-md">
             <article>
-              <header className="mb-8">
+              <header className="mt-24 mb-8">
                 <H className=" mb-4 lg:mb-8 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
                   {title}
                 </H>
@@ -185,7 +185,7 @@ export default function Slug({
           </Container>
         }
       >
-        <Container className="mt-16 xl:max-w-screen-xl">
+        <Container className="mt-24 mb-16 xl:max-w-screen-xl">
           <Section
             component={
               <H className="text-3xl font-bold mb-6">Related articles</H>

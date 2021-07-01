@@ -18,16 +18,24 @@ export default function Index({
       <SEO />
       <Layout>
         <Container className="xl:max-w-screen-xl">
-          <Section component={<About />}>
-            <Section
-              component={
-                <H className="text-2xl md:text-3xl font-bold mb-6">
-                  Latest articles
-                </H>
-              }
-            >
-              <PostPreviews articles={articles} />
-            </Section>
+          <Section
+            component={
+              <section className="flex flex-col justify-center pt-24 pb-16 min-h-screen">
+                <About />
+              </section>
+            }
+          >
+            <section className="mb-16">
+              <Section
+                component={
+                  <H className="text-2xl md:text-3xl font-bold mb-6">
+                    Latest articles
+                  </H>
+                }
+              >
+                <PostPreviews articles={articles} />
+              </Section>
+            </section>
           </Section>
         </Container>
       </Layout>
