@@ -1,7 +1,7 @@
 ---
 title: "Liskov Substitution Principle in Functional TypeScript"
 date: "2020-10-11"
-coverImage: "/ross-sokolovski-kCZSzqvIei4-unsplash.webp"
+coverImage: "/timothy-dykes-LhqLdDPcSV8-unsplash.webp"
 excerpt: "If it looks like a duck, quacks like a duck, but needs batteries, you probably have the wrong abstraction."
 ---
 

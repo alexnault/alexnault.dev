@@ -1,7 +1,7 @@
 ---
 title: "Open–Closed Principle in Functional TypeScript"
 date: "2020-08-24"
-coverImage: "/national-cancer-institute-xcN1taJ2y0M-unsplash.webp"
+coverImage: "/yang-deng-2loKxdi6Hmo-unsplash.webp"
 excerpt: "Putting on a hat shouldn't require a brain surgery."
 ---
 
