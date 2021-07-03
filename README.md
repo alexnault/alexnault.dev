@@ -1,6 +1,6 @@
 # [alexnault.dev](https://alexnault.dev)
 
-My personal website and blog.
+My personal website and blog. Built with [TypeScript](https://www.typescriptlang.org/), [React](https://reactjs.org/), [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/) and deployed on [Vercel](https://vercel.com).
 
 ![alexnault.dev preview](/media/preview.png?raw=true)
 
