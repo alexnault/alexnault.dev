@@ -19,17 +19,17 @@ const config = {
             directives: {
               defaultSrc: [
                 "'self'",
-                "https://alexnault.dev",
-                "https://excalidraw.com",
-                "https://www.googletagmanager.com",
-                "https://www.google-analytics.com",
-                "https://vitals.vercel-insights.com",
+                "alexnault.dev",
+                "excalidraw.com",
+                "*.googletagmanager.com",
+                "*.google-analytics.com",
+                "*.vercel-insights.com",
               ],
               styleSrc: ["'self'", "'unsafe-inline'"],
               scriptSrc: [
                 "'self'",
                 "'unsafe-inline'",
-                "https://www.googletagmanager.com",
+                "*.googletagmanager.com",
               ],
               imgSrc: ["'self'", "data:"],
               baseUri: "self",
