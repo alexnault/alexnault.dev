@@ -25,11 +25,18 @@ const config = {
                 "*.google-analytics.com",
                 "*.vercel-insights.com",
               ],
-              styleSrc: ["'self'", "'unsafe-inline'"],
+              styleSrc: [
+                "'self'",
+                ...(process.env.NODE_ENV === "development"
+                  ? ["'unsafe-inline'"]
+                  : []),
+              ],
               scriptSrc: [
                 "'self'",
-                "'unsafe-inline'",
                 "*.googletagmanager.com",
+                ...(process.env.NODE_ENV === "development"
+                  ? ["'unsafe-inline'", "'unsafe-eval'"]
+                  : []),
               ],
               imgSrc: ["'self'", "data:"],
               baseUri: "self",
