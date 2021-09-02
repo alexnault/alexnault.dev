@@ -15,6 +15,7 @@ const config = {
       {
         source: "/(.*)",
         headers: createSecureHeaders({
+          referrerPolicy: "origin-when-cross-origin",
           contentSecurityPolicy: {
             directives: {
               defaultSrc: [
