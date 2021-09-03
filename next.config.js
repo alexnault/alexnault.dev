@@ -15,6 +15,7 @@ const config = {
       {
         source: "/(.*)",
         headers: createSecureHeaders({
+          referrerPolicy: "origin-when-cross-origin",
           contentSecurityPolicy: {
             directives: {
               defaultSrc: [
@@ -30,6 +31,9 @@ const config = {
                 "'self'",
                 "'unsafe-inline'",
                 "*.googletagmanager.com",
+                ...(process.env.NODE_ENV === "development"
+                  ? ["'unsafe-eval'"] // For hot reload
+                  : []),
               ],
               imgSrc: ["'self'", "data:"],
               baseUri: "self",

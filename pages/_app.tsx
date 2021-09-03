@@ -19,10 +19,12 @@ export default function App({ Component, pageProps }: AppProps) {
       {process.env.NEXT_PUBLIC_GA_TRACKING_ID && (
         <>
           <Script
+            id="googleTagManager"
             strategy="afterInteractive"
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
           />
           <Script
+            id="googleScript"
             strategy="afterInteractive"
             dangerouslySetInnerHTML={{
               __html: `

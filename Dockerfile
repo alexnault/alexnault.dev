@@ -1,5 +1,5 @@
-FROM node:14.17.0-alpine as base
-RUN apk add --no-cache g++ make python
+FROM node:16.8.0-alpine as base
+RUN apk add --no-cache g++ make
 WORKDIR /app
 EXPOSE 3000
 COPY package*.json .
