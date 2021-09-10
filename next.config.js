@@ -38,6 +38,7 @@ const config = {
               imgSrc: ["'self'", "data:"],
               baseUri: ["'self'"],
               formAction: ["'self'"],
+              objectSrc: ["'none'"],
               frameAncestors: true,
             },
           },
