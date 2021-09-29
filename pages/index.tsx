@@ -20,7 +20,7 @@ export default function Index({
         <Container className="xl:max-w-screen-xl">
           <Section
             component={
-              <section className="flex flex-col justify-center pt-24 pb-16 min-h-screen">
+              <section className="flex flex-col justify-center mt-36 mb-20">
                 <About />
               </section>
             }
