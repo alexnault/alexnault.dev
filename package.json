@@ -41,7 +41,7 @@
     "react-headings": "^3.0.12",
     "react-markdown": "^5.0.3",
     "sharp": "^0.28.3",
-    "tailwindcss": "^2.2.7"
+    "tailwindcss": "^2.2.16"
   },
   "devDependencies": {
     "@types/node": "^16.7.10",
