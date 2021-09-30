@@ -8,7 +8,7 @@ import Container from "components/container";
 
 const NotFoundPage = () => (
   <Layout>
-    <Container className="md:max-w-screen-md">
+    <Container className="md:max-w-screen-md mt-24 mb-8">
       <SEO title="404 Not found" />
       <Section
         component={
