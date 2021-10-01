@@ -27,7 +27,7 @@ const SocialButton = ({ icon, title, href }: SocialButtonProps) => {
   );
 };
 
-const About = () => {
+const Overview = () => {
   return (
     <div className="flex flex-col sm:flex-row justify-center items-center mx-auto max-w-5xl">
       <div className="flex justify-center mb-6 sm:mb-0 flex-shrink-0">
@@ -47,7 +47,7 @@ const About = () => {
         </H>
         <p className="text-gray-500 text-center sm:text-left text-lg md:text-xl mb-3 md:leading-relaxed">
           {
-            "I'm currently building solutions at Apprentx as a software architect. Previously Classcraft and Ubisoft."
+            "I'm currently building solutions at Apprentx as a Software Architect. Previously Classcraft and Ubisoft."
           }
         </p>
         <div className="flex justify-center sm:justify-start space-x-2 sm:-mx-2">
@@ -77,4 +77,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Overview;
