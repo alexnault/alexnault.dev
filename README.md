@@ -4,6 +4,17 @@ My personal website and blog. Built with [TypeScript](https://www.typescriptlang
 
 ![alexnault.dev preview](/media/preview.png?raw=true)
 
+## Features
+
+- 🚀 Super fast
+- 🔎 Search engine optimized
+- ♿ Accessible
+- 📱 Responsive
+- 🔒 Secure
+- 🌙 Light and dark mode
+- 📘 Typed with TypeScript
+- ✔️ Uses best practices
+
 ## Getting started
 
 - `git clone https://github.com/alexnault/alexnault.dev.git`
