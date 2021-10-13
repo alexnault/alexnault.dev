@@ -5,6 +5,23 @@ import { useTheme } from "next-themes";
 import DarkIcon from "./icons/dark";
 import LogoIcon from "./icons/logo";
 
+const buttons = [{ href: "/about", text: "About" }];
+
+type HeaderButtonProps = {
+  href: string;
+  text: string;
+};
+
+const HeaderButton = ({ href, text }: HeaderButtonProps) => {
+  return (
+    <Link href={href}>
+      <a className="px-4 py-2 text-gray-500 hover:text-black hover:bg-gray-200 rounded-md transition-colors">
+        {text}
+      </a>
+    </Link>
+  );
+};
+
 const Header = () => {
   const { resolvedTheme, setTheme } = useTheme();
 
@@ -21,13 +38,20 @@ const Header = () => {
             <span className="text-lg font-bold">alexnault</span>
           </a>
         </Link>
-        <button
-          className="text-gray-300 hover:text-black transition-colors p-2 leading-none"
-          onClick={handleChangeTheme}
-          aria-label="Toggle theme"
-        >
-          <DarkIcon size="sm" />
-        </button>
+        <div className="flex items-center">
+          <div className="px-2">
+            {buttons.map(({ href, text }) => (
+              <HeaderButton key={href} href={href} text={text} />
+            ))}
+          </div>
+          <button
+            className="text-gray-300 hover:text-black transition-colors p-2 leading-none"
+            onClick={handleChangeTheme}
+            aria-label="Toggle theme"
+          >
+            <DarkIcon size="sm" />
+          </button>
+        </div>
       </div>
     </header>
   );
