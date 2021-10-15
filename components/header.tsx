@@ -39,11 +39,11 @@ const Header = () => {
           </a>
         </Link>
         <div className="flex items-center">
-          <div className="px-2">
+          <nav className="px-2">
             {buttons.map(({ href, text }) => (
               <HeaderButton key={href} href={href} text={text} />
             ))}
-          </div>
+          </nav>
           <button
             className="text-gray-300 hover:text-black transition-colors p-2 leading-none"
             onClick={handleChangeTheme}
