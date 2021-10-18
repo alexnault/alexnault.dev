@@ -20,6 +20,7 @@ import LinkIcon from "components/icons/link";
 import Container from "components/container";
 import PostPreviews from "components/postPreviews";
 import CustomMenu from "components/menu";
+import LikeCounter from "components/likeCounter";
 
 import alexWebp from "public/alex.webp";
 
@@ -97,6 +98,7 @@ export default function Slug({
                 </H>
                 <p className="text-gray-500 font-bold text-lg">{excerpt}</p>
               </header>
+              <LikeCounter slug={slug} />
               <div className="mb-8 -mx-6 sm:mx-0 sm:rounded-md shadow-xl overflow-hidden bg-gray-100">
                 <Image
                   src={coverImage}
