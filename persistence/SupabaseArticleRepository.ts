@@ -16,8 +16,22 @@ export function SupabaseArticleRepository(
 
       return data?.like_count;
     },
-    likeArticle: async () => {
-      throw new Error("Not implemented");
+    likeArticle: async (slug: string) => {
+      // TODO use transaction, switch to prisma?
+      const { data } = await supabase
+        .from<Article>("articles")
+        .select("like_count")
+        .match({ slug })
+        .single();
+
+      if (!data) {
+        return;
+      }
+
+      await supabase
+        .from<Article>("articles")
+        .update({ like_count: data.like_count + 1 })
+        .match({ slug });
     },
   };
 }

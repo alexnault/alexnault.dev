@@ -19,9 +19,13 @@ export default function LikeCounter({ slug }: Props) {
 
   useEffect(() => {
     fetchLikeCount();
-  }, []);
+  }, [slug]);
 
   const handleClickLike = () => {
+    fetch(`/api/articles/${slug}`, {
+      method: "POST",
+    });
+
     setLikeCount((likeCount) => (likeCount ?? 0) + 1);
   };
 
