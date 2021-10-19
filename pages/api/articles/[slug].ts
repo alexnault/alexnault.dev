@@ -14,14 +14,16 @@ export default async function handler(
 
       return res.status(200).json({ like_count });
     }
+
     if (req.method === "POST") {
       await articleRepository.likeArticle(slug);
 
       return res.status(200).json({});
     }
-    // TODO default to success or error?
-    return res.status(200).json({});
+
+    return res.status(400).json({});
   } catch (e) {
+    console.error(e);
     return res.status(500).json({});
   }
 }
