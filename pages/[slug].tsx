@@ -8,6 +8,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Section, H } from "react-headings";
 import { Menu } from "@headlessui/react";
+import { useInView } from "react-intersection-observer";
 
 import { getAllSlugs, getArticleBySlug, getRelatedArticles } from "lib/cms";
 
@@ -56,6 +57,9 @@ export default function Slug({
     mainEntityOfPage: currentUrl,
   };
 
+  const [topRef, isTopInView] = useInView();
+  const [bottomRef, isBottomInView] = useInView();
+
   const handleShareTwitter = () => {
     const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
       `${title} ${currentUrl} via @nault_alex`
@@ -98,7 +102,6 @@ export default function Slug({
                 </H>
                 <p className="text-gray-500 font-bold text-lg">{excerpt}</p>
               </header>
-              <LikeCounter slug={slug} />
               <div className="mb-8 -mx-6 sm:mx-0 sm:rounded-md shadow-xl overflow-hidden bg-gray-100">
                 <Image
                   src={coverImage}
@@ -112,9 +115,16 @@ export default function Slug({
                   placeholder="blur"
                 />
               </div>
+              <div ref={topRef} />
+              <div
+                className={`fixed hidden lg:block top-80 right-[calc((100vw-1000px)/2)] ${
+                  !isTopInView && !isBottomInView ? "opacity-100" : "opacity-0"
+                } transition-opacity duration-200`}
+              >
+                <LikeCounter slug={slug} />
+              </div>
               <MarkdownRenderer>{content}</MarkdownRenderer>
               <div className="my-8 space-x-2">
-                <LikeCounter slug={slug} />
                 <CustomMenu
                   button={
                     <Menu.Button className="btn-primary">Share</Menu.Button>
@@ -163,6 +173,7 @@ export default function Slug({
                 >
                   Edit
                 </a>
+                <LikeCounter slug={slug} />
               </div>
               <Link href="/" passHref>
                 <a className="flex items-center my-8">
@@ -195,6 +206,7 @@ export default function Slug({
             }
           >
             <PostPreviews articles={relatedArticles} />
+            <div ref={bottomRef} />
           </Section>
         </Container>
       </Section>

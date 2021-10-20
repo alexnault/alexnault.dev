@@ -39,10 +39,12 @@ export default function LikeCounter({ slug }: Props) {
   return (
     <button
       onClick={() => likeMutation.mutate()}
-      className="relative text-gray-500 hover:text-black hover:scale-105 active:scale-110 transition"
+      className="relative group hover:scale-105 active:scale-110 transition"
     >
-      <HeartIcon className="mr-2" />
-      {likeCountQuery.data.like_count}
+      <HeartIcon className="mr-2 text-gray-300 group-hover:text-black group-active:text-pink-500 transition" />
+      <span className="text-gray-500 group-hover:text-black group-active:text-pink-500 transition">
+        {likeCountQuery.data.like_count}
+      </span>
     </button>
   );
 }
