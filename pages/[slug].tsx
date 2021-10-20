@@ -114,6 +114,7 @@ export default function Slug({
               </div>
               <MarkdownRenderer>{content}</MarkdownRenderer>
               <div className="my-8 space-x-2">
+                <LikeCounter slug={slug} />
                 <CustomMenu
                   button={
                     <Menu.Button className="btn-primary">Share</Menu.Button>

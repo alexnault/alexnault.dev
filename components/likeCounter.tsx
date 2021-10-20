@@ -1,42 +1,48 @@
-import { useState, useEffect } from "react";
+import { useQuery, useMutation, useQueryClient } from "react-query";
+
+import HeartIcon from "./icons/heart";
+
+import { fetchJSON } from "utils/fetchJSON";
 
 type Props = {
   slug: string;
 };
 
 export default function LikeCounter({ slug }: Props) {
-  const [likeCount, setLikeCount] = useState<number | undefined>();
+  const queryClient = useQueryClient();
 
-  // TODO use react-query?
+  const likeCountQuery = useQuery(`api/articles/${slug}`, () =>
+    fetchJSON(`/api/articles/${slug}`)
+  );
 
-  async function fetchLikeCount() {
-    const res = await fetch(`/api/articles/${slug}`);
+  const likeMutation = useMutation(
+    () => fetchJSON(`api/articles/${slug}`, { method: "POST" }),
+    {
+      onMutate: async () => {
+        const previousValue = queryClient.getQueryData<{ like_count: number }>(
+          `api/articles/${slug}`
+        );
 
-    const like_count = await res.json();
+        if (previousValue) {
+          queryClient.setQueryData(`api/articles/${slug}`, {
+            like_count: previousValue.like_count + 1,
+          });
+        }
+      },
+    }
+  );
 
-    setLikeCount(like_count.like_count);
-  }
-
-  useEffect(() => {
-    fetchLikeCount();
-  }, [slug]);
-
-  const handleClickLike = () => {
-    fetch(`/api/articles/${slug}`, {
-      method: "POST",
-    });
-
-    setLikeCount((likeCount) => (likeCount ?? 0) + 1);
-  };
-
-  if (likeCount == null) {
+  if (likeCountQuery.data?.like_count == null) {
     return null;
   }
 
   return (
-    <div>
-      {likeCount}
-      <button onClick={handleClickLike}>Like</button>
-    </div>
+    <button
+      onClick={() => likeMutation.mutate()}
+      className="relative text-gray-500 hover:text-black hover:scale-105 active:scale-110 transition"
+    >
+      <HeartIcon className="mr-2" />
+      {likeCountQuery.data.like_count}
+    </button>
   );
 }
