@@ -1,6 +1,6 @@
-import { supabase } from "persistence/supabase";
-import { SupabaseArticleRepository } from "persistence/SupabaseArticleRepository";
+import prisma from "persistence/prisma";
+import { PrismaArticleRepository } from "persistence/PrismaArticleRepository";
 
-const articleRepository = SupabaseArticleRepository(supabase);
+const articleRepository = PrismaArticleRepository(prisma);
 
 export { articleRepository };
