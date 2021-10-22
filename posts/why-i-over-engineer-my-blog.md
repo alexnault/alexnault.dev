@@ -7,7 +7,7 @@ excerpt: "The reason is obvious actually."
 
 For every hour I spend writing I spend six working on this website.
 
-Truth is, this blog could very well be built with a few static HTML pages and it would still bring the same value to readers.
+Truth is, **this blog could very well be built with a few static HTML pages** and it would still bring the same value to readers.
 
 But getting thoughts out there and sharing knowledge aren't the only goals of [alexnault.dev](https://alexnault.dev/).
 
