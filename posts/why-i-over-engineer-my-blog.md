@@ -1,11 +1,9 @@
 ---
 title: "Why I Over-Engineer My Blog"
 date: "2021-10-21"
-coverImage: "/ales-nesetril-Im7lZjxeLhg-unsplash.webp"
-excerpt: "The reason is obvious actually."
+coverImage: "/mahesh-ranaweera-N6cdAF4mfqU-unsplash.webp"
+excerpt: "For every hour I spend writing I spend six working on this website."
 ---
-
-For every hour I spend writing I spend six working on this website.
 
 Truth is, **this blog could very well be built with a few static HTML pages** and it would still bring the same value to readers.
 
