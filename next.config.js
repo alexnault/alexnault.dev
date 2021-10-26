@@ -1,14 +1,9 @@
-const withPWA = require("next-pwa");
 const { withPlaiceholder } = require("@plaiceholder/next");
 const { createSecureHeaders } = require("next-secure-headers");
 
 const config = {
   future: {
     strictPostcssConfiguration: true,
-  },
-  pwa: {
-    dest: "public",
-    disable: process.env.NODE_ENV === "development",
   },
   reactStrictMode: true,
   async headers() {
@@ -49,4 +44,4 @@ const config = {
   },
 };
 
-module.exports = withPWA(withPlaiceholder(config));
+module.exports = withPlaiceholder(config);
