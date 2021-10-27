@@ -18,6 +18,8 @@ out/
 # misc
 .DS_Store
 *.pem
+public/robots.txt
+public/sitemap.xml
 
 # debug
 npm-debug.log*
