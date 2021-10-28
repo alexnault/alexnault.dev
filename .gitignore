@@ -18,6 +18,8 @@ out/
 # misc
 .DS_Store
 *.pem
+public/robots.txt
+public/sitemap.xml
 
 # debug
 npm-debug.log*
@@ -32,15 +34,3 @@ yarn-error.log*
 
 # vercel
 .vercel
-
-# next-pwa
-public/precache.*.*.js
-public/sw.js
-public/workbox-*.js
-public/worker-*.js
-public/precache.*.*.js.map
-public/sw.js.map
-public/workbox-*.js.map
-public/worker-*.js.map
-public/robots.txt
-public/sitemap.xml
