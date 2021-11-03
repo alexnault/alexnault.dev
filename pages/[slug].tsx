@@ -10,7 +10,7 @@ import { Section, H } from "react-headings";
 import { Menu } from "@headlessui/react";
 import { useInView } from "react-intersection-observer";
 
-import { articleRepository } from "repos/articles";
+import { articleRepo } from "repos/articles";
 
 import Layout from "components/layout";
 import SEO from "components/seo";
@@ -221,8 +221,8 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
     throw new Error("Invalid slug param");
   }
 
-  const article = await articleRepository.getArticleBySlug(slug);
-  const relatedArticles = await articleRepository.getRelatedArticles(slug);
+  const article = await articleRepo.getArticleBySlug(slug);
+  const relatedArticles = await articleRepo.getRelatedArticles(slug);
 
   return {
     props: {
@@ -233,7 +233,7 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const slugs = await articleRepository.getAllSlugs();
+  const slugs = await articleRepo.getAllSlugs();
 
   return {
     paths: slugs.map((slug) => ({

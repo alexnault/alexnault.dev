@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Section, H } from "react-headings";
 
-import { Article } from "domain/ArticleRepository";
+import { Article } from "domain/ArticleRepo";
 
 type Props = {
   article: Article;

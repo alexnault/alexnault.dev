@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { likeRepository } from "repos/likes";
+import { likeRepo } from "repos/likes";
 
 export default async function handler(
   req: NextApiRequest,
@@ -10,13 +10,13 @@ export default async function handler(
     const slug = req.query.slug.toString();
 
     if (req.method === "GET") {
-      const like_count = await likeRepository.getArticleLikeCount(slug);
+      const like_count = await likeRepo.getArticleLikeCount(slug);
 
       return res.status(200).json({ like_count });
     }
 
     if (req.method === "POST") {
-      await likeRepository.likeArticle(slug);
+      await likeRepo.likeArticle(slug);
 
       return res.status(200).json({});
     }

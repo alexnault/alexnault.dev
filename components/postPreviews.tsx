@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Article } from "domain/ArticleRepository";
+import { Article } from "domain/ArticleRepo";
 
 import PostPreview from "components/postPreview";
 

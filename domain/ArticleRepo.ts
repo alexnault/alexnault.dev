@@ -8,7 +8,7 @@ export type Article = {
   excerpt?: string;
 };
 
-export interface ArticleRepository {
+export interface ArticleRepo {
   getAllSlugs: () => Promise<string[]>;
   getArticleBySlug: (slug: string) => Promise<Article>;
   // getArticleBySlug: (slug: string) => Promise<Article | undefined>;

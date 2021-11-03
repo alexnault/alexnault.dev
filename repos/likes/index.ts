@@ -1,6 +1,6 @@
 import prisma from "repos/prisma";
-import { PrismaLikeRepository } from "./PrismaArticleRepository";
+import { PrismaLikeRepo } from "./PrismaArticleRepo";
 
-const likeRepository = PrismaLikeRepository(prisma);
+const likeRepo = PrismaLikeRepo(prisma);
 
-export { likeRepository };
+export { likeRepo };

@@ -1,5 +1,5 @@
-import { MDArticleRepository } from "./MDArticleRepository";
+import { MDArticleRepo } from "./MDArticleRepo";
 
-const articleRepository = MDArticleRepository();
+const articleRepo = MDArticleRepo();
 
-export { articleRepository };
+export { articleRepo };

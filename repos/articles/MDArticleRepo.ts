@@ -3,9 +3,9 @@ import { join } from "path";
 import matter from "gray-matter";
 import { getPlaiceholder } from "plaiceholder";
 
-import { ArticleRepository, Article } from "domain/ArticleRepository";
+import { ArticleRepo, Article } from "domain/ArticleRepo";
 
-export function MDArticleRepository(): ArticleRepository {
+export function MDArticleRepo(): ArticleRepo {
   const articlesDirectory = join(process.cwd(), "posts");
 
   return {
