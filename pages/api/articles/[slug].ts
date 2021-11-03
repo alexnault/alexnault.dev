@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { articleRepository } from "persistence";
+import { likeRepository } from "persistence/likes";
 
 export default async function handler(
   req: NextApiRequest,
@@ -10,13 +10,13 @@ export default async function handler(
     const slug = req.query.slug.toString();
 
     if (req.method === "GET") {
-      const like_count = await articleRepository.getArticleLikeCount(slug);
+      const like_count = await likeRepository.getArticleLikeCount(slug);
 
       return res.status(200).json({ like_count });
     }
 
     if (req.method === "POST") {
-      await articleRepository.likeArticle(slug);
+      await likeRepository.likeArticle(slug);
 
       return res.status(200).json({});
     }

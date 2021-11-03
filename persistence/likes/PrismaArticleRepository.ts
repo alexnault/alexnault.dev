@@ -1,13 +1,14 @@
 import { PrismaClient } from "@prisma/client";
 
-import { ArticleRepository } from "./ArticleRepository";
+import { LikeRepository } from "domain/LikeRepository";
 
-export function PrismaArticleRepository(
-  prisma: PrismaClient
-): ArticleRepository {
+export function PrismaLikeRepository(prisma: PrismaClient): LikeRepository {
   return {
     getArticleLikeCount: async (slug: string) => {
-      const article = await prisma.articles.findUnique({ where: { slug } });
+      const article = await prisma.articles.findUnique({
+        select: { like_count: true },
+        where: { slug },
+      });
 
       return article?.like_count;
     },
