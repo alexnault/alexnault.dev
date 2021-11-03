@@ -10,7 +10,7 @@ import { Section, H } from "react-headings";
 import { Menu } from "@headlessui/react";
 import { useInView } from "react-intersection-observer";
 
-import { articleRepository } from "persistence/articles";
+import { articleRepository } from "repos/articles";
 
 import Layout from "components/layout";
 import SEO from "components/seo";

@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { likeRepository } from "persistence/likes";
+import { likeRepository } from "repos/likes";
 
 export default async function handler(
   req: NextApiRequest,

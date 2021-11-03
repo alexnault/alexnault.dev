@@ -2,7 +2,7 @@ import React from "react";
 import { Section, H } from "react-headings";
 import { InferGetStaticPropsType } from "next";
 
-import { articleRepository } from "persistence/articles";
+import { articleRepository } from "repos/articles";
 
 import SEO from "components/seo";
 import Layout from "components/layout";

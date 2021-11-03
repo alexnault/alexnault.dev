@@ -1,4 +1,4 @@
-import prisma from "persistence/prisma";
+import prisma from "repos/prisma";
 import { PrismaLikeRepository } from "./PrismaArticleRepository";
 
 const likeRepository = PrismaLikeRepository(prisma);
