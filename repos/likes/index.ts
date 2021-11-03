@@ -1,5 +1,5 @@
 import prisma from "repos/prisma";
-import { PrismaLikeRepo } from "./PrismaArticleRepo";
+import { PrismaLikeRepo } from "./PrismaLikeRepo";
 
 const likeRepo = PrismaLikeRepo(prisma);
 
