@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import { getPlaiceholder } from "plaiceholder";
 
 import { ArticleRepo, Article } from "domain/ArticleRepo";
+import { isNotNullish } from "domain/utils";
 
 export function MDArticleRepo(): ArticleRepo {
   const articlesDirectory = join(process.cwd(), "posts");
@@ -25,7 +26,7 @@ export function MDArticleRepo(): ArticleRepo {
         slug,
         content,
         title: data.title,
-        date: data.date,
+        date: new Date(data.date),
         coverImage: data.coverImage,
         blurDataURL: base64,
         excerpt: data.excerpt,
@@ -38,11 +39,11 @@ export function MDArticleRepo(): ArticleRepo {
 
       return (
         await Promise.all(
-          slugs.map(async (slug) => {
-            return this.getArticleBySlug(slug);
-          })
+          slugs.map(async (slug) => this.getArticleBySlug(slug))
         )
-      ).sort((a, b) => (a.date > b.date ? -1 : 1));
+      )
+        .filter(isNotNullish)
+        .sort((a, b) => (a.date > b.date ? -1 : 1));
     },
     getRelatedArticles: async function (slug) {
       const slugs = await this.getAllSlugs();
@@ -52,11 +53,11 @@ export function MDArticleRepo(): ArticleRepo {
           slugs
             .filter((s) => s !== slug) // TODO use labels
             .slice(0, 3)
-            .map(async (slug) => {
-              return this.getArticleBySlug(slug);
-            })
+            .map(async (slug) => this.getArticleBySlug(slug))
         )
-      ).sort((a, b) => (a.date > b.date ? -1 : 1));
+      )
+        .filter(isNotNullish)
+        .sort((a, b) => (a.date > b.date ? -1 : 1));
     },
   };
 }

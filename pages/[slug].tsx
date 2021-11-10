@@ -222,6 +222,11 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
   }
 
   const article = await articleRepo.getArticleBySlug(slug);
+
+  if (!article) {
+    throw new Error("Missing article");
+  }
+
   const relatedArticles = await articleRepo.getRelatedArticles(slug);
 
   return {

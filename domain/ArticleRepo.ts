@@ -2,7 +2,7 @@ export type Article = {
   slug: string;
   content: string;
   title: string;
-  date: Date; // TODO string?
+  date: Date;
   coverImage: string;
   blurDataURL: string;
   excerpt?: string;
@@ -10,8 +10,7 @@ export type Article = {
 
 export interface ArticleRepo {
   getAllSlugs: () => Promise<string[]>;
-  getArticleBySlug: (slug: string) => Promise<Article>;
-  // getArticleBySlug: (slug: string) => Promise<Article | undefined>;
+  getArticleBySlug: (slug: string) => Promise<Article | undefined>;
   getAllArticles: () => Promise<Article[]>;
   getRelatedArticles: (slug: string) => Promise<Article[]>;
 }
