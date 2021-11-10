@@ -2,7 +2,7 @@ import { useQuery, useMutation, useQueryClient } from "react-query";
 
 import HeartIcon from "./icons/heart";
 
-import { fetchJSON } from "utils/fetchJSON";
+import { fetchJSON } from "utils/fetch";
 
 type Props = {
   slug: string;

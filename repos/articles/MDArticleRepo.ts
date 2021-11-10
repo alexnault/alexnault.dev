@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import { getPlaiceholder } from "plaiceholder";
 
 import { ArticleRepo, Article } from "domain/ArticleRepo";
-import { isNotNullish } from "domain/utils";
+import { isNotNullish } from "utils/common";
 
 export function MDArticleRepo(): ArticleRepo {
   const articlesDirectory = join(process.cwd(), "posts");
