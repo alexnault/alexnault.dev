@@ -32,18 +32,16 @@ export default function LikeCounter({ slug }: Props) {
     }
   );
 
-  if (likeCountQuery.data?.like_count == null) {
-    return null;
-  }
-
   return (
     <button
       onClick={() => likeMutation.mutate()}
-      className="relative group hover:scale-105 active:scale-110 transition"
+      className={`relative group hover:scale-105 active:scale-110 transition duration-200 ${
+        likeCountQuery.data?.like_count != null ? "opacity-100" : "opacity-0"
+      }`}
     >
       <HeartIcon className="mr-2 text-gray-300 group-hover:text-black group-active:text-pink-500 transition" />
       <span className="text-gray-500 group-hover:text-black group-active:text-pink-500 transition">
-        {likeCountQuery.data.like_count}
+        {likeCountQuery.data?.like_count}
       </span>
     </button>
   );
