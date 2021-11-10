@@ -15,11 +15,6 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "allowJs": false,
-    "paths": {
-      "components/*": ["components/*"],
-      "lib/*": ["lib/*"],
-      "styles/*": ["styles/*"]
-    },
     "incremental": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

@@ -8,8 +8,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { Section, H } from "react-headings";
 import { Menu } from "@headlessui/react";
+import { useInView } from "react-intersection-observer";
 
-import { getAllSlugs, getArticleBySlug, getRelatedArticles } from "lib/cms";
+import { articleRepo } from "repos/articles";
 
 import Layout from "components/layout";
 import SEO from "components/seo";
@@ -20,6 +21,7 @@ import LinkIcon from "components/icons/link";
 import Container from "components/container";
 import PostPreviews from "components/postPreviews";
 import CustomMenu from "components/menu";
+import LikeCounter from "components/likeCounter";
 
 import alexWebp from "public/alex.webp";
 
@@ -54,6 +56,9 @@ export default function Slug({
     image: `${siteUrl}${coverImage}`,
     mainEntityOfPage: currentUrl,
   };
+
+  const [topRef, isTopInView] = useInView();
+  const [bottomRef, isBottomInView] = useInView();
 
   const handleShareTwitter = () => {
     const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
@@ -110,6 +115,14 @@ export default function Slug({
                   placeholder="blur"
                 />
               </div>
+              <div ref={topRef} />
+              <div
+                className={`fixed hidden lg:block top-80 right-[calc((100vw-1000px)/2)] ${
+                  !isTopInView && !isBottomInView ? "opacity-100" : "opacity-0"
+                } transition-opacity duration-200`}
+              >
+                <LikeCounter slug={slug} />
+              </div>
               <MarkdownRenderer>{content}</MarkdownRenderer>
               <div className="my-8 space-x-2">
                 <CustomMenu
@@ -160,6 +173,7 @@ export default function Slug({
                 >
                   Edit
                 </a>
+                <LikeCounter slug={slug} />
               </div>
               <Link href="/" passHref>
                 <a className="flex items-center my-8">
@@ -192,6 +206,7 @@ export default function Slug({
             }
           >
             <PostPreviews articles={relatedArticles} />
+            <div ref={bottomRef} />
           </Section>
         </Container>
       </Section>
@@ -206,8 +221,13 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
     throw new Error("Invalid slug param");
   }
 
-  const article = await getArticleBySlug(slug);
-  const relatedArticles = await getRelatedArticles(slug);
+  const article = await articleRepo.getArticleBySlug(slug);
+
+  if (!article) {
+    throw new Error("Missing article");
+  }
+
+  const relatedArticles = await articleRepo.getRelatedArticles(slug);
 
   return {
     props: {
@@ -218,7 +238,7 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const slugs = await getAllSlugs();
+  const slugs = await articleRepo.getAllSlugs();
 
   return {
     paths: slugs.map((slug) => ({

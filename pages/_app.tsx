@@ -2,9 +2,12 @@ import Head from "next/head";
 import { AppProps } from "next/app";
 import { ThemeProvider } from "next-themes";
 import Script from "next/script";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 import "styles/fonts.css";
 import "styles/globals.css";
+
+const queryClient = new QueryClient();
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -39,7 +42,9 @@ export default function App({ Component, pageProps }: AppProps) {
           />
         </>
       )}
-      <Component {...pageProps} />
+      <QueryClientProvider client={queryClient}>
+        <Component {...pageProps} />
+      </QueryClientProvider>
     </ThemeProvider>
   );
 }

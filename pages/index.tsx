@@ -2,7 +2,7 @@ import React from "react";
 import { Section, H } from "react-headings";
 import { InferGetStaticPropsType } from "next";
 
-import { getAllArticles } from "lib/cms";
+import { articleRepo } from "repos/articles";
 
 import SEO from "components/seo";
 import Layout from "components/layout";
@@ -44,7 +44,7 @@ export default function Index({
 }
 
 export async function getStaticProps() {
-  const articles = await getAllArticles();
+  const articles = await articleRepo.getAllArticles();
 
   return {
     props: {
