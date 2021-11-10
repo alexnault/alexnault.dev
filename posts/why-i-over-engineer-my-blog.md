@@ -9,7 +9,7 @@ Truth is, **this blog could very well be built with a few static HTML pages** an
 
 But getting thoughts out there and sharing knowledge aren't the only goals of [alexnault.dev](https://alexnault.dev/).
 
-> Like many projects, it's an opportunity for playing around with ideas, technologies, and patterns.
+> Like most personal projects, it's an opportunity for playing around with ideas, technologies, and patterns.
 
 "Learning by doing" is my go-to strategy for proper knowledge retention. And I chose this website as a playground for it.
 
