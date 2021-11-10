@@ -26,7 +26,7 @@ export function MDArticleRepo(): ArticleRepo {
         slug,
         content,
         title: data.title,
-        date: new Date(data.date),
+        date: data.date,
         coverImage: data.coverImage,
         blurDataURL: base64,
         excerpt: data.excerpt,
@@ -43,7 +43,7 @@ export function MDArticleRepo(): ArticleRepo {
         )
       )
         .filter(isNotNullish)
-        .sort((a, b) => (a.date > b.date ? -1 : 1));
+        .sort((a, b) => (new Date(a.date) > new Date(b.date) ? -1 : 1));
     },
     getRelatedArticles: async function (slug) {
       const slugs = await this.getAllSlugs();
@@ -57,7 +57,7 @@ export function MDArticleRepo(): ArticleRepo {
         )
       )
         .filter(isNotNullish)
-        .sort((a, b) => (a.date > b.date ? -1 : 1));
+        .sort((a, b) => (new Date(a.date) > new Date(b.date) ? -1 : 1));
     },
   };
 }

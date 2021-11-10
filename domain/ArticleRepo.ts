@@ -2,7 +2,7 @@ export type Article = {
   slug: string;
   content: string;
   title: string;
-  date: Date;
+  date: string;
   coverImage: string;
   blurDataURL: string;
   excerpt?: string;
