@@ -26,7 +26,7 @@ export default function About() {
               I work at Apprentx as a Software Architect and I write articles for my fellow developers from time to time.`}
             </p>
             <p>
-              {`My first experience with programming stems from high school when I self-taught some basic Delphi and created a few video games.
+              {`My first experience with programming stems from high school when I taught myself some basic Delphi and created a few video games.
               Which I was very proud of by the way! A passion was born.`}
             </p>
             <p>
