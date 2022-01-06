@@ -1,6 +1,7 @@
 ---
 title: "Dependency Inversion Principle in Functional TypeScript"
 date: "2020-09-03"
+readingTime: 10
 coverImage: "/anne-nygard-OpNMKVpZPEE-unsplash.webp"
 excerpt: "A sure way to decouple modules and write testable code."
 ---

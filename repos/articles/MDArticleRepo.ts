@@ -27,6 +27,7 @@ export function MDArticleRepo(): ArticleRepo {
         content,
         title: data.title,
         date: data.date,
+        readingTime: data.readingTime,
         coverImage: data.coverImage,
         blurDataURL: base64,
         excerpt: data.excerpt,

@@ -1,6 +1,7 @@
 ---
 title: "Why I Over-Engineer My Blog"
 date: "2021-10-21"
+readingTime: 2
 coverImage: "/mahesh-ranaweera-N6cdAF4mfqU-unsplash.webp"
 excerpt: "For every hour I spend writing I spend six working on this website."
 ---

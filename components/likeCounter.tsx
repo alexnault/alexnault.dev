@@ -1,14 +1,25 @@
 import { useQuery, useMutation, useQueryClient } from "react-query";
 
-import HeartIcon from "./icons/heart";
+import HeartIcon from "components/icons/heart";
+import { SvgIconProps } from "components/svgicon";
 
 import { fetchJSON } from "utils/fetch";
 
 type Props = {
   slug: string;
+  className?: string;
+  classNameIcon?: string;
+  classNameText?: string;
+  IconProps?: SvgIconProps;
 };
 
-export default function LikeCounter({ slug }: Props) {
+export default function LikeCounter({
+  slug,
+  className,
+  classNameIcon,
+  classNameText,
+  IconProps,
+}: Props) {
   const queryClient = useQueryClient();
 
   const likeCountQuery = useQuery(`api/articles/${slug}`, () =>
@@ -32,15 +43,26 @@ export default function LikeCounter({ slug }: Props) {
     }
   );
 
+  const handleClickLike = function (e: React.MouseEvent<HTMLButtonElement>) {
+    e.stopPropagation();
+    e.preventDefault();
+    likeMutation.mutate();
+  };
+
   return (
     <button
-      onClick={() => likeMutation.mutate()}
-      className={`relative group hover:scale-105 active:scale-110 transition duration-200 ${
+      onClick={handleClickLike}
+      className={`relative group hover:scale-105 active:scale-110 transition duration-200 ${className} ${
         likeCountQuery.data?.like_count != null ? "opacity-100" : "opacity-0"
       }`}
     >
-      <HeartIcon className="mr-2 text-gray-300 group-hover:text-black group-active:text-pink-500 transition" />
-      <span className="text-gray-500 group-hover:text-black group-active:text-pink-500 transition">
+      <HeartIcon
+        className={`mr-2 text-gray-300 group-hover:text-black group-active:text-pink-500 transition ${classNameIcon}`}
+        {...IconProps}
+      />
+      <span
+        className={`text-gray-500 group-hover:text-black group-active:text-pink-500 transition ${classNameText}`}
+      >
         {likeCountQuery.data?.like_count}
       </span>
     </button>

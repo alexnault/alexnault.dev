@@ -3,6 +3,7 @@ export type Article = {
   content: string;
   title: string;
   date: string;
+  readingTime: number;
   coverImage: string;
   blurDataURL: string;
   excerpt?: string;

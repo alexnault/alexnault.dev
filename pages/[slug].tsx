@@ -173,7 +173,7 @@ export default function Slug({
                 >
                   Edit
                 </a>
-                <LikeCounter slug={slug} />
+                <LikeCounter slug={slug} className="px-1" />
               </div>
               <Link href="/" passHref>
                 <a className="flex items-center my-8">
