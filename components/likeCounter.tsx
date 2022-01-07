@@ -52,7 +52,7 @@ export default function LikeCounter({
   return (
     <button
       onClick={handleClickLike}
-      className={`relative group hover:scale-105 active:scale-110 transition duration-200 ${className} ${
+      className={`flex items-center relative group hover:scale-105 active:scale-110 transition duration-200 ${className} ${
         likeCountQuery.data?.like_count != null ? "opacity-100" : "opacity-0"
       }`}
     >
