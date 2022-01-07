@@ -34,22 +34,24 @@ const PostPreview = ({ article }: Props) => {
           />
         </div>
         <div className="px-4 py-6 sm:px-6">
-          <div className="flex items-center mb-2 space-x-4">
-            <div className="text-gray-500 text-sm">{readingTime} min read</div>
-            <LikeCounter
-              slug={slug}
-              classNameText="text-sm"
-              IconProps={{
-                size: "sm",
-              }}
-            />
-          </div>
           <Section
             component={
               <H className="text-xl md:text-2xl font-bold mb-3">{title}</H>
             }
           >
             <p className="text-gray-600 text-sm md:text-base">{excerpt}</p>
+            <div className="flex items-center mt-4 space-x-4">
+              <div className="text-gray-500 text-sm">
+                {readingTime} min read
+              </div>
+              <LikeCounter
+                slug={slug}
+                classNameText="text-sm"
+                IconProps={{
+                  size: "sm",
+                }}
+              />
+            </div>
           </Section>
         </div>
       </a>
