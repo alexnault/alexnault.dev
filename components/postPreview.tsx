@@ -5,12 +5,15 @@ import { Section, H } from "react-headings";
 
 import { Article } from "domain/ArticleRepo";
 
+import LikeCounter from "components/likeCounter";
+
 type Props = {
   article: Article;
 };
 
 const PostPreview = ({ article }: Props) => {
-  const { slug, title, coverImage, blurDataURL, excerpt } = article;
+  const { slug, title, coverImage, readingTime, blurDataURL, excerpt } =
+    article;
 
   return (
     <Link href={`/${slug}`} passHref>
@@ -36,7 +39,19 @@ const PostPreview = ({ article }: Props) => {
               <H className="text-xl md:text-2xl font-bold mb-3">{title}</H>
             }
           >
-            <p className="text-gray-500 text-sm md:text-base">{excerpt}</p>
+            <p className="text-gray-600 text-sm md:text-base">{excerpt}</p>
+            <div className="flex items-center mt-4 space-x-4">
+              <div className="text-gray-500 text-sm">
+                {readingTime} min read
+              </div>
+              <LikeCounter
+                slug={slug}
+                classNameText="text-sm"
+                IconProps={{
+                  size: "xs",
+                }}
+              />
+            </div>
           </Section>
         </div>
       </a>

@@ -1,7 +1,7 @@
 import classnames from "classnames";
 
 export interface SvgIconProps extends React.SVGProps<SVGSVGElement> {
-  size?: "sm" | "md" | "lg";
+  size?: "xs" | "sm" | "md" | "lg";
 }
 
 export default function SvgIcon({
@@ -15,12 +15,14 @@ export default function SvgIcon({
       focusable="false"
       aria-hidden={true}
       className={classnames(
-        `inline-flex fill-current select-none ${className}`,
+        "inline-flex fill-current select-none",
         {
           "w-8 h-8": size === "lg",
           "w-6 h-6": size === "md",
           "w-5 h-5": size === "sm",
-        }
+          "w-4 h-4": size === "xs",
+        },
+        className
       )}
       {...props}
     />
