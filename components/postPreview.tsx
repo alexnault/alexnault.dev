@@ -48,7 +48,7 @@ const PostPreview = ({ article }: Props) => {
                 slug={slug}
                 classNameText="text-sm"
                 IconProps={{
-                  size: "sm",
+                  size: "xs",
                 }}
               />
             </div>
