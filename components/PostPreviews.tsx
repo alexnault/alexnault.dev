@@ -2,7 +2,7 @@ import React from "react";
 
 import { Article } from "domain/ArticleRepo";
 
-import PostPreview from "components/postPreview";
+import PostPreview from "components/PostPreview";
 
 type Props = {
   articles: Article[];

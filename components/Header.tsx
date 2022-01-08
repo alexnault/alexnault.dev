@@ -2,8 +2,8 @@ import React from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 
-import DarkIcon from "./icons/dark";
-import LogoIcon from "./icons/logo";
+import DarkIcon from "./icons/Dark";
+import LogoIcon from "./icons/Logo";
 
 const buttons = [{ href: "/about", text: "About" }];
 

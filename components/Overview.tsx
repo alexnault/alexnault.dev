@@ -2,10 +2,10 @@ import React from "react";
 import Image from "next/image";
 import { H } from "react-headings";
 
-import GitHubIcon from "./icons/github";
-import LinkedInIcon from "./icons/linkedin";
-import TwitterIcon from "./icons/twitter";
-import EmailIcon from "./icons/email";
+import GitHubIcon from "./icons/GitHub";
+import LinkedInIcon from "./icons/LinkedIn";
+import TwitterIcon from "./icons/Twitter";
+import EmailIcon from "./icons/Email";
 
 import alexWebp from "public/alex.webp";
 

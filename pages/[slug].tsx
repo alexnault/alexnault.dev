@@ -12,16 +12,16 @@ import { useInView } from "react-intersection-observer";
 
 import { articleRepo } from "repos/articles";
 
-import Layout from "components/layout";
-import SEO from "components/seo";
-import MarkdownRenderer from "components/markdownRenderer";
-import TwitterIcon from "components/icons/twitter";
-import LinkedInIcon from "components/icons/linkedin";
-import LinkIcon from "components/icons/link";
-import Container from "components/container";
-import PostPreviews from "components/postPreviews";
-import CustomMenu from "components/menu";
-import LikeCounter from "components/likeCounter";
+import Layout from "components/Layout";
+import SEO from "components/SEO";
+import MarkdownRenderer from "components/MarkdownRenderer";
+import TwitterIcon from "components/icons/Twitter";
+import LinkedInIcon from "components/icons/LinkedIn";
+import LinkIcon from "components/icons/Link";
+import Container from "components/Container";
+import PostPreviews from "components/PostPreviews";
+import CustomMenu from "components/Menu";
+import LikeCounter from "components/LikeCounter";
 
 import alexWebp from "public/alex.webp";
 

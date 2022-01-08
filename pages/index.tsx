@@ -4,11 +4,11 @@ import { InferGetStaticPropsType } from "next";
 
 import { articleRepo } from "repos/articles";
 
-import SEO from "components/seo";
-import Layout from "components/layout";
-import Overview from "components/overview";
-import PostPreviews from "components/postPreviews";
-import Container from "components/container";
+import SEO from "components/SEO";
+import Layout from "components/Layout";
+import Overview from "components/Overview";
+import PostPreviews from "components/PostPreviews";
+import Container from "components/Container";
 
 export default function Index({
   articles,
