@@ -18,14 +18,14 @@ type Props = {
   image?: string;
 };
 
-const SEO = ({
+export default function SEO({
   description,
   keywords = ["alex", "nault", "dev", "blog", "alexnault", "personal site"],
   schema,
   title,
   url,
   image,
-}: Props) => {
+}: Props) {
   const metaTitle = title ? `${title} | ${siteTitle}` : siteTitle;
   const metaDescription = description || siteDescription;
   const metaUrl = url || siteUrl;
@@ -77,6 +77,4 @@ const SEO = ({
       </script>
     </Head>
   );
-};
-
-export default SEO;
+}

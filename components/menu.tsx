@@ -12,7 +12,7 @@ type Props = {
   }[];
 };
 
-export default function Example({ button, items }: Props) {
+export default function CustomMenu({ button, items }: Props) {
   return (
     <Menu as="div" className="relative inline-block ease- text-left">
       {({ open }) => (

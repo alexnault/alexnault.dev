@@ -6,7 +6,7 @@ import "prismjs/components/prism-jsx";
 import "prismjs/components/prism-typescript";
 import "prismjs/components/prism-tsx";
 
-const CodeBlock = ({ language, value }) => {
+function CodeBlock({ language, value }) {
   useEffect(() => {
     Prism.highlightAll();
   }, []);
@@ -16,7 +16,7 @@ const CodeBlock = ({ language, value }) => {
       <code>{value}</code>
     </pre>
   );
-};
+}
 
 const renderers = {
   code: CodeBlock,

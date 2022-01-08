@@ -8,7 +8,7 @@ type Props = {
   articles: Article[];
 };
 
-const PostPreviews = ({ articles }: Props) => {
+export default function PostPreviews({ articles }: Props) {
   return (
     <div className="w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
       {articles.map((article) => (
@@ -16,6 +16,4 @@ const PostPreviews = ({ articles }: Props) => {
       ))}
     </div>
   );
-};
-
-export default PostPreviews;
+}

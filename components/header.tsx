@@ -12,7 +12,7 @@ type HeaderButtonProps = {
   text: string;
 };
 
-const HeaderButton = ({ href, text }: HeaderButtonProps) => {
+function HeaderButton({ href, text }: HeaderButtonProps) {
   return (
     <Link href={href}>
       <a className="px-4 py-2 text-gray-500 hover:text-black hover:bg-gray-200 rounded-md transition-colors">
@@ -20,9 +20,9 @@ const HeaderButton = ({ href, text }: HeaderButtonProps) => {
       </a>
     </Link>
   );
-};
+}
 
-const Header = () => {
+export default function Header() {
   const { resolvedTheme, setTheme } = useTheme();
 
   const handleChangeTheme = () => {
@@ -55,6 +55,4 @@ const Header = () => {
       </div>
     </header>
   );
-};
-
-export default Header;
+}

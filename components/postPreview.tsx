@@ -11,7 +11,7 @@ type Props = {
   article: Article;
 };
 
-const PostPreview = ({ article }: Props) => {
+export default function PostPreview({ article }: Props) {
   const { slug, title, coverImage, readingTime, blurDataURL, excerpt } =
     article;
 
@@ -57,6 +57,4 @@ const PostPreview = ({ article }: Props) => {
       </a>
     </Link>
   );
-};
-
-export default PostPreview;
+}

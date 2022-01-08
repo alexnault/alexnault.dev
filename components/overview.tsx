@@ -15,7 +15,7 @@ type SocialButtonProps = {
   icon: React.ReactNode;
 };
 
-const SocialButton = ({ icon, title, href }: SocialButtonProps) => {
+function SocialButton({ icon, title, href }: SocialButtonProps) {
   return (
     <a
       href={href}
@@ -25,9 +25,9 @@ const SocialButton = ({ icon, title, href }: SocialButtonProps) => {
       {icon}
     </a>
   );
-};
+}
 
-const Overview = () => {
+export default function Overview() {
   return (
     <div className="flex flex-col sm:flex-row justify-center items-center mx-auto max-w-5xl">
       <div className="flex justify-center mb-6 sm:mb-0 flex-shrink-0">
@@ -75,6 +75,4 @@ const Overview = () => {
       </div>
     </div>
   );
-};
-
-export default Overview;
+}
