@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-import Divider from "components/divider";
+import Divider from "components/Divider";
 
 type FooterLinkProps = {
   children?: React.ReactNode;

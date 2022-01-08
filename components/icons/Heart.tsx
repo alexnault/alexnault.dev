@@ -1,4 +1,4 @@
-import SvgIcon, { SvgIconProps } from "components/svgicon";
+import SvgIcon, { SvgIconProps } from "components/SvgIcon";
 
 export default function HeartIcon(props: SvgIconProps) {
   return (

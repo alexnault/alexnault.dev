@@ -5,7 +5,7 @@ import { Section, H } from "react-headings";
 
 import { Article } from "domain/ArticleRepo";
 
-import LikeCounter from "components/likeCounter";
+import LikeCounter from "components/LikeCounter";
 
 type Props = {
   article: Article;

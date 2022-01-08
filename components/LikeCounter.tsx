@@ -1,7 +1,7 @@
 import { useQuery, useMutation, useQueryClient } from "react-query";
 
-import HeartIcon from "components/icons/heart";
-import { SvgIconProps } from "components/svgicon";
+import HeartIcon from "components/icons/Heart";
+import { SvgIconProps } from "components/SvgIcon";
 
 import { fetchJSON } from "utils/fetch";
 
