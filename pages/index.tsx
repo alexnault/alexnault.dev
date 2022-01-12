@@ -7,11 +7,11 @@ import { articleRepo } from "repos/articles";
 import SEO from "components/SEO";
 import Layout from "components/Layout";
 import Overview from "components/Overview";
-import ArticlePreviews from "components/ArticlePreviews";
+import ArticleCards from "components/ArticleCards";
 import Container from "components/Container";
 
 export default function Index({
-  articles,
+  articleCards,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
@@ -33,7 +33,7 @@ export default function Index({
                   </H>
                 }
               >
-                <ArticlePreviews articles={articles} />
+                <ArticleCards articleCards={articleCards} />
               </Section>
             </section>
           </Section>
@@ -44,11 +44,20 @@ export default function Index({
 }
 
 export async function getStaticProps() {
-  const articles = await articleRepo.getAllArticles();
+  const articleCards = (await articleRepo.getAllArticles()).map(
+    ({ slug, title, coverImage, readingTime, blurDataURL, excerpt }) => ({
+      slug,
+      title,
+      coverImage,
+      readingTime,
+      blurDataURL,
+      excerpt,
+    })
+  );
 
   return {
     props: {
-      articles,
+      articleCards,
     },
   };
 }
