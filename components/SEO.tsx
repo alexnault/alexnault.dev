@@ -72,9 +72,12 @@ export default function SEO({
       <meta name="twitter:creator" content={twitterUsername} />
       <meta name="twitter:site" content={twitterUsername} />
 
-      <script type="application/ld+json">
-        {JSON.stringify(schema || defaultSchema)}
-      </script>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schema || defaultSchema),
+        }}
+      />
     </Head>
   );
 }
