@@ -107,11 +107,11 @@ export default function Slug({
                   src={coverImage}
                   blurDataURL={blurDataURL}
                   alt="Article cover"
-                  width="680"
-                  height="440"
+                  width="728"
+                  height="460"
                   layout="responsive"
                   objectFit="cover"
-                  sizes="(max-width: 680px) 100vw, 680px"
+                  sizes="(max-width: 728px) 100vw, 728px"
                   placeholder="blur"
                 />
               </div>
