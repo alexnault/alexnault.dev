@@ -48,4 +48,4 @@ Thanks to:
 ## Licenses
 
 - [Website](https://github.com/alexnault/alexnault.dev/blob/master/LICENSE-website)
-- [Posts](https://github.com/alexnault/alexnault.dev/blob/master/LICENSE-posts)
+- [Articles](https://github.com/alexnault/alexnault.dev/blob/master/LICENSE-articles)
