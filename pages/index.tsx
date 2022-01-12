@@ -7,7 +7,7 @@ import { articleRepo } from "repos/articles";
 import SEO from "components/SEO";
 import Layout from "components/Layout";
 import Overview from "components/Overview";
-import PostPreviews from "components/PostPreviews";
+import ArticlePreviews from "components/ArticlePreviews";
 import Container from "components/Container";
 
 export default function Index({
@@ -33,7 +33,7 @@ export default function Index({
                   </H>
                 }
               >
-                <PostPreviews articles={articles} />
+                <ArticlePreviews articles={articles} />
               </Section>
             </section>
           </Section>

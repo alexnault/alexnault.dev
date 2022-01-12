@@ -7,7 +7,7 @@ import { ArticleRepo, Article } from "domain/ArticleRepo";
 import { isNotNullish } from "utils/common";
 
 export function MDArticleRepo(): ArticleRepo {
-  const articlesDirectory = join(process.cwd(), "posts");
+  const articlesDirectory = join(process.cwd(), "articles");
 
   return {
     getAllSlugs: async () => {

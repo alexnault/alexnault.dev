@@ -19,7 +19,7 @@ import TwitterIcon from "components/icons/Twitter";
 import LinkedInIcon from "components/icons/LinkedIn";
 import LinkIcon from "components/icons/Link";
 import Container from "components/Container";
-import PostPreviews from "components/PostPreviews";
+import ArticlePreviews from "components/ArticlePreviews";
 import CustomMenu from "components/Menu";
 import LikeCounter from "components/LikeCounter";
 
@@ -166,7 +166,7 @@ export default function Slug({
                   ]}
                 />
                 <a
-                  href={`https://github.com/alexnault/alexnault.dev/edit/master/posts/${slug}.md`}
+                  href={`https://github.com/alexnault/alexnault.dev/edit/master/articles/${slug}.md`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-secondary"
@@ -205,7 +205,7 @@ export default function Slug({
               <H className="text-3xl font-bold mb-6">Related articles</H>
             }
           >
-            <PostPreviews articles={relatedArticles} />
+            <ArticlePreviews articles={relatedArticles} />
             <div ref={bottomRef} />
           </Section>
         </Container>

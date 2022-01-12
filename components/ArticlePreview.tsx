@@ -11,7 +11,7 @@ type Props = {
   article: Article;
 };
 
-export default function PostPreview({ article }: Props) {
+export default function ArticlePreview({ article }: Props) {
   const { slug, title, coverImage, readingTime, blurDataURL, excerpt } =
     article;
 
