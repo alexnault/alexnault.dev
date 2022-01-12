@@ -19,7 +19,7 @@ import TwitterIcon from "components/icons/Twitter";
 import LinkedInIcon from "components/icons/LinkedIn";
 import LinkIcon from "components/icons/Link";
 import Container from "components/Container";
-import ArticlePreviews from "components/ArticlePreviews";
+import ArticleCards from "components/ArticleCards";
 import CustomMenu from "components/Menu";
 import LikeCounter from "components/LikeCounter";
 
@@ -29,7 +29,7 @@ const siteUrl = "https://alexnault.dev";
 
 export default function Slug({
   article,
-  relatedArticles,
+  articleCards,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { slug, title, excerpt, coverImage, blurDataURL, content } = article;
 
@@ -205,7 +205,7 @@ export default function Slug({
               <H className="text-3xl font-bold mb-6">Related articles</H>
             }
           >
-            <ArticlePreviews articles={relatedArticles} />
+            <ArticleCards articleCards={articleCards} />
             <div ref={bottomRef} />
           </Section>
         </Container>
@@ -227,12 +227,21 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
     throw new Error("Missing article");
   }
 
-  const relatedArticles = await articleRepo.getRelatedArticles(slug);
+  const articleCards = (await articleRepo.getRelatedArticles(slug)).map(
+    ({ slug, title, coverImage, readingTime, blurDataURL, excerpt }) => ({
+      slug,
+      title,
+      coverImage,
+      readingTime,
+      blurDataURL,
+      excerpt,
+    })
+  );
 
   return {
     props: {
       article,
-      relatedArticles,
+      articleCards,
     },
   };
 };
