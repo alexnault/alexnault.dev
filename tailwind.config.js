@@ -15,35 +15,29 @@ function cssVariableOpacity(variable) {
 }
 
 module.exports = {
-  mode: "jit",
-  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
   darkMode: "class",
   theme: {
-    colors: {
-      transparent: "transparent",
-      current: "currentColor",
-      black: cssVariableOpacity("--color-black"),
-      white: cssVariableOpacity("--color-white"),
-      gray: {
-        50: cssVariableOpacity("--color-gray-50"),
-        100: cssVariableOpacity("--color-gray-100"),
-        200: cssVariableOpacity("--color-gray-200"),
-        300: cssVariableOpacity("--color-gray-300"),
-        400: cssVariableOpacity("--color-gray-400"),
-        500: cssVariableOpacity("--color-gray-500"),
-        600: cssVariableOpacity("--color-gray-600"),
-        700: cssVariableOpacity("--color-gray-700"),
-        800: cssVariableOpacity("--color-gray-800"),
-        900: cssVariableOpacity("--color-gray-900"),
-      },
-      blue: colors.blue,
-      cyan: colors.cyan,
-      green: colors.green,
-      pink: colors.pink,
-      purple: colors.purple,
-      yellow: colors.yellow,
-    },
     extend: {
+      colors: {
+        black: cssVariableOpacity("--color-black"),
+        white: cssVariableOpacity("--color-white"),
+        gray: {
+          50: cssVariableOpacity("--color-gray-50"),
+          100: cssVariableOpacity("--color-gray-100"),
+          200: cssVariableOpacity("--color-gray-200"),
+          300: cssVariableOpacity("--color-gray-300"),
+          400: cssVariableOpacity("--color-gray-400"),
+          500: cssVariableOpacity("--color-gray-500"),
+          600: cssVariableOpacity("--color-gray-600"),
+          700: cssVariableOpacity("--color-gray-700"),
+          800: cssVariableOpacity("--color-gray-800"),
+          900: cssVariableOpacity("--color-gray-900"),
+        },
+      },
       fontFamily: {
         sans: ["Inter var", ...fontFamily.sans],
       },
@@ -76,12 +70,6 @@ module.exports = {
           },
         },
       }),
-    },
-  },
-  variants: {
-    extend: {
-      ringColor: ["dark", "hover"],
-      typography: ["dark"],
     },
   },
   plugins: [require("@tailwindcss/typography")],
