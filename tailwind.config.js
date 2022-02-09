@@ -23,8 +23,6 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        transparent: "transparent",
-        current: "currentColor",
         black: cssVariableOpacity("--color-black"),
         white: cssVariableOpacity("--color-white"),
         gray: {
