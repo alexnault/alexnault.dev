@@ -7,4 +7,5 @@ COPY package*.json .
 FROM base as dev
 RUN npm i
 COPY . .
+RUN npm run generate
 CMD ["npm", "run", "dev"]
