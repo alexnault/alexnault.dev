@@ -14,7 +14,7 @@ type Props = {
 
 export default function CustomMenu({ button, items }: Props) {
   return (
-    <Menu as="div" className="relative inline-block ease- text-left">
+    <Menu as="div" className="relative inline-block text-left">
       {({ open }) => (
         <>
           {button}
@@ -30,7 +30,7 @@ export default function CustomMenu({ button, items }: Props) {
           >
             <Menu.Items
               static
-              className="z-10 origin-top-left absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-gray-200 focus:outline-none"
+              className="absolute left-0 z-10 mt-2 w-56 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-gray-200 focus:outline-none"
             >
               <div className="py-1">
                 {items.map((item) => (
@@ -40,7 +40,7 @@ export default function CustomMenu({ button, items }: Props) {
                         onClick={item.onClick}
                         className={classnames(
                           active ? "bg-gray-100 text-black" : "text-gray-700",
-                          "group flex items-center w-full px-4 py-2 text-sm"
+                          "group flex w-full items-center px-4 py-2 text-sm"
                         )}
                       >
                         {item.icon}

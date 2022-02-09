@@ -97,12 +97,12 @@ export default function Slug({
           <Container className="max-w-[680px]">
             <article>
               <header className="mt-24 mb-8">
-                <H className="mb-4 lg:mb-8 text-3xl sm:text-4xl md:text-5xl font-bold">
+                <H className="mb-4 text-3xl font-bold sm:text-4xl md:text-5xl lg:mb-8">
                   {title}
                 </H>
-                <p className="text-gray-500 font-bold text-lg">{excerpt}</p>
+                <p className="text-lg font-bold text-gray-500">{excerpt}</p>
               </header>
-              <div className="mb-8 -mx-6 sm:rounded-md shadow-xl overflow-hidden bg-gray-100">
+              <div className="-mx-6 mb-8 overflow-hidden bg-gray-100 shadow-xl sm:rounded-md">
                 <Image
                   src={coverImage}
                   blurDataURL={blurDataURL}
@@ -117,14 +117,14 @@ export default function Slug({
               </div>
               <div ref={topRef} />
               <div
-                className={`fixed hidden lg:block top-80 right-[calc((100vw-1000px)/2)] ${
+                className={`fixed top-80 right-[calc((100vw-1000px)/2)] hidden lg:block ${
                   !isTopInView && !isBottomInView ? "opacity-100" : "opacity-0"
                 } transition-opacity duration-200`}
               >
                 <LikeCounter slug={slug} />
               </div>
               <MarkdownRenderer>{content}</MarkdownRenderer>
-              <div className="flex items-center my-8 space-x-2">
+              <div className="my-8 flex items-center space-x-2">
                 <CustomMenu
                   button={
                     <Menu.Button className="btn-primary">Share</Menu.Button>
@@ -176,8 +176,8 @@ export default function Slug({
                 <LikeCounter slug={slug} className="px-1" />
               </div>
               <Link href="/" passHref>
-                <a className="flex items-center my-8">
-                  <div className="shrink-0 mr-3">
+                <a className="my-8 flex items-center">
+                  <div className="mr-3 shrink-0">
                     <Image
                       src={alexWebp}
                       width={64}
@@ -202,7 +202,7 @@ export default function Slug({
         <Container className="mt-24 mb-16 xl:max-w-screen-xl">
           <Section
             component={
-              <H className="text-3xl font-bold mb-6">Related articles</H>
+              <H className="mb-6 text-3xl font-bold">Related articles</H>
             }
           >
             <ArticleCards articleCards={articleCards} />

@@ -8,7 +8,7 @@ type Props = {
 
 export default function ArticleCards({ articleCards }: Props) {
   return (
-    <div className="w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+    <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
       {articleCards.map((articleCard) => (
         <ArticleCard key={articleCard.slug} {...articleCard} />
       ))}

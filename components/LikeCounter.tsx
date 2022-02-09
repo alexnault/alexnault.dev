@@ -52,16 +52,16 @@ export default function LikeCounter({
   return (
     <button
       onClick={handleClickLike}
-      className={`flex items-center relative group hover:scale-105 active:scale-110 transition duration-200 ${className} ${
+      className={`group relative flex items-center transition duration-200 hover:scale-105 active:scale-110 ${className} ${
         likeCountQuery.data?.like_count != null ? "opacity-100" : "opacity-0"
       }`}
     >
       <HeartIcon
-        className={`mr-2 text-gray-300 group-hover:text-black group-active:text-pink-500 transition ${classNameIcon}`}
+        className={`mr-2 text-gray-300 transition group-hover:text-black group-active:text-pink-500 ${classNameIcon}`}
         {...IconProps}
       />
       <span
-        className={`text-gray-500 group-hover:text-black group-active:text-pink-500 transition ${classNameText}`}
+        className={`text-gray-500 transition group-hover:text-black group-active:text-pink-500 ${classNameText}`}
       >
         {likeCountQuery.data?.like_count}
       </span>

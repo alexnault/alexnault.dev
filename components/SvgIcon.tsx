@@ -15,12 +15,12 @@ export default function SvgIcon({
       focusable="false"
       aria-hidden={true}
       className={classnames(
-        "inline-flex fill-current select-none",
+        "inline-flex select-none fill-current",
         {
-          "w-8 h-8": size === "lg",
-          "w-6 h-6": size === "md",
-          "w-5 h-5": size === "sm",
-          "w-4 h-4": size === "xs",
+          "h-8 w-8": size === "lg",
+          "h-6 w-6": size === "md",
+          "h-5 w-5": size === "sm",
+          "h-4 w-4": size === "xs",
         },
         className
       )}

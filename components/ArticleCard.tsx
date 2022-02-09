@@ -22,7 +22,7 @@ export default function ArticleCard({
 }: ArticleCardProps) {
   return (
     <Link href={`/${slug}`} passHref>
-      <a className="overflow-hidden transition rounded-xl bg-white dark:bg-gray-100 shadow-xl hover:shadow-2xl ring-1 ring-gray-200 dark:hover:ring-black">
+      <a className="overflow-hidden rounded-xl bg-white shadow-xl ring-1 ring-gray-200 transition hover:shadow-2xl dark:bg-gray-100 dark:hover:ring-black">
         <div
           className="relative w-full
            bg-gray-100"
@@ -41,12 +41,12 @@ export default function ArticleCard({
         <div className="px-4 py-6 sm:px-6">
           <Section
             component={
-              <H className="text-xl md:text-2xl font-bold mb-3">{title}</H>
+              <H className="mb-3 text-xl font-bold md:text-2xl">{title}</H>
             }
           >
-            <p className="text-gray-600 text-sm md:text-base">{excerpt}</p>
-            <div className="flex items-center mt-4 space-x-4">
-              <div className="text-gray-500 text-sm">
+            <p className="text-sm text-gray-600 md:text-base">{excerpt}</p>
+            <div className="mt-4 flex items-center space-x-4">
+              <div className="text-sm text-gray-500">
                 {readingTime} min read
               </div>
               <LikeCounter

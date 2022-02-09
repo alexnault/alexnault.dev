@@ -15,7 +15,7 @@ type HeaderButtonProps = {
 function HeaderButton({ href, text }: HeaderButtonProps) {
   return (
     <Link href={href}>
-      <a className="px-4 py-2 text-gray-500 hover:text-black hover:bg-gray-200 rounded-md transition-colors">
+      <a className="rounded-md px-4 py-2 text-gray-500 transition-colors hover:bg-gray-200 hover:text-black">
         {text}
       </a>
     </Link>
@@ -30,8 +30,8 @@ export default function Header() {
   };
 
   return (
-    <header className="w-full fixed z-20 top-0 bg-white bg-opacity-80 dark:bg-opacity-60 backdrop-blur backdrop-saturate-150">
-      <div className="flex items-center justify-between h-16 px-6 py-4 container max-w-4xl mx-auto">
+    <header className="fixed top-0 z-20 w-full bg-white bg-opacity-80 backdrop-blur backdrop-saturate-150 dark:bg-opacity-60">
+      <div className="container mx-auto flex h-16 max-w-4xl items-center justify-between px-6 py-4">
         <Link href="/">
           <a className="flex items-center p-2 leading-none">
             <LogoIcon size="lg" className="mr-2" />
@@ -45,7 +45,7 @@ export default function Header() {
             ))}
           </nav>
           <button
-            className="text-gray-300 hover:text-black transition-colors p-2 leading-none"
+            className="p-2 leading-none text-gray-300 transition-colors hover:text-black"
             onClick={handleChangeTheme}
             aria-label="Toggle theme"
           >
