@@ -94,24 +94,24 @@ export default function Slug({
       />
       <Section
         component={
-          <Container className="md:max-w-screen-md">
+          <Container className="max-w-[680px]">
             <article>
               <header className="mt-24 mb-8">
-                <H className=" mb-4 lg:mb-8 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
+                <H className="mb-4 lg:mb-8 text-3xl sm:text-4xl md:text-5xl font-bold">
                   {title}
                 </H>
                 <p className="text-gray-500 font-bold text-lg">{excerpt}</p>
               </header>
-              <div className="mb-8 -mx-6 sm:mx-0 sm:rounded-md shadow-xl overflow-hidden bg-gray-100">
+              <div className="mb-8 -mx-6 sm:rounded-md shadow-xl overflow-hidden bg-gray-100">
                 <Image
                   src={coverImage}
                   blurDataURL={blurDataURL}
                   alt="Article cover"
-                  width="768"
-                  height="500"
+                  width="728"
+                  height="460"
                   layout="responsive"
                   objectFit="cover"
-                  sizes="(max-width: 768px) 100vw, 768px"
+                  sizes="(max-width: 728px) 100vw, 728px"
                   placeholder="blur"
                 />
               </div>

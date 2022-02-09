@@ -117,7 +117,7 @@ pre {
 }
 
 .prose pre {
-  @apply -mx-6 rounded-none sm:mx-0 sm:rounded-md bg-gray-100 border border-gray-200;
+  @apply -mx-6 rounded-none sm:rounded-md bg-gray-100 border border-gray-200;
 }
 
 .prose code {
