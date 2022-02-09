@@ -9,14 +9,14 @@ import Container from "components/Container";
 export default function NotFoundPage() {
   return (
     <Layout>
-      <Container className="md:max-w-screen-md mt-24 mb-8">
+      <Container className="mt-24 mb-8 md:max-w-screen-md">
         <SEO title="404 Not found" />
         <Section
           component={
-            <H className="text-5xl font-bold mb-6">Oops! Page not found</H>
+            <H className="mb-6 text-5xl font-bold">Oops! Page not found</H>
           }
         >
-          <p className="text-gray-500 text-xl mb-6">
+          <p className="mb-6 text-xl text-gray-500">
             The page you are looking for might have been removed, had its name
             changed or is temporarily unavailable.
           </p>

@@ -19,7 +19,7 @@ function SocialButton({ icon, title, href }: SocialButtonProps) {
   return (
     <a
       href={href}
-      className="text-gray-400 hover:text-black transition-colors p-2 leading-none"
+      className="p-2 leading-none text-gray-400 transition-colors hover:text-black"
       aria-label={title}
     >
       {icon}
@@ -29,9 +29,9 @@ function SocialButton({ icon, title, href }: SocialButtonProps) {
 
 export default function Overview() {
   return (
-    <div className="flex flex-col sm:flex-row justify-center items-center mx-auto max-w-5xl">
-      <div className="flex justify-center mb-6 sm:mb-0 shrink-0">
-        <div className="w-40 h-40 sm:w-48 sm:h-48 lg:w-60 lg:h-60 overflow-hidden rounded-full relative shadow-xl bg-gray-100">
+    <div className="mx-auto flex max-w-5xl flex-col items-center justify-center sm:flex-row">
+      <div className="mb-6 flex shrink-0 justify-center sm:mb-0">
+        <div className="relative h-40 w-40 overflow-hidden rounded-full bg-gray-100 shadow-xl sm:h-48 sm:w-48 lg:h-60 lg:w-60">
           <Image
             src={alexWebp}
             alt="Alex Nault"
@@ -41,16 +41,16 @@ export default function Overview() {
           />
         </div>
       </div>
-      <div className="sm:flex-1 sm:ml-12 md:ml-16">
-        <H className="text-center sm:text-left text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-8">
+      <div className="sm:ml-12 sm:flex-1 md:ml-16">
+        <H className="mb-4 text-center text-3xl font-bold sm:text-left md:mb-8 md:text-4xl lg:text-5xl">
           {"Hi, I'm Alex Nault and I solve problems using software."}
         </H>
-        <p className="text-gray-500 text-center sm:text-left text-lg md:text-xl mb-3 md:leading-relaxed">
+        <p className="mb-3 text-center text-lg text-gray-500 sm:text-left md:text-xl md:leading-relaxed">
           {
             "I'm currently building solutions at Apprentx as a Software Architect. Previously Classcraft and Ubisoft."
           }
         </p>
-        <div className="flex justify-center sm:justify-start space-x-2 sm:-mx-2">
+        <div className="flex justify-center space-x-2 sm:-mx-2 sm:justify-start">
           <SocialButton
             title="GitHub"
             href="https://github.com/alexnault"

@@ -12,15 +12,15 @@ export default function About() {
   return (
     <Layout>
       <SEO title="About" />
-      <Container className="md:max-w-screen-md mt-24 mb-8">
+      <Container className="mt-24 mb-8 md:max-w-screen-md">
         <Section
           component={
-            <H className="mb-4 md:mb-8 text-3xl sm:text-4xl md:text-5xl font-bold">
+            <H className="mb-4 text-3xl font-bold sm:text-4xl md:mb-8 md:text-5xl">
               About Me
             </H>
           }
         >
-          <div className="prose sm:prose-lg dark:prose-dark">
+          <div className="prose dark:prose-dark sm:prose-lg">
             <p className="font-bold text-gray-600">
               {`Hey! I'm Alex, a developer from Canada 🍁.
               I work at Apprentx as a Software Architect and I write articles for my fellow developers from time to time.`}
@@ -41,7 +41,7 @@ export default function About() {
               {`Anyway, you can find me either playing board games with friends, working out at the gym, or tasting beers at a micro-brewery.`}
             </p>
             <p>{`Enjoy your stay!`}</p>
-            <div className="-mx-6 sm:mx-0 sm:rounded-md shadow-xl overflow-hidden bg-gray-100">
+            <div className="-mx-6 overflow-hidden bg-gray-100 shadow-xl sm:mx-0 sm:rounded-md">
               <Image
                 src={hikeWebp}
                 alt="Alex Nault"

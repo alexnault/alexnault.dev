@@ -20,7 +20,7 @@ export default function Index({
         <Container className="xl:max-w-screen-xl">
           <Section
             component={
-              <section className="flex flex-col justify-center mt-36 mb-20">
+              <section className="mt-36 mb-20 flex flex-col justify-center">
                 <Overview />
               </section>
             }
@@ -28,7 +28,7 @@ export default function Index({
             <section className="mb-16">
               <Section
                 component={
-                  <H className="text-2xl md:text-3xl font-bold mb-6">
+                  <H className="mb-6 text-2xl font-bold md:text-3xl">
                     Latest articles
                   </H>
                 }

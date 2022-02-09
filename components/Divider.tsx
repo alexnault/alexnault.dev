@@ -5,7 +5,7 @@ type Props = {
 export default function Divider(props: Props) {
   return (
     <hr
-      className={`bg-gray-200 border-0 ${props.className}`}
+      className={`border-0 bg-gray-200 ${props.className}`}
       style={{ width: 1 }}
     />
   );
