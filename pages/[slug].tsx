@@ -177,7 +177,7 @@ export default function Slug({
               </div>
               <Link href="/" passHref>
                 <a className="flex items-center my-8">
-                  <div className="flex-shrink-0 mr-3">
+                  <div className="shrink-0 mr-3">
                     <Image
                       src={alexWebp}
                       width={64}
