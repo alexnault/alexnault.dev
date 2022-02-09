@@ -7,14 +7,19 @@ import { Article } from "domain/ArticleRepo";
 
 import LikeCounter from "components/LikeCounter";
 
-type Props = {
-  article: Article;
-};
+export type ArticleCardProps = Pick<
+  Article,
+  "slug" | "title" | "coverImage" | "readingTime" | "blurDataURL" | "excerpt"
+>;
 
-export default function PostPreview({ article }: Props) {
-  const { slug, title, coverImage, readingTime, blurDataURL, excerpt } =
-    article;
-
+export default function ArticleCard({
+  slug,
+  title,
+  coverImage,
+  readingTime,
+  blurDataURL,
+  excerpt,
+}: ArticleCardProps) {
   return (
     <Link href={`/${slug}`} passHref>
       <a className="overflow-hidden transition transform rounded-xl bg-white dark:bg-gray-100 shadow-xl hover:shadow-2xl ring-1 ring-gray-200 dark:hover:ring-black">
