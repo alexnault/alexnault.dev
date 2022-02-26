@@ -1,5 +1,4 @@
 const { fontFamily } = require("tailwindcss/defaultTheme");
-const colors = require("tailwindcss/colors");
 
 // https://github.com/adamwathan/tailwind-css-variable-text-opacity-demo
 function cssVariableOpacity(variable) {
@@ -51,7 +50,9 @@ module.exports = {
               },
               code: { color: theme("colors.blue.600") },
             },
-            code: { color: theme("colors.pink.600") },
+            ":not(pre) > code": {
+              color: theme("colors.pink.600"),
+            },
             "blockquote p": { color: theme("colors.gray.500") },
             "blockquote p:first-of-type::before": false,
             "blockquote p:last-of-type::after": false,
@@ -59,13 +60,15 @@ module.exports = {
         },
         dark: {
           css: {
-            code: { color: theme("colors.pink.500") },
             a: {
               color: theme("colors.blue.500"),
               "&:hover": {
                 color: theme("colors.blue.600"),
               },
               code: { color: theme("colors.blue.500") },
+            },
+            ":not(pre) > code": {
+              color: theme("colors.pink.500"),
             },
           },
         },
