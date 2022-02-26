@@ -20,7 +20,7 @@ export default function About() {
             </H>
           }
         >
-          <div className="prose dark:prose-dark sm:prose-lg">
+          <div className="prose dark:prose-dark dark:prose-invert sm:prose-lg">
             <p className="font-bold text-gray-600">
               {`Hey! I'm Alex, a developer from Canada 🍁.
               I work at Apprentx as a Software Architect and I write articles for my fellow developers from time to time.`}

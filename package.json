@@ -40,7 +40,7 @@
     "sharp": "^0.28.3"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.1",
+    "@tailwindcss/typography": "^0.5.2",
     "@types/node": "^16.11.6",
     "@types/prismjs": "^1.16.6",
     "@types/react": "^17.0.11",
