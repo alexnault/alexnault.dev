@@ -1,18 +1,5 @@
 const { fontFamily } = require("tailwindcss/defaultTheme");
 
-// https://github.com/adamwathan/tailwind-css-variable-text-opacity-demo
-function cssVariableOpacity(variable) {
-  return ({ opacityVariable, opacityValue }) => {
-    if (opacityValue !== undefined) {
-      return `rgba(var(${variable}), ${opacityValue})`;
-    }
-    if (opacityVariable !== undefined) {
-      return `rgba(var(${variable}), var(${opacityVariable}, 1))`;
-    }
-    return `rgb(var(${variable}))`;
-  };
-}
-
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -22,19 +9,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        black: cssVariableOpacity("--color-black"),
-        white: cssVariableOpacity("--color-white"),
+        black: "rgb(var(--color-black) / <alpha-value>)",
+        white: "rgb(var(--color-white) / <alpha-value>)",
         gray: {
-          50: cssVariableOpacity("--color-gray-50"),
-          100: cssVariableOpacity("--color-gray-100"),
-          200: cssVariableOpacity("--color-gray-200"),
-          300: cssVariableOpacity("--color-gray-300"),
-          400: cssVariableOpacity("--color-gray-400"),
-          500: cssVariableOpacity("--color-gray-500"),
-          600: cssVariableOpacity("--color-gray-600"),
-          700: cssVariableOpacity("--color-gray-700"),
-          800: cssVariableOpacity("--color-gray-800"),
-          900: cssVariableOpacity("--color-gray-900"),
+          50: "rgb(var(--color-gray-50) / <alpha-value>)",
+          100: "rgb(var(--color-gray-100) / <alpha-value>)",
+          200: "rgb(var(--color-gray-200) / <alpha-value>)",
+          300: "rgb(var(--color-gray-300) / <alpha-value>)",
+          400: "rgb(var(--color-gray-400) / <alpha-value>)",
+          500: "rgb(var(--color-gray-500) / <alpha-value>)",
+          600: "rgb(var(--color-gray-600) / <alpha-value>)",
+          700: "rgb(var(--color-gray-700) / <alpha-value>)",
+          800: "rgb(var(--color-gray-800) / <alpha-value>)",
+          900: "rgb(var(--color-gray-900) / <alpha-value>)",
         },
       },
       fontFamily: {
