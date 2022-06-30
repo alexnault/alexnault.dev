@@ -27,7 +27,7 @@ import alexWebp from "public/alex.webp";
 
 const siteUrl = "https://alexnault.dev";
 
-export default function Slug({
+export default function SlugPage({
   article,
   articleCards,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
