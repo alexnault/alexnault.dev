@@ -5,14 +5,17 @@ import Divider from "components/Divider";
 
 type FooterLinkProps = {
   children?: React.ReactNode;
-  href?: string;
+  href: string;
 };
 
 function FooterLink({ children, href }: FooterLinkProps) {
   return (
-    <a href={href} className="text-gray-500 transition-colors hover:text-black">
+    <Link
+      href={href}
+      className="text-gray-500 transition-colors hover:text-black"
+    >
       {children}
-    </a>
+    </Link>
   );
 }
 
@@ -20,13 +23,9 @@ export default function Footer() {
   return (
     <footer className="space-y-6 py-10 px-6">
       <nav className="flex justify-center">
-        <Link href="/" passHref>
-          <FooterLink>Home</FooterLink>
-        </Link>
+        <FooterLink href="/">Home</FooterLink>
         <Divider className="mx-4 h-auto" />
-        <Link href="/about" passHref>
-          <FooterLink>About</FooterLink>
-        </Link>
+        <FooterLink href="/about">About</FooterLink>
         <Divider className="mx-4 h-auto" />
         <FooterLink href="mailto:nault.alex@gmail.com">Contact</FooterLink>
         <Divider className="mx-4 h-auto" />
