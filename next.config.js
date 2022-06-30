@@ -2,6 +2,9 @@ const { withPlaiceholder } = require("@plaiceholder/next");
 const { createSecureHeaders } = require("next-secure-headers");
 
 const config = {
+  experimental: {
+    newNextLinkBehavior: true,
+  },
   future: {
     strictPostcssConfiguration: true,
   },

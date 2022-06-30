@@ -8,7 +8,7 @@ import Container from "components/Container";
 
 import hikeWebp from "public/hike.webp";
 
-export default function About() {
+export default function AboutPage() {
   return (
     <Layout>
       <SEO title="About" />

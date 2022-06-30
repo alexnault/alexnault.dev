@@ -10,7 +10,7 @@ import Overview from "components/Overview";
 import ArticleCards from "components/ArticleCards";
 import Container from "components/Container";
 
-export default function Index({
+export default function HomePage({
   articleCards,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
