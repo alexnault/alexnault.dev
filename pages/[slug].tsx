@@ -175,25 +175,23 @@ export default function SlugPage({
                 </a>
                 <LikeCounter slug={slug} className="px-1" />
               </div>
-              <Link href="/" passHref>
-                <a className="my-8 flex items-center">
-                  <div className="mr-3 shrink-0">
-                    <Image
-                      src={alexWebp}
-                      width={64}
-                      height={64}
-                      alt="Alex Nault"
-                      className="rounded-full bg-gray-100"
-                      placeholder="blur"
-                    />
+              <Link href="/" passHref className="my-8 flex items-center">
+                <div className="mr-3 shrink-0">
+                  <Image
+                    src={alexWebp}
+                    width={64}
+                    height={64}
+                    alt="Alex Nault"
+                    className="rounded-full bg-gray-100"
+                    placeholder="blur"
+                  />
+                </div>
+                <div>
+                  <div className="text-lg font-bold">By Alex Nault</div>
+                  <div className="text-lg text-gray-500">
+                    I write bite-sized articles for developers
                   </div>
-                  <div>
-                    <div className="text-lg font-bold">By Alex Nault</div>
-                    <div className="text-lg text-gray-500">
-                      I write bite-sized articles for developers
-                    </div>
-                  </div>
-                </a>
+                </div>
               </Link>
             </article>
           </Container>

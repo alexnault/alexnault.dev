@@ -20,8 +20,8 @@ export default function NotFoundPage() {
             The page you are looking for might have been removed, had its name
             changed or is temporarily unavailable.
           </p>
-          <Link href="/" passHref>
-            <a className="btn-primary">Go back home</a>
+          <Link href="/" className="btn-primary">
+            Go back home
           </Link>
         </Section>
       </Container>
