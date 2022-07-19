@@ -1,6 +1,6 @@
 import { Fragment, ReactNode } from "react";
 import { Menu, Transition } from "@headlessui/react";
-import classnames from "classnames";
+import { cx } from "classix";
 
 type Props = {
   button: ReactNode;
@@ -38,7 +38,7 @@ export default function CustomMenu({ button, items }: Props) {
                     {({ active }) => (
                       <button
                         onClick={item.onClick}
-                        className={classnames(
+                        className={cx(
                           active ? "bg-gray-100 text-black" : "text-gray-700",
                           "group flex w-full items-center px-4 py-2 text-sm"
                         )}

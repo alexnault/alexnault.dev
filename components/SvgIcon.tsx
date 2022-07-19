@@ -1,4 +1,4 @@
-import classnames from "classnames";
+import { cx } from "classix";
 
 export interface SvgIconProps extends React.SVGProps<SVGSVGElement> {
   size?: "xs" | "sm" | "md" | "lg";
@@ -14,14 +14,12 @@ export default function SvgIcon({
       viewBox="0 0 24 24"
       focusable="false"
       aria-hidden={true}
-      className={classnames(
+      className={cx(
         "inline-flex select-none fill-current",
-        {
-          "h-8 w-8": size === "lg",
-          "h-6 w-6": size === "md",
-          "h-5 w-5": size === "sm",
-          "h-4 w-4": size === "xs",
-        },
+        size === "lg" && "h-8 w-8",
+        size === "md" && "h-6 w-6",
+        size === "sm" && "h-5 w-5",
+        size === "xs" && "h-4 w-4",
         className
       )}
       {...props}
