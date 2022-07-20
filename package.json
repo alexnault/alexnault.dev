@@ -25,7 +25,7 @@
     "@headlessui/react": "^1.4.1",
     "@plaiceholder/next": "^2.4.0",
     "@prisma/client": "^3.3.0",
-    "classnames": "^2.3.1",
+    "classix": "^1.2.0",
     "gray-matter": "^4.0.3",
     "next": "^12.2.0",
     "next-themes": "0.2.0",
