@@ -1,4 +1,5 @@
 import React from "react";
+import { Transition } from "@headlessui/react";
 
 import Header from "./Header";
 import Footer from "./Footer";
@@ -11,8 +12,16 @@ export default function Layout({ children }: Props) {
   return (
     <>
       <Header />
-      <main>{children}</main>
-      <Footer />
+      <Transition
+        appear
+        show
+        enter="duration-150"
+        enterFrom="opacity-0 translate-y-8"
+        enterTo="opacity-100 translate-y-0"
+      >
+        <main>{children}</main>
+        <Footer />
+      </Transition>
     </>
   );
 }
