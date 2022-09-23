@@ -2,7 +2,7 @@ import Head from "next/head";
 import { AppProps } from "next/app";
 import { ThemeProvider } from "next-themes";
 import Script from "next/script";
-import { QueryClient, QueryClientProvider } from "react-query";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import "styles/fonts.css";
 import "styles/globals.css";

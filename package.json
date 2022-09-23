@@ -25,6 +25,7 @@
     "@headlessui/react": "^1.4.1",
     "@plaiceholder/next": "^2.4.0",
     "@prisma/client": "^3.3.0",
+    "@tanstack/react-query": "^4.3.9",
     "classix": "^2.1.14",
     "gray-matter": "^4.0.3",
     "next": "^12.3.0",
@@ -36,7 +37,6 @@
     "react-headings": "^3.0.15",
     "react-intersection-observer": "^8.32.2",
     "react-markdown": "^5.0.3",
-    "react-query": "^3.29.0",
     "sharp": "^0.30.5",
     "zod": "^3.17.3"
   },

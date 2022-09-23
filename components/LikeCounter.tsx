@@ -1,4 +1,4 @@
-import { useQuery, useMutation, useQueryClient } from "react-query";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 
 import HeartIcon from "components/icons/Heart";
 import { SvgIconProps } from "components/SvgIcon";
@@ -22,7 +22,7 @@ export default function LikeCounter({
 }: Props) {
   const queryClient = useQueryClient();
 
-  const likeCountQuery = useQuery(`api/articles/${slug}`, () =>
+  const likeCountQuery = useQuery([`api/articles/${slug}`], () =>
     fetchJSON(`/api/articles/${slug}`)
   );
 
@@ -30,12 +30,12 @@ export default function LikeCounter({
     () => fetchJSON(`api/articles/${slug}`, { method: "POST" }),
     {
       onMutate: async () => {
-        const previousValue = queryClient.getQueryData<{ like_count: number }>(
-          `api/articles/${slug}`
-        );
+        const previousValue = queryClient.getQueryData<{ like_count: number }>([
+          `api/articles/${slug}`,
+        ]);
 
         if (previousValue) {
-          queryClient.setQueryData(`api/articles/${slug}`, {
+          queryClient.setQueryData([`api/articles/${slug}`], {
             like_count: previousValue.like_count + 1,
           });
         }
