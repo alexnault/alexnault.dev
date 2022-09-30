@@ -9,15 +9,17 @@ import Image from "next/image";
 import { Section, H } from "react-headings";
 import { Menu } from "@headlessui/react";
 import { useInView } from "react-intersection-observer";
+import {
+  Twitter as TwitterIcon,
+  Linkedin as LinkedInIcon,
+  Link as LinkIcon,
+} from "react-feather";
 
 import { articleRepo } from "repos/articles";
 
 import Layout from "components/Layout";
 import SEO from "components/SEO";
 import MarkdownRenderer from "components/MarkdownRenderer";
-import TwitterIcon from "components/icons/Twitter";
-import LinkedInIcon from "components/icons/LinkedIn";
-import LinkIcon from "components/icons/Link";
 import Container from "components/Container";
 import ArticleCards from "components/ArticleCards";
 import CustomMenu from "components/Menu";
@@ -136,7 +138,7 @@ export default function SlugPage({
                       onClick: handleShareTwitter,
                       icon: (
                         <TwitterIcon
-                          size="sm"
+                          size={20}
                           className="mr-3 text-gray-400 group-hover:text-gray-500"
                         />
                       ),
@@ -147,7 +149,7 @@ export default function SlugPage({
                       onClick: handleShareLinkedIn,
                       icon: (
                         <LinkedInIcon
-                          size="sm"
+                          size={20}
                           className="mr-3 text-gray-400 group-hover:text-gray-500"
                         />
                       ),
@@ -158,7 +160,8 @@ export default function SlugPage({
                       onClick: handleCopyLink,
                       icon: (
                         <LinkIcon
-                          size="sm"
+                          size={20}
+                          strokeWidth={2.5}
                           className="mr-3 text-gray-400 group-hover:text-gray-500"
                         />
                       ),

@@ -54,7 +54,7 @@ export default function ArticleCard({
               slug={slug}
               classNameText="text-sm"
               IconProps={{
-                size: "xs",
+                size: 18,
               }}
             />
           </div>

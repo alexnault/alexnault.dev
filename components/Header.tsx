@@ -1,9 +1,9 @@
 import React from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
+import { Moon as MoonIcon } from "react-feather";
 
-import DarkIcon from "./icons/Dark";
-import LogoIcon from "./icons/Logo";
+import LogoIcon from "./Logo";
 
 const buttons = [{ href: "/about", text: "About" }];
 
@@ -48,7 +48,7 @@ export default function Header() {
             onClick={handleChangeTheme}
             aria-label="Toggle theme"
           >
-            <DarkIcon size="sm" />
+            <MoonIcon />
           </button>
         </div>
       </div>
