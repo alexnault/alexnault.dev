@@ -27,8 +27,7 @@ export default function ArticleCard({
       className="overflow-hidden rounded-xl bg-white shadow-xl ring-1 ring-gray-200 transition hover:shadow-2xl dark:bg-gray-100 dark:hover:ring-black"
     >
       <div
-        className="relative w-full
-         bg-gray-100"
+        className="relative w-full bg-gray-100"
         style={{ paddingTop: "50%" }}
       >
         <Image
@@ -47,7 +46,7 @@ export default function ArticleCard({
             <H className="mb-3 text-xl font-bold md:text-2xl">{title}</H>
           }
         >
-          <p className="text-sm text-gray-600 md:text-base">{excerpt}</p>
+          <p className="text-sm text-gray-500 md:text-base">{excerpt}</p>
           <div className="mt-4 flex items-center space-x-4">
             <div className="text-sm text-gray-500">{readingTime} min read</div>
             <LikeCounter

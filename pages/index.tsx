@@ -28,7 +28,7 @@ export default function HomePage({
             <section className="mb-16">
               <Section
                 component={
-                  <H className="mb-6 text-2xl font-bold md:text-3xl">
+                  <H className="mb-4 text-xl font-bold md:text-2xl">
                     Latest articles
                   </H>
                 }

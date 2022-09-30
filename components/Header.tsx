@@ -44,7 +44,7 @@ export default function Header() {
             ))}
           </nav>
           <button
-            className="p-2 leading-none text-gray-300 transition-colors hover:text-black"
+            className="p-2 leading-none text-gray-400 transition-colors hover:text-black"
             onClick={handleChangeTheme}
             aria-label="Toggle theme"
           >
