@@ -1,7 +1,5 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-
-import HeartIcon from "components/icons/Heart";
-import { SvgIconProps } from "components/SvgIcon";
+import { Heart as HeartIcon, IconProps } from "react-feather";
 
 import { fetchJSON } from "utils/fetch";
 
@@ -10,7 +8,7 @@ type Props = {
   className?: string;
   classNameIcon?: string;
   classNameText?: string;
-  IconProps?: SvgIconProps;
+  IconProps?: IconProps;
 };
 
 export default function LikeCounter({

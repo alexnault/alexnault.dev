@@ -1,11 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import { H } from "react-headings";
-
-import GitHubIcon from "./icons/GitHub";
-import LinkedInIcon from "./icons/LinkedIn";
-import TwitterIcon from "./icons/Twitter";
-import EmailIcon from "./icons/Email";
+import {
+  GitHub as GitHubIcon,
+  Linkedin as LinkedInIcon,
+  Twitter as TwitterIcon,
+  Mail as MailIcon,
+} from "react-feather";
 
 import alexWebp from "public/alex.webp";
 
@@ -69,7 +70,7 @@ export default function Overview() {
           <SocialButton
             title="Email"
             href="mailto:nault.alex@gmail.com"
-            icon={<EmailIcon />}
+            icon={<MailIcon />}
           />
         </div>
       </div>
