@@ -20,7 +20,7 @@ export default function HomePage({
         <Container className="xl:max-w-screen-xl">
           <Section
             component={
-              <section className="mt-36 mb-20 flex flex-col justify-center">
+              <section className="mt-36 mb-24 flex flex-col justify-center">
                 <Overview />
               </section>
             }
