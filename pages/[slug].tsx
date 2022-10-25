@@ -102,16 +102,15 @@ export default function SlugPage({
                 </H>
                 <p className="text-lg font-bold text-gray-500">{excerpt}</p>
               </header>
-              <div className="-mx-6 mb-8">
+              <div className="relative -mx-6 mb-8 pt-[66%]">
                 <Image
                   src={coverImage}
                   blurDataURL={blurDataURL}
                   alt="Article cover"
-                  width={728}
-                  height={460}
+                  fill
                   sizes="(max-width: 728px) 100vw, 728px"
                   placeholder="blur"
-                  className="bg-gray-100 shadow-xl sm:rounded-md"
+                  className="bg-gray-100 object-cover shadow-xl sm:rounded-md"
                 />
               </div>
               <div ref={topRef} />
