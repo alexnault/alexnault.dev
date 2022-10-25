@@ -3,7 +3,6 @@ const { withPlaiceholder } = require("@plaiceholder/next");
 const { createSecureHeaders } = require("next-secure-headers");
 
 const config = {
-  swcMinify: true,
   experimental: {
     newNextLinkBehavior: true,
   },
