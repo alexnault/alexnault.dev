@@ -58,7 +58,6 @@ export default function App({ Component, pageProps }: AppProps) {
         </>
       )}
       <QueryClientProvider client={queryClient}>
-        {/* @ts-expect-error */}
         <Hydrate state={pageProps.dehydratedState}>
           <Component {...pageProps} />
         </Hydrate>
