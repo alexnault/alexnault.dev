@@ -26,19 +26,15 @@ export default function ArticleCard({
       passHref
       className="overflow-hidden rounded-xl bg-white shadow-xl ring-1 ring-gray-200 transition hover:shadow-2xl dark:bg-gray-100 dark:hover:ring-black"
     >
-      <div
-        className="relative w-full
-         bg-gray-100"
-        style={{ paddingTop: "50%" }}
-      >
+      <div className="relative w-full pt-[50%]">
         <Image
           src={coverImage}
           blurDataURL={blurDataURL}
           alt="Cover image"
-          layout="fill"
-          objectFit="cover"
+          fill
           sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 416px"
           placeholder="blur"
+          className="bg-gray-100 object-cover"
         />
       </div>
       <div className="px-4 py-6 sm:px-6">

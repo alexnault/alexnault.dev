@@ -31,13 +31,14 @@ export default function Overview() {
   return (
     <div className="mx-auto flex max-w-5xl flex-col items-center justify-center sm:flex-row">
       <div className="mb-6 flex shrink-0 justify-center sm:mb-0">
-        <div className="relative h-40 w-40 overflow-hidden rounded-full bg-gray-100 shadow-xl sm:h-48 sm:w-48 lg:h-60 lg:w-60">
+        <div className="relative h-40 w-40 sm:h-48 sm:w-48 lg:h-60 lg:w-60">
           <Image
             src={alexWebp}
             alt="Alex Nault"
-            layout="fill"
+            fill
             sizes="(max-width: 640px) 160px, 240px"
             placeholder="blur"
+            className="rounded-full bg-gray-100 shadow-xl"
           />
         </div>
       </div>

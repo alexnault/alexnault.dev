@@ -41,12 +41,12 @@ export default function AboutPage() {
               {`Anyway, you can find me either playing board games with friends, working out at the gym, or tasting beers at a micro-brewery.`}
             </p>
             <p>{`Enjoy your stay!`}</p>
-            <div className="-mx-6 overflow-hidden bg-gray-100 shadow-xl sm:mx-0 sm:rounded-md">
+            <div className="-mx-6 sm:mx-0">
               <Image
                 src={hikeWebp}
                 alt="Alex Nault"
-                layout="responsive"
                 placeholder="blur"
+                className="bg-gray-100 shadow-xl sm:rounded-md"
               />
             </div>
           </div>
