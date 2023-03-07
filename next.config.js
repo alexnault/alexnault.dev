@@ -10,7 +10,7 @@ const config = {
         source: "/:path*",
         headers: [
           ...createSecureHeaders({
-            referrerPolicy: "origin-when-cross-origin",
+            referrerPolicy: "strict-origin-when-cross-origin",
             contentSecurityPolicy: {
               directives: {
                 defaultSrc: [
