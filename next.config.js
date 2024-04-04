@@ -17,15 +17,12 @@ const config = {
                   "'self'",
                   "alexnault.dev",
                   "excalidraw.com",
-                  "*.googletagmanager.com",
-                  "*.google-analytics.com",
                   "*.vercel-insights.com",
                 ],
                 styleSrc: ["'self'", "'unsafe-inline'"],
                 scriptSrc: [
                   "'self'",
                   "'unsafe-inline'",
-                  "*.googletagmanager.com",
                   ...(process.env.NODE_ENV === "development"
                     ? ["'unsafe-eval'"] // For hot reload
                     : []),
