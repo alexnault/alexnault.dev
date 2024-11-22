@@ -4,7 +4,7 @@ import { H } from "react-headings";
 
 import GitHubIcon from "./icons/GitHub";
 import LinkedInIcon from "./icons/LinkedIn";
-import TwitterIcon from "./icons/Twitter";
+import BlueskyIcon from "./icons/Bluesky";
 import EmailIcon from "./icons/Email";
 
 import alexWebp from "public/alex.webp";
@@ -63,9 +63,9 @@ export default function Overview() {
             icon={<LinkedInIcon />}
           />
           <SocialButton
-            title="Twitter"
-            href="https://twitter.com/nault_alex"
-            icon={<TwitterIcon />}
+            title="Bluesky"
+            href="https://bsky.app/profile/alexnault.dev"
+            icon={<BlueskyIcon />}
           />
           <SocialButton
             title="Email"

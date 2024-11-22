@@ -40,7 +40,9 @@ export default function Footer() {
           LinkedIn
         </FooterLink>
         <Divider className="mx-4 h-auto" />
-        <FooterLink href="https://twitter.com/nault_alex">Twitter</FooterLink>
+        <FooterLink href="https://bsky.app/profile/alexnault.dev">
+          Bluesky
+        </FooterLink>
       </div>
     </footer>
   );

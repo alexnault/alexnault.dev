@@ -5,7 +5,6 @@ const siteTitle = "Alex Nault";
 const siteDescription =
   "I solve problems using software and write bite-sized articles for developers.";
 const author = "Alex Nault";
-const twitterUsername = "@nault_alex";
 const siteUrl = "https://alexnault.dev";
 const siteImage = "/preview.jpg";
 
@@ -69,8 +68,6 @@ export default function SEO({
       <meta name="twitter:title" content={metaTitle} />
       <meta name="twitter:description" content={metaDescription} />
       <meta name="twitter:image" content={metaImage} />
-      <meta name="twitter:creator" content={twitterUsername} />
-      <meta name="twitter:site" content={twitterUsername} />
 
       <script
         type="application/ld+json"
