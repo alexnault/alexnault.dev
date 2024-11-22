@@ -26,7 +26,7 @@
     "@plaiceholder/next": "^2.4.0",
     "@prisma/client": "^3.3.0",
     "@tanstack/react-query": "^4.3.9",
-    "classix": "^2.1.14",
+    "classix": "^2.1.40",
     "gray-matter": "^4.0.3",
     "next": "^13.5.1",
     "next-themes": "0.2.1",

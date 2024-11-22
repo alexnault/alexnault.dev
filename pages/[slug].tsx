@@ -15,7 +15,7 @@ import { articleRepo } from "repos/articles";
 import Layout from "components/Layout";
 import SEO from "components/SEO";
 import MarkdownRenderer from "components/MarkdownRenderer";
-import TwitterIcon from "components/icons/Twitter";
+import BlueskyIcon from "components/icons/Bluesky";
 import LinkedInIcon from "components/icons/LinkedIn";
 import LinkIcon from "components/icons/Link";
 import Container from "components/Container";
@@ -60,9 +60,9 @@ export default function SlugPage({
   const [topRef, isTopInView] = useInView();
   const [bottomRef, isBottomInView] = useInView();
 
-  const handleShareTwitter = () => {
-    const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-      `${title} ${currentUrl} via @nault_alex`
+  const handleShareBluesky = () => {
+    const url = `https://bsky.app/intent/compose?text=${encodeURIComponent(
+      `${title} ${currentUrl} via @alexnault.dev`
     )}`;
     window.open(url, "_blank");
   };
@@ -129,11 +129,11 @@ export default function SlugPage({
                   }
                   items={[
                     {
-                      key: "twitter",
-                      title: "Twitter",
-                      onClick: handleShareTwitter,
+                      key: "bluesky",
+                      title: "Bluesky",
+                      onClick: handleShareBluesky,
                       icon: (
-                        <TwitterIcon
+                        <BlueskyIcon
                           size="sm"
                           className="mr-3 text-gray-400 group-hover:text-gray-500"
                         />
